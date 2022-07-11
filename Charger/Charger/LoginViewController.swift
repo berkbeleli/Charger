@@ -8,6 +8,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+  // Object Connections
   @IBOutlet private weak var statusbarBackgroundView: UIView!
   @IBOutlet private weak var welcomeLabel: UILabel!
   @IBOutlet private weak var loginNoteLabel: UILabel!
@@ -20,7 +21,7 @@ class LoginViewController: UIViewController {
     setupUI()
     localization()
   }
-  
+  /// Setup UI Elements
   func setupUI() {
     statusbarBackgroundView.backgroundColor = Themes.colorCharcoal
     welcomeLabel.textColor = Themes.colorSolidWhite
@@ -29,20 +30,20 @@ class LoginViewController: UIViewController {
     emailTextField.backgroundColor = .clear
     emailTextField.textColor = Themes.colorSolidWhite
     emailTextField.font = Themes.fontRegularSubtitle
-    emailTextField.useUnderline()
+    emailTextField.useUnderline() // make email text underlined
     loginButton.tintColor = Themes.colorDark
     loginButton.backgroundColor = Themes.colorSolidWhite
     loginButton.layer.cornerRadius = ObjectConstants.buttonBorderRadius
   }
-  
+  // Setup UI Elements according to app language
   func localization() {
     self.navigationItem.title = "loginTitle".localizeString()
-    welcomeLabel.attributedText = "welcome".localizeString().withBoldText(text: "loginBoldText".localizeString(),font: Themes.fontRegularHeader)
+    welcomeLabel.attributedText = "welcome".localizeString().withBoldText(text: "loginBoldText".localizeString(),font: Themes.fontRegularHeader) // set welcome label's Brand side bold
     loginNoteLabel.text = "loginNote".localizeString()
     emailTextField.attributedPlaceholder = NSAttributedString(
         string:  "loginTxtPlaceHolder".localizeString(),
         attributes: [NSAttributedString.Key.foregroundColor: Themes.colorGrayScale]
-    )
+    )  // set textField placeholder color
     loginButton.setTitle("loginButton".localizeString(), for: .normal)
   }
 
