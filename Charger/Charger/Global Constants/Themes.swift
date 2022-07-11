@@ -19,6 +19,8 @@ struct Themes {
   
   static var fontExtraBold = UIFont(name: "Proxima Nova Extrabold", size: 19)!
   static var fontBold = UIFont(name: "Proxima Nova Bold", size: 19)!
+  static var fontRegularHeader = UIFont(name: "ProximaNova-Regular", size: 25)!
+  static var fontRegularSubtitle = UIFont(name: "ProximaNova-Regular", size: 17)!
   static var fontRegular = UIFont(name: "ProximaNova-Regular", size: 14)!
   static var fontThin = UIFont(name: "Proxima Nova Thin", size: 14)!
 }
