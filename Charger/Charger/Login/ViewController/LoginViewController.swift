@@ -15,11 +15,14 @@ class LoginViewController: UIViewController {
   @IBOutlet private weak var emailTextField: UITextField!
   @IBOutlet private weak var loginButton: UIButton!
   
+  private var viewModel = LoginViewModel()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
     setupUI()
     localization()
+    setupVM()
   }
   /// Setup UI Elements
   func setupUI() {
@@ -46,8 +49,22 @@ class LoginViewController: UIViewController {
     )  // set textField placeholder color
     loginButton.setTitle("loginButton".localizeString(), for: .normal)
   }
+  
+  func setupVM() {
+    viewModel.onLoginRequested = { result in
+      
+      if result == "SUCCESS" {
+        print("Show next page")
+      }else {
+        print("Show error Page Title")
+      }
+      
+    }
+    
+  }
 
   @IBAction func loginButtonPressed(_ sender: UIButton) {
+    viewModel.loginRequest(email: "trylogg@mymail.com")
   }
   
   

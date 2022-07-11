@@ -28,6 +28,8 @@
 		C0EF3A80287CCE070078C77A /* WebServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A7F287CCE070078C77A /* WebServiceHelper.swift */; };
 		C0EF3A82287CD0CE0078C77A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A81287CD0CE0078C77A /* LoginViewModel.swift */; };
 		C0EF3A84287CD13D0078C77A /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A83287CD13D0078C77A /* AppConstants.swift */; };
+		C0EF3A86287CD1DD0078C77A /* WebsiteUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A85287CD1DD0078C77A /* WebsiteUrl.swift */; };
+		C0EF3A89287CD3800078C77A /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A88287CD3800078C77A /* UserInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		C0EF3A7F287CCE070078C77A /* WebServiceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceHelper.swift; sourceTree = "<group>"; };
 		C0EF3A81287CD0CE0078C77A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C0EF3A83287CD13D0078C77A /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		C0EF3A85287CD1DD0078C77A /* WebsiteUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteUrl.swift; sourceTree = "<group>"; };
+		C0EF3A88287CD3800078C77A /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 				C0EF3A5C287CB0120078C77A /* Themes.swift */,
 				C0EF3A77287CC2F60078C77A /* Object Constants.swift */,
 				C0EF3A83287CD13D0078C77A /* AppConstants.swift */,
+				C0EF3A85287CD1DD0078C77A /* WebsiteUrl.swift */,
 			);
 			path = "Global Constants";
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 		C0EF3A7B287CCD8C0078C77A /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				C0EF3A87287CD3760078C77A /* Model */,
 				C0EF3A7D287CCDA30078C77A /* ViewModel */,
 				C0EF3A7C287CCD940078C77A /* ViewController */,
 			);
@@ -205,6 +211,14 @@
 				C0EF3A7F287CCE070078C77A /* WebServiceHelper.swift */,
 			);
 			path = GenericAPICaller;
+			sourceTree = "<group>";
+		};
+		C0EF3A87287CD3760078C77A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C0EF3A88287CD3800078C77A /* UserInfo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E09D57559AD7669FA4F24006 /* Pods */ = {
@@ -337,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0EF3A86287CD1DD0078C77A /* WebsiteUrl.swift in Sources */,
 				C0EF3A7A287CCA010078C77A /* UITextField+Extension.swift in Sources */,
 				C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */,
 				C0EF3A82287CD0CE0078C77A /* LoginViewModel.swift in Sources */,
@@ -348,6 +363,7 @@
 				C0EF3A80287CCE070078C77A /* WebServiceHelper.swift in Sources */,
 				C0EF3A78287CC2F60078C77A /* Object Constants.swift in Sources */,
 				C0EF3A6D287CB5C20078C77A /* String+Extension.swift in Sources */,
+				C0EF3A89287CD3800078C77A /* UserInfo.swift in Sources */,
 				C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

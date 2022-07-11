@@ -45,7 +45,7 @@ class WebServiceHelper {
                 case .success(let result):
                   if let res  = result as? [String: AnyObject] {
                     completion(nil, (res["message"] as! String ?? "UNKNOWN ERROR") ) // if server returns any error receive it like "EMAILNOTINCORRECTFORM"
-                  }                 
+                  }
                 case .failure(let result):
                   completion(nil, "UNKNOWN ERROR" ) // If the error is not known error
                 }
