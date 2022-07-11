@@ -17,10 +17,13 @@ struct Themes {
   static let colorSelectedGreen = UIColor(named: "SelectedGreen")!
   static let colorSolidWhite = UIColor(named: "SolidWhite")!
   
-  static let fontExtraBold = UIFont(name: "Proxima Nova Extrabold", size: 19)!
+  static let fontExtraBold = UIFont(name: "Proxima Nova Extrabold", size: 25)!
   static let fontBold = UIFont(name: "Proxima Nova Bold", size: 19)!
   static let fontRegularHeader = UIFont(name: "ProximaNova-Regular", size: 25)!
   static let fontRegularSubtitle = UIFont(name: "ProximaNova-Regular", size: 17)!
   static let fontRegular = UIFont(name: "ProximaNova-Regular", size: 14)!
   static let fontThin = UIFont(name: "Proxima Nova Thin", size: 14)!
+  
+  static let noAppointmentImage = UIImage(named: "AppointmentBadge")!
+  static let UserImage = UIImage(named: "Users")!
 }

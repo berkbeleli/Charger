@@ -13,3 +13,10 @@
 "loginTxtPlaceHolder" = "E-MAIL ADDRESS";
 "loginButton" = "LOG IN";
 "loginBoldText" = "Charger";
+
+
+//MARK: - APPOINTMENTS PAGE
+"appointmentTitle" = "Appointments";
+"noAppointmentsTitle" = "You don't have any appointments yet.";
+"noAppointmentsInfo" = "Created appointmnts will be list here.";
+"createAppointmentButton" = "CREATE APPOINTMENT";

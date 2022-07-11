@@ -8,32 +8,46 @@
 import UIKit
 
 class AppointmentsViewController: UIViewController {
-
-  @IBOutlet weak var statusbarBackgroundView: UIView!
-  @IBOutlet weak var noappointmentTitleLabel: UILabel!
-  @IBOutlet weak var noappointmentSubtitleLabel: UILabel!
   
-  @IBOutlet weak var createAppointmentButton: UIButton!
+  @IBOutlet private weak var statusbarBackgroundView: UIView!
+  @IBOutlet private weak var noappointmentTitleLabel: UILabel!
+  @IBOutlet private weak var noappointmentSubtitleLabel: UILabel!
+  @IBOutlet private weak var noAppointmentImage: UIImageView!
+  @IBOutlet private weak var createAppointmentButton: UIButton!
   
   override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    super.viewDidLoad()
+    
+    // Do any additional setup after loading the view.
     setupUI()
-    }
+    localization()
+  }
   
   /// Setup UI Elements
   func setupUI() {
     statusbarBackgroundView.backgroundColor = Themes.colorCharcoal
     noappointmentTitleLabel.textColor = Themes.colorSolidWhite
-    noappointmentTitleLabel.font = Themes.fontBold
+    noappointmentTitleLabel.font = Themes.fontExtraBold
     noappointmentSubtitleLabel.font = Themes.fontRegularSubtitle
     noappointmentSubtitleLabel.textColor = Themes.colorGrayScale
+    createAppointmentButton.tintColor = Themes.colorDark
+    createAppointmentButton.backgroundColor = Themes.colorSolidWhite
+    createAppointmentButton.layer.cornerRadius = ObjectConstants.buttonBorderRadius
+    createAppointmentButton.titleLabel?.font = Themes.fontRegularSubtitle
+    noAppointmentImage.image = Themes.noAppointmentImage
   }
-    
-
+  
+  // Setup UI Elements according to app language
+  func localization() {
+    self.navigationItem.title = "appointmentTitle".localizeString()
+    noappointmentTitleLabel.text = "noAppointmentsTitle".localizeString()
+    noappointmentSubtitleLabel.text = "noAppointmentsInfo".localizeString()
+    createAppointmentButton.setTitle("createAppointmentButton".localizeString(), for: .normal)
+  }
+  
+  
   @IBAction func createAppointmentPressed(_ sender: UIButton) {
   }
   
-
+  
 }

@@ -56,7 +56,8 @@ class LoginViewController: UIViewController {
     viewModel.requestNotificationPermission()
     viewModel.onLoginRequested = { result in // check the result of login request
       if result == "SUCCESS" {
-        print("Show next page")
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AppointmentsView")
+        self.navigationController?.pushViewController(vc, animated: true)
       }else {
         // show error popup here
         print(result)

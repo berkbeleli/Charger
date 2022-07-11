@@ -13,3 +13,9 @@
 "loginTxtPlaceHolder" = "E-POSTA ADRESİNİZ";
 "loginButton" = "GİRİŞ YAP";
 "loginBoldText" = "Charger'a";
+
+//MARK: - APPOINTMENTS PAGE
+"appointmentTitle" = "Randevular";
+"noAppointmentsTitle" = "Henüz bir randevu oluşturmadınız.";
+"noAppointmentsInfo" = "Oluşturulan randevular burada listelenir.";
+"createAppointmentButton" = "RANDEVU OLUŞTUR";
