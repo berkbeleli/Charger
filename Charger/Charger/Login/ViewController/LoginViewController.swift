@@ -56,7 +56,8 @@ class LoginViewController: UIViewController {
       if result == "SUCCESS" {
         print("Show next page")
       }else {
-        print("Show error Page Title")
+        // show error popup here
+        print(result)
       }
       
     }
