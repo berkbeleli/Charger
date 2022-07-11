@@ -1,0 +1,15 @@
+/*
+  Localizable.strings
+  Charger
+
+  Created by Berk Beleli on 2022-07-11.
+  
+*/
+
+//MARK: - LOGIN PAGE
+"loginTitle" = "Giriş Yapın";
+"welcome" = "Charger'a hoş geldiniz.";
+"loginNote" = "Charger'ı kullanmak için giriş yapmanız gerekiyor.";
+"loginTxtPlaceHolder" = "E-POSTA ADRESİNİZ";
+"loginButton" = "GİRİŞ YAP";
+"loginBoldText" = "Charger'a";
