@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="69.642857142857139"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Navigation Controller-->
         <scene sceneID="Uf4-yw-gWM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PHG-JS-M1q" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PHG-JS-M1q" customClass="CustomNavigationController" customModule="Charger" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hJz-ps-lnT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
