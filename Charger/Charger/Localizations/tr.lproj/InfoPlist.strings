@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  Charger
+
+  Created by Berk Beleli on 2022-07-11.
+  
+*/
+
+NSUserNotificationsUsageDescription = "Randevu saatin yaklaştığında bildirim almak için izin ver.";
+NSLocationWhenInUseUsageDescription = "İstasyonların sana olan uzaklıklarını öğrenmek için izin ver.";

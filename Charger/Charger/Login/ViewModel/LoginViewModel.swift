@@ -10,7 +10,16 @@ import Foundation
 class LoginViewModel {
   var onLoginRequested: ((String) -> ())?
   
-  // With this function we can request api to login with given email
+  ///With this function you can ask user for location Info
+  func requestLocation() {
+    LocationManager.shared.checkLocationService()
+  }
+  // request Notification permission
+  func requestNotificationPermission() {
+    NotificationManager.shared.requestPermission()
+  }
+  
+  /// With this function we can request api to login with given email
   func loginRequest(email: String?) {
     if !(email!.isValidEmail()) { // firstly check if the email is valid
       onLoginRequested?("EMAIL_NOT_IN_CORRECT_FORM")

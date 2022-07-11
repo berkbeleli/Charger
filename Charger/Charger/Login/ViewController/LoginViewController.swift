@@ -51,21 +51,21 @@ class LoginViewController: UIViewController {
   }
   
   func setupVM() {
-    viewModel.onLoginRequested = { result in
-      
+    viewModel.requestLocation()
+    viewModel.requestNotificationPermission()
+    viewModel.onLoginRequested = { result in // check the result of login request
       if result == "SUCCESS" {
         print("Show next page")
       }else {
         // show error popup here
         print(result)
       }
-      
     }
     
   }
 
   @IBAction func loginButtonPressed(_ sender: UIButton) {
-    viewModel.loginRequest(email: "trylogg@mymail.com")
+    viewModel.loginRequest(email: emailTextField.text ?? "empty mail")
   }
   
   

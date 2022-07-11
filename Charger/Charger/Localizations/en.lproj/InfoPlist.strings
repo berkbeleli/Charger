@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  Charger
+
+  Created by Berk Beleli on 2022-07-11.
+  
+*/
+
+NSUserNotificationsUsageDescription = "Get notified when your appointment time is near.";
+NSLocationWhenInUseUsageDescription = "Allow to find out the distance of stations from your current location.";

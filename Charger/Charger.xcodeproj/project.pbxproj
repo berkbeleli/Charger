@@ -30,6 +30,10 @@
 		C0EF3A84287CD13D0078C77A /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A83287CD13D0078C77A /* AppConstants.swift */; };
 		C0EF3A86287CD1DD0078C77A /* WebsiteUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A85287CD1DD0078C77A /* WebsiteUrl.swift */; };
 		C0EF3A89287CD3800078C77A /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A88287CD3800078C77A /* UserInfo.swift */; };
+		C0EF3A8C287CD8F40078C77A /* LocationDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A8B287CD8F40078C77A /* LocationDatas.swift */; };
+		C0EF3A8E287CD9840078C77A /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A8D287CD9840078C77A /* UserLocation.swift */; };
+		C0EF3A9A287CDDCC0078C77A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0EF3A9C287CDDCC0078C77A /* InfoPlist.strings */; };
+		C0EF3AA0287CDF910078C77A /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A9F287CDF910078C77A /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +67,11 @@
 		C0EF3A83287CD13D0078C77A /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		C0EF3A85287CD1DD0078C77A /* WebsiteUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteUrl.swift; sourceTree = "<group>"; };
 		C0EF3A88287CD3800078C77A /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		C0EF3A8B287CD8F40078C77A /* LocationDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDatas.swift; sourceTree = "<group>"; };
+		C0EF3A8D287CD9840078C77A /* UserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
+		C0EF3A9B287CDDCC0078C77A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C0EF3A9D287CDDCF0078C77A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C0EF3A9F287CDF910078C77A /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +115,8 @@
 		C0EF3A3A287CAAD70078C77A /* Charger */ = {
 			isa = PBXGroup;
 			children = (
+				C0EF3A9E287CDF7B0078C77A /* LocalNotificationManager */,
+				C0EF3A8A287CD8D90078C77A /* LocationManager */,
 				C0EF3A7E287CCDE90078C77A /* GenericAPICaller */,
 				C0EF3A7B287CCD8C0078C77A /* Login */,
 				C0EF3A74287CBA150078C77A /* GradientBackground */,
@@ -157,6 +168,7 @@
 		C0EF3A64287CB45A0078C77A /* Localizations */ = {
 			isa = PBXGroup;
 			children = (
+				C0EF3A9C287CDDCC0078C77A /* InfoPlist.strings */,
 				C0EF3A72287CB6CA0078C77A /* Localizable.strings */,
 			);
 			path = Localizations;
@@ -219,6 +231,23 @@
 				C0EF3A88287CD3800078C77A /* UserInfo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C0EF3A8A287CD8D90078C77A /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				C0EF3A8B287CD8F40078C77A /* LocationDatas.swift */,
+				C0EF3A8D287CD9840078C77A /* UserLocation.swift */,
+			);
+			path = LocationManager;
+			sourceTree = "<group>";
+		};
+		C0EF3A9E287CDF7B0078C77A /* LocalNotificationManager */ = {
+			isa = PBXGroup;
+			children = (
+				C0EF3A9F287CDF910078C77A /* NotificationManager.swift */,
+			);
+			path = LocalNotificationManager;
 			sourceTree = "<group>";
 		};
 		E09D57559AD7669FA4F24006 /* Pods */ = {
@@ -298,6 +327,7 @@
 				C0EF3A5B287CAE650078C77A /* Proxima Nova Thin.otf in Resources */,
 				C0EF3A59287CAE650078C77A /* Proxima Nova Bold.otf in Resources */,
 				C0EF3A56287CAE650078C77A /* Proxima Nova Extrabold.otf in Resources */,
+				C0EF3A9A287CDDCC0078C77A /* InfoPlist.strings in Resources */,
 				C0EF3A43287CAAD70078C77A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,9 +382,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0EF3A86287CD1DD0078C77A /* WebsiteUrl.swift in Sources */,
+				C0EF3AA0287CDF910078C77A /* NotificationManager.swift in Sources */,
 				C0EF3A7A287CCA010078C77A /* UITextField+Extension.swift in Sources */,
 				C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */,
 				C0EF3A82287CD0CE0078C77A /* LoginViewModel.swift in Sources */,
+				C0EF3A8C287CD8F40078C77A /* LocationDatas.swift in Sources */,
+				C0EF3A8E287CD9840078C77A /* UserLocation.swift in Sources */,
 				C0EF3A61287CB2CD0078C77A /* CustomNavigationController.swift in Sources */,
 				C0EF3A5D287CB0120078C77A /* Themes.swift in Sources */,
 				C0EF3A76287CBA320078C77A /* GradientBackgroundView.swift in Sources */,
@@ -396,6 +429,15 @@
 				C0EF3A73287CB6D10078C77A /* en */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		C0EF3A9C287CDDCC0078C77A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0EF3A9B287CDDCC0078C77A /* tr */,
+				C0EF3A9D287CDDCF0078C77A /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -527,6 +569,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Charger/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = NSLocationWhenInUseUsageDescription;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -555,6 +598,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Charger/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = NSLocationWhenInUseUsageDescription;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
