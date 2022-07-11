@@ -25,6 +25,7 @@
 		C0EF3A76287CBA320078C77A /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A75287CBA320078C77A /* GradientBackgroundView.swift */; };
 		C0EF3A78287CC2F60078C77A /* Object Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A77287CC2F60078C77A /* Object Constants.swift */; };
 		C0EF3A7A287CCA010078C77A /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A79287CCA010078C77A /* UITextField+Extension.swift */; };
+		C0EF3A80287CCE070078C77A /* WebServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A7F287CCE070078C77A /* WebServiceHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		C0EF3A75287CBA320078C77A /* GradientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
 		C0EF3A77287CC2F60078C77A /* Object Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Object Constants.swift"; sourceTree = "<group>"; };
 		C0EF3A79287CCA010078C77A /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		C0EF3A7F287CCE070078C77A /* WebServiceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +98,11 @@
 		C0EF3A3A287CAAD70078C77A /* Charger */ = {
 			isa = PBXGroup;
 			children = (
+				C0EF3A7E287CCDE90078C77A /* GenericAPICaller */,
+				C0EF3A7B287CCD8C0078C77A /* Login */,
 				C0EF3A74287CBA150078C77A /* GradientBackground */,
 				C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */,
 				C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */,
-				C0EF3A3F287CAAD70078C77A /* LoginViewController.swift */,
 				C0EF3A41287CAAD70078C77A /* Main.storyboard */,
 				C0EF3A44287CAAD90078C77A /* Assets.xcassets */,
 				C0EF3A46287CAAD90078C77A /* LaunchScreen.storyboard */,
@@ -166,13 +169,44 @@
 			path = GradientBackground;
 			sourceTree = "<group>";
 		};
+		C0EF3A7B287CCD8C0078C77A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C0EF3A7D287CCDA30078C77A /* ViewModel */,
+				C0EF3A7C287CCD940078C77A /* ViewController */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C0EF3A7C287CCD940078C77A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C0EF3A3F287CAAD70078C77A /* LoginViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C0EF3A7D287CCDA30078C77A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C0EF3A7E287CCDE90078C77A /* GenericAPICaller */ = {
+			isa = PBXGroup;
+			children = (
+				C0EF3A7F287CCE070078C77A /* WebServiceHelper.swift */,
+			);
+			path = GenericAPICaller;
+			sourceTree = "<group>";
+		};
 		E09D57559AD7669FA4F24006 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				26AB01AA9CBECEF3815225AE /* Pods-Charger.debug.xcconfig */,
 				676773AED797A27AF75B9CC0 /* Pods-Charger.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -303,6 +337,7 @@
 				C0EF3A5D287CB0120078C77A /* Themes.swift in Sources */,
 				C0EF3A76287CBA320078C77A /* GradientBackgroundView.swift in Sources */,
 				C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */,
+				C0EF3A80287CCE070078C77A /* WebServiceHelper.swift in Sources */,
 				C0EF3A78287CC2F60078C77A /* Object Constants.swift in Sources */,
 				C0EF3A6D287CB5C20078C77A /* String+Extension.swift in Sources */,
 				C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */,
