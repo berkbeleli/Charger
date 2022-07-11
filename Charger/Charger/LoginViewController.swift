@@ -18,33 +18,32 @@ class LoginViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
     setupUI()
+    localization()
   }
   
   func setupUI() {
-    self.navigationItem.title = "loginTitle".localizeString()
     statusbarBackgroundView.backgroundColor = Themes.colorCharcoal
-    welcomeLabel.attributedText = "welcome".localizeString().withBoldText(text: "loginBoldText".localizeString(),font: Themes.fontRegularHeader)
     welcomeLabel.textColor = Themes.colorSolidWhite
-    
-    loginNoteLabel.text = "loginNote".localizeString()
     loginNoteLabel.font = Themes.fontRegularSubtitle
     loginNoteLabel.textColor = Themes.colorGrayScale
-    
-    
     emailTextField.backgroundColor = .clear
     emailTextField.textColor = Themes.colorSolidWhite
     emailTextField.font = Themes.fontRegularSubtitle
+    emailTextField.useUnderline()
+    loginButton.tintColor = Themes.colorDark
+    loginButton.backgroundColor = Themes.colorSolidWhite
+    loginButton.layer.cornerRadius = ObjectConstants.buttonBorderRadius
+  }
+  
+  func localization() {
+    self.navigationItem.title = "loginTitle".localizeString()
+    welcomeLabel.attributedText = "welcome".localizeString().withBoldText(text: "loginBoldText".localizeString(),font: Themes.fontRegularHeader)
+    loginNoteLabel.text = "loginNote".localizeString()
     emailTextField.attributedPlaceholder = NSAttributedString(
         string:  "loginTxtPlaceHolder".localizeString(),
         attributes: [NSAttributedString.Key.foregroundColor: Themes.colorGrayScale]
     )
-    emailTextField.useUnderline()
-    
     loginButton.setTitle("loginButton".localizeString(), for: .normal)
-    loginButton.tintColor = Themes.colorDark
-    loginButton.backgroundColor = Themes.colorSolidWhite
-    loginButton.layer.cornerRadius = ObjectConstants.buttonBorderRadius
-    
   }
 
   @IBAction func loginButtonPressed(_ sender: UIButton) {
