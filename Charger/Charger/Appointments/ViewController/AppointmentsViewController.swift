@@ -19,7 +19,17 @@ class AppointmentsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    setupUI()
     }
+  
+  /// Setup UI Elements
+  func setupUI() {
+    statusbarBackgroundView.backgroundColor = Themes.colorCharcoal
+    noappointmentTitleLabel.textColor = Themes.colorSolidWhite
+    noappointmentTitleLabel.font = Themes.fontBold
+    noappointmentSubtitleLabel.font = Themes.fontRegularSubtitle
+    noappointmentSubtitleLabel.textColor = Themes.colorGrayScale
+  }
     
 
   @IBAction func createAppointmentPressed(_ sender: UIButton) {

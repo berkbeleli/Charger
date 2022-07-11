@@ -37,6 +37,7 @@ class LoginViewController: UIViewController {
     loginButton.tintColor = Themes.colorDark
     loginButton.backgroundColor = Themes.colorSolidWhite
     loginButton.layer.cornerRadius = ObjectConstants.buttonBorderRadius
+    loginButton.titleLabel?.font = Themes.fontRegularSubtitle
   }
   // Setup UI Elements according to app language
   func localization() {
