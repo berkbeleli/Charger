@@ -35,6 +35,8 @@ class AppointmentsViewController: UIViewController {
     createAppointmentButton.layer.cornerRadius = ObjectConstants.buttonBorderRadius
     createAppointmentButton.titleLabel?.font = Themes.fontRegularSubtitle
     noAppointmentImage.image = Themes.noAppointmentImage
+    self.navigationItem.hidesBackButton = true // hide back navbar button
+    navigationItem.leftBarButtonItem = UIBarButtonItem(image: Themes.UserImage, style: .plain, target: self, action: #selector(profileClicked))
   }
   
   // Setup UI Elements according to app language
@@ -43,6 +45,11 @@ class AppointmentsViewController: UIViewController {
     noappointmentTitleLabel.text = "noAppointmentsTitle".localizeString()
     noappointmentSubtitleLabel.text = "noAppointmentsInfo".localizeString()
     createAppointmentButton.setTitle("createAppointmentButton".localizeString(), for: .normal)
+  }
+  
+  @objc
+  func profileClicked() {
+    
   }
   
   

@@ -10,6 +10,6 @@ import UIKit
 struct ObjectConstants {
   
   static let buttonBorderRadius: CGFloat = 25.0
-  
+  static let viewBorders: CGFloat = 10.0
   
 }
