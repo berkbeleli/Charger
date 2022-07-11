@@ -1,5 +1,5 @@
-/* 
-  LocalizeTexts.strings
+/*
+  Localizable.strings
   Charger
 
   Created by Berk Beleli on 2022-07-11.
@@ -12,4 +12,4 @@
 "loginNote" = "Charger'ı kullanmak için giriş yapmanız gerekiyor.";
 "loginTxtbxPlaceHolder" = "E-POSTA ADRESİNİZ";
 "loginButton" = "GİRİŞ YAP";
-"loginBoldText" = "Charger'a"
+"loginBoldText" = "Charger'a";

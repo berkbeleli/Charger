@@ -1,9 +1,9 @@
-/* 
-  LocalizeTexts.strings
+/*
+  Localizable.strings
   Charger
 
   Created by Berk Beleli on 2022-07-11.
-  
+
 */
 
 //MARK: - LOGIN PAGE
@@ -12,4 +12,4 @@
 "loginNote" = "It's reqired to login use charger.";
 "loginTxtbxPlaceHolder" = "E-MAIL ADDRESS";
 "loginButton" = "LOG IN";
-"loginBoldText" = "Charger"
+"loginBoldText" = "Charger";

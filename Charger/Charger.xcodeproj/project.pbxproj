@@ -19,7 +19,8 @@
 		C0EF3A5B287CAE650078C77A /* Proxima Nova Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0EF3A55287CAE650078C77A /* Proxima Nova Thin.otf */; };
 		C0EF3A5D287CB0120078C77A /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A5C287CB0120078C77A /* Themes.swift */; };
 		C0EF3A61287CB2CD0078C77A /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A60287CB2CD0078C77A /* CustomNavigationController.swift */; };
-		C0EF3A67287CB4AD0078C77A /* LocalizeTexts.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0EF3A69287CB4AD0078C77A /* LocalizeTexts.strings */; };
+		C0EF3A6D287CB5C20078C77A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A6C287CB5C20078C77A /* String+Extension.swift */; };
+		C0EF3A70287CB6CA0078C77A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0EF3A72287CB6CA0078C77A /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +40,9 @@
 		C0EF3A60287CB2CD0078C77A /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		C0EF3A62287CB44D0078C77A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		C0EF3A63287CB44D0078C77A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		C0EF3A68287CB4AD0078C77A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LocalizeTexts.strings; sourceTree = "<group>"; };
-		C0EF3A6A287CB4AF0078C77A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LocalizeTexts.strings; sourceTree = "<group>"; };
+		C0EF3A6C287CB5C20078C77A /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		C0EF3A71287CB6CA0078C77A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C0EF3A73287CB6D10078C77A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				C0EF3A41287CAAD70078C77A /* Main.storyboard */,
 				C0EF3A44287CAAD90078C77A /* Assets.xcassets */,
 				C0EF3A46287CAAD90078C77A /* LaunchScreen.storyboard */,
+				C0EF3A6B287CB5AC0078C77A /* Extensions */,
 				C0EF3A64287CB45A0078C77A /* Localizations */,
 				C0EF3A5F287CB2B10078C77A /* NavigationBar */,
 				C0EF3A5E287CB1BE0078C77A /* Global Constants */,
@@ -118,9 +121,17 @@
 		C0EF3A64287CB45A0078C77A /* Localizations */ = {
 			isa = PBXGroup;
 			children = (
-				C0EF3A69287CB4AD0078C77A /* LocalizeTexts.strings */,
+				C0EF3A72287CB6CA0078C77A /* Localizable.strings */,
 			);
 			path = Localizations;
+			sourceTree = "<group>";
+		};
+		C0EF3A6B287CB5AC0078C77A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C0EF3A6C287CB5C20078C77A /* String+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,10 +193,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0EF3A67287CB4AD0078C77A /* LocalizeTexts.strings in Resources */,
 				C0EF3A48287CAAD90078C77A /* LaunchScreen.storyboard in Resources */,
 				C0EF3A5A287CAE650078C77A /* ProximaNova-Regular.otf in Resources */,
 				C0EF3A45287CAAD90078C77A /* Assets.xcassets in Resources */,
+				C0EF3A70287CB6CA0078C77A /* Localizable.strings in Resources */,
 				C0EF3A5B287CAE650078C77A /* Proxima Nova Thin.otf in Resources */,
 				C0EF3A59287CAE650078C77A /* Proxima Nova Bold.otf in Resources */,
 				C0EF3A56287CAE650078C77A /* Proxima Nova Extrabold.otf in Resources */,
@@ -204,6 +215,7 @@
 				C0EF3A61287CB2CD0078C77A /* CustomNavigationController.swift in Sources */,
 				C0EF3A5D287CB0120078C77A /* Themes.swift in Sources */,
 				C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */,
+				C0EF3A6D287CB5C20078C77A /* String+Extension.swift in Sources */,
 				C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,13 +241,13 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		C0EF3A69287CB4AD0078C77A /* LocalizeTexts.strings */ = {
+		C0EF3A72287CB6CA0078C77A /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C0EF3A68287CB4AD0078C77A /* tr */,
-				C0EF3A6A287CB4AF0078C77A /* en */,
+				C0EF3A71287CB6CA0078C77A /* tr */,
+				C0EF3A73287CB6D10078C77A /* en */,
 			);
-			name = LocalizeTexts.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
