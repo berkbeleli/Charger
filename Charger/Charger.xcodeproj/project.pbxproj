@@ -17,6 +17,7 @@
 		C0EF3A59287CAE650078C77A /* Proxima Nova Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0EF3A53287CAE650078C77A /* Proxima Nova Bold.otf */; };
 		C0EF3A5A287CAE650078C77A /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0EF3A54287CAE650078C77A /* ProximaNova-Regular.otf */; };
 		C0EF3A5B287CAE650078C77A /* Proxima Nova Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0EF3A55287CAE650078C77A /* Proxima Nova Thin.otf */; };
+		C0EF3A5D287CB0120078C77A /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A5C287CB0120078C77A /* Themes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C0EF3A53287CAE650078C77A /* Proxima Nova Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Bold.otf"; sourceTree = "<group>"; };
 		C0EF3A54287CAE650078C77A /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
 		C0EF3A55287CAE650078C77A /* Proxima Nova Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Thin.otf"; sourceTree = "<group>"; };
+		C0EF3A5C287CB0120078C77A /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				C0EF3A41287CAAD70078C77A /* Main.storyboard */,
 				C0EF3A44287CAAD90078C77A /* Assets.xcassets */,
 				C0EF3A46287CAAD90078C77A /* LaunchScreen.storyboard */,
+				C0EF3A5E287CB1BE0078C77A /* Global Constants */,
 				C0EF3A4F287CAE650078C77A /* Font */,
 				C0EF3A49287CAAD90078C77A /* Info.plist */,
 			);
@@ -85,6 +88,14 @@
 				C0EF3A55287CAE650078C77A /* Proxima Nova Thin.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		C0EF3A5E287CB1BE0078C77A /* Global Constants */ = {
+			isa = PBXGroup;
+			children = (
+				C0EF3A5C287CB0120078C77A /* Themes.swift */,
+			);
+			path = "Global Constants";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */,
+				C0EF3A5D287CB0120078C77A /* Themes.swift in Sources */,
 				C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */,
 				C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */,
 			);
