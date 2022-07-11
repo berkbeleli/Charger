@@ -24,6 +24,7 @@ class CustomNavigationController: UINavigationController
     
       // set bar background Color
       self.navigationBar.backgroundColor = Themes.colorCharcoal
+      self.navigationBar.tintColor = Themes.colorSolidWhite
   
        // set font for navigation bar buttons
       UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: Themes.fontRegular], for: UIControl.State.normal)

@@ -101,7 +101,92 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="939.13043478260875" y="69.642857142857139"/>
+            <point key="canvasLocation" x="590" y="70"/>
+        </scene>
+        <!--Appointments View Controller-->
+        <scene sceneID="71W-jq-oD1">
+            <objects>
+                <viewController storyboardIdentifier="AppointmentsView" id="7gF-jA-0ws" customClass="AppointmentsViewController" customModule="Charger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZbS-gG-MSJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cyz-Ed-DCw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9c-pq-MXo" userLabel="GradientView" customClass="GradientBackgroundView" customModule="Charger" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="OZf-66-OXT">
+                                <rect key="frame" x="15" y="124" width="384" height="251"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="48r-hO-o9i">
+                                        <rect key="frame" x="122" y="0.0" width="140" height="140"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="140" id="H7d-9e-klP"/>
+                                            <constraint firstAttribute="width" constant="140" id="Haf-T3-5Ew"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdi-ep-r7t">
+                                        <rect key="frame" x="171.5" y="175" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onw-bd-VTa">
+                                        <rect key="frame" x="171.5" y="230.5" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERL-r0-W8Z">
+                                <rect key="frame" x="62" y="752" width="290" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="xpj-jp-kps"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="createAppointmentPressed:" destination="7gF-jA-0ws" eventType="touchUpInside" id="Xax-DF-rtV"/>
+                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7hS-5P-pgO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="W2y-cU-Bup"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="x9c-pq-MXo" firstAttribute="leading" secondItem="W2y-cU-Bup" secondAttribute="leading" id="4Hh-Fg-5Np"/>
+                            <constraint firstItem="OZf-66-OXT" firstAttribute="leading" secondItem="W2y-cU-Bup" secondAttribute="leading" constant="15" id="B7N-Tg-8RE"/>
+                            <constraint firstItem="W2y-cU-Bup" firstAttribute="trailing" secondItem="x9c-pq-MXo" secondAttribute="trailing" id="IAp-xa-Elu"/>
+                            <constraint firstItem="OZf-66-OXT" firstAttribute="top" secondItem="Cyz-Ed-DCw" secondAttribute="bottom" constant="80" id="MeZ-Zv-Kuo"/>
+                            <constraint firstItem="W2y-cU-Bup" firstAttribute="trailing" secondItem="OZf-66-OXT" secondAttribute="trailing" constant="15" id="PEc-lA-Biy"/>
+                            <constraint firstItem="OZf-66-OXT" firstAttribute="centerX" secondItem="ZbS-gG-MSJ" secondAttribute="centerX" id="R5z-6b-l16"/>
+                            <constraint firstItem="W2y-cU-Bup" firstAttribute="bottom" secondItem="ERL-r0-W8Z" secondAttribute="bottom" constant="60" id="Rf6-zd-Rnl"/>
+                            <constraint firstItem="Cyz-Ed-DCw" firstAttribute="leading" secondItem="ZbS-gG-MSJ" secondAttribute="leading" id="SEh-RY-Uml"/>
+                            <constraint firstItem="Cyz-Ed-DCw" firstAttribute="top" secondItem="ZbS-gG-MSJ" secondAttribute="top" id="Sxo-aM-Ui8"/>
+                            <constraint firstItem="W2y-cU-Bup" firstAttribute="trailing" secondItem="Cyz-Ed-DCw" secondAttribute="trailing" id="TGH-yT-grJ"/>
+                            <constraint firstItem="ERL-r0-W8Z" firstAttribute="width" secondItem="ZbS-gG-MSJ" secondAttribute="width" multiplier="0.7" id="WbA-PC-9mE"/>
+                            <constraint firstItem="Cyz-Ed-DCw" firstAttribute="bottom" secondItem="x9c-pq-MXo" secondAttribute="top" id="ZYv-eA-2Uj"/>
+                            <constraint firstItem="x9c-pq-MXo" firstAttribute="top" secondItem="W2y-cU-Bup" secondAttribute="top" id="k0l-RT-Q6h"/>
+                            <constraint firstItem="ERL-r0-W8Z" firstAttribute="centerX" secondItem="ZbS-gG-MSJ" secondAttribute="centerX" id="lOu-uN-YnC"/>
+                            <constraint firstAttribute="bottom" secondItem="x9c-pq-MXo" secondAttribute="bottom" id="zUt-c1-bnS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="createAppointmentButton" destination="ERL-r0-W8Z" id="6d9-FX-PRk"/>
+                        <outlet property="noAppointmentImage" destination="48r-hO-o9i" id="YmZ-8p-Y7B"/>
+                        <outlet property="noappointmentSubtitleLabel" destination="onw-bd-VTa" id="bGP-FB-RvZ"/>
+                        <outlet property="noappointmentTitleLabel" destination="wdi-ep-r7t" id="3BV-ay-x3r"/>
+                        <outlet property="statusbarBackgroundView" destination="Cyz-Ed-DCw" id="A8z-gB-Fu8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CZe-3f-fue" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1657" y="69"/>
         </scene>
         <!--Custom Navigation Controller-->
         <scene sceneID="Uf4-yw-gWM">

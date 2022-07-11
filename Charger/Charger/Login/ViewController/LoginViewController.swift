@@ -37,6 +37,7 @@ class LoginViewController: UIViewController {
     loginButton.tintColor = Themes.colorDark
     loginButton.backgroundColor = Themes.colorSolidWhite
     loginButton.layer.cornerRadius = ObjectConstants.buttonBorderRadius
+    loginButton.titleLabel?.font = Themes.fontRegularSubtitle
   }
   // Setup UI Elements according to app language
   func localization() {
@@ -55,7 +56,8 @@ class LoginViewController: UIViewController {
     viewModel.requestNotificationPermission()
     viewModel.onLoginRequested = { result in // check the result of login request
       if result == "SUCCESS" {
-        print("Show next page")
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AppointmentsView")
+        self.navigationController?.pushViewController(vc, animated: true)
       }else {
         // show error popup here
         print(result)
