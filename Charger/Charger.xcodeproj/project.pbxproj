@@ -21,6 +21,7 @@
 		C0EF3A61287CB2CD0078C77A /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A60287CB2CD0078C77A /* CustomNavigationController.swift */; };
 		C0EF3A6D287CB5C20078C77A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A6C287CB5C20078C77A /* String+Extension.swift */; };
 		C0EF3A70287CB6CA0078C77A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0EF3A72287CB6CA0078C77A /* Localizable.strings */; };
+		C0EF3A76287CBA320078C77A /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A75287CBA320078C77A /* GradientBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		C0EF3A6C287CB5C20078C77A /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		C0EF3A71287CB6CA0078C77A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C0EF3A73287CB6D10078C77A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C0EF3A75287CBA320078C77A /* GradientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 		C0EF3A3A287CAAD70078C77A /* Charger */ = {
 			isa = PBXGroup;
 			children = (
+				C0EF3A74287CBA150078C77A /* GradientBackground */,
 				C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */,
 				C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */,
 				C0EF3A3F287CAAD70078C77A /* LoginViewController.swift */,
@@ -132,6 +135,14 @@
 				C0EF3A6C287CB5C20078C77A /* String+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C0EF3A74287CBA150078C77A /* GradientBackground */ = {
+			isa = PBXGroup;
+			children = (
+				C0EF3A75287CBA320078C77A /* GradientBackgroundView.swift */,
+			);
+			path = GradientBackground;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +225,7 @@
 				C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */,
 				C0EF3A61287CB2CD0078C77A /* CustomNavigationController.swift in Sources */,
 				C0EF3A5D287CB0120078C77A /* Themes.swift in Sources */,
+				C0EF3A76287CBA320078C77A /* GradientBackgroundView.swift in Sources */,
 				C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */,
 				C0EF3A6D287CB5C20078C77A /* String+Extension.swift in Sources */,
 				C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */,

@@ -15,8 +15,28 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AoU-c1-AaR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ce1-fu-iKM" userLabel="Gradient View" customClass="GradientBackgroundView" customModule="Charger" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AoU-c1-AaR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3Qv-Xh-ygN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AoU-c1-AaR" secondAttribute="trailing" id="7am-bi-snO"/>
+                            <constraint firstItem="AoU-c1-AaR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FXm-n1-zbo"/>
+                            <constraint firstItem="AoU-c1-AaR" firstAttribute="bottom" secondItem="Ce1-fu-iKM" secondAttribute="top" id="ZdO-LN-XHO"/>
+                            <constraint firstItem="Ce1-fu-iKM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zf5-qG-CYg"/>
+                            <constraint firstAttribute="bottom" secondItem="Ce1-fu-iKM" secondAttribute="bottom" id="egB-n5-O4s"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ce1-fu-iKM" secondAttribute="trailing" id="i4h-vS-VUA"/>
+                            <constraint firstItem="Ce1-fu-iKM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zHA-FV-W1l"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UKe-9p-f9S"/>
                 </viewController>
@@ -46,6 +66,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
