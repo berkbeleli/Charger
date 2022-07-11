@@ -10,6 +10,6 @@
 "loginTitle" = "Login";
 "welcome" = "Welcome to Charger";
 "loginNote" = "It's reqired to login use Charger.";
-"loginTxtbxPlaceHolder" = "E-MAIL ADDRESS";
+"loginTxtPlaceHolder" = "E-MAIL ADDRESS";
 "loginButton" = "LOG IN";
 "loginBoldText" = "Charger";

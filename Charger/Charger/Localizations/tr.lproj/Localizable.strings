@@ -10,6 +10,6 @@
 "loginTitle" = "Giriş Yapın";
 "welcome" = "Charger'a hoş geldiniz.";
 "loginNote" = "Charger'ı kullanmak için giriş yapmanız gerekiyor.";
-"loginTxtbxPlaceHolder" = "E-POSTA ADRESİNİZ";
+"loginTxtPlaceHolder" = "E-POSTA ADRESİNİZ";
 "loginButton" = "GİRİŞ YAP";
 "loginBoldText" = "Charger'a";

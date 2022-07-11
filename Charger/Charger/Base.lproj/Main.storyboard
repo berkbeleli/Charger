@@ -47,6 +47,25 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PDo-FN-sMi">
+                                <rect key="frame" x="8" y="358" width="398" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="nKL-LW-Qb1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="0.0"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UV5-Aw-dy8">
+                                <rect key="frame" x="62" y="752" width="290" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="zfU-oa-zu5"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wm6-ev-M0n"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -56,17 +75,25 @@
                             <constraint firstItem="AoU-c1-AaR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FXm-n1-zbo"/>
                             <constraint firstItem="e03-sy-GRK" firstAttribute="top" secondItem="AoU-c1-AaR" secondAttribute="bottom" constant="100" id="Jax-jo-Jkd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e03-sy-GRK" secondAttribute="trailing" constant="15" id="PDA-Oc-Hf4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UV5-Aw-dy8" secondAttribute="bottom" constant="60" id="PVz-je-LCS"/>
+                            <constraint firstItem="UV5-Aw-dy8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sxi-be-uTa"/>
+                            <constraint firstItem="UV5-Aw-dy8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="TvJ-DJ-Nb9"/>
                             <constraint firstItem="AoU-c1-AaR" firstAttribute="bottom" secondItem="Ce1-fu-iKM" secondAttribute="top" id="ZdO-LN-XHO"/>
                             <constraint firstItem="Ce1-fu-iKM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zf5-qG-CYg"/>
                             <constraint firstAttribute="bottom" secondItem="Ce1-fu-iKM" secondAttribute="bottom" id="egB-n5-O4s"/>
+                            <constraint firstItem="PDo-FN-sMi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="fiz-mT-85c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PDo-FN-sMi" secondAttribute="trailing" constant="8" id="gV3-eh-Opn"/>
                             <constraint firstItem="e03-sy-GRK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="gf8-gX-lA6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ce1-fu-iKM" secondAttribute="trailing" id="i4h-vS-VUA"/>
                             <constraint firstItem="e03-sy-GRK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jGw-Wt-7AX"/>
+                            <constraint firstItem="PDo-FN-sMi" firstAttribute="top" secondItem="e03-sy-GRK" secondAttribute="bottom" constant="100" id="jSR-ZW-Qpx"/>
                             <constraint firstItem="Ce1-fu-iKM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zHA-FV-W1l"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UKe-9p-f9S"/>
                     <connections>
+                        <outlet property="emailTextField" destination="PDo-FN-sMi" id="JX4-3i-PLg"/>
+                        <outlet property="loginButton" destination="UV5-Aw-dy8" id="hZz-Lt-e2l"/>
                         <outlet property="loginNoteLabel" destination="k2Y-9d-GeN" id="vjR-DD-5uP"/>
                         <outlet property="statusbarBackgroundView" destination="AoU-c1-AaR" id="ZyV-IA-Xo6"/>
                         <outlet property="welcomeLabel" destination="oBM-d1-7UZ" id="OQM-rc-kTk"/>

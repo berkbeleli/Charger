@@ -13,6 +13,10 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var welcomeLabel: UILabel!
   @IBOutlet weak var loginNoteLabel: UILabel!
   
+  @IBOutlet weak var emailTextField: UITextField!
+  
+  @IBOutlet weak var loginButton: UIButton!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
@@ -28,8 +32,26 @@ class LoginViewController: UIViewController {
     loginNoteLabel.text = "loginNote".localizeString()
     loginNoteLabel.font = Themes.fontRegularSubtitle
     loginNoteLabel.textColor = Themes.colorGrayScale
+    
+    
+    emailTextField.backgroundColor = .clear
+    emailTextField.textColor = Themes.colorSolidWhite
+    emailTextField.font = Themes.fontRegularSubtitle
+    emailTextField.attributedPlaceholder = NSAttributedString(
+        string:  "loginTxtPlaceHolder".localizeString(),
+        attributes: [NSAttributedString.Key.foregroundColor: Themes.colorGrayScale]
+    )
+    
+    loginButton.setTitle("loginButton".localizeString(), for: .normal)
+    loginButton.tintColor = Themes.colorDark
+    loginButton.backgroundColor = Themes.colorSolidWhite
+    loginButton.layer.cornerRadius = ObjectConstants.buttonBorderRadius
+    
   }
 
-
+  @IBAction func loginButtonPressed(_ sender: UIButton) {
+  }
+  
+  
 }
 
