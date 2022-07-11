@@ -48,9 +48,9 @@
                                 </subviews>
                             </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PDo-FN-sMi">
-                                <rect key="frame" x="8" y="358" width="398" height="50"/>
+                                <rect key="frame" x="15" y="358" width="384" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="nKL-LW-Qb1"/>
+                                    <constraint firstAttribute="height" constant="45" id="nKL-LW-Qb1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="0.0"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -81,8 +81,8 @@
                             <constraint firstItem="AoU-c1-AaR" firstAttribute="bottom" secondItem="Ce1-fu-iKM" secondAttribute="top" id="ZdO-LN-XHO"/>
                             <constraint firstItem="Ce1-fu-iKM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zf5-qG-CYg"/>
                             <constraint firstAttribute="bottom" secondItem="Ce1-fu-iKM" secondAttribute="bottom" id="egB-n5-O4s"/>
-                            <constraint firstItem="PDo-FN-sMi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="fiz-mT-85c"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PDo-FN-sMi" secondAttribute="trailing" constant="8" id="gV3-eh-Opn"/>
+                            <constraint firstItem="PDo-FN-sMi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="fiz-mT-85c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PDo-FN-sMi" secondAttribute="trailing" constant="15" id="gV3-eh-Opn"/>
                             <constraint firstItem="e03-sy-GRK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="gf8-gX-lA6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ce1-fu-iKM" secondAttribute="trailing" id="i4h-vS-VUA"/>
                             <constraint firstItem="e03-sy-GRK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jGw-Wt-7AX"/>

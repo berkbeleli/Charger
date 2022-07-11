@@ -9,13 +9,10 @@ import UIKit
 
 class LoginViewController: UIViewController {
   @IBOutlet private weak var statusbarBackgroundView: UIView!
-  
-  @IBOutlet weak var welcomeLabel: UILabel!
-  @IBOutlet weak var loginNoteLabel: UILabel!
-  
-  @IBOutlet weak var emailTextField: UITextField!
-  
-  @IBOutlet weak var loginButton: UIButton!
+  @IBOutlet private weak var welcomeLabel: UILabel!
+  @IBOutlet private weak var loginNoteLabel: UILabel!
+  @IBOutlet private weak var emailTextField: UITextField!
+  @IBOutlet private weak var loginButton: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -41,6 +38,7 @@ class LoginViewController: UIViewController {
         string:  "loginTxtPlaceHolder".localizeString(),
         attributes: [NSAttributedString.Key.foregroundColor: Themes.colorGrayScale]
     )
+    emailTextField.useUnderline()
     
     loginButton.setTitle("loginButton".localizeString(), for: .normal)
     loginButton.tintColor = Themes.colorDark
