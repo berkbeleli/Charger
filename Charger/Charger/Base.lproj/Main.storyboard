@@ -360,8 +360,8 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="k8v-ER-pY1"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="K0h-dX-TAi">
-                                <rect key="frame" x="10" y="123" width="394" height="773"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="K0h-dX-TAi">
+                                <rect key="frame" x="15" y="123" width="384" height="773"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -381,8 +381,8 @@
                             <constraint firstAttribute="bottom" secondItem="4rB-Ia-x95" secondAttribute="bottom" id="RRe-wz-bWh"/>
                             <constraint firstItem="A8H-Hb-la5" firstAttribute="trailing" secondItem="Yzd-Ag-3wc" secondAttribute="trailing" id="Rba-mZ-ART"/>
                             <constraint firstItem="MGJ-CT-op1" firstAttribute="leading" secondItem="A8H-Hb-la5" secondAttribute="leading" constant="10" id="YRI-LZ-obJ"/>
-                            <constraint firstItem="K0h-dX-TAi" firstAttribute="leading" secondItem="A8H-Hb-la5" secondAttribute="leading" constant="10" id="lFz-YU-Zmq"/>
-                            <constraint firstItem="A8H-Hb-la5" firstAttribute="trailing" secondItem="K0h-dX-TAi" secondAttribute="trailing" constant="10" id="otH-aC-iZv"/>
+                            <constraint firstItem="K0h-dX-TAi" firstAttribute="leading" secondItem="A8H-Hb-la5" secondAttribute="leading" constant="15" id="lFz-YU-Zmq"/>
+                            <constraint firstItem="A8H-Hb-la5" firstAttribute="trailing" secondItem="K0h-dX-TAi" secondAttribute="trailing" constant="15" id="otH-aC-iZv"/>
                             <constraint firstItem="Yzd-Ag-3wc" firstAttribute="bottom" secondItem="4rB-Ia-x95" secondAttribute="top" id="qgL-GK-msw"/>
                             <constraint firstItem="4rB-Ia-x95" firstAttribute="top" secondItem="A8H-Hb-la5" secondAttribute="top" id="r6l-Ld-SEo"/>
                             <constraint firstItem="w6w-i6-dd5" firstAttribute="leading" secondItem="DKO-mX-ICB" secondAttribute="leading" id="z6E-TV-eYK"/>

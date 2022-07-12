@@ -12,6 +12,8 @@
 		C0319ADA287E0FA9005B846D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AD9287E0FA9005B846D /* ProfileViewModel.swift */; };
 		C0319ADC287E1115005B846D /* UserToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319ADB287E1115005B846D /* UserToken.swift */; };
 		C0319AE4287E18B6005B846D /* CitySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AE3287E18B6005B846D /* CitySelectionViewController.swift */; };
+		C0319AE8287E22C5005B846D /* CustomCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AE6287E22C5005B846D /* CustomCityTableViewCell.swift */; };
+		C0319AE9287E22C5005B846D /* CustomCityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0319AE7287E22C5005B846D /* CustomCityTableViewCell.xib */; };
 		C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */; };
 		C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */; };
 		C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3F287CAAD70078C77A /* LoginViewController.swift */; };
@@ -49,6 +51,8 @@
 		C0319AD9287E0FA9005B846D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		C0319ADB287E1115005B846D /* UserToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserToken.swift; sourceTree = "<group>"; };
 		C0319AE3287E18B6005B846D /* CitySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySelectionViewController.swift; sourceTree = "<group>"; };
+		C0319AE6287E22C5005B846D /* CustomCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCityTableViewCell.swift; sourceTree = "<group>"; };
+		C0319AE7287E22C5005B846D /* CustomCityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCityTableViewCell.xib; sourceTree = "<group>"; };
 		C0EF3A38287CAAD70078C77A /* Charger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 		C0319AE1287E1888005B846D /* City Selection */ = {
 			isa = PBXGroup;
 			children = (
+				C0319AE5287E22A0005B846D /* Components */,
 				C0319AE2287E189D005B846D /* ViewController */,
 			);
 			path = "City Selection";
@@ -142,6 +147,15 @@
 				C0319AE3287E18B6005B846D /* CitySelectionViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C0319AE5287E22A0005B846D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C0319AE6287E22C5005B846D /* CustomCityTableViewCell.swift */,
+				C0319AE7287E22C5005B846D /* CustomCityTableViewCell.xib */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		C0EF3A2F287CAAD70078C77A = {
@@ -406,6 +420,7 @@
 				C0EF3A5B287CAE650078C77A /* Proxima Nova Thin.otf in Resources */,
 				C0EF3A59287CAE650078C77A /* Proxima Nova Bold.otf in Resources */,
 				C0EF3A56287CAE650078C77A /* Proxima Nova Extrabold.otf in Resources */,
+				C0319AE9287E22C5005B846D /* CustomCityTableViewCell.xib in Resources */,
 				C0EF3A9A287CDDCC0078C77A /* InfoPlist.strings in Resources */,
 				C0EF3A43287CAAD70078C77A /* Main.storyboard in Resources */,
 			);
@@ -462,6 +477,7 @@
 			files = (
 				C0EF3A86287CD1DD0078C77A /* WebsiteUrl.swift in Sources */,
 				C0EF3AA0287CDF910078C77A /* NotificationManager.swift in Sources */,
+				C0319AE8287E22C5005B846D /* CustomCityTableViewCell.swift in Sources */,
 				C0EF3A7A287CCA010078C77A /* UITextField+Extension.swift in Sources */,
 				C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */,
 				C0319ADC287E1115005B846D /* UserToken.swift in Sources */,

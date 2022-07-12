@@ -15,7 +15,6 @@ class CitySelectionViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     setupCustomSearchTextField()
     setupUI()
     localization()
@@ -60,6 +59,7 @@ class CitySelectionViewController: UIViewController {
   @objc
   func clearTextField() {
     searchCityTextField.text = ""
+    searchCityTextField.layer.borderColor = Themes.colorGrayScale.cgColor // border color for the textfield
   }
   
 }
