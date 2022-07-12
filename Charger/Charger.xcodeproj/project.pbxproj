@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6CC73505AB1CAF438BA4D782 /* Pods_Charger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425149758F6630A3A1A11A7C /* Pods_Charger.framework */; };
 		C0319AD8287E0757005B846D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AD7287E0757005B846D /* ProfileViewController.swift */; };
+		C0319ADA287E0FA9005B846D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AD9287E0FA9005B846D /* ProfileViewModel.swift */; };
+		C0319ADC287E1115005B846D /* UserToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319ADB287E1115005B846D /* UserToken.swift */; };
 		C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */; };
 		C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */; };
 		C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3F287CAAD70078C77A /* LoginViewController.swift */; };
@@ -43,6 +45,8 @@
 		425149758F6630A3A1A11A7C /* Pods_Charger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Charger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		676773AED797A27AF75B9CC0 /* Pods-Charger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Charger.release.xcconfig"; path = "Target Support Files/Pods-Charger/Pods-Charger.release.xcconfig"; sourceTree = "<group>"; };
 		C0319AD7287E0757005B846D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C0319AD9287E0FA9005B846D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		C0319ADB287E1115005B846D /* UserToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserToken.swift; sourceTree = "<group>"; };
 		C0EF3A38287CAAD70078C77A /* Charger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				C0EF3A88287CD3800078C77A /* UserInfo.swift */,
+				C0319ADB287E1115005B846D /* UserToken.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 		C0EF3AA5287CE4B80078C77A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C0319AD9287E0FA9005B846D /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -439,6 +445,7 @@
 				C0EF3AA0287CDF910078C77A /* NotificationManager.swift in Sources */,
 				C0EF3A7A287CCA010078C77A /* UITextField+Extension.swift in Sources */,
 				C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */,
+				C0319ADC287E1115005B846D /* UserToken.swift in Sources */,
 				C0EF3AA7287CE7130078C77A /* AppointmentsViewController.swift in Sources */,
 				C0EF3A82287CD0CE0078C77A /* LoginViewModel.swift in Sources */,
 				C0EF3A8C287CD8F40078C77A /* LocationDatas.swift in Sources */,
@@ -449,6 +456,7 @@
 				C0EF3A76287CBA320078C77A /* GradientBackgroundView.swift in Sources */,
 				C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */,
 				C0EF3A84287CD13D0078C77A /* AppConstants.swift in Sources */,
+				C0319ADA287E0FA9005B846D /* ProfileViewModel.swift in Sources */,
 				C0EF3A80287CCE070078C77A /* WebServiceHelper.swift in Sources */,
 				C0EF3A78287CC2F60078C77A /* Object Constants.swift in Sources */,
 				C0EF3A6D287CB5C20078C77A /* String+Extension.swift in Sources */,
