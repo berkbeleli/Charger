@@ -27,3 +27,10 @@
 "email" = "E-mail:";
 "deviceID" = "Device ID:";
 "logoutButton" = "LOG OUT";
+
+
+//MARK: - CITY SELECTION PAGE
+"cityselectionTitle" = "Select City";
+"searchCityPlaceHolder" = "Search City";
+"noCityErrorTitle" = "No Result found matching your search.";
+"noCityErrorSubTitle" = "Please make a new search.";

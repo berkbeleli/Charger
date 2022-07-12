@@ -26,3 +26,10 @@
 "email" = "E-posta:";
 "deviceID" = "Cihaz ID:";
 "logoutButton" = "ÇIKIŞ YAP";
+
+
+//MARK: - CITY SELECTION PAGE
+"cityselectionTitle" = "Şehir Seçin";
+"searchCityPlaceHolder" = "Şehir Ara";
+"noCityErrorTitle" = "Aramanız ile eşleşen bir sonuç bulunamadı.";
+"noCityErrorSubTitle" = "Lütfen yeni bir arama yapın.";
