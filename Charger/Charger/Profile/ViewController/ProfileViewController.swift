@@ -11,7 +11,7 @@ class ProfileViewController: UIViewController {
   // Object Connections
   @IBOutlet private weak var statusbarBackgroundView: UIView!
   @IBOutlet private weak var profileBadgeImage: UIImageView!
-  @IBOutlet private weak var ınfoBackgroundView: UIView!
+  @IBOutlet private weak var infoBackgroundView: UIView!
   @IBOutlet private weak var emailTitleLabel: UILabel!
   @IBOutlet private weak var emailLabel: UILabel!
   @IBOutlet private weak var deviceUdIdTitleLabel: UILabel!
@@ -19,20 +19,38 @@ class ProfileViewController: UIViewController {
   @IBOutlet private weak var logoutButton: UIButton!
   override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    setupUI()
+    localization()
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+  
+  /// Setup UI Elements
+  func setupUI() {
+    statusbarBackgroundView.backgroundColor = Themes.colorCharcoal
+    infoBackgroundView.backgroundColor = Themes.colorCharcoal
+    infoBackgroundView.layer.cornerRadius = ObjectConstants.viewBorders
+    emailLabel.textColor = Themes.colorSolidWhite
+    emailLabel.font = Themes.fontBold
+    emailTitleLabel.font = Themes.fontRegularSubtitle
+    emailTitleLabel.textColor = Themes.colorGrayScale
+    deviceUdIdLabel.textColor = Themes.colorSolidWhite
+    deviceUdIdLabel.font = Themes.fontBold
+    deviceUdIdTitleLabel.font = Themes.fontRegularSubtitle
+    deviceUdIdTitleLabel.textColor = Themes.colorGrayScale
+    logoutButton.tintColor = Themes.colorDark
+    logoutButton.backgroundColor = Themes.colorSolidWhite
+    logoutButton.layer.cornerRadius = ObjectConstants.buttonBorderRadius
+    logoutButton.titleLabel?.font = Themes.fontRegularSubtitle
+    profileBadgeImage.image = Themes.profileBadgeImage
+  }
+  
+  // Setup UI Elements according to app language
+  func localization() {
+    self.navigationItem.title = "profileTitle".localizeString()
+    emailTitleLabel.text = "email".localizeString()
+    deviceUdIdTitleLabel.text = "deviceID".localizeString()
+    logoutButton.setTitle("logoutButton".localizeString(), for: .normal)
+  }
 
   @IBAction func logOutPressed(_ sender: UIButton) {
   }

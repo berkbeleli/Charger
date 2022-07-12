@@ -20,3 +20,10 @@
 "noAppointmentsTitle" = "You don't have any appointments yet.";
 "noAppointmentsInfo" = "Created appointmnts will be list here.";
 "createAppointmentButton" = "CREATE APPOINTMENT";
+
+
+//MARK: - PROFILE PAGE
+"profileTitle" = "Profile";
+"email" = "E-mail:";
+"deviceID" = "Device ID:";
+"logoutButton" = "LOG OUT";
