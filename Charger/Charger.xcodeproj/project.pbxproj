@@ -16,6 +16,7 @@
 		C0319AE9287E22C5005B846D /* CustomCityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0319AE7287E22C5005B846D /* CustomCityTableViewCell.xib */; };
 		C0319AEE287E2831005B846D /* CitySelectionTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AED287E2831005B846D /* CitySelectionTableViewHelper.swift */; };
 		C0319AF1287E2879005B846D /* CitySelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AF0287E2879005B846D /* CitySelectionViewModel.swift */; };
+		C0319AF4287E30E7005B846D /* LetterCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AF3287E30E7005B846D /* LetterCities.swift */; };
 		C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */; };
 		C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */; };
 		C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3F287CAAD70078C77A /* LoginViewController.swift */; };
@@ -57,6 +58,7 @@
 		C0319AE7287E22C5005B846D /* CustomCityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCityTableViewCell.xib; sourceTree = "<group>"; };
 		C0319AED287E2831005B846D /* CitySelectionTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySelectionTableViewHelper.swift; sourceTree = "<group>"; };
 		C0319AF0287E2879005B846D /* CitySelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySelectionViewModel.swift; sourceTree = "<group>"; };
+		C0319AF3287E30E7005B846D /* LetterCities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCities.swift; sourceTree = "<group>"; };
 		C0EF3A38287CAAD70078C77A /* Charger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		C0319AE1287E1888005B846D /* City Selection */ = {
 			isa = PBXGroup;
 			children = (
+				C0319AF2287E30DB005B846D /* Model */,
 				C0319AE5287E22A0005B846D /* Components */,
 				C0319AE2287E189D005B846D /* ViewController */,
 				C0319AEF287E2864005B846D /* ViewModel */,
@@ -178,6 +181,14 @@
 				C0319AF0287E2879005B846D /* CitySelectionViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C0319AF2287E30DB005B846D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C0319AF3287E30E7005B846D /* LetterCities.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C0EF3A2F287CAAD70078C77A = {
@@ -517,6 +528,7 @@
 				C0EF3A84287CD13D0078C77A /* AppConstants.swift in Sources */,
 				C0319ADA287E0FA9005B846D /* ProfileViewModel.swift in Sources */,
 				C0EF3A80287CCE070078C77A /* WebServiceHelper.swift in Sources */,
+				C0319AF4287E30E7005B846D /* LetterCities.swift in Sources */,
 				C0319AEE287E2831005B846D /* CitySelectionTableViewHelper.swift in Sources */,
 				C0EF3A78287CC2F60078C77A /* Object Constants.swift in Sources */,
 				C0EF3A6D287CB5C20078C77A /* String+Extension.swift in Sources */,

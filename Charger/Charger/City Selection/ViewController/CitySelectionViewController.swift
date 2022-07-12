@@ -9,6 +9,7 @@ import UIKit
 
 class CitySelectionViewController: UIViewController {
   
+  @IBOutlet private weak var statusbarBackgroundView: UIView!
   @IBOutlet private weak var searchCityTextField: UITextField!
   @IBOutlet private weak var indicatorView: UIView!
   @IBOutlet private weak var cityTableView: UITableView!
@@ -23,8 +24,9 @@ class CitySelectionViewController: UIViewController {
     localization()
     setupController()
   }
-  
+  /// Setup UI Elements
   func setupUI(){
+    statusbarBackgroundView.backgroundColor = Themes.colorCharcoal
     searchCityTextField.textColor = Themes.colorSolidWhite
     searchCityTextField.font = Themes.fontRegularSubtitle
     indicatorView.backgroundColor = Themes.colorGrayScale
@@ -35,7 +37,8 @@ class CitySelectionViewController: UIViewController {
     self.navigationItem.title = "cityselectionTitle".localizeString()
   }
   
-  func setupCustomSearchTextField(){
+  func setupCustomSearchTextField() {
+    searchCityTextField.addTarget(self, action: #selector(filterTextEntered), for: .editingChanged) // add and observer for our custom searchBar
     searchCityTextField.layer.cornerRadius = ObjectConstants.searchTextFiledBorderRadies
     searchCityTextField.backgroundColor = Themes.colorDark
     searchCityTextField.clipsToBounds = true // to make text field radiues rounded
@@ -62,8 +65,22 @@ class CitySelectionViewController: UIViewController {
   
   func setupController(){
     tableViewHelper = .init(with: cityTableView, vm: viewModel)
+    viewModel.fetchCities()
     viewModel.onCitiesChanged = { [weak self] cities in
+      self?.cityTableView.isHidden = false
+      self?.searchCityTextField.layer.borderColor = Themes.colorGrayScale.cgColor // border color for the textfield
       self?.tableViewHelper.setItems(cities)
+    }
+    viewModel.onCitiesFiltered = { [weak self] filteredCities in
+      self?.cityTableView.isHidden = false
+      if filteredCities.count == 0{
+        self?.searchCityTextField.layer.borderColor = Themes.colorSecurity.cgColor// border color for the textfield
+        self?.cityTableView.isHidden = true
+      }else {
+        self?.searchCityTextField.layer.borderColor = Themes.colorSelectedGreen.cgColor// border color for the textfield
+      }
+      self?.tableViewHelper.setItems(filteredCities) // set our tableview's items
+      
     }
     viewModel.onCitiesError = { [weak self] receivedError in
       // show received error custom error page
@@ -71,8 +88,14 @@ class CitySelectionViewController: UIViewController {
   }
   
   @objc
+  func filterTextEntered(textfield: UITextField) {
+    viewModel.filterTextValueEntered(textfield.text!) // call viewmodel Filter function
+  }
+  
+  @objc
   func clearTextField() {
-    searchCityTextField.text = ""
+    viewModel.resetCities() // reset the values of the our table view
+    searchCityTextField.text = "" // set our custom searchText' text empty
     searchCityTextField.layer.borderColor = Themes.colorGrayScale.cgColor // border color for the textfield
   }
   

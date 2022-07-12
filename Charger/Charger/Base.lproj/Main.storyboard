@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aah-GB-VUz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PHG-JS-M1q">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -392,6 +392,7 @@
                         <outlet property="cityTableView" destination="K0h-dX-TAi" id="Zh8-oQ-Hlf"/>
                         <outlet property="indicatorView" destination="w6w-i6-dd5" id="myE-5c-t9R"/>
                         <outlet property="searchCityTextField" destination="MGJ-CT-op1" id="BDk-iJ-UKw"/>
+                        <outlet property="statusbarBackgroundView" destination="Yzd-Ag-3wc" id="5OG-SR-wyT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8B-Fm-9cS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

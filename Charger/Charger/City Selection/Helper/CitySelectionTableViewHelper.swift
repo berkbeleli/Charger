@@ -8,7 +8,7 @@
 import UIKit
 
 class CitySelectionTableViewHelper: NSObject {
-  private var allCities: [String] = []
+  private var allCities: [LetterCities] = []
   
   weak var vm: CitySelectionViewModel?
   weak var tableView: UITableView?
@@ -26,7 +26,7 @@ class CitySelectionTableViewHelper: NSObject {
     tableView?.register(.init(nibName: "CustomCityTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCityTableViewCell")
   }
   /// This function set the table view items and reload the table view
-  func setItems(_ items: [String]) {
+  func setItems(_ items: [LetterCities]) {
     self.allCities = items
     tableView?.reloadData()
   }
@@ -51,7 +51,11 @@ extension CitySelectionTableViewHelper: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCityTableViewCell") as! CustomCityTableViewCell
-    cell.cityNameLabel.text = allCities[indexPath.row]
+    let rowItem = allCities[indexPath.row]
+    let cityText = rowItem.city?.withBoldText(text: rowItem.boldString!, font: Themes.fontRegularSubtitle)
+    cell.cityNameLabel.attributedText = cityText
+    cell.backgroundColor = .clear
+    cell.selectionStyle = .none
     return cell
   }
 }
