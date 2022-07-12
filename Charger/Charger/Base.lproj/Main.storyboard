@@ -328,6 +328,76 @@
             </objects>
             <point key="canvasLocation" x="-407" y="70"/>
         </scene>
+        <!--City Selection View Controller-->
+        <scene sceneID="VZJ-yx-hpl">
+            <objects>
+                <viewController storyboardIdentifier="CitySelection" id="aah-GB-VUz" customClass="CitySelectionViewController" customModule="Charger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DKO-mX-ICB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yzd-Ag-3wc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rB-Ia-x95" customClass="GradientBackgroundView" customModule="Charger" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MGJ-CT-op1">
+                                <rect key="frame" x="10" y="54" width="394" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Qdc-qc-EdI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w6w-i6-dd5">
+                                <rect key="frame" x="0.0" y="107" width="414" height="1"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="N4b-f9-tHc"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="k8v-ER-pY1"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="K0h-dX-TAi">
+                                <rect key="frame" x="10" y="115" width="394" height="781"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="A8H-Hb-la5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="A8H-Hb-la5" firstAttribute="trailing" secondItem="MGJ-CT-op1" secondAttribute="trailing" constant="10" id="1AG-xP-GyG"/>
+                            <constraint firstItem="K0h-dX-TAi" firstAttribute="top" secondItem="w6w-i6-dd5" secondAttribute="top" constant="8" id="4iH-bR-sKv"/>
+                            <constraint firstItem="A8H-Hb-la5" firstAttribute="trailing" secondItem="4rB-Ia-x95" secondAttribute="trailing" id="9vp-zW-dHk"/>
+                            <constraint firstAttribute="trailing" secondItem="w6w-i6-dd5" secondAttribute="trailing" id="Asw-Uk-2kn"/>
+                            <constraint firstItem="4rB-Ia-x95" firstAttribute="leading" secondItem="A8H-Hb-la5" secondAttribute="leading" id="E1s-uz-5Mh"/>
+                            <constraint firstAttribute="bottom" secondItem="K0h-dX-TAi" secondAttribute="bottom" id="Hx0-Lh-Oqf"/>
+                            <constraint firstItem="Yzd-Ag-3wc" firstAttribute="leading" secondItem="DKO-mX-ICB" secondAttribute="leading" id="I2y-Is-Nq0"/>
+                            <constraint firstItem="Yzd-Ag-3wc" firstAttribute="top" secondItem="DKO-mX-ICB" secondAttribute="top" id="J0E-NP-Ppv"/>
+                            <constraint firstItem="MGJ-CT-op1" firstAttribute="top" secondItem="Yzd-Ag-3wc" secondAttribute="bottom" constant="10" id="Lvp-EE-Lug"/>
+                            <constraint firstItem="w6w-i6-dd5" firstAttribute="top" secondItem="MGJ-CT-op1" secondAttribute="bottom" constant="8" id="Lyd-lW-P9l"/>
+                            <constraint firstAttribute="bottom" secondItem="4rB-Ia-x95" secondAttribute="bottom" id="RRe-wz-bWh"/>
+                            <constraint firstItem="A8H-Hb-la5" firstAttribute="trailing" secondItem="Yzd-Ag-3wc" secondAttribute="trailing" id="Rba-mZ-ART"/>
+                            <constraint firstItem="MGJ-CT-op1" firstAttribute="leading" secondItem="A8H-Hb-la5" secondAttribute="leading" constant="10" id="YRI-LZ-obJ"/>
+                            <constraint firstItem="K0h-dX-TAi" firstAttribute="leading" secondItem="A8H-Hb-la5" secondAttribute="leading" constant="10" id="lFz-YU-Zmq"/>
+                            <constraint firstItem="A8H-Hb-la5" firstAttribute="trailing" secondItem="K0h-dX-TAi" secondAttribute="trailing" constant="10" id="otH-aC-iZv"/>
+                            <constraint firstItem="Yzd-Ag-3wc" firstAttribute="bottom" secondItem="4rB-Ia-x95" secondAttribute="top" id="qgL-GK-msw"/>
+                            <constraint firstItem="4rB-Ia-x95" firstAttribute="top" secondItem="A8H-Hb-la5" secondAttribute="top" id="r6l-Ld-SEo"/>
+                            <constraint firstItem="w6w-i6-dd5" firstAttribute="leading" secondItem="DKO-mX-ICB" secondAttribute="leading" id="z6E-TV-eYK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cityTableView" destination="K0h-dX-TAi" id="Zh8-oQ-Hlf"/>
+                        <outlet property="indicatorView" destination="w6w-i6-dd5" id="myE-5c-t9R"/>
+                        <outlet property="searchCityTextField" destination="MGJ-CT-op1" id="BDk-iJ-UKw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q8B-Fm-9cS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2813" y="74"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
