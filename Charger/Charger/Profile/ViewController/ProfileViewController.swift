@@ -19,7 +19,6 @@ class ProfileViewController: UIViewController {
   @IBOutlet private weak var logoutButton: UIButton!
   
   private var viewModel = ProfileViewModel()
-  
   override func viewDidLoad() {
         super.viewDidLoad()
     setupUI()
@@ -45,14 +44,13 @@ class ProfileViewController: UIViewController {
     logoutButton.layer.cornerRadius = ObjectConstants.buttonBorderRadius
     logoutButton.titleLabel?.font = Themes.fontRegularSubtitle
     profileBadgeImage.image = Themes.profileBadgeImage
-    
-    emailLabel.text = User.user?.email!
-    deviceUdIdLabel.text = AppConstants.deviceUDID
+    emailLabel.text = User.user?.email! // set email label to our user email
+    deviceUdIdLabel.text = AppConstants.deviceUDID // set Device Id to our device Id constant value
   }
   
   // Setup UI Elements according to app language
   func localization() {
-    self.navigationItem.title = "profileTitle".localizeString()
+    self.navigationItem.title = "profileTitle".localizeString() // set nav bar title
     emailTitleLabel.text = "email".localizeString()
     deviceUdIdTitleLabel.text = "deviceID".localizeString()
     logoutButton.setTitle("logoutButton".localizeString(), for: .normal)
@@ -72,7 +70,6 @@ class ProfileViewController: UIViewController {
   }
 
   @IBAction func logOutPressed(_ sender: UIButton) {
-    viewModel.logOutRequest()
+    viewModel.logOutRequest() // request logout from our vm
   }
-  
 }
