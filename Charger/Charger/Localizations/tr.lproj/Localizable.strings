@@ -19,3 +19,10 @@
 "noAppointmentsTitle" = "Henüz bir randevu oluşturmadınız.";
 "noAppointmentsInfo" = "Oluşturulan randevular burada listelenir.";
 "createAppointmentButton" = "RANDEVU OLUŞTUR";
+
+
+//MARK: - PROFILE PAGE
+"profileTitle" = "Profil";
+"email" = "E-posta:";
+"deviceID" = "Cihaz ID:";
+"logoutButton" = "ÇIKIŞ YAP";

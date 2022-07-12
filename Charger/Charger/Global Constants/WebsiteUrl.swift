@@ -10,5 +10,5 @@ import Foundation
 // with this file we will reach all the websites we need our app
 struct WebsiteUrl {
   static let loginUrl = "http://ec2-18-197-100-203.eu-central-1.compute.amazonaws.com:8080/auth/login"
-  
+  static let logOutUrl = "http://ec2-18-197-100-203.eu-central-1.compute.amazonaws.com:8080/auth/logout/"
 }

@@ -37,6 +37,7 @@ class AppointmentsViewController: UIViewController {
     noAppointmentImage.image = Themes.noAppointmentImage
     self.navigationItem.hidesBackButton = true // hide back navbar button
     navigationItem.leftBarButtonItem = UIBarButtonItem(image: Themes.UserImage, style: .plain, target: self, action: #selector(profileClicked))
+    navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // with this we will disable back button label text
   }
   
   // Setup UI Elements according to app language
@@ -49,7 +50,8 @@ class AppointmentsViewController: UIViewController {
   
   @objc
   func profileClicked() {
-    
+    let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileView")
+    self.navigationController?.pushViewController(vc, animated: true)
   }
   
   
