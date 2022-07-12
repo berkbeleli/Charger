@@ -313,7 +313,7 @@
         <!--Custom Navigation Controller-->
         <scene sceneID="Uf4-yw-gWM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PHG-JS-M1q" customClass="CustomNavigationController" customModule="Charger" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navController" automaticallyAdjustsScrollViewInsets="NO" id="PHG-JS-M1q" customClass="CustomNavigationController" customModule="Charger" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hJz-ps-lnT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

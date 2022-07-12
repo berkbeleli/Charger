@@ -17,11 +17,14 @@ class ProfileViewController: UIViewController {
   @IBOutlet private weak var deviceUdIdTitleLabel: UILabel!
   @IBOutlet private weak var deviceUdIdLabel: UILabel!
   @IBOutlet private weak var logoutButton: UIButton!
+  
+  private var viewModel = ProfileViewModel()
+  
   override func viewDidLoad() {
         super.viewDidLoad()
     setupUI()
     localization()
-    
+    setupVM()
     }
   
   /// Setup UI Elements
@@ -42,6 +45,9 @@ class ProfileViewController: UIViewController {
     logoutButton.layer.cornerRadius = ObjectConstants.buttonBorderRadius
     logoutButton.titleLabel?.font = Themes.fontRegularSubtitle
     profileBadgeImage.image = Themes.profileBadgeImage
+    
+    emailLabel.text = User.user?.email!
+    deviceUdIdLabel.text = AppConstants.deviceUDID
   }
   
   // Setup UI Elements according to app language
@@ -51,8 +57,22 @@ class ProfileViewController: UIViewController {
     deviceUdIdTitleLabel.text = "deviceID".localizeString()
     logoutButton.setTitle("logoutButton".localizeString(), for: .normal)
   }
+  
+  func setupVM() {
+    viewModel.onLogoutRequested = {  result in // check the result of login request
+      if result == "SUCCESS" {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "navController")
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+      }else {
+        // show error popup here
+        print(result)
+      }
+    }
+  }
 
   @IBAction func logOutPressed(_ sender: UIButton) {
+    viewModel.logOutRequest()
   }
   
 }

@@ -147,12 +147,12 @@
 		C0EF3A3A287CAAD70078C77A /* Charger */ = {
 			isa = PBXGroup;
 			children = (
+				C0EF3A7B287CCD8C0078C77A /* Login */,
 				C0EF3AA3287CE4920078C77A /* Appointments */,
 				C0319AD4287E071F005B846D /* Profile */,
 				C0EF3A9E287CDF7B0078C77A /* LocalNotificationManager */,
 				C0EF3A8A287CD8D90078C77A /* LocationManager */,
 				C0EF3A7E287CCDE90078C77A /* GenericAPICaller */,
-				C0EF3A7B287CCD8C0078C77A /* Login */,
 				C0EF3A74287CBA150078C77A /* GradientBackground */,
 				C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */,
 				C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */,
