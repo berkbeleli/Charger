@@ -13,11 +13,15 @@ class CitySelectionViewController: UIViewController {
   @IBOutlet private weak var indicatorView: UIView!
   @IBOutlet private weak var cityTableView: UITableView!
   
+  private var viewModel = CitySelectionViewModel()
+  private var tableViewHelper: CitySelectionTableViewHelper!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     setupCustomSearchTextField()
     setupUI()
     localization()
+    setupController()
   }
   
   func setupUI(){
@@ -54,6 +58,16 @@ class CitySelectionViewController: UIViewController {
     imageView.isUserInteractionEnabled = true
     let cancelButton = UITapGestureRecognizer(target: self, action: #selector(clearTextField)) // add gesture func to our cancel button image
     imageView.addGestureRecognizer(cancelButton)// add gesture to our cancel button image
+  }
+  
+  func setupController(){
+    tableViewHelper = .init(with: cityTableView, vm: viewModel)
+    viewModel.onCitiesChanged = { [weak self] cities in
+      self?.tableViewHelper.setItems(cities)
+    }
+    viewModel.onCitiesError = { [weak self] receivedError in
+      // show received error custom error page
+    }
   }
   
   @objc
