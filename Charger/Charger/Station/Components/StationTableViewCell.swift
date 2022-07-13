@@ -14,7 +14,7 @@ class StationTableViewCell: UITableViewCell {
   @IBOutlet private weak var stationBackgroundView: UIView!
   @IBOutlet private weak var stationSubBackgroundView: UIView!
   @IBOutlet private weak var stationSubBackgroundViewSec: UIView!
-  @IBOutlet private weak var workingHoursLabel: NSLayoutConstraint!
+  @IBOutlet private weak var workingHoursLabel: UILabel!
   @IBOutlet private(set) weak var workingHours: UILabel!
   @IBOutlet private(set) weak var distanceLabel: UILabel!
   @IBOutlet private weak var availableSocketsTitleLabel: UILabel!
@@ -35,8 +35,8 @@ class StationTableViewCell: UITableViewCell {
     stationSubBackgroundViewSec.layer.cornerRadius = ObjectConstants.viewBorders
     stationNameLabel.font = Themes.fontBold
     stationNameLabel.textColor = Themes.colorSolidWhite
-    workingHours.font = Themes.fontRegularSubtitle
-    workingHours.textColor = Themes.colorGrayScale
+    workingHoursLabel.font = Themes.fontRegularSubtitle
+    workingHoursLabel.textColor = Themes.colorGrayScale
     availableSocketsTitleLabel.font = Themes.fontRegularSubtitle
     availableSocketsTitleLabel.textColor = Themes.colorGrayScale
     distanceLabel.font = Themes.fontRegularSubtitle
@@ -48,8 +48,8 @@ class StationTableViewCell: UITableViewCell {
   }
   
   func localize() {
-    workingHours.text = "servicehourTitle".localizeString()
-    availableSocketLabel.text = "availablesocket".localizeString()
+    workingHoursLabel.text = "servicehourTitle".localizeString()
+    availableSocketsTitleLabel.text = "availablesocket".localizeString()
   }
   
 }

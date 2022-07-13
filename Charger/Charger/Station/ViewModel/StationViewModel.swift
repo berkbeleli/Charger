@@ -35,7 +35,7 @@ class StationViewModel{
             stationName: $0.stationName ?? "Unknown Station Name",
             availableSocket: "\(($0.socketCount ?? 0) - ($0.occupiedSocketCount ?? 0) ) / \($0.socketCount ?? 0)",
             workingHours: "24",
-            distance: $0.distanceInKm == nil ? nil : "\(self?.getModifiedChange($0.distanceInKm!)) km",
+            distance: $0.distanceInKm == nil ? nil : "\($0.distanceInKm!.withOutCurrencySeperator ?? "0") km",
             services: $0.services ?? [])
         }
         
@@ -43,8 +43,19 @@ class StationViewModel{
           for index in 0..<(self?.allStations?.count ?? 0) {
             self?.allStations![index].chargeTypes = (self?.cityStations![index].sockets ?? []).map{ $0.chargeType! } // map charge types
             self?.allStations![index].socketTypes = (self?.cityStations![index].sockets ?? []).map{ $0.socketType! } // map socket types
+                        
+            if (self?.allStations![index].chargeTypes?.contains("AC") ?? false) && (self?.allStations![index].chargeTypes?.contains("DC") ?? false) { // set the image for the view cell
+              self?.allStations![index].imageType = Themes.acDcImage
+            }else if (self?.allStations![index].chargeTypes?.contains("AC") ?? false) {
+              self?.allStations![index].imageType = Themes.acImage
+            }else {
+              self?.allStations![index].imageType = Themes.dcImage
+            }
+            
           }
         }
+        
+     
         
         self?.onStationsChanged?(self?.allStations ?? []) // call the closure to let the vc know station fetched
       }else {

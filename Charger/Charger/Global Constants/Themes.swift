@@ -29,4 +29,11 @@ struct Themes {
   static let UserImage = UIImage(named: "Users")!
   static let profileBadgeImage = UIImage(named: "ProfileBadge")!
   static let noResultImage = UIImage(named: "NoResult")!
+  static let acImage = UIImage(named: "AcImage")!
+  static let dcImage = UIImage(named: "DcImage")!
+  static let acDcImage = UIImage(named: "Ac-DcImage")!
 }
+
+
+
+

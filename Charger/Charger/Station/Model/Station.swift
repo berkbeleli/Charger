@@ -5,7 +5,7 @@
 //  Created by Berk Beleli on 2022-07-13.
 //
 
-import Foundation
+import UIKit
 
 struct Station: Codable {
   var id: Int?
@@ -66,4 +66,5 @@ struct StationViewViewModel {
   var socketTypes: [String]?
   var chargeTypes: [String]?
   var services: [String]?
+  var imageType: UIImage?
 }

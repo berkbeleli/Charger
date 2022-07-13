@@ -15,6 +15,7 @@ class StationViewController: UIViewController {
   @IBOutlet private weak var stationsTableView: UITableView!
   
   private var viewModel = StationViewModel()
+  private var tableViewHelper: StationTableViewHelper!
   var cityName: String?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,11 +65,18 @@ class StationViewController: UIViewController {
   
   func setupController() {
     viewModel.fetchStations(cityName: cityName ?? "Unknown City")
+    tableViewHelper = .init(with: stationsTableView, vm: viewModel)
+    viewModel.onStationsChanged = {[weak self] stations in
+      self?.resultLabel.isHidden = false
+      let stringResult = String(format: NSLocalizedString("City: %@ Count: %@", comment: ""), self?.cityName! as! NSString, "\(stations.count)" as! NSString)
+      self?.resultLabel.attributedText = stringResult.withBoldText(text: self?.cityName! ?? "Unknown City", font: Themes.fontRegularSubtitle)
+      self?.tableViewHelper.setItems(stations)
+    }
   }
   
   // Setup UI Elements according to app language
   func localization() {
-    self.navigationItem.title = "cityselectionTitle".localizeString()
+    self.navigationItem.title = "stationselectionTitle".localizeString()
   }
   
   @objc
