@@ -29,11 +29,17 @@ class FilterStationsViewController: UIViewController {
   @IBOutlet private weak var buffetButton: UIButton!
   @IBOutlet private weak var wifiButton: UIButton!
   @IBOutlet private weak var filterButton: UIButton!
+  
+  var filterValues: FilterModel?
+  var onfilterChanged: ((FilterModel) -> ())?
+  var viewModel = FilterStationsViewModel()
+  
   override func viewDidLoad() {
         super.viewDidLoad()
 
     setupUI()
     localization()
+    setupController()
  
     }
   
@@ -108,6 +114,7 @@ class FilterStationsViewController: UIViewController {
     distanceHeaderLabel.textColor = Themes.colorSolidWhite
     servicesHeaderLabel.font = Themes.fontExtraBold
     servicesHeaderLabel.textColor = Themes.colorSolidWhite
+    distanceSlider.tintColor = Themes.colorSelectedGreen
   }
   
   /// Setup UI Elements according to app language
@@ -126,5 +133,119 @@ class FilterStationsViewController: UIViewController {
     buffetButton.setTitle("buffet".localizeString(), for: .normal)
     wifiButton.setTitle("Wi-Fi", for: .normal)
     filterButton.setTitle("filterButton".localizeString(), for: .normal)
+  }
+  
+  func setupController() {
+    viewModel.filterValues = filterValues ?? FilterModel(deviceTypes: [], socketTypes: [], services: [])
+    
+    viewModel.onFiltersChanged = {[weak self] _ in
+      // check the filter values for the ac device type and setup the button view
+      if self?.viewModel.checkContainsDeviceValue(filter: .AC) ?? false {
+        self?.acDeviceTypeButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
+        self?.acDeviceTypeButton.backgroundColor = Themes.colorDark
+      }else {
+        self?.acDeviceTypeButton.layer.borderColor = Themes.colorGrayScale.cgColor
+        self?.acDeviceTypeButton.backgroundColor = .clear
+      }
+      // check the filter values for the dc device type  and setup the button view
+      if self?.viewModel.checkContainsDeviceValue(filter: .DC) ?? false {
+        self?.dcDeviceTypeButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
+        self?.dcDeviceTypeButton.backgroundColor = Themes.colorDark
+      }else {
+        self?.dcDeviceTypeButton.layer.borderColor = Themes.colorGrayScale.cgColor
+        self?.dcDeviceTypeButton.backgroundColor = .clear
+      }
+      // check the filter values for the type 2 socket type  and setup the button view
+      if self?.viewModel.checkContainsSocketValue(filter: .Type2) ?? false {
+        self?.type2Button.layer.borderColor = Themes.colorSelectedGreen.cgColor
+        self?.type2Button.backgroundColor = Themes.colorDark
+      }else {
+        self?.type2Button.layer.borderColor = Themes.colorGrayScale.cgColor
+        self?.type2Button.backgroundColor = .clear
+      }
+      // check the filter values for the csc socket type  and setup the button view
+      if self?.viewModel.checkContainsSocketValue(filter: .CSC) ?? false {
+        self?.cscButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
+        self?.cscButton.backgroundColor = Themes.colorDark
+      }else {
+        self?.cscButton.layer.borderColor = Themes.colorGrayScale.cgColor
+        self?.cscButton.backgroundColor = .clear
+      }
+      // check the filter values for the chademo socket type  and setup the button view
+      if self?.viewModel.checkContainsSocketValue(filter: .CHAdeMO) ?? false {
+        self?.chademoButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
+        self?.chademoButton.backgroundColor = Themes.colorDark
+      }else {
+        self?.chademoButton.layer.borderColor = Themes.colorGrayScale.cgColor
+        self?.chademoButton.backgroundColor = .clear
+      }
+      // check the filter values for the car park service type  and setup the button view
+      if self?.viewModel.checkContainsServiceValue(filter: .CarPark) ?? false {
+        self?.carParkButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
+        self?.carParkButton.backgroundColor = Themes.colorDark
+      }else {
+        self?.carParkButton.layer.borderColor = Themes.colorGrayScale.cgColor
+        self?.carParkButton.backgroundColor = .clear
+      }
+      // check the filter values for the buffet service type  and setup the button view
+      if self?.viewModel.checkContainsServiceValue(filter: .Buffet) ?? false {
+        self?.buffetButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
+        self?.buffetButton.backgroundColor = Themes.colorDark
+      }else {
+        self?.buffetButton.layer.borderColor = Themes.colorGrayScale.cgColor
+        self?.buffetButton.backgroundColor = .clear
+      }
+      // check the filter values for the wifi service type  and setup the button view
+      if self?.viewModel.checkContainsServiceValue(filter: .Wifi) ?? false {
+        self?.wifiButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
+        self?.wifiButton.backgroundColor = Themes.colorDark
+      }else {
+        self?.wifiButton.layer.borderColor = Themes.colorGrayScale.cgColor
+        self?.wifiButton.backgroundColor = .clear
+      }
+      
+      if (self?.viewModel.checkDistanceExist() ?? true) {
+        self?.distanceSlider.value = 15
+      }
+      
+    }
+    
+  }
+  
+  @IBAction func acButtonPressed(_ sender: UIButton) {
+    viewModel.addDeviceFilter(filter: .AC)
+  }
+  
+  @IBAction func dcButtonPressed(_ sender: UIButton) {
+    viewModel.addDeviceFilter(filter: .DC)
+  }
+  
+  @IBAction func type2ButtonPressed(_ sender: UIButton) {
+    viewModel.addSocketFilter(filter: .Type2)
+  }
+  
+  @IBAction func cscButtonPressed(_ sender: UIButton) {
+    viewModel.addSocketFilter(filter: .CSC)
+  }
+  
+  @IBAction func chademoButtonPressed(_ sender: UIButton) {
+    viewModel.addSocketFilter(filter: .CHAdeMO)
+  }
+  
+  
+  @IBAction func carParkButtonPressed(_ sender: UIButton) {
+    viewModel.addServiceFilter(filter: .CarPark)
+  }
+  
+  @IBAction func buffetButtonPressed(_ sender: UIButton) {
+    viewModel.addServiceFilter(filter: .Buffet)
+  }
+  
+  @IBAction func wifiButtonPressed(_ sender: UIButton) {
+    viewModel.addServiceFilter(filter: .Wifi)
+  }
+  
+  @IBAction func distanceSliderChanged(_ sender: UISlider) {
+    viewModel.addDistanceFilter(filter: Double(sender.value))
   }
 }

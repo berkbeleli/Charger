@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5AD8C01B-C3BB-47B6-8918-3869BBD11807"
+            uuid = "99808EBA-5C78-45DF-983B-4FD98C4124B6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Charger/Station/ViewModel/StationViewModel.swift"
+            filePath = "Charger/Filter Stations/View Model/FilterStationsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "fetchStations(cityName:)"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "addServiceFilter(filter:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

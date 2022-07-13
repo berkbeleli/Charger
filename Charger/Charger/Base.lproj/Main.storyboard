@@ -475,11 +475,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="67" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="acButtonPressed:" destination="fDV-mE-zlq" eventType="touchUpInside" id="0jF-lE-ACd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6f-A3-LDa">
                                         <rect key="frame" x="92" y="0.0" width="67" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="dcButtonPressed:" destination="fDV-mE-zlq" eventType="touchUpInside" id="hda-lc-fiX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -496,16 +502,25 @@
                                         <rect key="frame" x="0.0" y="0.0" width="67" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="type2ButtonPressed:" destination="fDV-mE-zlq" eventType="touchUpInside" id="0wV-xg-OER"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hov-Zw-bBB">
                                         <rect key="frame" x="92" y="0.0" width="67" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="cscButtonPressed:" destination="fDV-mE-zlq" eventType="touchUpInside" id="nQy-do-HjT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ykm-cV-giI">
                                         <rect key="frame" x="184" y="0.0" width="67" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="chademoButtonPressed:" destination="fDV-mE-zlq" eventType="touchUpInside" id="hZp-lg-iOK"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -518,6 +533,9 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="3" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="nQX-8c-loB">
                                 <rect key="frame" x="13" y="298.5" width="388" height="31"/>
                                 <color key="tintColor" name="SelectedGreen"/>
+                                <connections>
+                                    <action selector="distanceSliderChanged:" destination="fDV-mE-zlq" eventType="valueChanged" id="v9r-Ss-Hwm"/>
+                                </connections>
                             </slider>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Suy-Fb-pyl">
                                 <rect key="frame" x="20" y="331.5" width="379" height="20.5"/>
@@ -567,16 +585,25 @@
                                         <rect key="frame" x="0.0" y="0.0" width="67" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="carParkButtonPressed:" destination="fDV-mE-zlq" eventType="touchUpInside" id="K6x-ud-qfO"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ems-5A-l2w">
                                         <rect key="frame" x="92" y="0.0" width="67" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="buffetButtonPressed:" destination="fDV-mE-zlq" eventType="touchUpInside" id="soD-CD-wYz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypq-9l-1Uy">
                                         <rect key="frame" x="184" y="0.0" width="67" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="wifiButtonPressed:" destination="fDV-mE-zlq" eventType="touchUpInside" id="Yxr-nY-uhD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
