@@ -16,6 +16,8 @@ class StationViewModel{
   
   var allStations: [StationViewViewModel]?
   var cityStations: [Station]?
+  
+  var filterValues: FilterModel?
 
   /// Fetch Stations according to user city selection from Api
   func fetchStations(cityName: String) {
@@ -84,9 +86,24 @@ class StationViewModel{
  
       onStationsFiltered?(filteredStations)
     }
-    
-    
   }
+  /// This function checks if the filter value contains any data
+  func checkIfTheFiltersEmpty(filterValues: FilterModel) -> Bool {
+    self.filterValues = filterValues
+    
+    if (filterValues.deviceTypes?.count ?? 0) > 0 {
+      return true
+    }else if (filterValues.socketTypes?.count ?? 0) > 0 {
+      return true
+    }else if (filterValues.services?.count ?? 0) > 0 {
+      return true
+    }else if filterValues.distance != nil {
+      return true
+    }else {
+      return false
+    }
+  }
+  
   
   
 }
