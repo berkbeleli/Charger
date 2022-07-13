@@ -20,6 +20,8 @@
 		C047CBFF287EDE6A0038CAA2 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047CBFE287EDE6A0038CAA2 /* StationViewController.swift */; };
 		C047CC02287EE5C30038CAA2 /* StationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047CC01287EE5C30038CAA2 /* StationViewModel.swift */; };
 		C047CC05287EE6630038CAA2 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047CC04287EE6630038CAA2 /* Station.swift */; };
+		C047CC09287F01770038CAA2 /* StationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047CC07287F01770038CAA2 /* StationTableViewCell.swift */; };
+		C047CC0A287F01770038CAA2 /* StationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C047CC08287F01770038CAA2 /* StationTableViewCell.xib */; };
 		C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */; };
 		C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */; };
 		C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3F287CAAD70078C77A /* LoginViewController.swift */; };
@@ -65,6 +67,8 @@
 		C047CBFE287EDE6A0038CAA2 /* StationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
 		C047CC01287EE5C30038CAA2 /* StationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewModel.swift; sourceTree = "<group>"; };
 		C047CC04287EE6630038CAA2 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		C047CC07287F01770038CAA2 /* StationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewCell.swift; sourceTree = "<group>"; };
+		C047CC08287F01770038CAA2 /* StationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StationTableViewCell.xib; sourceTree = "<group>"; };
 		C0EF3A38287CAAD70078C77A /* Charger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +205,7 @@
 		C047CBFC287EDE300038CAA2 /* Station */ = {
 			isa = PBXGroup;
 			children = (
+				C047CC06287F01480038CAA2 /* Components */,
 				C047CC03287EE65B0038CAA2 /* Model */,
 				C047CBFD287EDE430038CAA2 /* View Controller */,
 				C047CC00287EE5B20038CAA2 /* ViewModel */,
@@ -230,6 +235,15 @@
 				C047CC04287EE6630038CAA2 /* Station.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C047CC06287F01480038CAA2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C047CC07287F01770038CAA2 /* StationTableViewCell.swift */,
+				C047CC08287F01770038CAA2 /* StationTableViewCell.xib */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		C0EF3A2F287CAAD70078C77A = {
@@ -488,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0EF3A48287CAAD90078C77A /* LaunchScreen.storyboard in Resources */,
+				C047CC0A287F01770038CAA2 /* StationTableViewCell.xib in Resources */,
 				C0EF3A5A287CAE650078C77A /* ProximaNova-Regular.otf in Resources */,
 				C0EF3A45287CAAD90078C77A /* Assets.xcassets in Resources */,
 				C0EF3A70287CB6CA0078C77A /* Localizable.strings in Resources */,
@@ -575,6 +590,7 @@
 				C0319AEE287E2831005B846D /* CitySelectionTableViewHelper.swift in Sources */,
 				C0EF3A78287CC2F60078C77A /* Object Constants.swift in Sources */,
 				C0EF3A6D287CB5C20078C77A /* String+Extension.swift in Sources */,
+				C047CC09287F01770038CAA2 /* StationTableViewCell.swift in Sources */,
 				C0EF3A89287CD3800078C77A /* UserInfo.swift in Sources */,
 				C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */,
 				C047CC02287EE5C30038CAA2 /* StationViewModel.swift in Sources */,

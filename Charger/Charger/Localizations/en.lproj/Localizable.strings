@@ -40,7 +40,7 @@
 "searchStationPlaceHolder" = "Search Station";
 "noStationErrorTitle" = "No Result found";
 "noStationErrorSubTitle" = "Please make a new selection.";
-"servicehourTitle" = "Service Hours";
+"servicehourTitle" = "Service Hours:";
 "availablesocket" = "Available Sockets:";
 "time" = "Hour";
 "City: %@ Count: %d" = "Displaying %d results for '%@'";

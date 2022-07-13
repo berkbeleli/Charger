@@ -20,6 +20,7 @@ class StationViewController: UIViewController {
         super.viewDidLoad()
       setupUI()
       setupCustomSearchTextField()
+      localization()
       setupController()
     }
   
@@ -63,6 +64,11 @@ class StationViewController: UIViewController {
   
   func setupController() {
     viewModel.fetchStations(cityName: cityName ?? "Unknown City")
+  }
+  
+  // Setup UI Elements according to app language
+  func localization() {
+    self.navigationItem.title = "cityselectionTitle".localizeString()
   }
   
   @objc

@@ -40,6 +40,7 @@ class CitySelectionViewController: UIViewController {
     noResultSubtitleLabel.textColor = Themes.colorGrayScale
     noResultImage.image = Themes.noResultImage
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // with this we will disable back button label text
+    noResultView.isHidden = true
   }
   
   // Setup UI Elements according to app language
