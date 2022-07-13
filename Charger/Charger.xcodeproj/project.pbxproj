@@ -25,6 +25,8 @@
 		C047CC0D287F0A680038CAA2 /* StationTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047CC0C287F0A680038CAA2 /* StationTableViewHelper.swift */; };
 		C047CC0F287F17AC0038CAA2 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047CC0E287F17AC0038CAA2 /* Double+Extension.swift */; };
 		C070BB85287F4E2800DCCE44 /* FilterStationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070BB84287F4E2800DCCE44 /* FilterStationsViewController.swift */; };
+		C070BB88287F5A9B00DCCE44 /* Filter Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070BB87287F5A9B00DCCE44 /* Filter Enums.swift */; };
+		C070BB8A287F5AE000DCCE44 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070BB89287F5AE000DCCE44 /* Filter.swift */; };
 		C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */; };
 		C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */; };
 		C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3F287CAAD70078C77A /* LoginViewController.swift */; };
@@ -75,6 +77,8 @@
 		C047CC0C287F0A680038CAA2 /* StationTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewHelper.swift; sourceTree = "<group>"; };
 		C047CC0E287F17AC0038CAA2 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		C070BB84287F4E2800DCCE44 /* FilterStationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStationsViewController.swift; sourceTree = "<group>"; };
+		C070BB87287F5A9B00DCCE44 /* Filter Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Filter Enums.swift"; sourceTree = "<group>"; };
+		C070BB89287F5AE000DCCE44 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		C0EF3A38287CAAD70078C77A /* Charger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -264,6 +268,7 @@
 		C070BB82287F4E0200DCCE44 /* Filter Stations */ = {
 			isa = PBXGroup;
 			children = (
+				C070BB86287F5A8600DCCE44 /* Models */,
 				C070BB83287F4E0E00DCCE44 /* View Controller */,
 			);
 			path = "Filter Stations";
@@ -275,6 +280,15 @@
 				C070BB84287F4E2800DCCE44 /* FilterStationsViewController.swift */,
 			);
 			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		C070BB86287F5A8600DCCE44 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C070BB87287F5A9B00DCCE44 /* Filter Enums.swift */,
+				C070BB89287F5AE000DCCE44 /* Filter.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C0EF3A2F287CAAD70078C77A = {
@@ -618,8 +632,10 @@
 				C0EF3A76287CBA320078C77A /* GradientBackgroundView.swift in Sources */,
 				C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */,
 				C047CC0F287F17AC0038CAA2 /* Double+Extension.swift in Sources */,
+				C070BB8A287F5AE000DCCE44 /* Filter.swift in Sources */,
 				C0EF3A84287CD13D0078C77A /* AppConstants.swift in Sources */,
 				C0319ADA287E0FA9005B846D /* ProfileViewModel.swift in Sources */,
+				C070BB88287F5A9B00DCCE44 /* Filter Enums.swift in Sources */,
 				C0EF3A80287CCE070078C77A /* WebServiceHelper.swift in Sources */,
 				C0319AF4287E30E7005B846D /* LetterCities.swift in Sources */,
 				C0319AEE287E2831005B846D /* CitySelectionTableViewHelper.swift in Sources */,
