@@ -45,6 +45,7 @@ class StationViewController: UIViewController {
     noResultImage.image = Themes.noResultImage
     noResultView.isHidden = true
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // with this we will disable back button label text
+    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.decrease")?.withTintColor(.white), style: .plain, target: self, action: #selector(filterPageOpen)) // Create open Filter Page Button
   }
   
   func setupCustomSearchTextField() {
@@ -87,8 +88,8 @@ class StationViewController: UIViewController {
  
       self?.resultLabel.isHidden = false
       self?.searchStationTextField.layer.borderColor = Themes.colorGrayScale.cgColor // border color for the textfield
-      let stringResult = String(format: NSLocalizedString("City: %@ Count: %@", comment: ""), self?.cityName! as! NSString, "\(stations.count)" as! NSString)
-      self?.resultLabel.attributedText = stringResult.withBoldText(text: self?.cityName! ?? "Unknown City", font: Themes.fontRegularSubtitle)
+      let stringResult = String(format: NSLocalizedString("City: %@ Count: %@", comment: ""), self?.cityName! as! NSString, "\(stations.count)" as! NSString) // localize string
+      self?.resultLabel.attributedText = stringResult.withBoldText(text: self?.cityName! ?? "Unknown City", font: Themes.fontRegularSubtitle) // make city label bold
       self?.tableViewHelper.setItems(stations)
     }
     
@@ -97,14 +98,14 @@ class StationViewController: UIViewController {
         self?.resultView.isHidden = true // show tableview
         self?.noResultView.isHidden = false // hide no result view
         self?.searchStationTextField.layer.borderColor = Themes.colorSecurity.cgColor// border color for the textfield
-        let stringResult = String(format: NSLocalizedString("City: %@ Count: %@", comment: ""), self?.cityName! as! NSString, "0" as! NSString)
-        self?.resultLabel.attributedText = stringResult.withBoldText(text: self?.cityName! ?? "Unknown City", font: Themes.fontRegularSubtitle)
+        let stringResult = String(format: NSLocalizedString("City: %@ Count: %@", comment: ""), self?.cityName! as! NSString, "0" as! NSString)// localize string
+        self?.resultLabel.attributedText = stringResult.withBoldText(text: self?.cityName! ?? "Unknown City", font: Themes.fontRegularSubtitle)// make city label bold
       }else {
         self?.resultView.isHidden = false // show tableview
         self?.noResultView.isHidden = true // hide no result view
         self?.searchStationTextField.layer.borderColor = Themes.colorSelectedGreen.cgColor// border color for the textfield
-        let stringResult = String(format: NSLocalizedString("City: %@ Count: %@", comment: ""), self?.cityName! as! NSString, "\(filteredStations.count)" as! NSString)
-        self?.resultLabel.attributedText = stringResult.withBoldText(text: self?.cityName! ?? "Unknown City", font: Themes.fontRegularSubtitle)
+        let stringResult = String(format: NSLocalizedString("City: %@ Count: %@", comment: ""), self?.cityName! as! NSString, "\(filteredStations.count)" as! NSString)// localize string
+        self?.resultLabel.attributedText = stringResult.withBoldText(text: self?.cityName! ?? "Unknown City", font: Themes.fontRegularSubtitle)// make city label bold
       }
       self?.tableViewHelper.setItems(filteredStations) // set our tableview's items
     }
@@ -129,9 +130,15 @@ class StationViewController: UIViewController {
   
   @objc
   func clearTextField() {
-//    viewModel.resetCities() // reset the values of the our table view
+    viewModel.resetStations() // reset the values of the our table view
     searchStationTextField.text = "" // set our custom searchText' text empty
     searchStationTextField.layer.borderColor = Themes.colorGrayScale.cgColor // border color for the textfield
+  }
+  
+  @objc
+  func filterPageOpen() {
+    let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "")
+    self.navigationController?.pushViewController(vc, animated: true)
   }
     
 
