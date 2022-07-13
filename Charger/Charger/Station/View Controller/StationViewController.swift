@@ -13,7 +13,11 @@ class StationViewController: UIViewController {
   @IBOutlet private weak var filterCollectionView: UICollectionView!
   @IBOutlet private weak var resultLabel: UILabel!
   @IBOutlet private weak var stationsTableView: UITableView!
-  
+  @IBOutlet private weak var resultView: UIStackView!
+  @IBOutlet private weak var noResultView: UIView!
+  @IBOutlet private weak var noResultImage: UIImageView!
+  @IBOutlet private weak var noResultTitle: UILabel!
+  @IBOutlet private weak var NoResultSubtitle: UILabel!
   private var viewModel = StationViewModel()
   private var tableViewHelper: StationTableViewHelper!
   var cityName: String?
@@ -34,6 +38,12 @@ class StationViewController: UIViewController {
     statusbarBackgroundView.backgroundColor = Themes.colorCharcoal
     searchStationTextField.textColor = Themes.colorSolidWhite
     searchStationTextField.font = Themes.fontRegularSubtitle
+    noResultTitle.textColor = Themes.colorSolidWhite
+    noResultTitle.font = Themes.fontExtraBold
+    NoResultSubtitle.font = Themes.fontRegularSubtitle
+    NoResultSubtitle.textColor = Themes.colorGrayScale
+    noResultImage.image = Themes.noResultImage
+    noResultView.isHidden = true
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // with this we will disable back button label text
   }
   
@@ -67,6 +77,14 @@ class StationViewController: UIViewController {
     viewModel.fetchStations(cityName: cityName ?? "Unknown City")
     tableViewHelper = .init(with: stationsTableView, vm: viewModel)
     viewModel.onStationsChanged = {[weak self] stations in
+      if stations.count == 0{
+        self?.resultView.isHidden = true // show tableview
+        self?.noResultView.isHidden = false // hide no result view
+      }else {
+        self?.resultView.isHidden = false // show tableview
+        self?.noResultView.isHidden = true // hide no result view
+      }
+ 
       self?.resultLabel.isHidden = false
       self?.searchStationTextField.layer.borderColor = Themes.colorGrayScale.cgColor // border color for the textfield
       let stringResult = String(format: NSLocalizedString("City: %@ Count: %@", comment: ""), self?.cityName! as! NSString, "\(stations.count)" as! NSString)
@@ -76,10 +94,14 @@ class StationViewController: UIViewController {
     
     viewModel.onStationsFiltered =  {[weak self] filteredStations in
       if filteredStations.count == 0{
+        self?.resultView.isHidden = true // show tableview
+        self?.noResultView.isHidden = false // hide no result view
         self?.searchStationTextField.layer.borderColor = Themes.colorSecurity.cgColor// border color for the textfield
         let stringResult = String(format: NSLocalizedString("City: %@ Count: %@", comment: ""), self?.cityName! as! NSString, "0" as! NSString)
         self?.resultLabel.attributedText = stringResult.withBoldText(text: self?.cityName! ?? "Unknown City", font: Themes.fontRegularSubtitle)
       }else {
+        self?.resultView.isHidden = false // show tableview
+        self?.noResultView.isHidden = true // hide no result view
         self?.searchStationTextField.layer.borderColor = Themes.colorSelectedGreen.cgColor// border color for the textfield
         let stringResult = String(format: NSLocalizedString("City: %@ Count: %@", comment: ""), self?.cityName! as! NSString, "\(filteredStations.count)" as! NSString)
         self?.resultLabel.attributedText = stringResult.withBoldText(text: self?.cityName! ?? "Unknown City", font: Themes.fontRegularSubtitle)
@@ -96,6 +118,8 @@ class StationViewController: UIViewController {
   // Setup UI Elements according to app language
   func localization() {
     self.navigationItem.title = "stationselectionTitle".localizeString()
+    noResultTitle.text = "noCityErrorTitle".localizeString()
+    NoResultSubtitle.text = "noCityErrorSubTitle".localizeString()
   }
   
   @objc
