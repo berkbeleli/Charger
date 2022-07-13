@@ -68,10 +68,29 @@ class StationViewController: UIViewController {
     tableViewHelper = .init(with: stationsTableView, vm: viewModel)
     viewModel.onStationsChanged = {[weak self] stations in
       self?.resultLabel.isHidden = false
+      self?.searchStationTextField.layer.borderColor = Themes.colorGrayScale.cgColor // border color for the textfield
       let stringResult = String(format: NSLocalizedString("City: %@ Count: %@", comment: ""), self?.cityName! as! NSString, "\(stations.count)" as! NSString)
       self?.resultLabel.attributedText = stringResult.withBoldText(text: self?.cityName! ?? "Unknown City", font: Themes.fontRegularSubtitle)
       self?.tableViewHelper.setItems(stations)
     }
+    
+    viewModel.onStationsFiltered =  {[weak self] filteredStations in
+      if filteredStations.count == 0{
+        self?.searchStationTextField.layer.borderColor = Themes.colorSecurity.cgColor// border color for the textfield
+        let stringResult = String(format: NSLocalizedString("City: %@ Count: %@", comment: ""), self?.cityName! as! NSString, "0" as! NSString)
+        self?.resultLabel.attributedText = stringResult.withBoldText(text: self?.cityName! ?? "Unknown City", font: Themes.fontRegularSubtitle)
+      }else {
+        self?.searchStationTextField.layer.borderColor = Themes.colorSelectedGreen.cgColor// border color for the textfield
+        let stringResult = String(format: NSLocalizedString("City: %@ Count: %@", comment: ""), self?.cityName! as! NSString, "\(filteredStations.count)" as! NSString)
+        self?.resultLabel.attributedText = stringResult.withBoldText(text: self?.cityName! ?? "Unknown City", font: Themes.fontRegularSubtitle)
+      }
+      self?.tableViewHelper.setItems(filteredStations) // set our tableview's items
+    }
+    
+    viewModel.onStationsError = { [weak self] receivedError in
+      // show received error custom error page
+    }
+    
   }
   
   // Setup UI Elements according to app language
@@ -81,7 +100,7 @@ class StationViewController: UIViewController {
   
   @objc
   func filterTextEntered(textfield: UITextField) {
-//    viewModel.filterTextValueEntered(textfield.text!) // call viewmodel Filter function
+    viewModel.filterTextValueEntered(textfield.text!) // call viewmodel Filter function
   }
   
   @objc

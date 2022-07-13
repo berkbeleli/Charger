@@ -54,9 +54,6 @@ class StationViewModel{
             
           }
         }
-        
-     
-        
         self?.onStationsChanged?(self?.allStations ?? []) // call the closure to let the vc know station fetched
       }else {
         // SHOW ERROR PAGE HERE!!!!
@@ -64,6 +61,28 @@ class StationViewModel{
       }
     }
   }
+  
+  func resetStations() {
+    onStationsChanged?(allStations ?? [])
+  }
+  
+  
+  func filterTextValueEntered(_ value: String) {
+    if value == "" { // if the filtered value is empty make the array default
+      resetStations()
+    }else {
+      var filteredStations: [StationViewViewModel] = []
+      if allStations != [] {
+        filteredStations = allStations!.filter{ $0.stationName!.contains(value) }
+      }
+ 
+      onStationsFiltered?(filteredStations)
+    }
+    
+    
+  }
+  
+  
 }
 
 //MARK: - private func

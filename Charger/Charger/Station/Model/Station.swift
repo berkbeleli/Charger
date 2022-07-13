@@ -57,7 +57,7 @@ struct GeoLocation: Codable {
   var address: String?
 }
 
-struct StationViewViewModel {
+struct StationViewViewModel: Equatable {
   var stationId: Int?
   var stationName: String?
   var availableSocket: String?
