@@ -18,6 +18,8 @@
 		C0319AF1287E2879005B846D /* CitySelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AF0287E2879005B846D /* CitySelectionViewModel.swift */; };
 		C0319AF4287E30E7005B846D /* LetterCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AF3287E30E7005B846D /* LetterCities.swift */; };
 		C047CBFF287EDE6A0038CAA2 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047CBFE287EDE6A0038CAA2 /* StationViewController.swift */; };
+		C047CC02287EE5C30038CAA2 /* StationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047CC01287EE5C30038CAA2 /* StationViewModel.swift */; };
+		C047CC05287EE6630038CAA2 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047CC04287EE6630038CAA2 /* Station.swift */; };
 		C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */; };
 		C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */; };
 		C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3F287CAAD70078C77A /* LoginViewController.swift */; };
@@ -61,6 +63,8 @@
 		C0319AF0287E2879005B846D /* CitySelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySelectionViewModel.swift; sourceTree = "<group>"; };
 		C0319AF3287E30E7005B846D /* LetterCities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCities.swift; sourceTree = "<group>"; };
 		C047CBFE287EDE6A0038CAA2 /* StationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
+		C047CC01287EE5C30038CAA2 /* StationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewModel.swift; sourceTree = "<group>"; };
+		C047CC04287EE6630038CAA2 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		C0EF3A38287CAAD70078C77A /* Charger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 		C0319AD6287E0734005B846D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C0319AD9287E0FA9005B846D /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -196,7 +201,9 @@
 		C047CBFC287EDE300038CAA2 /* Station */ = {
 			isa = PBXGroup;
 			children = (
+				C047CC03287EE65B0038CAA2 /* Model */,
 				C047CBFD287EDE430038CAA2 /* View Controller */,
+				C047CC00287EE5B20038CAA2 /* ViewModel */,
 			);
 			path = Station;
 			sourceTree = "<group>";
@@ -207,6 +214,22 @@
 				C047CBFE287EDE6A0038CAA2 /* StationViewController.swift */,
 			);
 			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		C047CC00287EE5B20038CAA2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C047CC01287EE5C30038CAA2 /* StationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C047CC03287EE65B0038CAA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C047CC04287EE6630038CAA2 /* Station.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C0EF3A2F287CAAD70078C77A = {
@@ -390,7 +413,6 @@
 		C0EF3AA5287CE4B80078C77A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				C0319AD9287E0FA9005B846D /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -533,6 +555,7 @@
 				C0319AE8287E22C5005B846D /* CustomCityTableViewCell.swift in Sources */,
 				C0EF3A7A287CCA010078C77A /* UITextField+Extension.swift in Sources */,
 				C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */,
+				C047CC05287EE6630038CAA2 /* Station.swift in Sources */,
 				C0319ADC287E1115005B846D /* UserToken.swift in Sources */,
 				C0EF3AA7287CE7130078C77A /* AppointmentsViewController.swift in Sources */,
 				C0319AE4287E18B6005B846D /* CitySelectionViewController.swift in Sources */,
@@ -554,6 +577,7 @@
 				C0EF3A6D287CB5C20078C77A /* String+Extension.swift in Sources */,
 				C0EF3A89287CD3800078C77A /* UserInfo.swift in Sources */,
 				C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */,
+				C047CC02287EE5C30038CAA2 /* StationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
