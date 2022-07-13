@@ -43,3 +43,16 @@
 "availablesocket" = "Uygun soket sayısı:";
 "time" = "Saat";
 "City: %@ Count: %@" = "'%@' şehri için %@ sonuç görüntüleniyor.";
+
+
+//MARK: - FILTER SELECTION PAGE
+"filterselectionTitle" = "Filtreleme";
+"clearButton" = "TEMİZLE";
+"DeviceTypeHeader" = "Cihaz Tipi";
+"SocketTypeHeader" = "Soket Tipi";
+"DistanceHeader" = "Uzaklık (km)";
+"servicesTitle" = "Hizmetler";
+"dcbutton" = "DC (Hızlı Sarj)";
+"carpark" = "Otopark";
+"buffet" = "Büfe";
+"filterButton" = "FİLTRELE";

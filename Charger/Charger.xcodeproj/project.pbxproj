@@ -24,6 +24,10 @@
 		C047CC0A287F01770038CAA2 /* StationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C047CC08287F01770038CAA2 /* StationTableViewCell.xib */; };
 		C047CC0D287F0A680038CAA2 /* StationTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047CC0C287F0A680038CAA2 /* StationTableViewHelper.swift */; };
 		C047CC0F287F17AC0038CAA2 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047CC0E287F17AC0038CAA2 /* Double+Extension.swift */; };
+		C070BB85287F4E2800DCCE44 /* FilterStationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070BB84287F4E2800DCCE44 /* FilterStationsViewController.swift */; };
+		C070BB88287F5A9B00DCCE44 /* Filter Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070BB87287F5A9B00DCCE44 /* Filter Enums.swift */; };
+		C070BB8A287F5AE000DCCE44 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070BB89287F5AE000DCCE44 /* Filter.swift */; };
+		C070BB8D287F5CE100DCCE44 /* FilterStationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070BB8C287F5CE100DCCE44 /* FilterStationsViewModel.swift */; };
 		C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */; };
 		C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */; };
 		C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3F287CAAD70078C77A /* LoginViewController.swift */; };
@@ -73,6 +77,10 @@
 		C047CC08287F01770038CAA2 /* StationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StationTableViewCell.xib; sourceTree = "<group>"; };
 		C047CC0C287F0A680038CAA2 /* StationTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewHelper.swift; sourceTree = "<group>"; };
 		C047CC0E287F17AC0038CAA2 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		C070BB84287F4E2800DCCE44 /* FilterStationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStationsViewController.swift; sourceTree = "<group>"; };
+		C070BB87287F5A9B00DCCE44 /* Filter Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Filter Enums.swift"; sourceTree = "<group>"; };
+		C070BB89287F5AE000DCCE44 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		C070BB8C287F5CE100DCCE44 /* FilterStationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStationsViewModel.swift; sourceTree = "<group>"; };
 		C0EF3A38287CAAD70078C77A /* Charger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -259,6 +267,41 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		C070BB82287F4E0200DCCE44 /* Filter Stations */ = {
+			isa = PBXGroup;
+			children = (
+				C070BB8B287F5CC000DCCE44 /* View Model */,
+				C070BB86287F5A8600DCCE44 /* Models */,
+				C070BB83287F4E0E00DCCE44 /* View Controller */,
+			);
+			path = "Filter Stations";
+			sourceTree = "<group>";
+		};
+		C070BB83287F4E0E00DCCE44 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C070BB84287F4E2800DCCE44 /* FilterStationsViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		C070BB86287F5A8600DCCE44 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C070BB87287F5A9B00DCCE44 /* Filter Enums.swift */,
+				C070BB89287F5AE000DCCE44 /* Filter.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C070BB8B287F5CC000DCCE44 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				C070BB8C287F5CE100DCCE44 /* FilterStationsViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
 		C0EF3A2F287CAAD70078C77A = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +328,7 @@
 				C0319AD4287E071F005B846D /* Profile */,
 				C0319AE1287E1888005B846D /* City Selection */,
 				C047CBFC287EDE300038CAA2 /* Station */,
+				C070BB82287F4E0200DCCE44 /* Filter Stations */,
 				C0EF3A9E287CDF7B0078C77A /* LocalNotificationManager */,
 				C0EF3A8A287CD8D90078C77A /* LocationManager */,
 				C0EF3A7E287CCDE90078C77A /* GenericAPICaller */,
@@ -581,6 +625,7 @@
 				C047CBFF287EDE6A0038CAA2 /* StationViewController.swift in Sources */,
 				C0EF3A86287CD1DD0078C77A /* WebsiteUrl.swift in Sources */,
 				C0EF3AA0287CDF910078C77A /* NotificationManager.swift in Sources */,
+				C070BB8D287F5CE100DCCE44 /* FilterStationsViewModel.swift in Sources */,
 				C0319AE8287E22C5005B846D /* CustomCityTableViewCell.swift in Sources */,
 				C0EF3A7A287CCA010078C77A /* UITextField+Extension.swift in Sources */,
 				C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */,
@@ -599,14 +644,17 @@
 				C0EF3A76287CBA320078C77A /* GradientBackgroundView.swift in Sources */,
 				C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */,
 				C047CC0F287F17AC0038CAA2 /* Double+Extension.swift in Sources */,
+				C070BB8A287F5AE000DCCE44 /* Filter.swift in Sources */,
 				C0EF3A84287CD13D0078C77A /* AppConstants.swift in Sources */,
 				C0319ADA287E0FA9005B846D /* ProfileViewModel.swift in Sources */,
+				C070BB88287F5A9B00DCCE44 /* Filter Enums.swift in Sources */,
 				C0EF3A80287CCE070078C77A /* WebServiceHelper.swift in Sources */,
 				C0319AF4287E30E7005B846D /* LetterCities.swift in Sources */,
 				C0319AEE287E2831005B846D /* CitySelectionTableViewHelper.swift in Sources */,
 				C0EF3A78287CC2F60078C77A /* Object Constants.swift in Sources */,
 				C0EF3A6D287CB5C20078C77A /* String+Extension.swift in Sources */,
 				C047CC09287F01770038CAA2 /* StationTableViewCell.swift in Sources */,
+				C070BB85287F4E2800DCCE44 /* FilterStationsViewController.swift in Sources */,
 				C0EF3A89287CD3800078C77A /* UserInfo.swift in Sources */,
 				C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */,
 				C047CC02287EE5C30038CAA2 /* StationViewModel.swift in Sources */,

@@ -44,3 +44,16 @@
 "availablesocket" = "Available Sockets:";
 "time" = "Hours";
 "City: %@ Count: %@" = "'%@' being shown with %@ stations.";
+
+
+//MARK: - FILTER SELECTION PAGE
+"filterselectionTitle" = "Filter";
+"clearButton" = "CLEAR";
+"DeviceTypeHeader" = "Device Type";
+"SocketTypeHeader" = "Socket Type";
+"DistanceHeader" = "Distance (km)";
+"servicesTitle" = "Services";
+"dcbutton" = "DC (Fast Charge)";
+"carpark" = "Car Park";
+"buffet" = "Buffet";
+"filterButton" = "FILTER";
