@@ -56,7 +56,7 @@ class AppointmentsViewController: UIViewController {
   
   
   @IBAction func createAppointmentPressed(_ sender: UIButton) {
+    let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CitySelection")
+    self.navigationController?.pushViewController(vc, animated: true)
   }
-  
-  
 }

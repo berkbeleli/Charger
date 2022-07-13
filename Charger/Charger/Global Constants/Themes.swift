@@ -27,4 +27,5 @@ struct Themes {
   static let noAppointmentImage = UIImage(named: "AppointmentBadge")!
   static let UserImage = UIImage(named: "Users")!
   static let profileBadgeImage = UIImage(named: "ProfileBadge")!
+  static let noResultImage = UIImage(named: "NoResult")!
 }

@@ -35,5 +35,15 @@ extension String {
       return emailPred.evaluate(with: self)
   }
   
-  
+  /// With this extension you can find the starting index  of the given string in the self string
+  func index(findString: String) -> Int {
+    if let range: Range<String.Index> = self.range(of: findString) {
+        let index: Int = self.distance(from: self.startIndex, to: range.lowerBound)
+        return index
+    }
+    else {
+        print("substring not found")
+    }
+   return 0
+  }
 }
