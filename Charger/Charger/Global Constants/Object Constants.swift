@@ -10,6 +10,7 @@ import UIKit
 struct ObjectConstants {
   
   static let buttonBorderRadius: CGFloat = 25.0
+  static let filterbuttonBorderRadius: CGFloat = 16.0
   static let viewBorders: CGFloat = 6.0
   static let searchTextFiledBorderRadies: CGFloat = 20.0
   
