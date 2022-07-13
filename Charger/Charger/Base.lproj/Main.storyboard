@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fDV-mE-zlq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PHG-JS-M1q">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -185,9 +185,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <action selector="createAppointmentPressed:" destination="7gF-jA-0ws" eventType="touchUpInside" id="U8e-jD-idb"/>
                                     <action selector="logOutPressed:" destination="kwb-xO-rXW" eventType="touchUpInside" id="afO-Ei-RRE"/>
-                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eu3-5v-gPk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -276,7 +274,6 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
                                     <action selector="createAppointmentPressed:" destination="7gF-jA-0ws" eventType="touchUpInside" id="Xax-DF-rtV"/>
-                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7hS-5P-pgO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -615,9 +612,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <action selector="createAppointmentPressed:" destination="7gF-jA-0ws" eventType="touchUpInside" id="zDU-Lb-SJr"/>
-                                    <action selector="logOutPressed:" destination="kwb-xO-rXW" eventType="touchUpInside" id="2Og-q2-iQp"/>
-                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EGN-4I-aBN"/>
+                                    <action selector="filterButtonPressed:" destination="fDV-mE-zlq" eventType="touchUpInside" id="rPG-hC-ghW"/>
                                 </connections>
                             </button>
                         </subviews>

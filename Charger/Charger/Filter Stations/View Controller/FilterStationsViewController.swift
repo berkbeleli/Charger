@@ -8,7 +8,7 @@
 import UIKit
 
 class FilterStationsViewController: UIViewController {
-// object connections
+  // object connections
   @IBOutlet private weak var statusbarBackgroundView: UIView!
   @IBOutlet private weak var deviceTypeHeaderLabel: UILabel!
   @IBOutlet private weak var acDeviceTypeButton: UIButton!
@@ -35,23 +35,25 @@ class FilterStationsViewController: UIViewController {
   var viewModel = FilterStationsViewModel()
   
   override func viewDidLoad() {
-        super.viewDidLoad()
-
+    super.viewDidLoad()
+    
     setupUI()
     localization()
     setupController()
- 
-    }
+    
+  }
   
   /// Setup UI Elements
   func setupUI() {
+    statusbarBackgroundView.backgroundColor = Themes.colorCharcoal
+    
     acDeviceTypeButton.layer.borderWidth = 2 // setup ac button
     acDeviceTypeButton.layer.borderColor = Themes.colorGrayScale.cgColor
     acDeviceTypeButton.backgroundColor = .clear
     acDeviceTypeButton.titleLabel?.font = Themes.fontRegular
     acDeviceTypeButton.tintColor = Themes.colorSolidWhite
     acDeviceTypeButton.layer.cornerRadius = ObjectConstants.filterbuttonBorderRadius
-
+    
     dcDeviceTypeButton.layer.borderWidth = 2  // setup dc button
     dcDeviceTypeButton.layer.borderColor = Themes.colorGrayScale.cgColor
     dcDeviceTypeButton.backgroundColor = .clear
@@ -204,7 +206,7 @@ class FilterStationsViewController: UIViewController {
         self?.wifiButton.backgroundColor = .clear
       }
       
-      if (self?.viewModel.checkDistanceExist() ?? true) {
+      if !(self?.viewModel.checkDistanceExist() ?? false) {
         self?.distanceSlider.value = 15
       }
       
@@ -213,39 +215,46 @@ class FilterStationsViewController: UIViewController {
   }
   
   @IBAction func acButtonPressed(_ sender: UIButton) {
-    viewModel.addDeviceFilter(filter: .AC)
+    viewModel.addDeviceFilter(filter: .AC) // adding ac value or removing
   }
   
   @IBAction func dcButtonPressed(_ sender: UIButton) {
-    viewModel.addDeviceFilter(filter: .DC)
+    viewModel.addDeviceFilter(filter: .DC) // adding dc value or removing
   }
   
   @IBAction func type2ButtonPressed(_ sender: UIButton) {
-    viewModel.addSocketFilter(filter: .Type2)
+    viewModel.addSocketFilter(filter: .Type2) // adding type 2 value or removing
   }
   
   @IBAction func cscButtonPressed(_ sender: UIButton) {
-    viewModel.addSocketFilter(filter: .CSC)
+    viewModel.addSocketFilter(filter: .CSC) // adding csc value or removing
   }
   
   @IBAction func chademoButtonPressed(_ sender: UIButton) {
-    viewModel.addSocketFilter(filter: .CHAdeMO)
+    viewModel.addSocketFilter(filter: .CHAdeMO) // adding chademo value or removing
   }
   
   
   @IBAction func carParkButtonPressed(_ sender: UIButton) {
-    viewModel.addServiceFilter(filter: .CarPark)
+    viewModel.addServiceFilter(filter: .CarPark) // adding car park value or removing
   }
   
   @IBAction func buffetButtonPressed(_ sender: UIButton) {
-    viewModel.addServiceFilter(filter: .Buffet)
+    viewModel.addServiceFilter(filter: .Buffet) // adding the buffet value or removing
   }
   
   @IBAction func wifiButtonPressed(_ sender: UIButton) {
-    viewModel.addServiceFilter(filter: .Wifi)
+    viewModel.addServiceFilter(filter: .Wifi) // adding the wifi value or removing
   }
   
   @IBAction func distanceSliderChanged(_ sender: UISlider) {
-    viewModel.addDistanceFilter(filter: Double(sender.value))
+    viewModel.addDistanceFilter(filter: Double(sender.value)) // adding the distance value or removing
   }
+  // after
+  @IBAction func filterButtonPressed(_ sender: UIButton) {
+    self.filterValues = viewModel.requestAllFilters()
+    onfilterChanged?(filterValues!)
+    navigationController?.popViewController(animated: true)
+  }
+  
 }

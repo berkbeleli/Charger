@@ -21,6 +21,7 @@ class StationViewController: UIViewController {
   private var viewModel = StationViewModel()
   private var tableViewHelper: StationTableViewHelper!
   var cityName: String?
+  var filterValues: FilterModel? // it will hold the filter Values
     override func viewDidLoad() {
         super.viewDidLoad()
       setupUI()
@@ -137,8 +138,14 @@ class StationViewController: UIViewController {
   
   @objc
   func filterPageOpen() {
-    let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "")
+    let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FilterStationsView") as! FilterStationsViewController
+    vc.filterValues = filterValues
     self.navigationController?.pushViewController(vc, animated: true)
+    
+    vc.onfilterChanged = { [weak self] filterValues in
+      
+      
+    }
   }
     
 

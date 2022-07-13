@@ -9,6 +9,7 @@ import Foundation
 
 class FilterStationsViewModel {
   var onFiltersChanged: ((String) -> ())?
+  var onFiltersRequested: ((FilterModel) -> ())?
 
   var filterValues: FilterModel?
   /// Adds or remove the given device type filter
@@ -39,11 +40,7 @@ class FilterStationsViewModel {
   }
   /// Adds the given distance filter
   func addDistanceFilter(filter: Double) {
-    if filter == 15 {
-      filterValues?.distance = nil
-    }else {
       filterValues?.distance = filter
-    }
   }
   
   func checkDistanceExist() -> Bool {
@@ -62,5 +59,8 @@ class FilterStationsViewModel {
   func checkContainsServiceValue(filter: Services) -> Bool {
     filterValues?.services?.contains(filter) ?? false
   }
-  
+  /// Request All Of the Filters
+  func requestAllFilters() -> FilterModel {
+    return filterValues ?? FilterModel(deviceTypes: [], socketTypes: [], services: [])
+  }
 }
