@@ -40,7 +40,8 @@ extension CitySelectionTableViewHelper: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     // city selection
     let rowItem = allCities[indexPath.row]
-    let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "")
+    let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StationView") as! StationViewController
+    vc.cityName = rowItem.city
     self.delegate?.didCitySelected(vc)
   }
 }

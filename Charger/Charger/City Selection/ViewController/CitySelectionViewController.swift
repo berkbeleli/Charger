@@ -76,8 +76,8 @@ class CitySelectionViewController: UIViewController {
   }
   /// This function setup vm and tableviewHelper and handle their closures
   func setupController(){
-    tableViewHelper.delegate = self
     tableViewHelper = .init(with: cityTableView, vm: viewModel)
+    tableViewHelper.delegate = self
     viewModel.fetchCities()
     viewModel.onCitiesChanged = { [weak self] cities in
       self?.cityTableView.isHidden = false // show tableview

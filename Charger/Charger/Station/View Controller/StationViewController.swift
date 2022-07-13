@@ -9,6 +9,7 @@ import UIKit
 
 class StationViewController: UIViewController {
 
+  var cityName: String?
     override func viewDidLoad() {
         super.viewDidLoad()
 
