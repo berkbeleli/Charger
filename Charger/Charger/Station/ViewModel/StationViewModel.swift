@@ -12,12 +12,13 @@ class StationViewModel{
   
   var onStationsChanged: (([StationViewViewModel]) -> ())? // stations completion handler
   var onStationsFiltered: (([StationViewViewModel]) -> ())? // stations completion handler
+  var onFiltersConverted: (([String]) -> ())?
   var onStationsError: ((String) -> ())? // ERROR COMPLETION HANDLER
   
   var allStations: [StationViewViewModel]?
   var cityStations: [Station]?
-  
   var filterValues: FilterModel?
+  var filtersForDisplay: [String]?
 
   /// Fetch Stations according to user city selection from Api
   func fetchStations(cityName: String) {
@@ -103,6 +104,63 @@ class StationViewModel{
       return false
     }
   }
+  
+  func ConvertReceivedFilters() {
+    filtersForDisplay = []
+    if !(filterValues?.deviceTypes!.isEmpty ?? true) {
+      for value in filterValues!.deviceTypes! {
+        filtersForDisplay?.append(value.rawValue)
+      }
+    }
+    
+    if !(filterValues?.socketTypes!.isEmpty ?? true) {
+      for value in filterValues!.socketTypes! {
+        filtersForDisplay?.append(value.rawValue)
+      }
+    }
+    
+    if !(filterValues?.services!.isEmpty ?? true) {
+      for value in filterValues!.services! {
+        filtersForDisplay?.append(value.rawValue)
+      }
+    }
+    
+    if filterValues?.distance != nil {
+      filtersForDisplay?.append("\(filterValues?.distance?.withOutCurrencySeperator ?? "0") km")
+    }
+    onFiltersConverted?(filtersForDisplay ?? [])
+  }
+  
+  
+  func removeFilter(filterName: String) {
+    
+    if let enumCase = DeviceType(rawValue: filterName) {
+      if (filterValues?.deviceTypes?.contains( enumCase )) ?? false {
+        filterValues?.deviceTypes?.removeAll { $0 == enumCase }
+
+        // reload the items
+      }
+    }else if let enumCase = SocketType(rawValue: filterName) {
+      if (filterValues?.socketTypes?.contains( enumCase )) ?? false {
+        filterValues?.socketTypes?.removeAll { $0 == enumCase }
+
+        // reload the items
+       
+      }
+    }else if let enumCase = Services(rawValue: filterName) {
+      if (filterValues?.services?.contains( enumCase )) ?? false {
+        filterValues?.services?.removeAll { $0 == enumCase }
+
+        // reload the items
+       
+      }
+    }else {
+      filterValues?.distance = 15
+      // reload the items
+    }
+  }
+  
+
   
   
   

@@ -20,6 +20,7 @@ class StationViewController: UIViewController {
   @IBOutlet private weak var NoResultSubtitle: UILabel!
   private var viewModel = StationViewModel()
   private var tableViewHelper: StationTableViewHelper!
+  private var collectionViewHelper: StationCollectionViewHelper!
   var cityName: String?
   var filterValues: FilterModel? // it will hold the filter Values
     override func viewDidLoad() {
@@ -115,6 +116,14 @@ class StationViewController: UIViewController {
       // show received error custom error page
     }
     
+    collectionViewHelper = .init(with: filterCollectionView, vm: viewModel)
+    viewModel.onFiltersConverted = {[weak self] filters in
+      if filters.count == 0 {
+        self?.filterCollectionView.isHidden = true
+      }else{
+        self?.collectionViewHelper.setItems(filters)
+      }
+    }
   }
   
   // Setup UI Elements according to app language
@@ -146,8 +155,11 @@ class StationViewController: UIViewController {
       
       if self?.viewModel.checkIfTheFiltersEmpty(filterValues: filterValues) ?? false { // checks if filters contains any data
         self?.navigationItem.rightBarButtonItem?.tintColor = Themes.colorSelectedGreen // if so make right bar button color green
+        self?.filterCollectionView.isHidden = false
+        self?.viewModel.ConvertReceivedFilters()
       }else {
         self?.navigationItem.rightBarButtonItem?.tintColor = Themes.colorSolidWhite // if not make it white
+        self?.filterCollectionView.isHidden = true
       }
   
     }

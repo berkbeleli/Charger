@@ -18,10 +18,12 @@ class FilterCollectionViewCell: UICollectionViewCell {
   }
   /// setup the ui
   func setupUI() {
-    bgFilterView.layer.cornerRadius = ObjectConstants.filterbuttonBorderRadius
+    bgFilterView.layer.cornerRadius = ObjectConstants.stationfilterbuttonBorderRadius
     bgFilterView.layer.borderWidth = 2
     bgFilterView.backgroundColor = Themes.colorDark
     bgFilterView.layer.borderColor = Themes.colorSelectedGreen.cgColor
+    filterLabel.font = Themes.fontRegular
+    filterLabel.textColor = Themes.colorSolidWhite
   }
   
   @IBAction func deleteFilterButton(_ sender: UIButton) {
