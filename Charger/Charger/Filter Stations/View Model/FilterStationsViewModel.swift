@@ -16,6 +16,11 @@ class FilterStationsViewModel {
   func updateFilters() {
     onFiltersChanged?("Update") // call closure check if the previous filter exist
   }
+  // clear filters
+  func clearFilters() {
+    filterValues = .init(deviceTypes: [], socketTypes: [], distance: nil, services: [])
+    onFiltersChanged?("Update") // call closure check if the previous filter exist
+  }
   
   /// Adds or remove the given device type filter
   func addDeviceFilter(filter: DeviceType) {
