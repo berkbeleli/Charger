@@ -7,9 +7,13 @@
 
 import UIKit
 
+protocol CitySelectionProtocol: AnyObject {
+  func didCitySelected(_ vc: UIViewController)
+}
+
 class CitySelectionTableViewHelper: NSObject {
+  weak var delegate: CitySelectionProtocol?
   private var allCities: [LetterCities] = []
-  
   weak var vm: CitySelectionViewModel?
   weak var tableView: UITableView?
   
@@ -36,9 +40,8 @@ extension CitySelectionTableViewHelper: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     // city selection
     let rowItem = allCities[indexPath.row]
-    
-    // will be added next page
-    
+    let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "")
+    self.delegate?.didCitySelected(vc)
   }
 }
 

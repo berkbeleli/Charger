@@ -39,6 +39,7 @@ class CitySelectionViewController: UIViewController {
     noResultSubtitleLabel.font = Themes.fontRegularSubtitle
     noResultSubtitleLabel.textColor = Themes.colorGrayScale
     noResultImage.image = Themes.noResultImage
+    navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // with this we will disable back button label text
   }
   
   // Setup UI Elements according to app language
@@ -75,6 +76,7 @@ class CitySelectionViewController: UIViewController {
   }
   /// This function setup vm and tableviewHelper and handle their closures
   func setupController(){
+    tableViewHelper.delegate = self
     tableViewHelper = .init(with: cityTableView, vm: viewModel)
     viewModel.fetchCities()
     viewModel.onCitiesChanged = { [weak self] cities in
@@ -113,4 +115,10 @@ class CitySelectionViewController: UIViewController {
     searchCityTextField.layer.borderColor = Themes.colorGrayScale.cgColor // border color for the textfield
   }
   
+}
+// MARK - CitySelectionProtocol
+extension CitySelectionViewController: CitySelectionProtocol {
+  func didCitySelected(_ vc: UIViewController) {
+    self.navigationController?.pushViewController(vc, animated: true) // PUSH The vc that has been sent from delegate selected city
+  }
 }
