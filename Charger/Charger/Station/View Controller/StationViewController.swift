@@ -8,19 +8,19 @@
 import UIKit
 
 class StationViewController: UIViewController {
-  @IBOutlet weak var statusbarBackgroundView: UIView!
-  @IBOutlet weak var searchStationTextField: UITextField!
+  @IBOutlet private weak var statusbarBackgroundView: UIView!
+  @IBOutlet private weak var searchStationTextField: UITextField!
+  @IBOutlet private weak var filterCollectionView: UICollectionView!
+  @IBOutlet private weak var resultLabel: UILabel!
+  @IBOutlet private weak var stationsTableView: UITableView!
   
-  @IBOutlet weak var filterCollectionView: UICollectionViewCell!
-  
-  @IBOutlet weak var resultLabel: UILabel!
-  
-  @IBOutlet weak var stationsTableView: UITableView!
+  private var viewModel = StationViewModel()
   var cityName: String?
     override func viewDidLoad() {
         super.viewDidLoad()
       setupUI()
       setupCustomSearchTextField()
+      setupController()
     }
   
   /// Setup UI Elements
@@ -61,14 +61,18 @@ class StationViewController: UIViewController {
     imageView.addGestureRecognizer(cancelButton)// add gesture to our cancel button image
   }
   
+  func setupController() {
+    viewModel.fetchStations(cityName: cityName ?? "Unknown City")
+  }
+  
   @objc
   func filterTextEntered(textfield: UITextField) {
-    viewModel.filterTextValueEntered(textfield.text!) // call viewmodel Filter function
+//    viewModel.filterTextValueEntered(textfield.text!) // call viewmodel Filter function
   }
   
   @objc
   func clearTextField() {
-    viewModel.resetCities() // reset the values of the our table view
+//    viewModel.resetCities() // reset the values of the our table view
     searchStationTextField.text = "" // set our custom searchText' text empty
     searchStationTextField.layer.borderColor = Themes.colorGrayScale.cgColor // border color for the textfield
   }

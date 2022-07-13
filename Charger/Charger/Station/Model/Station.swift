@@ -57,3 +57,13 @@ struct GeoLocation: Codable {
   var address: String?
 }
 
+struct StationViewViewModel {
+  var stationId: Int?
+  var stationName: String?
+  var availableSocket: String?
+  var workingHours: String?
+  var distance: String?
+  var socketTypes: [String]?
+  var chargeTypes: [String]?
+  var services: [String]?
+}

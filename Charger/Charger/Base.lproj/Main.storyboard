@@ -538,7 +538,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="filterCollectionView" destination="cQZ-AF-MrT" id="ngB-HW-9rX"/>
+                        <outlet property="filterCollectionView" destination="KdY-QW-lZG" id="yrw-uH-eXF"/>
                         <outlet property="resultLabel" destination="84l-M1-hOZ" id="d0R-2B-N2M"/>
                         <outlet property="searchStationTextField" destination="HmC-rs-9bi" id="LAv-XJ-CT4"/>
                         <outlet property="stationsTableView" destination="bYH-25-owW" id="3i9-IL-j79"/>
