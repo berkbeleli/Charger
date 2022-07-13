@@ -141,10 +141,9 @@ class StationViewController: UIViewController {
     let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FilterStationsView") as! FilterStationsViewController
     vc.filterValues = filterValues
     self.navigationController?.pushViewController(vc, animated: true)
-    
     vc.onfilterChanged = { [weak self] filterValues in
-      
-      
+      self?.filterValues = filterValues
+  
     }
   }
     

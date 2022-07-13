@@ -36,11 +36,9 @@ class FilterStationsViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     setupUI()
     localization()
     setupController()
-    
   }
   
   /// Setup UI Elements
@@ -139,79 +137,85 @@ class FilterStationsViewController: UIViewController {
   
   func setupController() {
     viewModel.filterValues = filterValues ?? FilterModel(deviceTypes: [], socketTypes: [], services: [])
-    
+    viewModel.updateFilters()
+    self.setupUIElements()
     viewModel.onFiltersChanged = {[weak self] _ in
       // check the filter values for the ac device type and setup the button view
-      if self?.viewModel.checkContainsDeviceValue(filter: .AC) ?? false {
-        self?.acDeviceTypeButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
-        self?.acDeviceTypeButton.backgroundColor = Themes.colorDark
-      }else {
-        self?.acDeviceTypeButton.layer.borderColor = Themes.colorGrayScale.cgColor
-        self?.acDeviceTypeButton.backgroundColor = .clear
-      }
-      // check the filter values for the dc device type  and setup the button view
-      if self?.viewModel.checkContainsDeviceValue(filter: .DC) ?? false {
-        self?.dcDeviceTypeButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
-        self?.dcDeviceTypeButton.backgroundColor = Themes.colorDark
-      }else {
-        self?.dcDeviceTypeButton.layer.borderColor = Themes.colorGrayScale.cgColor
-        self?.dcDeviceTypeButton.backgroundColor = .clear
-      }
-      // check the filter values for the type 2 socket type  and setup the button view
-      if self?.viewModel.checkContainsSocketValue(filter: .Type2) ?? false {
-        self?.type2Button.layer.borderColor = Themes.colorSelectedGreen.cgColor
-        self?.type2Button.backgroundColor = Themes.colorDark
-      }else {
-        self?.type2Button.layer.borderColor = Themes.colorGrayScale.cgColor
-        self?.type2Button.backgroundColor = .clear
-      }
-      // check the filter values for the csc socket type  and setup the button view
-      if self?.viewModel.checkContainsSocketValue(filter: .CSC) ?? false {
-        self?.cscButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
-        self?.cscButton.backgroundColor = Themes.colorDark
-      }else {
-        self?.cscButton.layer.borderColor = Themes.colorGrayScale.cgColor
-        self?.cscButton.backgroundColor = .clear
-      }
-      // check the filter values for the chademo socket type  and setup the button view
-      if self?.viewModel.checkContainsSocketValue(filter: .CHAdeMO) ?? false {
-        self?.chademoButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
-        self?.chademoButton.backgroundColor = Themes.colorDark
-      }else {
-        self?.chademoButton.layer.borderColor = Themes.colorGrayScale.cgColor
-        self?.chademoButton.backgroundColor = .clear
-      }
-      // check the filter values for the car park service type  and setup the button view
-      if self?.viewModel.checkContainsServiceValue(filter: .CarPark) ?? false {
-        self?.carParkButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
-        self?.carParkButton.backgroundColor = Themes.colorDark
-      }else {
-        self?.carParkButton.layer.borderColor = Themes.colorGrayScale.cgColor
-        self?.carParkButton.backgroundColor = .clear
-      }
-      // check the filter values for the buffet service type  and setup the button view
-      if self?.viewModel.checkContainsServiceValue(filter: .Buffet) ?? false {
-        self?.buffetButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
-        self?.buffetButton.backgroundColor = Themes.colorDark
-      }else {
-        self?.buffetButton.layer.borderColor = Themes.colorGrayScale.cgColor
-        self?.buffetButton.backgroundColor = .clear
-      }
-      // check the filter values for the wifi service type  and setup the button view
-      if self?.viewModel.checkContainsServiceValue(filter: .Wifi) ?? false {
-        self?.wifiButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
-        self?.wifiButton.backgroundColor = Themes.colorDark
-      }else {
-        self?.wifiButton.layer.borderColor = Themes.colorGrayScale.cgColor
-        self?.wifiButton.backgroundColor = .clear
-      }
-      
-      if !(self?.viewModel.checkDistanceExist() ?? false) {
-        self?.distanceSlider.value = 15
-      }
+      self?.setupUIElements()
       
     }
+  }
+  
+  func setupUIElements() {
+    if self.viewModel.checkContainsDeviceValue(filter: .AC) {
+      self.acDeviceTypeButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
+      self.acDeviceTypeButton.backgroundColor = Themes.colorDark
+    }else {
+      self.acDeviceTypeButton.layer.borderColor = Themes.colorGrayScale.cgColor
+      self.acDeviceTypeButton.backgroundColor = .clear
+    }
+    // check the filter values for the dc device type  and setup the button view
+    if self.viewModel.checkContainsDeviceValue(filter: .DC) {
+      self.dcDeviceTypeButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
+      self.dcDeviceTypeButton.backgroundColor = Themes.colorDark
+    }else {
+      self.dcDeviceTypeButton.layer.borderColor = Themes.colorGrayScale.cgColor
+      self.dcDeviceTypeButton.backgroundColor = .clear
+    }
+    // check the filter values for the type 2 socket type  and setup the button view
+    if self.viewModel.checkContainsSocketValue(filter: .Type2) {
+      self.type2Button.layer.borderColor = Themes.colorSelectedGreen.cgColor
+      self.type2Button.backgroundColor = Themes.colorDark
+    }else {
+      self.type2Button.layer.borderColor = Themes.colorGrayScale.cgColor
+      self.type2Button.backgroundColor = .clear
+    }
+    // check the filter values for the csc socket type  and setup the button view
+    if self.viewModel.checkContainsSocketValue(filter: .CSC) {
+      self.cscButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
+      self.cscButton.backgroundColor = Themes.colorDark
+    }else {
+      self.cscButton.layer.borderColor = Themes.colorGrayScale.cgColor
+      self.cscButton.backgroundColor = .clear
+    }
+    // check the filter values for the chademo socket type  and setup the button view
+    if self.viewModel.checkContainsSocketValue(filter: .CHAdeMO) {
+      self.chademoButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
+      self.chademoButton.backgroundColor = Themes.colorDark
+    }else {
+      self.chademoButton.layer.borderColor = Themes.colorGrayScale.cgColor
+      self.chademoButton.backgroundColor = .clear
+    }
+    // check the filter values for the car park service type  and setup the button view
+    if self.viewModel.checkContainsServiceValue(filter: .CarPark) {
+      self.carParkButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
+      self.carParkButton.backgroundColor = Themes.colorDark
+    }else {
+      self.carParkButton.layer.borderColor = Themes.colorGrayScale.cgColor
+      self.carParkButton.backgroundColor = .clear
+    }
+    // check the filter values for the buffet service type  and setup the button view
+    if self.viewModel.checkContainsServiceValue(filter: .Buffet) {
+      self.buffetButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
+      self.buffetButton.backgroundColor = Themes.colorDark
+    }else {
+      self.buffetButton.layer.borderColor = Themes.colorGrayScale.cgColor
+      self.buffetButton.backgroundColor = .clear
+    }
+    // check the filter values for the wifi service type  and setup the button view
+    if self.viewModel.checkContainsServiceValue(filter: .Wifi) {
+      self.wifiButton.layer.borderColor = Themes.colorSelectedGreen.cgColor
+      self.wifiButton.backgroundColor = Themes.colorDark
+    }else {
+      self.wifiButton.layer.borderColor = Themes.colorGrayScale.cgColor
+      self.wifiButton.backgroundColor = .clear
+    }
     
+    if (self.viewModel.checkDistanceExist() ) {
+      self.distanceSlider.value = viewModel.getDistanceValue()
+    }else {
+      self.distanceSlider.value = 15
+    }
   }
   
   @IBAction func acButtonPressed(_ sender: UIButton) {

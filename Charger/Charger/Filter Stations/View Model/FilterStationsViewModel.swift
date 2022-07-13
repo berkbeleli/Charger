@@ -12,6 +12,11 @@ class FilterStationsViewModel {
   var onFiltersRequested: ((FilterModel) -> ())?
 
   var filterValues: FilterModel?
+  // checks for previous filter
+  func updateFilters() {
+    onFiltersChanged?("Update") // call closure check if the previous filter exist
+  }
+  
   /// Adds or remove the given device type filter
   func addDeviceFilter(filter: DeviceType) {
     if filterValues?.deviceTypes?.contains(filter) ?? false{
@@ -41,6 +46,10 @@ class FilterStationsViewModel {
   /// Adds the given distance filter
   func addDistanceFilter(filter: Double) {
       filterValues?.distance = filter
+  }
+  
+  func getDistanceValue() -> Float {
+    Float(filterValues?.distance ?? 0)
   }
   
   func checkDistanceExist() -> Bool {
