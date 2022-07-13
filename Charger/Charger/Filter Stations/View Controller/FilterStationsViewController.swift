@@ -46,57 +46,41 @@ class FilterStationsViewController: UIViewController {
     statusbarBackgroundView.backgroundColor = Themes.colorCharcoal
     
     acDeviceTypeButton.layer.borderWidth = 2 // setup ac button
-    acDeviceTypeButton.layer.borderColor = Themes.colorGrayScale.cgColor
-    acDeviceTypeButton.backgroundColor = .clear
     acDeviceTypeButton.titleLabel?.font = Themes.fontRegular
     acDeviceTypeButton.tintColor = Themes.colorSolidWhite
     acDeviceTypeButton.layer.cornerRadius = ObjectConstants.filterbuttonBorderRadius
     
     dcDeviceTypeButton.layer.borderWidth = 2  // setup dc button
-    dcDeviceTypeButton.layer.borderColor = Themes.colorGrayScale.cgColor
-    dcDeviceTypeButton.backgroundColor = .clear
     dcDeviceTypeButton.titleLabel?.font = Themes.fontRegular
     dcDeviceTypeButton.tintColor = Themes.colorSolidWhite
     dcDeviceTypeButton.layer.cornerRadius = ObjectConstants.filterbuttonBorderRadius
     
     type2Button.layer.borderWidth = 2  // setup type2 button
-    type2Button.layer.borderColor = Themes.colorGrayScale.cgColor
-    type2Button.backgroundColor = .clear
     type2Button.titleLabel?.font = Themes.fontRegular
     type2Button.tintColor = Themes.colorSolidWhite
     type2Button.layer.cornerRadius = ObjectConstants.filterbuttonBorderRadius
     
     cscButton.layer.borderWidth = 2  // setup csc button
-    cscButton.layer.borderColor = Themes.colorGrayScale.cgColor
-    cscButton.backgroundColor = .clear
     cscButton.titleLabel?.font = Themes.fontRegular
     cscButton.tintColor = Themes.colorSolidWhite
     cscButton.layer.cornerRadius = ObjectConstants.filterbuttonBorderRadius
     
     chademoButton.layer.borderWidth = 2  // setup chademo button
-    chademoButton.layer.borderColor = Themes.colorGrayScale.cgColor
-    chademoButton.backgroundColor = .clear
     chademoButton.titleLabel?.font = Themes.fontRegular
     chademoButton.tintColor = Themes.colorSolidWhite
     chademoButton.layer.cornerRadius = ObjectConstants.filterbuttonBorderRadius
     
     carParkButton.layer.borderWidth = 2 // setup carpark button
-    carParkButton.layer.borderColor = Themes.colorGrayScale.cgColor
-    carParkButton.backgroundColor = .clear
     carParkButton.titleLabel?.font = Themes.fontRegular
     carParkButton.tintColor = Themes.colorSolidWhite
     carParkButton.layer.cornerRadius = ObjectConstants.filterbuttonBorderRadius
     
     buffetButton.layer.borderWidth = 2  // setup buffet button
-    buffetButton.layer.borderColor = Themes.colorGrayScale.cgColor
-    buffetButton.backgroundColor = .clear
     buffetButton.titleLabel?.font = Themes.fontRegular
     buffetButton.tintColor = Themes.colorSolidWhite
     buffetButton.layer.cornerRadius = ObjectConstants.filterbuttonBorderRadius
     
     wifiButton.layer.borderWidth = 2  // setup wifi button
-    wifiButton.layer.borderColor = Themes.colorGrayScale.cgColor
-    wifiButton.backgroundColor = .clear
     wifiButton.titleLabel?.font = Themes.fontRegular
     wifiButton.tintColor = Themes.colorSolidWhite
     wifiButton.layer.cornerRadius = ObjectConstants.filterbuttonBorderRadius
@@ -115,6 +99,8 @@ class FilterStationsViewController: UIViewController {
     servicesHeaderLabel.font = Themes.fontExtraBold
     servicesHeaderLabel.textColor = Themes.colorSolidWhite
     distanceSlider.tintColor = Themes.colorSelectedGreen
+    
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "clearButton".localizeString(), style: .done, target: self, action: #selector(emptyFilters))
   }
   
   /// Setup UI Elements according to app language
@@ -259,6 +245,11 @@ class FilterStationsViewController: UIViewController {
     self.filterValues = viewModel.requestAllFilters()
     onfilterChanged?(filterValues!)
     navigationController?.popViewController(animated: true)
+  }
+  
+  @objc
+  func emptyFilters() {
+    viewModel.clearFilters()
   }
   
 }
