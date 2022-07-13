@@ -8,11 +8,15 @@
 import UIKit
 
 class CitySelectionViewController: UIViewController {
-  
+  // Object Connections
   @IBOutlet private weak var statusbarBackgroundView: UIView!
   @IBOutlet private weak var searchCityTextField: UITextField!
   @IBOutlet private weak var indicatorView: UIView!
   @IBOutlet private weak var cityTableView: UITableView!
+  @IBOutlet private weak var noResultView: UIView!
+  @IBOutlet private weak var noResultImage: UIImageView!
+  @IBOutlet private weak var noResultTitleLabel: UILabel!
+  @IBOutlet private weak var noResultSubtitleLabel: UILabel!
   
   private var viewModel = CitySelectionViewModel()
   private var tableViewHelper: CitySelectionTableViewHelper!
@@ -30,11 +34,18 @@ class CitySelectionViewController: UIViewController {
     searchCityTextField.textColor = Themes.colorSolidWhite
     searchCityTextField.font = Themes.fontRegularSubtitle
     indicatorView.backgroundColor = Themes.colorGrayScale
+    noResultTitleLabel.textColor = Themes.colorSolidWhite
+    noResultTitleLabel.font = Themes.fontExtraBold
+    noResultSubtitleLabel.font = Themes.fontRegularSubtitle
+    noResultSubtitleLabel.textColor = Themes.colorGrayScale
+    noResultImage.image = Themes.noResultImage
   }
   
   // Setup UI Elements according to app language
   func localization() {
     self.navigationItem.title = "cityselectionTitle".localizeString()
+    noResultTitleLabel.text = "noCityErrorTitle".localizeString()
+    noResultSubtitleLabel.text = "noCityErrorSubTitle".localizeString()
   }
   
   func setupCustomSearchTextField() {
@@ -46,7 +57,7 @@ class CitySelectionViewController: UIViewController {
     searchCityTextField.layer.borderColor = Themes.colorGrayScale.cgColor // border color for the textfield
     searchCityTextField.attributedPlaceholder = NSAttributedString(
       string:  "searchCityPlaceHolder".localizeString(),
-        attributes: [NSAttributedString.Key.foregroundColor: Themes.colorGrayScale]
+      attributes: [NSAttributedString.Key.foregroundColor: Themes.colorGrayScale]
     )  // set textField placeholder color
     searchCityTextField.setIcon(UIImage(systemName: "magnifyingglass")!) // set left view of the text field
     let imageView = UIImageView(image: UIImage(systemName: "xmark.circle.fill")) // set right cancel button image
@@ -62,20 +73,23 @@ class CitySelectionViewController: UIViewController {
     let cancelButton = UITapGestureRecognizer(target: self, action: #selector(clearTextField)) // add gesture func to our cancel button image
     imageView.addGestureRecognizer(cancelButton)// add gesture to our cancel button image
   }
-  
+  /// This function setup vm and tableviewHelper and handle their closures
   func setupController(){
     tableViewHelper = .init(with: cityTableView, vm: viewModel)
     viewModel.fetchCities()
     viewModel.onCitiesChanged = { [weak self] cities in
-      self?.cityTableView.isHidden = false
+      self?.cityTableView.isHidden = false // show tableview
+      self?.noResultView.isHidden = true // hide no result view
       self?.searchCityTextField.layer.borderColor = Themes.colorGrayScale.cgColor // border color for the textfield
       self?.tableViewHelper.setItems(cities)
     }
     viewModel.onCitiesFiltered = { [weak self] filteredCities in
-      self?.cityTableView.isHidden = false
+      self?.cityTableView.isHidden = false // show tableview
+      self?.noResultView.isHidden = true // hide no result view
       if filteredCities.count == 0{
         self?.searchCityTextField.layer.borderColor = Themes.colorSecurity.cgColor// border color for the textfield
-        self?.cityTableView.isHidden = true
+        self?.cityTableView.isHidden = true // show tableview
+        self?.noResultView.isHidden = false // hide no result view
       }else {
         self?.searchCityTextField.layer.borderColor = Themes.colorSelectedGreen.cgColor// border color for the textfield
       }
