@@ -92,11 +92,11 @@ class StationViewModel{
   func checkIfTheFiltersEmpty(filterValues: FilterModel) -> Bool {
     self.filterValues = filterValues
     
-    if (filterValues.deviceTypes?.count ?? 0) > 0 {
+    if (filterValues.deviceTypes?.count ?? 0) > 0 { // check the number of the elements
       return true
-    }else if (filterValues.socketTypes?.count ?? 0) > 0 {
+    }else if (filterValues.socketTypes?.count ?? 0) > 0 { // check the number of the elements
       return true
-    }else if (filterValues.services?.count ?? 0) > 0 {
+    }else if (filterValues.services?.count ?? 0) > 0 { // check the number of the elements
       return true
     }else if filterValues.distance != nil {
       return true
@@ -105,65 +105,52 @@ class StationViewModel{
     }
   }
   
-  func ConvertReceivedFilters() {
+  func convertReceivedFilters() {
     filtersForDisplay = []
-    if !(filterValues?.deviceTypes!.isEmpty ?? true) {
+    if !(filterValues?.deviceTypes!.isEmpty ?? true) {  // check if the array empty
       for value in filterValues!.deviceTypes! {
         filtersForDisplay?.append(value.rawValue)
       }
     }
     
-    if !(filterValues?.socketTypes!.isEmpty ?? true) {
+    if !(filterValues?.socketTypes!.isEmpty ?? true) { // check if the array empty
       for value in filterValues!.socketTypes! {
         filtersForDisplay?.append(value.rawValue)
       }
     }
     
-    if !(filterValues?.services!.isEmpty ?? true) {
+    if !(filterValues?.services!.isEmpty ?? true) { // check if the array empty
       for value in filterValues!.services! {
         filtersForDisplay?.append(value.rawValue)
       }
     }
     
-    if filterValues?.distance != nil {
+    if filterValues?.distance != nil { // check if the distance empty
       filtersForDisplay?.append("\(filterValues?.distance?.withOutCurrencySeperator ?? "0") km")
     }
     onFiltersConverted?(filtersForDisplay ?? [])
   }
   
-  
+  // remove the filter according to given raw value
   func removeFilter(filterName: String) {
     
-    if let enumCase = DeviceType(rawValue: filterName) {
+    if let enumCase = DeviceType(rawValue: filterName) { // if the given raw value belongs to device type
       if (filterValues?.deviceTypes?.contains( enumCase )) ?? false {
         filterValues?.deviceTypes?.removeAll { $0 == enumCase }
-
-        // reload the items
       }
-    }else if let enumCase = SocketType(rawValue: filterName) {
+    }else if let enumCase = SocketType(rawValue: filterName) {// if the given raw value belongs to socket type
       if (filterValues?.socketTypes?.contains( enumCase )) ?? false {
         filterValues?.socketTypes?.removeAll { $0 == enumCase }
-
-        // reload the items
-       
       }
-    }else if let enumCase = Services(rawValue: filterName) {
+    }else if let enumCase = Services(rawValue: filterName) { // if the given raw value belongs to service type
       if (filterValues?.services?.contains( enumCase )) ?? false {
         filterValues?.services?.removeAll { $0 == enumCase }
-
-        // reload the items
-       
       }
     }else {
-      filterValues?.distance = 15
-      // reload the items
+      filterValues?.distance = nil // if the given raw value belongs to distance type
     }
+    convertReceivedFilters() // after removing the item reload the filter items
   }
-  
-
-  
-  
-  
 }
 
 //MARK: - private func

@@ -118,10 +118,11 @@ class StationViewController: UIViewController {
     
     collectionViewHelper = .init(with: filterCollectionView, vm: viewModel)
     viewModel.onFiltersConverted = {[weak self] filters in
-      if filters.count == 0 {
-        self?.filterCollectionView.isHidden = true
+      if filters.count == 0 { // if there is no item
+        self?.filterCollectionView.isHidden = true // hide the collection view
+        self?.navigationItem.rightBarButtonItem?.tintColor = Themes.colorSolidWhite // make the color default
       }else{
-        self?.collectionViewHelper.setItems(filters)
+        self?.collectionViewHelper.setItems(filters) // if there is any filter item send them to our helper class
       }
     }
   }
@@ -155,11 +156,11 @@ class StationViewController: UIViewController {
       
       if self?.viewModel.checkIfTheFiltersEmpty(filterValues: filterValues) ?? false { // checks if filters contains any data
         self?.navigationItem.rightBarButtonItem?.tintColor = Themes.colorSelectedGreen // if so make right bar button color green
-        self?.filterCollectionView.isHidden = false
-        self?.viewModel.ConvertReceivedFilters()
+        self?.filterCollectionView.isHidden = false // show the filter collection view visible
+        self?.viewModel.convertReceivedFilters() // convert the received items into string array
       }else {
         self?.navigationItem.rightBarButtonItem?.tintColor = Themes.colorSolidWhite // if not make it white
-        self?.filterCollectionView.isHidden = true
+        self?.filterCollectionView.isHidden = true // hide the collection view
       }
   
     }
