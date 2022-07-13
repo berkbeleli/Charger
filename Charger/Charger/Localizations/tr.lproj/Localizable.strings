@@ -33,3 +33,13 @@
 "searchCityPlaceHolder" = "Şehir Ara";
 "noCityErrorTitle" = "Aramanız ile eşleşen bir sonuç bulunamadı.";
 "noCityErrorSubTitle" = "Lütfen yeni bir arama yapın.";
+
+//MARK: - STATION SELECTION PAGE
+"stationselectionTitle" = "İstasyon Seçin";
+"searchStationPlaceHolder" = "İstasyon Ara";
+"noStationErrorTitle" = "Aramanız ile eşleşen bir sonuç bulunamadı.";
+"noStationErrorSubTitle" = "Lütfen yeni bir arama yapın.";
+"servicehourTitle" = "Hizmet saatleri:";
+"availablesocket" = "Uygun soket sayısı:";
+"time" = "Saat";
+"City: %@ Count: %@" = "'%@' şehri için %@ sonuç görüntüleniyor.";

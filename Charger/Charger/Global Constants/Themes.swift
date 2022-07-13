@@ -19,6 +19,7 @@ struct Themes {
   
   static let fontExtraBold = UIFont(name: "Proxima Nova Extrabold", size: 25)!
   static let fontBold = UIFont(name: "Proxima Nova Bold", size: 19)!
+  static let fontBoldStationSubValues = UIFont(name: "Proxima Nova Bold", size: 17)!
   static let fontRegularHeader = UIFont(name: "ProximaNova-Regular", size: 25)!
   static let fontRegularSubtitle = UIFont(name: "ProximaNova-Regular", size: 17)!
   static let fontRegular = UIFont(name: "ProximaNova-Regular", size: 14)!
@@ -28,4 +29,11 @@ struct Themes {
   static let UserImage = UIImage(named: "Users")!
   static let profileBadgeImage = UIImage(named: "ProfileBadge")!
   static let noResultImage = UIImage(named: "NoResult")!
+  static let acImage = UIImage(named: "AcImage")!
+  static let dcImage = UIImage(named: "DcImage")!
+  static let acDcImage = UIImage(named: "Ac-DcImage")!
 }
+
+
+
+

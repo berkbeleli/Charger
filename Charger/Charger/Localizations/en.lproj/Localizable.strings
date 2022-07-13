@@ -34,3 +34,13 @@
 "searchCityPlaceHolder" = "Search City";
 "noCityErrorTitle" = "No Result found matching your search.";
 "noCityErrorSubTitle" = "Please make a new search.";
+
+//MARK: - STATION SELECTION PAGE;
+"stationselectionTitle" = "Select Station";
+"searchStationPlaceHolder" = "Search Station";
+"noStationErrorTitle" = "No Result found";
+"noStationErrorSubTitle" = "Please make a new selection.";
+"servicehourTitle" = "Service Hours:";
+"availablesocket" = "Available Sockets:";
+"time" = "Hours";
+"City: %@ Count: %@" = "'%@' being shown with %@ stations.";

@@ -40,6 +40,7 @@ class CitySelectionViewController: UIViewController {
     noResultSubtitleLabel.textColor = Themes.colorGrayScale
     noResultImage.image = Themes.noResultImage
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // with this we will disable back button label text
+    noResultView.isHidden = true
   }
   
   // Setup UI Elements according to app language
@@ -76,8 +77,8 @@ class CitySelectionViewController: UIViewController {
   }
   /// This function setup vm and tableviewHelper and handle their closures
   func setupController(){
-    tableViewHelper.delegate = self
     tableViewHelper = .init(with: cityTableView, vm: viewModel)
+    tableViewHelper.delegate = self
     viewModel.fetchCities()
     viewModel.onCitiesChanged = { [weak self] cities in
       self?.cityTableView.isHidden = false // show tableview

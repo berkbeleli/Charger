@@ -12,4 +12,5 @@ struct WebsiteUrl {
   static let loginUrl = "http://ec2-18-197-100-203.eu-central-1.compute.amazonaws.com:8080/auth/login"
   static let logOutUrl = "http://ec2-18-197-100-203.eu-central-1.compute.amazonaws.com:8080/auth/logout/"
   static let citiesUrl = "http://ec2-18-197-100-203.eu-central-1.compute.amazonaws.com:8080/provinces?userID="
+  static let stationsUrl = "http://ec2-18-197-100-203.eu-central-1.compute.amazonaws.com:8080/stations?userID="
 }
