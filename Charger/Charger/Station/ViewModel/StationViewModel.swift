@@ -36,6 +36,7 @@ class StationViewModel{
             availableSocket: "\(($0.socketCount ?? 0) - ($0.occupiedSocketCount ?? 0) ) / \($0.socketCount ?? 0)",
             workingHours: "24",
             distance: $0.distanceInKm == nil ? nil : "\($0.distanceInKm!.withOutCurrencySeperator ?? "0") km",
+            distanceFilter: $0.distanceInKm,
             services: $0.services ?? [])
         }
         
@@ -54,6 +55,11 @@ class StationViewModel{
             
           }
         }
+        
+        if LocationDatas.shared.locationlatitude != nil && self?.allStations != [] { // if user allowed the location permission if so  sort the stations based on their distances
+          self?.allStations = self?.allStations?.sorted { $0.distanceFilter ?? 0 < $1.distanceFilter ?? 0 }
+        }
+        
         self?.onStationsChanged?(self?.allStations ?? []) // call the closure to let the vc know station fetched
       }else {
         // SHOW ERROR PAGE HERE!!!!

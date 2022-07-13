@@ -42,5 +42,5 @@
 "noStationErrorSubTitle" = "Please make a new selection.";
 "servicehourTitle" = "Service Hours:";
 "availablesocket" = "Available Sockets:";
-"time" = "Hour";
+"time" = "Hours";
 "City: %@ Count: %@" = "'%@' being shown with %@ stations.";

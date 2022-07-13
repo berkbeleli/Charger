@@ -58,11 +58,15 @@ struct GeoLocation: Codable {
 }
 
 struct StationViewViewModel: Equatable {
+  static func == (lhs: StationViewViewModel, rhs: StationViewViewModel) -> Bool {
+    return lhs.stationId == rhs.stationId
+  }
   var stationId: Int?
   var stationName: String?
   var availableSocket: String?
   var workingHours: String?
   var distance: String?
+  var distanceFilter: Double?
   var socketTypes: [String]?
   var chargeTypes: [String]?
   var services: [String]?
