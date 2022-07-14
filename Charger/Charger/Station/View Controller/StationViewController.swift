@@ -121,6 +121,7 @@ class StationViewController: UIViewController {
       if filters.count == 0 { // if there is no item
         self?.filterCollectionView.isHidden = true // hide the collection view
         self?.navigationItem.rightBarButtonItem?.tintColor = Themes.colorSolidWhite // make the color default
+        self?.viewModel.filteredStations()
       }else{
         self?.collectionViewHelper.setItems(filters) // if there is any filter item send them to our helper class
       }
@@ -149,7 +150,7 @@ class StationViewController: UIViewController {
   @objc
   func filterPageOpen() {
     let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FilterStationsView") as! FilterStationsViewController
-    vc.filterValues = filterValues
+    vc.filterValues = viewModel.filterValuesRequest()
     self.navigationController?.pushViewController(vc, animated: true)
     vc.onfilterChanged = { [weak self] filterValues in
       self?.filterValues = filterValues
@@ -158,6 +159,7 @@ class StationViewController: UIViewController {
         self?.navigationItem.rightBarButtonItem?.tintColor = Themes.colorSelectedGreen // if so make right bar button color green
         self?.filterCollectionView.isHidden = false // show the filter collection view visible
         self?.viewModel.convertReceivedFilters() // convert the received items into string array
+        self?.viewModel.filteredStations()
       }else {
         self?.navigationItem.rightBarButtonItem?.tintColor = Themes.colorSolidWhite // if not make it white
         self?.filterCollectionView.isHidden = true // hide the collection view
