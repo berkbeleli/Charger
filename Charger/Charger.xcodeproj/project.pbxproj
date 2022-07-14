@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6CC73505AB1CAF438BA4D782 /* Pods_Charger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425149758F6630A3A1A11A7C /* Pods_Charger.framework */; };
+		C00831EB28805C7D00FC4FAA /* DateTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00831EA28805C7D00FC4FAA /* DateTimeViewController.swift */; };
 		C0319AD8287E0757005B846D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AD7287E0757005B846D /* ProfileViewController.swift */; };
 		C0319ADA287E0FA9005B846D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AD9287E0FA9005B846D /* ProfileViewModel.swift */; };
 		C0319ADC287E1115005B846D /* UserToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319ADB287E1115005B846D /* UserToken.swift */; };
@@ -64,6 +65,7 @@
 		26AB01AA9CBECEF3815225AE /* Pods-Charger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Charger.debug.xcconfig"; path = "Target Support Files/Pods-Charger/Pods-Charger.debug.xcconfig"; sourceTree = "<group>"; };
 		425149758F6630A3A1A11A7C /* Pods_Charger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Charger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		676773AED797A27AF75B9CC0 /* Pods-Charger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Charger.release.xcconfig"; path = "Target Support Files/Pods-Charger/Pods-Charger.release.xcconfig"; sourceTree = "<group>"; };
+		C00831EA28805C7D00FC4FAA /* DateTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeViewController.swift; sourceTree = "<group>"; };
 		C0319AD7287E0757005B846D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C0319AD9287E0FA9005B846D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		C0319ADB287E1115005B846D /* UserToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserToken.swift; sourceTree = "<group>"; };
@@ -140,6 +142,22 @@
 				425149758F6630A3A1A11A7C /* Pods_Charger.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C00831E828805C2F00FC4FAA /* Date Time Selection */ = {
+			isa = PBXGroup;
+			children = (
+				C00831E928805C4900FC4FAA /* View Controller */,
+			);
+			path = "Date Time Selection";
+			sourceTree = "<group>";
+		};
+		C00831E928805C4900FC4FAA /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C00831EA28805C7D00FC4FAA /* DateTimeViewController.swift */,
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 		C0319AD4287E071F005B846D /* Profile */ = {
@@ -338,6 +356,7 @@
 				C0319AE1287E1888005B846D /* City Selection */,
 				C047CBFC287EDE300038CAA2 /* Station */,
 				C070BB82287F4E0200DCCE44 /* Filter Stations */,
+				C00831E828805C2F00FC4FAA /* Date Time Selection */,
 				C0EF3A9E287CDF7B0078C77A /* LocalNotificationManager */,
 				C0EF3A8A287CD8D90078C77A /* LocationManager */,
 				C0EF3A7E287CCDE90078C77A /* GenericAPICaller */,
@@ -666,6 +685,7 @@
 				C0EF3A78287CC2F60078C77A /* Object Constants.swift in Sources */,
 				C0EF3A6D287CB5C20078C77A /* String+Extension.swift in Sources */,
 				C047CC09287F01770038CAA2 /* StationTableViewCell.swift in Sources */,
+				C00831EB28805C7D00FC4FAA /* DateTimeViewController.swift in Sources */,
 				C070BB85287F4E2800DCCE44 /* FilterStationsViewController.swift in Sources */,
 				C0EF3A89287CD3800078C77A /* UserInfo.swift in Sources */,
 				C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */,
