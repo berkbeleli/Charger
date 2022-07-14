@@ -20,6 +20,7 @@ class StationViewController: UIViewController {
   @IBOutlet private weak var NoResultSubtitle: UILabel!
   private var viewModel = StationViewModel()
   private var tableViewHelper: StationTableViewHelper!
+  private var collectionViewHelper: StationCollectionViewHelper!
   var cityName: String?
   var filterValues: FilterModel? // it will hold the filter Values
     override func viewDidLoad() {
@@ -46,7 +47,7 @@ class StationViewController: UIViewController {
     noResultImage.image = Themes.noResultImage
     noResultView.isHidden = true
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // with this we will disable back button label text
-    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.decrease")?.withTintColor(.white), style: .plain, target: self, action: #selector(filterPageOpen)) // Create open Filter Page Button
+    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.decrease")?.withTintColor(Themes.colorSolidWhite), style: .plain, target: self, action: #selector(filterPageOpen)) // Create open Filter Page Button
   }
   
   func setupCustomSearchTextField() {
@@ -115,6 +116,16 @@ class StationViewController: UIViewController {
       // show received error custom error page
     }
     
+    collectionViewHelper = .init(with: filterCollectionView, vm: viewModel)
+    viewModel.onFiltersConverted = {[weak self] filters in
+      if filters.count == 0 { // if there is no item
+        self?.filterCollectionView.isHidden = true // hide the collection view
+        self?.navigationItem.rightBarButtonItem?.tintColor = Themes.colorSolidWhite // make the color default
+        self?.viewModel.filteredStations()
+      }else{
+        self?.collectionViewHelper.setItems(filters) // if there is any filter item send them to our helper class
+      }
+    }
   }
   
   // Setup UI Elements according to app language
@@ -139,10 +150,20 @@ class StationViewController: UIViewController {
   @objc
   func filterPageOpen() {
     let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FilterStationsView") as! FilterStationsViewController
-    vc.filterValues = filterValues
+    vc.filterValues = viewModel.filterValuesRequest()
     self.navigationController?.pushViewController(vc, animated: true)
     vc.onfilterChanged = { [weak self] filterValues in
       self?.filterValues = filterValues
+      
+      if self?.viewModel.checkIfTheFiltersEmpty(filterValues: filterValues) ?? false { // checks if filters contains any data
+        self?.navigationItem.rightBarButtonItem?.tintColor = Themes.colorSelectedGreen // if so make right bar button color green
+        self?.filterCollectionView.isHidden = false // show the filter collection view visible
+        self?.viewModel.convertReceivedFilters() // convert the received items into string array
+        self?.viewModel.filteredStations()
+      }else {
+        self?.navigationItem.rightBarButtonItem?.tintColor = Themes.colorSolidWhite // if not make it white
+        self?.filterCollectionView.isHidden = true // hide the collection view
+      }
   
     }
   }

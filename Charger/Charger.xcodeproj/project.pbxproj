@@ -28,6 +28,9 @@
 		C070BB88287F5A9B00DCCE44 /* Filter Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070BB87287F5A9B00DCCE44 /* Filter Enums.swift */; };
 		C070BB8A287F5AE000DCCE44 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070BB89287F5AE000DCCE44 /* Filter.swift */; };
 		C070BB8D287F5CE100DCCE44 /* FilterStationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070BB8C287F5CE100DCCE44 /* FilterStationsViewModel.swift */; };
+		C070BB90287F794700DCCE44 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070BB8E287F794700DCCE44 /* FilterCollectionViewCell.swift */; };
+		C070BB91287F794700DCCE44 /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C070BB8F287F794700DCCE44 /* FilterCollectionViewCell.xib */; };
+		C070BB93287F7AF500DCCE44 /* StationCollectionViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070BB92287F7AF500DCCE44 /* StationCollectionViewHelper.swift */; };
 		C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */; };
 		C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */; };
 		C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3F287CAAD70078C77A /* LoginViewController.swift */; };
@@ -81,6 +84,9 @@
 		C070BB87287F5A9B00DCCE44 /* Filter Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Filter Enums.swift"; sourceTree = "<group>"; };
 		C070BB89287F5AE000DCCE44 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		C070BB8C287F5CE100DCCE44 /* FilterStationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStationsViewModel.swift; sourceTree = "<group>"; };
+		C070BB8E287F794700DCCE44 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		C070BB8F287F794700DCCE44 /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
+		C070BB92287F7AF500DCCE44 /* StationCollectionViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCollectionViewHelper.swift; sourceTree = "<group>"; };
 		C0EF3A38287CAAD70078C77A /* Charger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -255,6 +261,8 @@
 			children = (
 				C047CC07287F01770038CAA2 /* StationTableViewCell.swift */,
 				C047CC08287F01770038CAA2 /* StationTableViewCell.xib */,
+				C070BB8E287F794700DCCE44 /* FilterCollectionViewCell.swift */,
+				C070BB8F287F794700DCCE44 /* FilterCollectionViewCell.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -263,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				C047CC0C287F0A680038CAA2 /* StationTableViewHelper.swift */,
+				C070BB92287F7AF500DCCE44 /* StationCollectionViewHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -569,6 +578,7 @@
 				C0EF3A56287CAE650078C77A /* Proxima Nova Extrabold.otf in Resources */,
 				C0319AE9287E22C5005B846D /* CustomCityTableViewCell.xib in Resources */,
 				C0EF3A9A287CDDCC0078C77A /* InfoPlist.strings in Resources */,
+				C070BB91287F794700DCCE44 /* FilterCollectionViewCell.xib in Resources */,
 				C0EF3A43287CAAD70078C77A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -633,6 +643,8 @@
 				C047CC0D287F0A680038CAA2 /* StationTableViewHelper.swift in Sources */,
 				C0319ADC287E1115005B846D /* UserToken.swift in Sources */,
 				C0EF3AA7287CE7130078C77A /* AppointmentsViewController.swift in Sources */,
+				C070BB93287F7AF500DCCE44 /* StationCollectionViewHelper.swift in Sources */,
+				C070BB90287F794700DCCE44 /* FilterCollectionViewCell.swift in Sources */,
 				C0319AE4287E18B6005B846D /* CitySelectionViewController.swift in Sources */,
 				C0319AF1287E2879005B846D /* CitySelectionViewModel.swift in Sources */,
 				C0EF3A82287CD0CE0078C77A /* LoginViewModel.swift in Sources */,
