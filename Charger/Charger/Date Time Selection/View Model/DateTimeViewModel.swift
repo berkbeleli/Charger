@@ -42,13 +42,12 @@ class DateTimeViewModel{
           })
         // map the socket type Header label's values
         var viewSocketValues = (viewTimeDatas.sockets ?? []).map {
-          $0.chargeType! + "•" + $0.socketType!
+          $0.chargeType! + " • " + $0.socketType!
         }
         
         self?.onTimesChanged?(viewTimeDatas)
-        self?.onViewsSocketsChanged?(viewSocketValues!)
+        self?.onViewsSocketsChanged?(viewSocketValues)
        
-        
       }else {
         // SHOW ERROR PAGE HERE!!!!
         self?.onTimesError?(errorString ?? "UNKNOWN ERROR")

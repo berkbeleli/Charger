@@ -41,6 +41,7 @@ class DateTimeViewController: UIViewController {
     setupUI()
     localization()
     setupDatePickerLabel()
+    setupController()
   }
   
   /// Setup UI Elements
@@ -82,6 +83,29 @@ class DateTimeViewController: UIViewController {
   func setupDatePickerLabel() {
     (appointmentSelectorLabel as? DatePickerLabel)?.delegate = self // get datepicker label's delegation
     (appointmentSelectorLabel as? DatePickerLabel)?.startDatePicker() // select today's date
+  }
+  
+  func setupController() {
+    viewModel.onViewsSocketsChanged = { [weak self] viewDatas in
+      
+      if viewDatas.count == 1 {
+        self?.socketFirstTypeLabel.text = viewDatas[0]
+        self?.socketSecondHolderView.isHidden = true
+        self?.socketThirdHolderView.isHidden = true
+      }else if viewDatas.count == 2 {
+        self?.socketFirstTypeLabel.text = viewDatas[0]
+        self?.socketSecondTypeLabel.text = viewDatas[1]
+        self?.socketSecondHolderView.isHidden = false
+        self?.socketThirdHolderView.isHidden = true
+        
+      }else {
+        self?.socketFirstTypeLabel.text = viewDatas[0]
+        self?.socketSecondTypeLabel.text = viewDatas[1]
+        self?.socketThirdTypeLabel.text = viewDatas[2]
+        self?.socketSecondHolderView.isHidden = false
+        self?.socketThirdHolderView.isHidden = false
+      }
+    }
   }
   
   
