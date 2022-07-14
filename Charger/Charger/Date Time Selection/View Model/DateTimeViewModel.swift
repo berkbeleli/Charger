@@ -10,25 +10,48 @@ import Foundation
 
 class DateTimeViewModel{
   
-  var onCitiesChanged: (([LetterCities]) -> ())? // cities completion handler
-  var onCitiesFiltered: (([LetterCities]) -> ())? // cities completion handler
-  var onCitiesError: ((String) -> ())? // ERROR COMPLETION HANDLER
-  var allCityLetter: [LetterCities]?
-  var allCities: [String]?
-  /// Fetch Cities from Api
-  func fetchCities() {
-    let citiesUrl = WebsiteUrl.citiesUrl + "\(User.user?.userId ?? -1)" // create custom url
+  var onTimesChanged: ((SelectTimeViewModel) -> ())? // times completion handler
+  var onViewsSocketsChanged: (([String]) -> ())?
+  var onTimesError: ((String) -> ())? // ERROR COMPLETION HANDLER
+  /// Fetch Times from Api
+  func fetchTimes(stationId: String, date: String) {
+    let timesUrl = WebsiteUrl.dateTimeUrl + "\(stationId)" + "?userID=\(User.user?.userId ?? 0)" + "&date=\(date)" // create custom url
     
-    WebServiceHelper.instance.getServiceData(url: citiesUrl, method: .get, header: UserToken.token) { [weak self] (returnedResponse: [String]!, errorString: String?) in
+    WebServiceHelper.instance.getServiceData(url: timesUrl, method: .get, header: UserToken.token) { [weak self] (returnedResponse: SelectTimeStations!, errorString: String?) in
       if errorString == nil {
-        self?.allCities = returnedResponse
-        self?.allCityLetter = returnedResponse.map { // map the returned string array according to our needs to view it
-          .init(city: $0, boldString: "")
+     // map the received response according to our usage
+        let viewTimeDatas = SelectTimeViewModel(
+          stationId: returnedResponse.stationId,
+          stationCode: returnedResponse.stationCode,
+          address: returnedResponse.geoLocation?.address,
+          services: returnedResponse.services,
+          sockets: (returnedResponse.sockets ?? []).map{
+            SocketView(
+              socketId: "\($0.socketId!)",
+              day: DaySocketView(
+                timeSlots: ($0.day?.timeSlots ?? []).map {
+                  TimeSlotView(
+                    slot: $0.slot,
+                    isOccupied: $0.isOccupied)
+                }),
+              socketType: $0.socketType,
+              chargeType: $0.chargeType,
+              power: "\($0.power!)",
+              socketNumber: "\($0.socketNumber)",
+              powerUnit: $0.powerUnit)
+          })
+        // map the socket type Header label's values
+        var viewSocketValues = (viewTimeDatas.sockets ?? []).map {
+          $0.chargeType! + "•" + $0.socketType!
         }
-        self?.onCitiesChanged?(self?.allCityLetter ?? [])
+        
+        self?.onTimesChanged?(viewTimeDatas)
+        self?.onViewsSocketsChanged?(viewSocketValues!)
+       
+        
       }else {
         // SHOW ERROR PAGE HERE!!!!
-        self?.onCitiesError?(errorString ?? "UNKNOWN ERROR")
+        self?.onTimesError?(errorString ?? "UNKNOWN ERROR")
       }
     }
   }

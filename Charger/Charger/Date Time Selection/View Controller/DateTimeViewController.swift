@@ -80,6 +80,7 @@ class DateTimeViewController: UIViewController {
   }
   
   func setupDatePickerLabel() {
+    (appointmentSelectorLabel as? DatePickerLabel)?.delegate = self // get datepicker label's delegation
     (appointmentSelectorLabel as? DatePickerLabel)?.startDatePicker() // select today's date
   }
   
@@ -89,4 +90,10 @@ class DateTimeViewController: UIViewController {
   }
   
   
+}
+
+extension DateTimeViewController: DateSelectedDelegate {
+  func dateChanged(date: String) {
+    viewModel.fetchTimes(stationId: "\(stationId!)", date: date) // fetch the times according to the selected date
+  }
 }

@@ -61,7 +61,7 @@ struct SelectTimeViewModel {
   var stationId: Int?
   var stationCode: String?
   var address: String?
-  var services: String?
+  var services: [String]?
   var sockets: [SocketView]?
 }
 
