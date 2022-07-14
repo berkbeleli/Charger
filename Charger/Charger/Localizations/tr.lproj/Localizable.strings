@@ -56,3 +56,10 @@
 "carpark" = "Otopark";
 "buffet" = "Büfe";
 "filterButton" = "FİLTRELE";
+
+
+//MARK: - DATE AND TIME PAGE
+"timeTitle" = "Tarih ve Saat Seçin";
+"dateIndicator" = "Randevu Tarihi";
+"socketHead" = "Soket";
+"confirmTimeButton" = "TARİH VE SAATİ ONAYLA";

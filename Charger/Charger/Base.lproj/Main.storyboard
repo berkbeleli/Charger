@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ikf-3b-LBH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PHG-JS-M1q">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -832,7 +832,7 @@
         <!--Date Time View Controller-->
         <scene sceneID="p69-wg-tfr">
             <objects>
-                <viewController id="Ikf-3b-LBH" customClass="DateTimeViewController" customModule="Charger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DateTimeView" id="Ikf-3b-LBH" customClass="DateTimeViewController" customModule="Charger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="whi-Sh-kMX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -938,6 +938,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="confirmTimePressed:" destination="Ikf-3b-LBH" eventType="touchUpInside" id="Kjx-E1-d7d"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FAh-gk-z8f"/>
@@ -967,6 +970,27 @@
                             <constraint firstItem="4af-5Y-7gk" firstAttribute="leading" secondItem="whi-Sh-kMX" secondAttribute="leading" id="zx2-ol-V9p"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="appointmentSelectorLabel" destination="FtW-FI-E02" id="8MT-yu-kOD"/>
+                        <outlet property="appointmentTimeHeadLabel" destination="H62-2y-jkv" id="l8V-Yb-KLt"/>
+                        <outlet property="confirmTimeButton" destination="Rrb-Ty-5Mi" id="94A-xr-7iM"/>
+                        <outlet property="socket1HeaderLabel" destination="iwH-hN-NPN" id="fG5-Uh-TRA"/>
+                        <outlet property="socket1HolderView" destination="a4U-T0-3eH" id="hmJ-mw-iiv"/>
+                        <outlet property="socket1TableView" destination="4Dq-vV-WU2" id="g2I-o6-rWF"/>
+                        <outlet property="socket1TableeviewWidth" destination="wNC-em-zi5" id="77D-Y2-dbd"/>
+                        <outlet property="socket1TypeLabel" destination="zVd-VR-Jce" id="3iM-Wy-eob"/>
+                        <outlet property="socket2HeaderLabel" destination="I8H-4W-vPQ" id="Ql5-Df-ewa"/>
+                        <outlet property="socket2HolderView" destination="9UM-ig-2t4" id="aaa-T7-2yx"/>
+                        <outlet property="socket2TableView" destination="JwK-tt-gil" id="shB-s2-YM7"/>
+                        <outlet property="socket2TableeviewWidth" destination="zV8-3M-lrV" id="pAN-ZG-CGG"/>
+                        <outlet property="socket2TypeLabel" destination="5Xo-K8-AIS" id="sUD-JW-kzR"/>
+                        <outlet property="socket3HeaderLabel" destination="KST-Sb-MUI" id="ZZD-nM-Ywq"/>
+                        <outlet property="socket3HolderView" destination="UIO-F1-HJc" id="Cpf-8z-nCT"/>
+                        <outlet property="socket3TableView" destination="gUx-ZW-VLm" id="gHH-KZ-cTM"/>
+                        <outlet property="socket3TableeViewWidth" destination="RWJ-5i-87W" id="rIn-Lg-I2Z"/>
+                        <outlet property="socket3TypeLabel" destination="WzN-H6-EyX" id="gND-rC-hzT"/>
+                        <outlet property="statusBarBackgroundView" destination="4af-5Y-7gk" id="TDZ-ZV-SMc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SpM-nT-SDO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

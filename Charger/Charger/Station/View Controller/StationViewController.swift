@@ -79,6 +79,7 @@ class StationViewController: UIViewController {
   func setupController() {
     viewModel.fetchStations(cityName: cityName ?? "Unknown City")
     tableViewHelper = .init(with: stationsTableView, vm: viewModel)
+    tableViewHelper.delegate = self
     viewModel.onStationsChanged = {[weak self] stations in
       if stations.count == 0{
         self?.resultView.isHidden = true // show tableview
@@ -169,6 +170,10 @@ class StationViewController: UIViewController {
   
     }
   }
-    
-
+}
+// MARK - StationSelectionProtocol
+extension StationViewController: StationSelectionProtocol {
+  func didStationSelected(_ vc: UIViewController) {
+    self.navigationController?.pushViewController(vc, animated: true) // PUSH The vc that has been sent from delegate selected station
+  }
 }
