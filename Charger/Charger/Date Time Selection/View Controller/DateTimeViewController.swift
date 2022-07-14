@@ -12,23 +12,26 @@ class DateTimeViewController: UIViewController {
   @IBOutlet private weak var statusBarBackgroundView: UIView!
   @IBOutlet private weak var appointmentTimeHeadLabel: UILabel!
   @IBOutlet private weak var appointmentSelectorLabel: UILabel!
-  @IBOutlet private weak var socket1HolderView: UIStackView!
-  @IBOutlet private weak var socket1HeaderLabel: UILabel!
-  @IBOutlet private weak var socket1TypeLabel: UILabel!
-  @IBOutlet private weak var socket1TableView: UITableView!
-  @IBOutlet private weak var socket1TableeviewWidth: NSLayoutConstraint!
-  @IBOutlet private weak var socket2HolderView: UIStackView!
-  @IBOutlet private weak var socket2HeaderLabel: UILabel!
-  @IBOutlet private weak var socket2TypeLabel: UILabel!
-  @IBOutlet private weak var socket2TableView: UITableView!
-  @IBOutlet private weak var socket2TableeviewWidth: NSLayoutConstraint!
-  @IBOutlet private weak var socket3HolderView: UIStackView!
-  @IBOutlet private weak var socket3HeaderLabel: UILabel!
-  @IBOutlet private weak var socket3TypeLabel: UILabel!
-  @IBOutlet private weak var socket3TableView: UITableView!
-  @IBOutlet private weak var socket3TableeViewWidth: NSLayoutConstraint!
+  @IBOutlet private weak var socketFirstHolderView: UIStackView!
+  @IBOutlet private weak var socketFirstHeaderLabel: UILabel!
+  @IBOutlet private weak var socketFirstTypeLabel: UILabel!
+  @IBOutlet private weak var socketFirstTableView: UITableView!
+  @IBOutlet private weak var socketFirstTableeviewWidth: NSLayoutConstraint!
+  @IBOutlet private weak var socketSecondHolderView: UIStackView!
+  @IBOutlet private weak var socketSecondHeaderLabel: UILabel!
+  @IBOutlet private weak var socketSecondTypeLabel: UILabel!
+  @IBOutlet private weak var socketSecondTableView: UITableView!
+  @IBOutlet private weak var socketSecondTableeviewWidth: NSLayoutConstraint!
+  @IBOutlet private weak var socketThirdHolderView: UIStackView!
+  @IBOutlet private weak var socketThirdHeaderLabel: UILabel!
+  @IBOutlet private weak var socketThirdTypeLabel: UILabel!
+  @IBOutlet private weak var socketThirdTableView: UITableView!
+  @IBOutlet private weak var socketThirdTableeViewWidth: NSLayoutConstraint!
   @IBOutlet private weak var confirmTimeButton: UIButton!
-  
+  // we will receive this datas from the station view
+  var stationId: Int?
+  var stationName: String?
+  var distance: String?
   override func viewDidLoad() {
         super.viewDidLoad()
 
