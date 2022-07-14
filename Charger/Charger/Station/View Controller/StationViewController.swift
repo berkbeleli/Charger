@@ -17,7 +17,7 @@ class StationViewController: UIViewController {
   @IBOutlet private weak var noResultView: UIView!
   @IBOutlet private weak var noResultImage: UIImageView!
   @IBOutlet private weak var noResultTitle: UILabel!
-  @IBOutlet private weak var NoResultSubtitle: UILabel!
+  @IBOutlet private weak var noResultSubtitle: UILabel!
   private var viewModel = StationViewModel()
   private var tableViewHelper: StationTableViewHelper!
   private var collectionViewHelper: StationCollectionViewHelper!
@@ -42,8 +42,8 @@ class StationViewController: UIViewController {
     searchStationTextField.font = Themes.fontRegularSubtitle
     noResultTitle.textColor = Themes.colorSolidWhite
     noResultTitle.font = Themes.fontExtraBold
-    NoResultSubtitle.font = Themes.fontRegularSubtitle
-    NoResultSubtitle.textColor = Themes.colorGrayScale
+    noResultSubtitle.font = Themes.fontRegularSubtitle
+    noResultSubtitle.textColor = Themes.colorGrayScale
     noResultImage.image = Themes.noResultImage
     noResultView.isHidden = true
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // with this we will disable back button label text
@@ -135,7 +135,7 @@ class StationViewController: UIViewController {
   func localization() {
     self.navigationItem.title = "stationselectionTitle".localizeString()
     noResultTitle.text = "noCityErrorTitle".localizeString()
-    NoResultSubtitle.text = "noCityErrorSubTitle".localizeString()
+    noResultSubtitle.text = "noCityErrorSubTitle".localizeString()
   }
   
   @objc

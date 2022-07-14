@@ -33,6 +33,7 @@
 		C070BB90287F794700DCCE44 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070BB8E287F794700DCCE44 /* FilterCollectionViewCell.swift */; };
 		C070BB91287F794700DCCE44 /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C070BB8F287F794700DCCE44 /* FilterCollectionViewCell.xib */; };
 		C070BB93287F7AF500DCCE44 /* StationCollectionViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070BB92287F7AF500DCCE44 /* StationCollectionViewHelper.swift */; };
+		C0BD8E182880B53100F91A8E /* DatePickerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BD8E172880B53100F91A8E /* DatePickerLabel.swift */; };
 		C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */; };
 		C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */; };
 		C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3F287CAAD70078C77A /* LoginViewController.swift */; };
@@ -91,6 +92,7 @@
 		C070BB8E287F794700DCCE44 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		C070BB8F287F794700DCCE44 /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		C070BB92287F7AF500DCCE44 /* StationCollectionViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCollectionViewHelper.swift; sourceTree = "<group>"; };
+		C0BD8E172880B53100F91A8E /* DatePickerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerLabel.swift; sourceTree = "<group>"; };
 		C0EF3A38287CAAD70078C77A /* Charger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		C00831E828805C2F00FC4FAA /* Date Time Selection */ = {
 			isa = PBXGroup;
 			children = (
+				C0BD8E162880B51900F91A8E /* DatePicker */,
 				C00831E928805C4900FC4FAA /* View Controller */,
 			);
 			path = "Date Time Selection";
@@ -329,6 +332,14 @@
 				C070BB8C287F5CE100DCCE44 /* FilterStationsViewModel.swift */,
 			);
 			path = "View Model";
+			sourceTree = "<group>";
+		};
+		C0BD8E162880B51900F91A8E /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				C0BD8E172880B53100F91A8E /* DatePickerLabel.swift */,
+			);
+			path = DatePicker;
 			sourceTree = "<group>";
 		};
 		C0EF3A2F287CAAD70078C77A = {
@@ -687,6 +698,7 @@
 				C0319AEE287E2831005B846D /* CitySelectionTableViewHelper.swift in Sources */,
 				C0EF3A78287CC2F60078C77A /* Object Constants.swift in Sources */,
 				C00831ED28806EC200FC4FAA /* UINavigationItem+Extension.swift in Sources */,
+				C0BD8E182880B53100F91A8E /* DatePickerLabel.swift in Sources */,
 				C0EF3A6D287CB5C20078C77A /* String+Extension.swift in Sources */,
 				C047CC09287F01770038CAA2 /* StationTableViewCell.swift in Sources */,
 				C00831EB28805C7D00FC4FAA /* DateTimeViewController.swift in Sources */,
