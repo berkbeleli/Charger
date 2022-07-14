@@ -90,11 +90,14 @@ class DateTimeViewController: UIViewController {
       
       if viewDatas.count == 1 {
         self?.socketFirstTypeLabel.text = viewDatas[0]
+        self?.socketFirstTableeviewWidth = self?.socketFirstTableeviewWidth.setMultiplier(multiplier: 0.9) // change the width of the table view
         self?.socketSecondHolderView.isHidden = true
         self?.socketThirdHolderView.isHidden = true
       }else if viewDatas.count == 2 {
         self?.socketFirstTypeLabel.text = viewDatas[0]
         self?.socketSecondTypeLabel.text = viewDatas[1]
+        self?.socketFirstTableeviewWidth = self?.socketFirstTableeviewWidth.setMultiplier(multiplier: 0.45) // change the width of the table view
+        self?.socketSecondTableeviewWidth = self?.socketSecondTableeviewWidth.setMultiplier(multiplier: 0.45) // change the width of the table view
         self?.socketSecondHolderView.isHidden = false
         self?.socketThirdHolderView.isHidden = true
         
@@ -102,6 +105,9 @@ class DateTimeViewController: UIViewController {
         self?.socketFirstTypeLabel.text = viewDatas[0]
         self?.socketSecondTypeLabel.text = viewDatas[1]
         self?.socketThirdTypeLabel.text = viewDatas[2]
+        self?.socketFirstTableeviewWidth = self?.socketFirstTableeviewWidth.setMultiplier(multiplier: 0.3) // change the width of the table view
+        self?.socketSecondTableeviewWidth = self?.socketSecondTableeviewWidth.setMultiplier(multiplier: 0.3) // change the width of the table view
+        self?.socketThirdTableeViewWidth = self?.socketFirstTableeviewWidth.setMultiplier(multiplier: 0.3) // change the width of the table view
         self?.socketSecondHolderView.isHidden = false
         self?.socketThirdHolderView.isHidden = false
       }
