@@ -37,6 +37,7 @@ class DateTimeViewController: UIViewController {
     
     setupUI()
     localization()
+    setupDatePickerLabel()
   }
   
   /// Setup UI Elements
@@ -75,6 +76,9 @@ class DateTimeViewController: UIViewController {
     confirmTimeButton.setTitle("confirmTimeButton".localizeString(), for: .normal)
   }
   
+  func setupDatePickerLabel() {
+    (appointmentSelectorLabel as? DatePickerLabel)?.startDatePicker()
+  }
   
   
   

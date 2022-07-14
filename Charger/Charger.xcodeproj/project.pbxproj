@@ -34,6 +34,7 @@
 		C070BB91287F794700DCCE44 /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C070BB8F287F794700DCCE44 /* FilterCollectionViewCell.xib */; };
 		C070BB93287F7AF500DCCE44 /* StationCollectionViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070BB92287F7AF500DCCE44 /* StationCollectionViewHelper.swift */; };
 		C0BD8E182880B53100F91A8E /* DatePickerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BD8E172880B53100F91A8E /* DatePickerLabel.swift */; };
+		C0BD8E1B2880B70700F91A8E /* Date Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BD8E1A2880B70700F91A8E /* Date Handler.swift */; };
 		C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */; };
 		C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */; };
 		C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3F287CAAD70078C77A /* LoginViewController.swift */; };
@@ -93,6 +94,7 @@
 		C070BB8F287F794700DCCE44 /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		C070BB92287F7AF500DCCE44 /* StationCollectionViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCollectionViewHelper.swift; sourceTree = "<group>"; };
 		C0BD8E172880B53100F91A8E /* DatePickerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerLabel.swift; sourceTree = "<group>"; };
+		C0BD8E1A2880B70700F91A8E /* Date Handler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date Handler.swift"; sourceTree = "<group>"; };
 		C0EF3A38287CAAD70078C77A /* Charger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -342,6 +344,14 @@
 			path = DatePicker;
 			sourceTree = "<group>";
 		};
+		C0BD8E192880B6F700F91A8E /* Date Handler */ = {
+			isa = PBXGroup;
+			children = (
+				C0BD8E1A2880B70700F91A8E /* Date Handler.swift */,
+			);
+			path = "Date Handler";
+			sourceTree = "<group>";
+		};
 		C0EF3A2F287CAAD70078C77A = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +373,7 @@
 		C0EF3A3A287CAAD70078C77A /* Charger */ = {
 			isa = PBXGroup;
 			children = (
+				C0BD8E192880B6F700F91A8E /* Date Handler */,
 				C0EF3A7B287CCD8C0078C77A /* Login */,
 				C0EF3AA3287CE4920078C77A /* Appointments */,
 				C0319AD4287E071F005B846D /* Profile */,
@@ -696,6 +707,7 @@
 				C0EF3A80287CCE070078C77A /* WebServiceHelper.swift in Sources */,
 				C0319AF4287E30E7005B846D /* LetterCities.swift in Sources */,
 				C0319AEE287E2831005B846D /* CitySelectionTableViewHelper.swift in Sources */,
+				C0BD8E1B2880B70700F91A8E /* Date Handler.swift in Sources */,
 				C0EF3A78287CC2F60078C77A /* Object Constants.swift in Sources */,
 				C00831ED28806EC200FC4FAA /* UINavigationItem+Extension.swift in Sources */,
 				C0BD8E182880B53100F91A8E /* DatePickerLabel.swift in Sources */,
