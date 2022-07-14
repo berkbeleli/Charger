@@ -16,6 +16,7 @@ class StationTableViewHelper: NSObject {
   private var allStations: [StationViewViewModel] = []
   weak var vm: StationViewModel?
   weak var tableView: UITableView?
+  private var shouldAnimate: Bool = true // with tihs one we will check if there is an animation or not
   
   init(with tableView: UITableView, vm: StationViewModel){
     super.init()
@@ -31,6 +32,7 @@ class StationTableViewHelper: NSObject {
   }
   /// This function set the table view items and reload the table view
   func setItems(_ items: [StationViewViewModel]) {
+    shouldAnimate = false
     self.allStations = items
     tableView?.reloadData()
   }
@@ -50,18 +52,28 @@ extension StationTableViewHelper: UITableViewDelegate {
 extension StationTableViewHelper: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    allStations.count
+    return shouldAnimate ? 10 : allStations.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "StationTableViewCell") as! StationTableViewCell
-    let rowItem = allStations[indexPath.row]
-   
-    cell.chargeTypeImage.image = rowItem.imageType
-    cell.stationNameLabel.text = rowItem.stationName
-    cell.availableSocketLabel.text = rowItem.availableSocket
-    cell.distanceLabel.text = rowItem.distance ?? ""
-    cell.workingHours.text = rowItem.workingHours! + " " + "time".localizeString()
+    
+    if shouldAnimate { // check if the animation requested
+      cell.startAnimatedSkeletonView() // start the animation
+      cell.stationNameLabel.text = "" // there is a small delay before the view appears before them remove the texts
+      cell.availableSocketLabel.text = ""
+      cell.distanceLabel.text = ""
+      cell.workingHours.text = ""
+    }else {
+      cell.stopAnimatedSkeletonView()
+      let rowItem = allStations[indexPath.row]
+      cell.chargeTypeImage.image = rowItem.imageType
+      cell.stationNameLabel.text = rowItem.stationName
+      cell.availableSocketLabel.text = rowItem.availableSocket
+      cell.distanceLabel.text = rowItem.distance ?? ""
+      cell.workingHours.text = rowItem.workingHours! + " " + "time".localizeString()
+    }
+    
     cell.backgroundColor = .clear
     cell.selectionStyle = .none
     return cell
