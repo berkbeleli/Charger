@@ -52,7 +52,7 @@ class StationViewController: UIViewController {
   
   func setupCustomSearchTextField() {
     searchStationTextField.addTarget(self, action: #selector(filterTextEntered), for: .editingChanged) // add and observer for our custom searchBar
-    searchStationTextField.layer.cornerRadius = ObjectConstants.searchTextFiledBorderRadies
+    searchStationTextField.layer.cornerRadius = ObjectConstants.searchTextFiledBorderRadius
     searchStationTextField.backgroundColor = Themes.colorDark
     searchStationTextField.clipsToBounds = true // to make text field radiues rounded
     searchStationTextField.layer.borderWidth = 2 // border width for the textfield
