@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class StationTableViewCell: UITableViewCell {
   
@@ -45,6 +46,16 @@ class StationTableViewCell: UITableViewCell {
     workingHours.textColor = Themes.colorSolidWhite
     availableSocketLabel.font = Themes.fontBoldStationSubValues
     availableSocketLabel.textColor = Themes.colorSolidWhite
+    stationBackgroundView.isSkeletonable = true
+  }
+  /// This function makes the view animated
+  func startAnimatedSkeletonView() {
+    stationBackgroundView.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: Themes.colorCharcoal), animation: nil, transition: .crossDissolve(0.25)) // start gradient animation
+  }
+  /// This function stops the animation
+  func stopAnimatedSkeletonView() {
+    stationBackgroundView.stopSkeletonAnimation() // stop the animation
+    stationBackgroundView.hideSkeleton() // hide the animation
   }
   
   func localize() {

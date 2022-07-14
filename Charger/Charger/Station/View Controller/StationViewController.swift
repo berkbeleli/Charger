@@ -92,7 +92,9 @@ class StationViewController: UIViewController {
       self?.searchStationTextField.layer.borderColor = Themes.colorGrayScale.cgColor // border color for the textfield
       let stringResult = String(format: NSLocalizedString("City: %@ Count: %@", comment: ""), self?.cityName! as! NSString, "\(stations.count)" as! NSString) // localize string
       self?.resultLabel.attributedText = stringResult.withBoldText(text: self?.cityName! ?? "Unknown City", font: Themes.fontRegularSubtitle) // make city label bold
+      DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) { // inserted a delay so user can see the gradient animation
       self?.tableViewHelper.setItems(stations)
+      }
     }
     
     viewModel.onStationsFiltered =  {[weak self] filteredStations in

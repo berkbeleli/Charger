@@ -7,5 +7,6 @@ target 'Charger' do
 
   # Pods for Charger
   pod 'Alamofire'
+  pod 'SkeletonView'
 
 end
