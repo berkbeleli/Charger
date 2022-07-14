@@ -19,6 +19,8 @@ class TimeSelectionTableViewCell: UITableViewCell {
   func setupUI() {
     timeBackgroundView.backgroundColor = Themes.colorCharcoal
     timeBackgroundView.layer.cornerRadius = ObjectConstants.timeSelectionBorderRadius
+    timeLabel.font = Themes.fontRegularSubtitle
+    timeLabel.textColor = Themes.colorSolidWhite
   }
   /// disable cell
   func disableCell(){

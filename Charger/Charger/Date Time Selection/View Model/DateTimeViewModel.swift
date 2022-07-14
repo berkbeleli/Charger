@@ -13,6 +13,7 @@ class DateTimeViewModel{
   var onTimesChanged: ((SelectTimeViewModel) -> ())? // times completion handler
   var onViewsSocketsChanged: (([String]) -> ())?
   var onTimesError: ((String) -> ())? // ERROR COMPLETION HANDLER
+  var numberOfSockets: Int?
   /// Fetch Times from Api
   func fetchTimes(stationId: String, date: String) {
     let timesUrl = WebsiteUrl.dateTimeUrl + "\(stationId)" + "?userID=\(User.user?.userId ?? 0)" + "&date=\(date)" // create custom url
@@ -44,6 +45,7 @@ class DateTimeViewModel{
         var viewSocketValues = (viewTimeDatas.sockets ?? []).map {
           $0.chargeType! + " • " + $0.socketType!
         }
+        self?.numberOfSockets = viewSocketValues.count
         
         self?.onTimesChanged?(viewTimeDatas)
         self?.onViewsSocketsChanged?(viewSocketValues)
@@ -54,5 +56,8 @@ class DateTimeViewModel{
       }
     }
   }
-  
+  /// Returns the Number of the sockets in a specific station
+  func getNumberOfSockets() -> Int {
+    numberOfSockets ?? 1
+  }
 }

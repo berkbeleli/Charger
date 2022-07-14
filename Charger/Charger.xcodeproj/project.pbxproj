@@ -40,6 +40,7 @@
 		C0BD8E232880C8C000F91A8E /* NSLayoutConsstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BD8E222880C8C000F91A8E /* NSLayoutConsstraint+Extension.swift */; };
 		C0BD8E292880CB0700F91A8E /* TimeSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BD8E272880CB0700F91A8E /* TimeSelectionTableViewCell.swift */; };
 		C0BD8E2A2880CB0700F91A8E /* TimeSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0BD8E282880CB0700F91A8E /* TimeSelectionTableViewCell.xib */; };
+		C0BD8E2D2880CD1C00F91A8E /* TimeSelectionTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BD8E2C2880CD1C00F91A8E /* TimeSelectionTableViewHelper.swift */; };
 		C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */; };
 		C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */; };
 		C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A3F287CAAD70078C77A /* LoginViewController.swift */; };
@@ -105,6 +106,7 @@
 		C0BD8E222880C8C000F91A8E /* NSLayoutConsstraint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConsstraint+Extension.swift"; sourceTree = "<group>"; };
 		C0BD8E272880CB0700F91A8E /* TimeSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		C0BD8E282880CB0700F91A8E /* TimeSelectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeSelectionTableViewCell.xib; sourceTree = "<group>"; };
+		C0BD8E2C2880CD1C00F91A8E /* TimeSelectionTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelectionTableViewHelper.swift; sourceTree = "<group>"; };
 		C0EF3A38287CAAD70078C77A /* Charger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0EF3A3B287CAAD70078C77A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0EF3A3D287CAAD70078C77A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				C0BD8E162880B51900F91A8E /* DatePicker */,
 				C0BD8E242880CACB00F91A8E /* Components */,
 				C00831E928805C4900FC4FAA /* View Controller */,
+				C0BD8E2B2880CCDF00F91A8E /* Helper */,
 			);
 			path = "Date Time Selection";
 			sourceTree = "<group>";
@@ -388,6 +391,14 @@
 				C0BD8E282880CB0700F91A8E /* TimeSelectionTableViewCell.xib */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		C0BD8E2B2880CCDF00F91A8E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C0BD8E2C2880CD1C00F91A8E /* TimeSelectionTableViewHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		C0EF3A2F287CAAD70078C77A = {
@@ -762,6 +773,7 @@
 				C0BD8E232880C8C000F91A8E /* NSLayoutConsstraint+Extension.swift in Sources */,
 				C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */,
 				C047CC02287EE5C30038CAA2 /* StationViewModel.swift in Sources */,
+				C0BD8E2D2880CD1C00F91A8E /* TimeSelectionTableViewHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

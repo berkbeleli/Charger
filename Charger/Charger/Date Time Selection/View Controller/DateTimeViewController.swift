@@ -34,6 +34,7 @@ class DateTimeViewController: UIViewController {
   var distance: String?
   
   private var viewModel = DateTimeViewModel()
+  private var tableViewHelper: TimeSelectionTableViewHelper!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -112,6 +113,16 @@ class DateTimeViewController: UIViewController {
         self?.socketThirdHolderView.isHidden = false
       }
     }
+    
+    tableViewHelper = .init(
+      tableViewFirst: socketFirstTableView,
+      tableViewSecond: socketSecondTableView,
+      tableViewThird: socketThirdTableView,
+      vm: viewModel)
+    viewModel.onTimesChanged = {[weak self] receivedTimes in
+      self?.tableViewHelper.setItems(receivedTimes)
+    }
+    
   }
   
   
