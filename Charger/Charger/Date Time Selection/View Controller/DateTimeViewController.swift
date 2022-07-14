@@ -32,6 +32,9 @@ class DateTimeViewController: UIViewController {
   var stationId: Int?
   var stationName: String?
   var distance: String?
+  
+  private var viewModel = DateTimeViewModel()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -77,7 +80,7 @@ class DateTimeViewController: UIViewController {
   }
   
   func setupDatePickerLabel() {
-    (appointmentSelectorLabel as? DatePickerLabel)?.startDatePicker()
+    (appointmentSelectorLabel as? DatePickerLabel)?.startDatePicker() // select today's date
   }
   
   
