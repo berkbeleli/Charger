@@ -9,21 +9,30 @@ import UIKit
 
 class MakeAppointmentViewController: UIViewController {
 
-    override func viewDidLoad() {
+  @IBOutlet private weak var appointmentDatasTableView: UITableView!
+  @IBOutlet private weak var confirmAppointmentButton: UIButton!
+  override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+  
+  func setupUI() {
+    confirmAppointmentButton.backgroundColor = Themes.colorSolidWhite  // setup filter button
+    confirmAppointmentButton.layer.cornerRadius = ObjectConstants.buttonBorderRadius
+    confirmAppointmentButton.titleLabel?.font = Themes.fontRegularSubtitle
+    confirmAppointmentButton.tintColor = Themes.colorDark
+  }
+  
+  func localization() {
+    confirmAppointmentButton.setTitle("confirmAppointmentButton", for: .normal)
+  }
+  
+  
+  
+  
+  @IBAction func confirmAppointmentButtonPressed(_ sender: UIButton) {
+  }
+  
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

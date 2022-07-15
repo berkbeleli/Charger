@@ -70,6 +70,27 @@
 "oldDateSecondActionButton" = "SELECT TODAY";
 
 
+//MARK: - MAKE APPOINTMENT PAGE
+"makeAppointmentTitle" = "Appointment Detail";
+"stationInfo" = "STATION INFOS";
+"addres" = "Address";
+"workingHours" = "Working Hours";
+"distance" = "Distance";
+"stationCode" = "Station Code";
+"services" = "Services";
+"socketInfos" = "SOCKET INFOS";
+"socketNumber" = "Socket Number";
+"socketType" = "Socket Type";
+"outpower" = "Power";
+"appointmentInfos" = "APPOINTMENT INFOS";
+"date" = "Date";
+"time" = "Time";
+"appointmentDuration" = "Appointment Duration";
+"getNotify" = "Receive Notification";
+"confirmAppointmentButton" = "CONFIRM APPOINTMENT";
+
+
+
 
 "receivedServerErrorTitle" = "Server Error";
 "receivedServerErrorButtonTitle" = "EDIT";

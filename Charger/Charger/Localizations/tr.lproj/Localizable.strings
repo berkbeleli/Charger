@@ -69,7 +69,24 @@
 "oldDateSecondActionButton" = "BUGÜNÜ SEÇ";
 
 
-
+//MARK: - MAKE APPOINTMENT PAGE
+"makeAppointmentTitle" = "Randevu Detayı";
+"stationInfo" = "İSTASYON BİLGİLERİ";
+"addres" = "Adres";
+"workingHours" = "Hizmet Saatleri";
+"distance" = "Uzaklık";
+"stationCode" = "İstasyon Kodu";
+"services" = "Hizmetler";
+"socketInfos" = "SOKET BİLGİLERİ";
+"socketNumber" = "Soket Numarası";
+"socketType" = "Soket Tipi";
+"outpower" = "Çıkış Gücü";
+"appointmentInfos" = "RANDEVU BİLGİLERİ";
+"date" = "Tarih";
+"time" = "Saat";
+"appointmentDuration" = "Randevu Süresi";
+"getNotify" = "Bildirim Al";
+"confirmAppointmentButton" = "RANDEVUYU ONAYLA";
 
 
 "receivedServerErrorTitle" = "Server Hatası";
