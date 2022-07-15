@@ -9,7 +9,7 @@ import UIKit
 
 protocol DateSelectedDelegate: NSObject {
   /// let the delegation know the date value has been changed
-  func dateChanged(date: String)
+  func dateChanged(date: String, dateView: String)
 }
 
 class DatePickerLabel: UILabel {
@@ -93,7 +93,7 @@ class DatePickerLabel: UILabel {
 
     dateFormatter.dateFormat = "yyyy-MM-dd"
     let dateData = dateFormatter.string(from: getDate.date) // convert the date for using in the api
-    self.delegate?.dateChanged(date: dateData) // let the delegation know the date has been changed
+    self.delegate?.dateChanged(date: dateData, dateView: selectedDate) // let the delegation know the date has been changed
     
     self.text = selectedDate // set the selected date to  current label's text
     

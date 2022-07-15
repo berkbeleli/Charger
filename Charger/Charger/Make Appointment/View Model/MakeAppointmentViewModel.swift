@@ -11,8 +11,8 @@ class MakeAppointmentViewModel{
   
   var onAppointmentCreated: ((String) -> ())?
   var onAppointmentError: ((String) -> ())? // ERROR COMPLETION HANDLER
-  var getNotified: Bool? = false
-  var notificationTime: String? = ""
+  var getNotified: Bool? = false // it will inddicate if we are going to show notification
+  var notificationTime: String? = "5m" // default notification Time
   private var appointmentValues: AppointmentDatas?
   /// Fetch Times from Api
   func createAppointment() {

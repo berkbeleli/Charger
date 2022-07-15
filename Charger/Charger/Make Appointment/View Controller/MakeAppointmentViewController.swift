@@ -16,13 +16,15 @@ class MakeAppointmentViewController: UIViewController {
   var appointmentValues: AppointmentDatas?
   var stationName: String?
   
-  var viewModel = MakeAppointmentViewModel()
+  private var viewModel = MakeAppointmentViewModel()
+  private var tableViewHelper: MakeAppointmentTableViewHelper!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     setupUI()
     localization()
+    setupController()
   }
   
   func setupUI() {
@@ -35,8 +37,14 @@ class MakeAppointmentViewController: UIViewController {
   
   func localization() {
     self.navigationItem.setSubTitle("makeAppointmentTitle".localizeString(), subtitle: stationName!.uppercased())
-    confirmAppointmentButton.setTitle("confirmAppointmentButton", for: .normal)
+    confirmAppointmentButton.setTitle("confirmAppointmentButton".localizeString(), for: .normal)
   }
+  
+  func setupController() {
+    tableViewHelper = .init(tableView: appointmentDatasTableView, vm: viewModel)
+    tableViewHelper.setItems(appointmentValues!)
+  }
+  
   
   @IBAction func confirmAppointmentButtonPressed(_ sender: UIButton) {
     viewModel.createAppointment()

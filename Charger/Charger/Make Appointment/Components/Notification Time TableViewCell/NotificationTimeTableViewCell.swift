@@ -8,7 +8,8 @@
 import UIKit
 
 class NotificationTimeTableViewCell: UITableViewCell {
-  @IBOutlet private weak var notififcationTimeBackgroundView: UIView!
+ 
+  @IBOutlet private(set) weak var notificationTimeBackgroundView: NotificationTimePickerView!
   @IBOutlet private(set) weak var notificationTimeLabel: UILabel!
   @IBOutlet private weak var expandMoreImage: UIImageView!
   @IBOutlet private weak var indicatorView: UIView!
@@ -19,11 +20,11 @@ class NotificationTimeTableViewCell: UITableViewCell {
 
   // setup view
   func setupUI() {
-    notificationTimeLabel.font = Themes.fontRegularSubtitle
+    notificationTimeLabel.font = Themes.fontRegularMakeAppInfo
     notificationTimeLabel.textColor = Themes.colorGrayScale
-    notififcationTimeBackgroundView.backgroundColor = Themes.colorCharcoal
+    notificationTimeBackgroundView.backgroundColor = Themes.colorCharcoal
     indicatorView.backgroundColor = Themes.colorGrayScale
-    expandMoreImage.tintColor = Themes.colorGrayScale
+    expandMoreImage.tintColor = Themes.colorSolidWhite
   }
     
 }

@@ -190,9 +190,9 @@ class DateTimeViewController: UIViewController {
 }
 // MARK: - DateSelectedDelegate
 extension DateTimeViewController: DateSelectedDelegate {
-  func dateChanged(date: String) {
+  func dateChanged(date: String, dateView: String) {
     viewModel.fetchTimes(stationId: "\(stationId!)", date: date) // fetch the times according to the selected date
-    viewModel.setDateAndDistanceValues(date: date, dateView: appointmentSelectorLabel.text!, distance: distance ?? "-1") // set view models date and distance values if thereis not distance value we will not show in the next page
+    viewModel.setDateAndDistanceValues(date: date, dateView: dateView, distance: distance ?? "-1") // set view models date and distance values if thereis not distance value we will not show in the next page
     deactivateConfirmButton()// deactivate confirm button
   }
 }

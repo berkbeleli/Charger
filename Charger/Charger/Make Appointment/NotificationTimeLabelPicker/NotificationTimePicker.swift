@@ -5,21 +5,20 @@
 //  Created by Berk Beleli on 2022-07-16.
 //
 
-import Foundation
+import UIKit
 
 protocol NotificationTimeProtocol: NSObject {
   func timeChanged(time: String)
 }
 
 
-class PickerView: UIView {
+class NotificationTimePickerView: UIView {
   
   weak var delegate: NotificationTimeProtocol?
   
-  let pickerData = ["5 minutes ago", "10 minutes ago", "15 minutes ago", "30 minutes ago", "1 hour ago", "2 hours ago", "3 hours ago"]
-  var selecterRow = 0
+  let pickerData = ["5m", "10m", "15m", "30m", "60m", "120m", "180m"]
+  var selectedRow = 0
   private let _inputView: UIView? = {
-
     let picker = UIPickerView()
     return picker
   }()
@@ -35,14 +34,11 @@ class PickerView: UIView {
   }()
   
   override var inputView: UIView? {
-    let pickker = _inputView as? UIPickerView
-    pickker?.dataSource = self
-    pickker?.delegate = self
-    
-    pickker?.backgroundColor = .black
-    pickker?.setValue(UIColor.white, forKey: "textColor")
-
-    
+    let picker = _inputView as? UIPickerView
+    picker?.dataSource = self
+    picker?.delegate = self
+    picker?.backgroundColor = Themes.colorDark
+    picker?.setValue(Themes.colorSolidWhite, forKey: "textColor")
     return _inputView
   }
   
@@ -50,27 +46,15 @@ class PickerView: UIView {
     return _inputAccessoryToolbar
   }
   
-  
-  
   required init?(coder aDecoder: NSCoder?) {
     super.init(coder: aDecoder ?? NSCoder())
     let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(doneClick))
     let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-    
     _inputAccessoryToolbar.setItems([ spaceButton, doneButton], animated: false)
     
     let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(launchPicker))
     self.addGestureRecognizer(tapRecognizer)
-    
-    
   }
-  
-  func startDatePicker() {
-    doneClick()
-  }
-  
-  
-  
   
   override var canBecomeFirstResponder: Bool {
     return true
@@ -82,31 +66,26 @@ class PickerView: UIView {
   
   @objc private func doneClick() {
     resignFirstResponder()
-    delegate?.timeChanged(time: pickerData[selecterRow])
+    delegate?.timeChanged(time: pickerData[selectedRow])
   }
   
 }
 
-extension PickerView: UIPickerViewDataSource {
+extension NotificationTimePickerView: UIPickerViewDataSource {
   public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-         return 1
-     }
-     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-         return pickerData.count;
-     }
-
-  func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-      return pickerData[row]
+    return 1
   }
-
+  func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    return pickerData.count;
+  }
   
-  
-  
+  func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    return pickerData[row].localizeString()
+  }
 }
 
-extension PickerView: UIPickerViewDelegate {
+extension NotificationTimePickerView: UIPickerViewDelegate {
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    selecterRow = row
-    
+    selectedRow = row
   }
 }

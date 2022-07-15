@@ -21,16 +21,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="09f-E2-8Mh">
-                                <rect key="frame" x="15" y="12" width="290" height="20"/>
+                                <rect key="frame" x="15" y="15" width="290" height="14"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSV-jH-lcO">
-                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="14"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mdV-sf-SxO">
-                                        <rect key="frame" x="241" y="0.0" width="51" height="20"/>
+                                        <rect key="frame" x="241" y="0.0" width="51" height="14"/>
                                         <connections>
                                             <action selector="notifyToggled:" destination="KGk-i7-Jjw" eventType="valueChanged" id="ebM-qF-PzK"/>
                                         </connections>
@@ -45,9 +45,9 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="09f-E2-8Mh" secondAttribute="trailing" constant="15" id="7vW-Zf-7gP"/>
                             <constraint firstItem="09f-E2-8Mh" firstAttribute="leading" secondItem="8ME-r3-6Zw" secondAttribute="leading" constant="15" id="P7z-ge-phQ"/>
-                            <constraint firstAttribute="bottom" secondItem="09f-E2-8Mh" secondAttribute="bottom" constant="12" id="atV-6a-8dd"/>
+                            <constraint firstAttribute="bottom" secondItem="09f-E2-8Mh" secondAttribute="bottom" constant="15" id="atV-6a-8dd"/>
                             <constraint firstItem="09f-E2-8Mh" firstAttribute="centerY" secondItem="8ME-r3-6Zw" secondAttribute="centerY" id="bJP-zo-LLC"/>
-                            <constraint firstItem="09f-E2-8Mh" firstAttribute="top" secondItem="8ME-r3-6Zw" secondAttribute="top" constant="12" id="d3d-3u-tLC"/>
+                            <constraint firstItem="09f-E2-8Mh" firstAttribute="top" secondItem="8ME-r3-6Zw" secondAttribute="top" constant="15" id="d3d-3u-tLC"/>
                         </constraints>
                     </view>
                 </subviews>

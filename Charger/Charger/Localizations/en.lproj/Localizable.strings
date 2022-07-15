@@ -90,7 +90,14 @@
 "getNotify" = "Receive Notification";
 "confirmAppointmentButton" = "CONFIRM APPOINTMENT";
 
-
+//MARK: - TIME SELECTION PICKER
+"5m" = "5 minutes ago";
+"10m" = "10 minutes ago";
+"15m" = "15 minutes ago";
+"30m" = "30 minutes ago";
+"60m" = "1 hour ago";
+"120m" = "2 hours ago";
+"180m" = "3 hours ago";
 
 
 "receivedServerErrorTitle" = "Server Error";

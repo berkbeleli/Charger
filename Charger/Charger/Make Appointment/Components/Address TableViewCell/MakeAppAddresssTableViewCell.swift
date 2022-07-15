@@ -19,9 +19,9 @@ class MakeAppAddresssTableViewCell: UITableViewCell {
   }
   // setup view
   func setupUI() {
-    addressHeaderLabel.font = Themes.fontBold
+    addressHeaderLabel.font = Themes.fontBoldMakeAppointmentHeader
     addressHeaderLabel.textColor = Themes.colorSolidWhite
-    addressLabel.font = Themes.fontRegularSubtitle
+    addressLabel.font = Themes.fontRegularMakeAppInfo
     addressLabel.textColor = Themes.colorGrayScale
     addressBackgroundView.backgroundColor = Themes.colorCharcoal
   }

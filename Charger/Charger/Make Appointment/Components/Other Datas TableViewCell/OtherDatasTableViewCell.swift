@@ -18,9 +18,9 @@ class OtherDatasTableViewCell: UITableViewCell {
   }
   // setup view
   func setupUI() {
-    appointmentInfoTypeLabel.font = Themes.fontBold
+    appointmentInfoTypeLabel.font = Themes.fontBoldMakeAppInfoType
     appointmentInfoTypeLabel.textColor = Themes.colorSolidWhite
-    appointmentType.font = Themes.fontRegularSubtitle
+    appointmentType.font = Themes.fontRegularMakeAppInfo
     appointmentType.textColor = Themes.colorGrayScale
     otherDatasBackgroundView.backgroundColor = Themes.colorCharcoal
   }

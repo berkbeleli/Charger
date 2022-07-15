@@ -21,9 +21,10 @@ class GetNotifiedTableViewCell: UITableViewCell {
   
   // setup view
   func setupUI() {
-    getNotifiedHeadLabel.font = Themes.fontBold
+    getNotifiedHeadLabel.font = Themes.fontBoldMakeAppInfoType
     getNotifiedHeadLabel.textColor = Themes.colorSolidWhite
     notifySwift.tintColor = Themes.colorSelectedGreen
+    getNotifiedBackgroundView.backgroundColor = Themes.colorCharcoal
   }
   
   func localization() {

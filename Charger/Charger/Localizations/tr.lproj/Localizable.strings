@@ -89,6 +89,15 @@
 "getNotify" = "Bildirim Al";
 "confirmAppointmentButton" = "RANDEVUYU ONAYLA";
 
+//MARK: - TIME SELECTION PICKER
+"5m" = "5 dakika önce";
+"10m" = "10 dakika önce";
+"15m" = "15 dakika önce";
+"30m" = "30 dakika önce";
+"60m" = "1 saat önce";
+"120m" = "2 saat önce";
+"180m" = "3 saat önce";
+
 
 "receivedServerErrorTitle" = "Server Hatası";
 "receivedServerErrorButtonTitle" = "DÜZENLE";
