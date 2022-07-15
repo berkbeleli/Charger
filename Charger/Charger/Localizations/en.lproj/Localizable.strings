@@ -57,3 +57,10 @@
 "carpark" = "Car Park";
 "buffet" = "Buffet";
 "filterButton" = "FILTER";
+
+
+//MARK: - DATE AND TIME PAGE
+"timeTitle" = "Select Date and Time";
+"dateIndicator" = "Appointment Date";
+"socketHead" = "Socket";
+"confirmTimeButton" = "CONFIRM DATE AND TIME";

@@ -42,8 +42,12 @@ extension StationTableViewHelper: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     // city selection
     let rowItem = allStations[indexPath.row]
-    let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "")
-
+    let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DateTimeView") as! DateTimeViewController
+    
+    vc.stationId = rowItem.stationId
+    vc.stationName = rowItem.stationName
+    vc.distance = rowItem.distance ?? nil
+  
     self.delegate?.didStationSelected(vc)
   }
 }

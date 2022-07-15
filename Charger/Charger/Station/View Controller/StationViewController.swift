@@ -17,7 +17,7 @@ class StationViewController: UIViewController {
   @IBOutlet private weak var noResultView: UIView!
   @IBOutlet private weak var noResultImage: UIImageView!
   @IBOutlet private weak var noResultTitle: UILabel!
-  @IBOutlet private weak var NoResultSubtitle: UILabel!
+  @IBOutlet private weak var noResultSubtitle: UILabel!
   private var viewModel = StationViewModel()
   private var tableViewHelper: StationTableViewHelper!
   private var collectionViewHelper: StationCollectionViewHelper!
@@ -42,8 +42,8 @@ class StationViewController: UIViewController {
     searchStationTextField.font = Themes.fontRegularSubtitle
     noResultTitle.textColor = Themes.colorSolidWhite
     noResultTitle.font = Themes.fontExtraBold
-    NoResultSubtitle.font = Themes.fontRegularSubtitle
-    NoResultSubtitle.textColor = Themes.colorGrayScale
+    noResultSubtitle.font = Themes.fontRegularSubtitle
+    noResultSubtitle.textColor = Themes.colorGrayScale
     noResultImage.image = Themes.noResultImage
     noResultView.isHidden = true
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // with this we will disable back button label text
@@ -52,7 +52,7 @@ class StationViewController: UIViewController {
   
   func setupCustomSearchTextField() {
     searchStationTextField.addTarget(self, action: #selector(filterTextEntered), for: .editingChanged) // add and observer for our custom searchBar
-    searchStationTextField.layer.cornerRadius = ObjectConstants.searchTextFiledBorderRadies
+    searchStationTextField.layer.cornerRadius = ObjectConstants.searchTextFiledBorderRadius
     searchStationTextField.backgroundColor = Themes.colorDark
     searchStationTextField.clipsToBounds = true // to make text field radiues rounded
     searchStationTextField.layer.borderWidth = 2 // border width for the textfield
@@ -79,6 +79,7 @@ class StationViewController: UIViewController {
   func setupController() {
     viewModel.fetchStations(cityName: cityName ?? "Unknown City")
     tableViewHelper = .init(with: stationsTableView, vm: viewModel)
+    tableViewHelper.delegate = self
     viewModel.onStationsChanged = {[weak self] stations in
       if stations.count == 0{
         self?.resultView.isHidden = true // show tableview
@@ -134,7 +135,7 @@ class StationViewController: UIViewController {
   func localization() {
     self.navigationItem.title = "stationselectionTitle".localizeString()
     noResultTitle.text = "noCityErrorTitle".localizeString()
-    NoResultSubtitle.text = "noCityErrorSubTitle".localizeString()
+    noResultSubtitle.text = "noCityErrorSubTitle".localizeString()
   }
   
   @objc
@@ -169,6 +170,10 @@ class StationViewController: UIViewController {
   
     }
   }
-    
-
+}
+// MARK - StationSelectionProtocol
+extension StationViewController: StationSelectionProtocol {
+  func didStationSelected(_ vc: UIViewController) {
+    self.navigationController?.pushViewController(vc, animated: true) // PUSH The vc that has been sent from delegate selected station
+  }
 }

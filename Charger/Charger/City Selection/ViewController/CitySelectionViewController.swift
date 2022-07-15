@@ -52,7 +52,7 @@ class CitySelectionViewController: UIViewController {
   
   func setupCustomSearchTextField() {
     searchCityTextField.addTarget(self, action: #selector(filterTextEntered), for: .editingChanged) // add and observer for our custom searchBar
-    searchCityTextField.layer.cornerRadius = ObjectConstants.searchTextFiledBorderRadies
+    searchCityTextField.layer.cornerRadius = ObjectConstants.searchTextFiledBorderRadius
     searchCityTextField.backgroundColor = Themes.colorDark
     searchCityTextField.clipsToBounds = true // to make text field radiues rounded
     searchCityTextField.layer.borderWidth = 2 // border width for the textfield
