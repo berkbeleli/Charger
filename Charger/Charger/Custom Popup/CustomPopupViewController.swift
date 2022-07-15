@@ -9,13 +9,14 @@ import UIKit
 
 class CustomPopupViewController: UIViewController {
   var confirmPressed: ((String) -> ())?
+  var secondActionPressed: ((String) -> ())?
   // object connections
   @IBOutlet private weak var popUpbgView: UIView!
   @IBOutlet private weak var popUpAlertImage: UIImageView!
   @IBOutlet private weak var alertTitleLabel: UILabel!
   @IBOutlet private weak var alertSubtitleLabel: UILabel!
   @IBOutlet private weak var actionButton: UIButton!
-  @IBOutlet private weak var cancelButton: UIButton!
+  @IBOutlet private weak var secondActionButton: UIButton!
   override func viewDidLoad() {
     super.viewDidLoad()
     showAnimate()
@@ -26,8 +27,8 @@ class CustomPopupViewController: UIViewController {
     alertTitleLabel.text = title
     alertSubtitleLabel.text = subtitle
     actionButton.setTitle(confirmButtonLabel, for: .normal)
-    cancelButton.setTitle(cancelButtonLabel, for: .normal)
-    cancelButton.isHidden = hideSecondButton! // if we do not need second button we will hide it
+    secondActionButton.setTitle(cancelButtonLabel, for: .normal)
+    secondActionButton.isHidden = hideSecondButton! // if we do not need second button we will hide it
   }
   // setup UIView
   func setupUI() {
@@ -42,12 +43,12 @@ class CustomPopupViewController: UIViewController {
     actionButton.layer.cornerRadius = ObjectConstants.buttonBorderRadius
     actionButton.titleLabel?.font = Themes.fontRegularSubtitle
     actionButton.tintColor = Themes.colorDark
-    cancelButton.backgroundColor = .clear  // setup confirm button
-    cancelButton.layer.cornerRadius = ObjectConstants.buttonBorderRadius
-    cancelButton.titleLabel?.font = Themes.fontRegularSubtitle
-    cancelButton.tintColor = Themes.colorSolidWhite
-    cancelButton.layer.borderWidth = 1
-    cancelButton.layer.borderColor = Themes.colorGrayScale.cgColor
+    secondActionButton.backgroundColor = .clear  // setup confirm button
+    secondActionButton.layer.cornerRadius = ObjectConstants.buttonBorderRadius
+    secondActionButton.titleLabel?.font = Themes.fontRegularSubtitle
+    secondActionButton.tintColor = Themes.colorSolidWhite
+    secondActionButton.layer.borderWidth = 1
+    secondActionButton.layer.borderColor = Themes.colorGrayScale.cgColor
   }
   /// show animation as the view appears
   func showAnimate()
@@ -78,7 +79,8 @@ class CustomPopupViewController: UIViewController {
     removeAnimate()
   }
   
-  @IBAction func cancelButtonPressed(_ sender: UIButton) {
+  @IBAction func secondActionButtonPressed(_ sender: UIButton) {
+    self.secondActionPressed?("SECONDACTION")
     removeAnimate()
     self.dismiss(animated: true)
   }

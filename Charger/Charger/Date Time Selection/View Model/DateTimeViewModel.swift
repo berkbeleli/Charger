@@ -50,7 +50,6 @@ class DateTimeViewModel{
           $0.chargeType! + " • " + $0.socketType!
         }
         self?.numberOfSockets = viewSocketValues.count // set the number of the socket's count
-        
         self?.onTimesChanged?(viewTimeDatas)
         self?.onViewsSocketsChanged?(viewSocketValues) // we will set the sockettype's label's with this
       }else {
@@ -88,11 +87,11 @@ class DateTimeViewModel{
       appointmentDuration: "1")
     appointmentSelectedTime = allTimes.sockets![tableNumber].day?.timeSlots![selectedRow].slot
   }
-  /// checks if the selected date and time is older than the curentDate and Time
-  func isDateOld() -> Bool {
+  /// checks if the selected date and time is past than the curentDate and Time
+  func isDatePast() -> Bool {
     let selectedDate = DateHandler.shared.convertDate(dateData: dateData!, timeData: appointmentSelectedTime!)
     let todayDate = DateHandler.shared.getTodayDate() // get today date
-    let difference = selectedDate - todayDate // get differencef between today and selected date
+    let difference = selectedDate - todayDate // get difference between today and selected date
     if difference.minute! < 0 {
       return true
     }else {

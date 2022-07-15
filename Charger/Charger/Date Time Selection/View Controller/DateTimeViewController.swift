@@ -43,6 +43,7 @@ class DateTimeViewController: UIViewController {
     localization()
     setupDatePickerLabel()
     setupController()
+    deactivateConfirmButton()
   }
   
   /// Setup UI Elements
@@ -64,12 +65,7 @@ class DateTimeViewController: UIViewController {
     socketSecondTypeLabel.textColor = Themes.colorGrayScale
     socketThirdTypeLabel.font = Themes.fontRegular
     socketThirdTypeLabel.textColor = Themes.colorGrayScale
-    confirmTimeButton.backgroundColor = Themes.colorCharcoal  // setup confirm button
-    confirmTimeButton.layer.cornerRadius = ObjectConstants.buttonBorderRadius
-    confirmTimeButton.titleLabel?.font = Themes.fontRegularSubtitle
-    confirmTimeButton.tintColor = Themes.colorGrayScale
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // with this we will disable back button label text
-    confirmTimeButton.isUserInteractionEnabled = false // disable confirm button
   }
   
   // Setup UI Elements according to app language
@@ -93,6 +89,14 @@ class DateTimeViewController: UIViewController {
       self.confirmTimeButton.backgroundColor = Themes.colorSolidWhite  // setup confirm button
       self.confirmTimeButton.tintColor = Themes.colorDark
     }
+  }
+  
+  func deactivateConfirmButton() {
+    confirmTimeButton.backgroundColor = Themes.colorCharcoal  // setup confirm button
+    confirmTimeButton.layer.cornerRadius = ObjectConstants.buttonBorderRadius
+    confirmTimeButton.titleLabel?.font = Themes.fontRegularSubtitle
+    confirmTimeButton.tintColor = Themes.colorGrayScale
+    confirmTimeButton.isUserInteractionEnabled = false // disable confirm button
   }
   
   func setupController() {
@@ -127,7 +131,18 @@ class DateTimeViewController: UIViewController {
     viewModel.onTimesChanged = {[weak self] receivedTimes in // times object catched
       self?.tableViewHelper.setItems(receivedTimes)
     }
+    viewModel.onTimesError = { [weak self] receivedError in
+      if receivedError != "STATION_NOT_ACCEPTING_APPOINTMENTS" { // there is a small bug as catching the datas from  the server it gives this error when we select old date to silent this error as loading time I ignored this error
+        self?.onServerError(error: receivedError)
+      }
+    }
   }
+  // open erro pop up according to received error
+  func onServerError(error: String) {
+    openErrorPopUp(error: error, responseHandler: serverErrorHandler)
+  }
+  /// İf we want to handle server error handle we can write inside this func
+  func serverErrorHandler(){}
   /// setup tableView's width with the given multiplier value
   func setupTables(multiplier: Double) {
     self.socketFirstTableeviewWidth = self.socketFirstTableeviewWidth.setMultiplier(multiplier: multiplier) // change the width of the table view
@@ -135,11 +150,34 @@ class DateTimeViewController: UIViewController {
     self.socketThirdTableeViewWidth = self.socketFirstTableeviewWidth.setMultiplier(multiplier: multiplier) // change the width of the table view
   }
   
+  func openErrorPopUp(error: String, responseHandler: @escaping (() -> ())) {
+    let popvc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CustomPopup") as! CustomPopupViewController // instantiate custom popup view
+    UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController!.addChild(popvc)
+    popvc.view.frame = UIScreen.main.bounds
+    UIApplication.shared.windows.last!.addSubview(popvc.view)
+    if error == "DATE ERROR" { // if the selected date is past we will show the error page according to that
+      popvc.setupObjects(title: "oldDateTitleError".localizeString(), subtitle: "oldDateSubtitleError".localizeString(), confirmButtonLabel:  "oldDateActionButton".localizeString(), cancelButtonLabel: "oldDateSecondActionButton".localizeString()) // setup pop up elements
+      
+      popvc.didMove(toParent: self) // open popup
+      popvc.secondActionPressed = { [weak self] response in
+        self?.resetDatePickerToday()
+      } // handle received button press action
+    }else {
+      popvc.setupObjects(title: "receivedServerErrorTitle".localizeString(), subtitle: "error".localizeString(), confirmButtonLabel:  "receivedServerErrorButtonTitle".localizeString(), cancelButtonLabel: "zero".localizeString(),hideSecondButton: true)
+      popvc.didMove(toParent: self)
+    }
+    
+  }
+  /// reset the selected date picker's date today
+  func resetDatePickerToday() {
+    (appointmentSelectorLabel as? DatePickerLabel)?.resetDate()
+    (appointmentSelectorLabel as? DatePickerLabel)?.startDatePicker()
+  }
+  
   @IBAction func confirmTimePressed(_ sender: UIButton) {
-    let timeControl = viewModel.isDateOld() // checking if the selected date and time older than today
+    let timeControl = viewModel.isDatePast() // checking if the selected date and time older than today
     if timeControl {
-      // display error Page
-      print("error Page")
+      openErrorPopUp(error: "DATE ERROR", responseHandler: resetDatePickerToday)
     }else {
       // display next Page
       print("Next Page")
@@ -151,6 +189,7 @@ extension DateTimeViewController: DateSelectedDelegate {
   func dateChanged(date: String) {
     viewModel.fetchTimes(stationId: "\(stationId!)", date: date) // fetch the times according to the selected date
     viewModel.setDateAndDistanceValues(date: date, dateView: appointmentSelectorLabel.text!, distance: distance ?? "-1") // set view models date and distance values if thereis not distance value we will not show in the next page
+    deactivateConfirmButton()// deactivate confirm button
   }
 }
 // MARK: - TimeSelectionProtocol
