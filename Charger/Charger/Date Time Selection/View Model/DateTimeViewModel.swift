@@ -18,6 +18,7 @@ class DateTimeViewModel{
   var dateView: String? // date that is being shown to the user
   var distance: String? // distance to the
   var appointmentSelectedTime: String? = ""
+  var stationName: String? = ""
   /// Fetch Times from Api
   func fetchTimes(stationId: String, date: String) {
     let timesUrl = WebsiteUrl.dateTimeUrl + "\(stationId)" + "?userID=\(User.user?.userId ?? 0)" + "&date=\(date)" // create custom url
@@ -50,6 +51,7 @@ class DateTimeViewModel{
           $0.chargeType! + " • " + $0.socketType!
         }
         self?.numberOfSockets = viewSocketValues.count // set the number of the socket's count
+        self?.stationName = returnedResponse.stationName
         self?.onTimesChanged?(viewTimeDatas)
         self?.onViewsSocketsChanged?(viewSocketValues) // we will set the sockettype's label's with this
       }else {
@@ -76,6 +78,7 @@ class DateTimeViewModel{
       distance: distance == "-1" ? nil : distance, // check if the distance value exists
       stationCode: allTimes.stationCode,
       services: allTimes.services,
+      stationName: stationName,
       stationID: allTimes.stationId,
       socketNumber: allTimes.sockets![tableNumber].socketId,
       deviceType: allTimes.sockets![tableNumber].chargeType,

@@ -11,10 +11,13 @@ class MakeAppointmentViewController: UIViewController {
 
   @IBOutlet private weak var appointmentDatasTableView: UITableView!
   @IBOutlet private weak var confirmAppointmentButton: UIButton!
+  
+  var appointmentValues: AppointmentDatas?
+  
   override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    
     }
   
   func setupUI() {

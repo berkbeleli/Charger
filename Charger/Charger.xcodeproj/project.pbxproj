@@ -80,6 +80,8 @@
 		C0F14FF22881B63200079EE1 /* GetNotifiedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0F14FF02881B63200079EE1 /* GetNotifiedTableViewCell.xib */; };
 		C0F14FF62881B86000079EE1 /* NotificationTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F14FF42881B86000079EE1 /* NotificationTimeTableViewCell.swift */; };
 		C0F14FF72881B86000079EE1 /* NotificationTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0F14FF52881B86000079EE1 /* NotificationTimeTableViewCell.xib */; };
+		C0F14FFA2881BD9C00079EE1 /* MakeAppointmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F14FF92881BD9C00079EE1 /* MakeAppointmentViewModel.swift */; };
+		C0F14FFD2881BF2E00079EE1 /* Appointments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F14FFC2881BF2E00079EE1 /* Appointments.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,6 +166,8 @@
 		C0F14FF02881B63200079EE1 /* GetNotifiedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetNotifiedTableViewCell.xib; sourceTree = "<group>"; };
 		C0F14FF42881B86000079EE1 /* NotificationTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTimeTableViewCell.swift; sourceTree = "<group>"; };
 		C0F14FF52881B86000079EE1 /* NotificationTimeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTimeTableViewCell.xib; sourceTree = "<group>"; };
+		C0F14FF92881BD9C00079EE1 /* MakeAppointmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAppointmentViewModel.swift; sourceTree = "<group>"; };
+		C0F14FFC2881BF2E00079EE1 /* Appointments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointments.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,7 +348,6 @@
 		C070BB82287F4E0200DCCE44 /* Filter Stations */ = {
 			isa = PBXGroup;
 			children = (
-				C0F14FE32881B28300079EE1 /* Components */,
 				C070BB8B287F5CC000DCCE44 /* View Model */,
 				C070BB86287F5A8600DCCE44 /* Models */,
 				C070BB83287F4E0E00DCCE44 /* View Controller */,
@@ -429,6 +432,8 @@
 		C0BD8E2F2880E30400F91A8E /* Make Appointment */ = {
 			isa = PBXGroup;
 			children = (
+				C0F14FF82881BD8B00079EE1 /* View Model */,
+				C0F14FE32881B28300079EE1 /* Components */,
 				C0F14FE02881AEBE00079EE1 /* View Controller */,
 				C0BD8E302880E31100F91A8E /* Model */,
 			);
@@ -617,6 +622,7 @@
 		C0EF3AA3287CE4920078C77A /* Appointments */ = {
 			isa = PBXGroup;
 			children = (
+				C0F14FFB2881BF2500079EE1 /* Model */,
 				C0EF3AA5287CE4B80078C77A /* ViewModel */,
 				C0EF3AA4287CE4A50078C77A /* ViewController */,
 			);
@@ -714,6 +720,22 @@
 				C0F14FF52881B86000079EE1 /* NotificationTimeTableViewCell.xib */,
 			);
 			path = "Notification Time TableViewCell";
+			sourceTree = "<group>";
+		};
+		C0F14FF82881BD8B00079EE1 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				C0F14FF92881BD9C00079EE1 /* MakeAppointmentViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		C0F14FFB2881BF2500079EE1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C0F14FFC2881BF2E00079EE1 /* Appointments.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E09D57559AD7669FA4F24006 /* Pods */ = {
@@ -857,6 +879,7 @@
 			files = (
 				C047CBFF287EDE6A0038CAA2 /* StationViewController.swift in Sources */,
 				C0EF3A86287CD1DD0078C77A /* WebsiteUrl.swift in Sources */,
+				C0F14FFA2881BD9C00079EE1 /* MakeAppointmentViewModel.swift in Sources */,
 				C0EF3AA0287CDF910078C77A /* NotificationManager.swift in Sources */,
 				C070BB8D287F5CE100DCCE44 /* FilterStationsViewModel.swift in Sources */,
 				C0319AE8287E22C5005B846D /* CustomCityTableViewCell.swift in Sources */,
@@ -892,6 +915,7 @@
 				C0F14FDD288190AA00079EE1 /* CustomPopupViewController.swift in Sources */,
 				C070BB88287F5A9B00DCCE44 /* Filter Enums.swift in Sources */,
 				C0EF3A80287CCE070078C77A /* WebServiceHelper.swift in Sources */,
+				C0F14FFD2881BF2E00079EE1 /* Appointments.swift in Sources */,
 				C0BD8E342880EAE100F91A8E /* Date+Extension.swift in Sources */,
 				C0319AF4287E30E7005B846D /* LetterCities.swift in Sources */,
 				C0319AEE287E2831005B846D /* CitySelectionTableViewHelper.swift in Sources */,
