@@ -11,12 +11,14 @@ class MakeAppointmentViewModel{
   
   var onAppointmentCreated: ((String) -> ())?
   var onAppointmentError: ((String) -> ())? // ERROR COMPLETION HANDLER
+  var getNotified: Bool? = false
+  var notificationTime: String? = ""
   private var appointmentValues: AppointmentDatas?
   /// Fetch Times from Api
   func createAppointment() {
     var createAppointmentUrl = WebsiteUrl.createAppointmentUrl + "\(User.user?.userId ?? -1)" // create custom url
     if LocationDatas.shared.locationlatitude != nil { // if user allowed the location permission we will add the locations to the URL
-      createAppointmentUrl += "&userLatitude=\(LocationDatas.shared.locationlatitude!)&userLongitude=\(LocationDatas.shared.locationlatitude!)"
+      createAppointmentUrl += "&userLatitude=\(LocationDatas.shared.locationlatitude!)&userLongitude=\(LocationDatas.shared.locationlongitude!)"
     }
     
     let parameter: [String: Any] = ["stationID": appointmentValues?.stationID ?? 0,"socketID": appointmentValues?.socketNumber ?? 0, "timeSlot": appointmentValues?.time ?? "0", "appointmentDate": "\(appointmentValues?.dateData ?? "")"]

@@ -24,7 +24,7 @@ class StationViewModel{
   func fetchStations(cityName: String) {
     var stationsUrl = WebsiteUrl.stationsUrl + "\(User.user?.userId ?? -1)" // create custom url
     if LocationDatas.shared.locationlatitude != nil { // if user allowed the location permission we will add the locations to the URL
-      stationsUrl += "&userLatitude=\(LocationDatas.shared.locationlatitude!)&userLongitude=\(LocationDatas.shared.locationlatitude!)"
+      stationsUrl += "&userLatitude=\(LocationDatas.shared.locationlatitude!)&userLongitude=\(LocationDatas.shared.locationlongitude!)"
     }
     
     WebServiceHelper.instance.getServiceData(url: stationsUrl, method: .get, header: UserToken.token) { [weak self] (returnedResponse: [Station]!, errorString: String?) in
@@ -165,7 +165,7 @@ class StationViewModel{
         }else {
           resultFilter = allStations!.filter({ data in //check if the first item distance type filter
             let result = filtersForDisplay![0].filter("0123456789.".contains)
-            return (data.distanceFilter ?? 0)! < Double(result) ?? 0
+            return (data.distanceFilter ?? 0)! < Double(result.replacingOccurrences(of: ",", with: ".")) ?? 0
           })
         }
       } else { // after the first filtered item we will do the second according to first item
@@ -189,7 +189,7 @@ class StationViewModel{
         }else {
           resultFilter = resultFilter.filter({ data in
             let result = filtersForDisplay![filterItemIndex].filter("0123456789.".contains)
-            return (data.distanceFilter ?? 0)! < Double(result) ?? 0
+            return (data.distanceFilter ?? 0)! < Double(result.replacingOccurrences(of: ",", with: ".")) ?? 0
           })
         }
       }

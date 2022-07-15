@@ -79,6 +79,7 @@
 "services" = "Hizmetler";
 "socketInfos" = "SOKET BİLGİLERİ";
 "socketNumber" = "Soket Numarası";
+"deviceType" = "Cihaz Tipi";
 "socketType" = "Soket Tipi";
 "outpower" = "Çıkış Gücü";
 "appointmentInfos" = "RANDEVU BİLGİLERİ";

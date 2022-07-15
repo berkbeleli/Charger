@@ -10,6 +10,8 @@
 		6CC73505AB1CAF438BA4D782 /* Pods_Charger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425149758F6630A3A1A11A7C /* Pods_Charger.framework */; };
 		C00831EB28805C7D00FC4FAA /* DateTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00831EA28805C7D00FC4FAA /* DateTimeViewController.swift */; };
 		C00831ED28806EC200FC4FAA /* UINavigationItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00831EC28806EC200FC4FAA /* UINavigationItem+Extension.swift */; };
+		C00ED7F82882082D004322BA /* MakeAppointmentTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00ED7F72882082D004322BA /* MakeAppointmentTableViewHelper.swift */; };
+		C00ED7FB28820F66004322BA /* NotificationTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00ED7FA28820F66004322BA /* NotificationTimePicker.swift */; };
 		C0319AD8287E0757005B846D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AD7287E0757005B846D /* ProfileViewController.swift */; };
 		C0319ADA287E0FA9005B846D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AD9287E0FA9005B846D /* ProfileViewModel.swift */; };
 		C0319ADC287E1115005B846D /* UserToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319ADB287E1115005B846D /* UserToken.swift */; };
@@ -90,6 +92,8 @@
 		676773AED797A27AF75B9CC0 /* Pods-Charger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Charger.release.xcconfig"; path = "Target Support Files/Pods-Charger/Pods-Charger.release.xcconfig"; sourceTree = "<group>"; };
 		C00831EA28805C7D00FC4FAA /* DateTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeViewController.swift; sourceTree = "<group>"; };
 		C00831EC28806EC200FC4FAA /* UINavigationItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+Extension.swift"; sourceTree = "<group>"; };
+		C00ED7F72882082D004322BA /* MakeAppointmentTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAppointmentTableViewHelper.swift; sourceTree = "<group>"; };
+		C00ED7FA28820F66004322BA /* NotificationTimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTimePicker.swift; sourceTree = "<group>"; };
 		C0319AD7287E0757005B846D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C0319AD9287E0FA9005B846D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		C0319ADB287E1115005B846D /* UserToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserToken.swift; sourceTree = "<group>"; };
@@ -209,6 +213,22 @@
 				C00831EA28805C7D00FC4FAA /* DateTimeViewController.swift */,
 			);
 			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		C00ED7F628820812004322BA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C00ED7F72882082D004322BA /* MakeAppointmentTableViewHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C00ED7F928820F4A004322BA /* NotificationTimeLabelPicker */ = {
+			isa = PBXGroup;
+			children = (
+				C00ED7FA28820F66004322BA /* NotificationTimePicker.swift */,
+			);
+			path = NotificationTimeLabelPicker;
 			sourceTree = "<group>";
 		};
 		C0319AD4287E071F005B846D /* Profile */ = {
@@ -432,10 +452,12 @@
 		C0BD8E2F2880E30400F91A8E /* Make Appointment */ = {
 			isa = PBXGroup;
 			children = (
+				C00ED7F928820F4A004322BA /* NotificationTimeLabelPicker */,
 				C0F14FE32881B28300079EE1 /* Components */,
 				C0F14FE02881AEBE00079EE1 /* View Controller */,
 				C0F14FF82881BD8B00079EE1 /* View Model */,
 				C0BD8E302880E31100F91A8E /* Model */,
+				C00ED7F628820812004322BA /* Helpers */,
 			);
 			path = "Make Appointment";
 			sourceTree = "<group>";
@@ -905,11 +927,13 @@
 				C0F14FF12881B63200079EE1 /* GetNotifiedTableViewCell.swift in Sources */,
 				C0EF3A5D287CB0120078C77A /* Themes.swift in Sources */,
 				C0F14FEC2881B4EC00079EE1 /* OtherDatasTableViewCell.swift in Sources */,
+				C00ED7FB28820F66004322BA /* NotificationTimePicker.swift in Sources */,
 				C0EF3A76287CBA320078C77A /* GradientBackgroundView.swift in Sources */,
 				C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */,
 				C047CC0F287F17AC0038CAA2 /* Double+Extension.swift in Sources */,
 				C070BB8A287F5AE000DCCE44 /* Filter.swift in Sources */,
 				C0BD8E292880CB0700F91A8E /* TimeSelectionTableViewCell.swift in Sources */,
+				C00ED7F82882082D004322BA /* MakeAppointmentTableViewHelper.swift in Sources */,
 				C0EF3A84287CD13D0078C77A /* AppConstants.swift in Sources */,
 				C0319ADA287E0FA9005B846D /* ProfileViewModel.swift in Sources */,
 				C0F14FDD288190AA00079EE1 /* CustomPopupViewController.swift in Sources */,

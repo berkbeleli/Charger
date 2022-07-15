@@ -80,6 +80,7 @@
 "services" = "Services";
 "socketInfos" = "SOCKET INFOS";
 "socketNumber" = "Socket Number";
+"deviceType" = "Device Type";
 "socketType" = "Socket Type";
 "outpower" = "Power";
 "appointmentInfos" = "APPOINTMENT INFOS";
