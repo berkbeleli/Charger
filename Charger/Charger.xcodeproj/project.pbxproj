@@ -72,6 +72,14 @@
 		C0EF3AA7287CE7130078C77A /* AppointmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3AA6287CE7130078C77A /* AppointmentsViewController.swift */; };
 		C0F14FDD288190AA00079EE1 /* CustomPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F14FDC288190AA00079EE1 /* CustomPopupViewController.swift */; };
 		C0F14FE22881AECD00079EE1 /* MakeAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F14FE12881AECD00079EE1 /* MakeAppointmentViewController.swift */; };
+		C0F14FE62881B2B000079EE1 /* MakeAppAddresssTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F14FE42881B2B000079EE1 /* MakeAppAddresssTableViewCell.swift */; };
+		C0F14FE72881B2B000079EE1 /* MakeAppAddresssTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0F14FE52881B2B000079EE1 /* MakeAppAddresssTableViewCell.xib */; };
+		C0F14FEC2881B4EC00079EE1 /* OtherDatasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F14FEA2881B4EC00079EE1 /* OtherDatasTableViewCell.swift */; };
+		C0F14FED2881B4EC00079EE1 /* OtherDatasTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0F14FEB2881B4EC00079EE1 /* OtherDatasTableViewCell.xib */; };
+		C0F14FF12881B63200079EE1 /* GetNotifiedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F14FEF2881B63200079EE1 /* GetNotifiedTableViewCell.swift */; };
+		C0F14FF22881B63200079EE1 /* GetNotifiedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0F14FF02881B63200079EE1 /* GetNotifiedTableViewCell.xib */; };
+		C0F14FF62881B86000079EE1 /* NotificationTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F14FF42881B86000079EE1 /* NotificationTimeTableViewCell.swift */; };
+		C0F14FF72881B86000079EE1 /* NotificationTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0F14FF52881B86000079EE1 /* NotificationTimeTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +156,14 @@
 		C0EF3AA6287CE7130078C77A /* AppointmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsViewController.swift; sourceTree = "<group>"; };
 		C0F14FDC288190AA00079EE1 /* CustomPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopupViewController.swift; sourceTree = "<group>"; };
 		C0F14FE12881AECD00079EE1 /* MakeAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAppointmentViewController.swift; sourceTree = "<group>"; };
+		C0F14FE42881B2B000079EE1 /* MakeAppAddresssTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAppAddresssTableViewCell.swift; sourceTree = "<group>"; };
+		C0F14FE52881B2B000079EE1 /* MakeAppAddresssTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MakeAppAddresssTableViewCell.xib; sourceTree = "<group>"; };
+		C0F14FEA2881B4EC00079EE1 /* OtherDatasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherDatasTableViewCell.swift; sourceTree = "<group>"; };
+		C0F14FEB2881B4EC00079EE1 /* OtherDatasTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherDatasTableViewCell.xib; sourceTree = "<group>"; };
+		C0F14FEF2881B63200079EE1 /* GetNotifiedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNotifiedTableViewCell.swift; sourceTree = "<group>"; };
+		C0F14FF02881B63200079EE1 /* GetNotifiedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetNotifiedTableViewCell.xib; sourceTree = "<group>"; };
+		C0F14FF42881B86000079EE1 /* NotificationTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTimeTableViewCell.swift; sourceTree = "<group>"; };
+		C0F14FF52881B86000079EE1 /* NotificationTimeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTimeTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +344,7 @@
 		C070BB82287F4E0200DCCE44 /* Filter Stations */ = {
 			isa = PBXGroup;
 			children = (
+				C0F14FE32881B28300079EE1 /* Components */,
 				C070BB8B287F5CC000DCCE44 /* View Model */,
 				C070BB86287F5A8600DCCE44 /* Models */,
 				C070BB83287F4E0E00DCCE44 /* View Controller */,
@@ -652,6 +669,53 @@
 			path = "View Controller";
 			sourceTree = "<group>";
 		};
+		C0F14FE32881B28300079EE1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C0F14FF32881B83500079EE1 /* Notification Time TableViewCell */,
+				C0F14FEE2881B60F00079EE1 /* Notify TableViewCell */,
+				C0F14FE92881B4D400079EE1 /* Other Datas TableViewCell */,
+				C0F14FE82881B4BE00079EE1 /* Address TableViewCell */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C0F14FE82881B4BE00079EE1 /* Address TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C0F14FE42881B2B000079EE1 /* MakeAppAddresssTableViewCell.swift */,
+				C0F14FE52881B2B000079EE1 /* MakeAppAddresssTableViewCell.xib */,
+			);
+			path = "Address TableViewCell";
+			sourceTree = "<group>";
+		};
+		C0F14FE92881B4D400079EE1 /* Other Datas TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C0F14FEA2881B4EC00079EE1 /* OtherDatasTableViewCell.swift */,
+				C0F14FEB2881B4EC00079EE1 /* OtherDatasTableViewCell.xib */,
+			);
+			path = "Other Datas TableViewCell";
+			sourceTree = "<group>";
+		};
+		C0F14FEE2881B60F00079EE1 /* Notify TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C0F14FEF2881B63200079EE1 /* GetNotifiedTableViewCell.swift */,
+				C0F14FF02881B63200079EE1 /* GetNotifiedTableViewCell.xib */,
+			);
+			path = "Notify TableViewCell";
+			sourceTree = "<group>";
+		};
+		C0F14FF32881B83500079EE1 /* Notification Time TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C0F14FF42881B86000079EE1 /* NotificationTimeTableViewCell.swift */,
+				C0F14FF52881B86000079EE1 /* NotificationTimeTableViewCell.xib */,
+			);
+			path = "Notification Time TableViewCell";
+			sourceTree = "<group>";
+		};
 		E09D57559AD7669FA4F24006 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -722,16 +786,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0F14FE72881B2B000079EE1 /* MakeAppAddresssTableViewCell.xib in Resources */,
 				C0BD8E2A2880CB0700F91A8E /* TimeSelectionTableViewCell.xib in Resources */,
+				C0F14FF22881B63200079EE1 /* GetNotifiedTableViewCell.xib in Resources */,
 				C0EF3A48287CAAD90078C77A /* LaunchScreen.storyboard in Resources */,
 				C047CC0A287F01770038CAA2 /* StationTableViewCell.xib in Resources */,
 				C0EF3A5A287CAE650078C77A /* ProximaNova-Regular.otf in Resources */,
 				C0EF3A45287CAAD90078C77A /* Assets.xcassets in Resources */,
 				C0EF3A70287CB6CA0078C77A /* Localizable.strings in Resources */,
 				C0EF3A5B287CAE650078C77A /* Proxima Nova Thin.otf in Resources */,
+				C0F14FED2881B4EC00079EE1 /* OtherDatasTableViewCell.xib in Resources */,
 				C0EF3A59287CAE650078C77A /* Proxima Nova Bold.otf in Resources */,
 				C0EF3A56287CAE650078C77A /* Proxima Nova Extrabold.otf in Resources */,
 				C0319AE9287E22C5005B846D /* CustomCityTableViewCell.xib in Resources */,
+				C0F14FF72881B86000079EE1 /* NotificationTimeTableViewCell.xib in Resources */,
 				C0EF3A9A287CDDCC0078C77A /* InfoPlist.strings in Resources */,
 				C070BB91287F794700DCCE44 /* FilterCollectionViewCell.xib in Resources */,
 				C0EF3A43287CAAD70078C77A /* Main.storyboard in Resources */,
@@ -795,6 +863,7 @@
 				C0EF3A7A287CCA010078C77A /* UITextField+Extension.swift in Sources */,
 				C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */,
 				C047CC05287EE6630038CAA2 /* Station.swift in Sources */,
+				C0F14FE62881B2B000079EE1 /* MakeAppAddresssTableViewCell.swift in Sources */,
 				C047CC0D287F0A680038CAA2 /* StationTableViewHelper.swift in Sources */,
 				C0319ADC287E1115005B846D /* UserToken.swift in Sources */,
 				C0EF3AA7287CE7130078C77A /* AppointmentsViewController.swift in Sources */,
@@ -810,7 +879,9 @@
 				C0EF3A61287CB2CD0078C77A /* CustomNavigationController.swift in Sources */,
 				C0319AD8287E0757005B846D /* ProfileViewController.swift in Sources */,
 				C0BD8E212880BADB00F91A8E /* DateTimeModel.swift in Sources */,
+				C0F14FF12881B63200079EE1 /* GetNotifiedTableViewCell.swift in Sources */,
 				C0EF3A5D287CB0120078C77A /* Themes.swift in Sources */,
+				C0F14FEC2881B4EC00079EE1 /* OtherDatasTableViewCell.swift in Sources */,
 				C0EF3A76287CBA320078C77A /* GradientBackgroundView.swift in Sources */,
 				C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */,
 				C047CC0F287F17AC0038CAA2 /* Double+Extension.swift in Sources */,
@@ -828,6 +899,7 @@
 				C0EF3A78287CC2F60078C77A /* Object Constants.swift in Sources */,
 				C00831ED28806EC200FC4FAA /* UINavigationItem+Extension.swift in Sources */,
 				C0BD8E182880B53100F91A8E /* DatePickerLabel.swift in Sources */,
+				C0F14FF62881B86000079EE1 /* NotificationTimeTableViewCell.swift in Sources */,
 				C0EF3A6D287CB5C20078C77A /* String+Extension.swift in Sources */,
 				C0BD8E1E2880BA7A00F91A8E /* DateTimeViewModel.swift in Sources */,
 				C047CC09287F01770038CAA2 /* StationTableViewCell.swift in Sources */,
