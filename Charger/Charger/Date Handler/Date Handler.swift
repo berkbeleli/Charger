@@ -29,5 +29,15 @@ struct DateHandler {
     
     return dateFormatter.date(from: dateString)!
   }
+  /// converts the user Selection date and time datas into date type
+  func convertDate(dateData: String, timeData: String) -> Date {
+    let dateString = "\(dateData) \(timeData)" // create a completed string date with given datas
+    let dateFormatter = DateFormatter()
+    dateFormatter.timeZone = TimeZone(secondsFromGMT:0)! // set the difference between timezone difference 0
+    dateFormatter.locale = NSLocale.current
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm" // set formatter type
+    
+    return dateFormatter.date(from: dateString)! // convert and return the date
+  }
   
 }

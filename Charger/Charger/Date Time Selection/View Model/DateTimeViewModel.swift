@@ -14,9 +14,10 @@ class DateTimeViewModel{
   var onViewsSocketsChanged: (([String]) -> ())?
   var onTimesError: ((String) -> ())? // ERROR COMPLETION HANDLER
   var numberOfSockets: Int?
-  var dateData: String?
-  var dateView: String?
-  var distance: String?
+  var dateData: String? // date that will be used in api calls
+  var dateView: String? // date that is being shown to the user
+  var distance: String? // distance to the
+  var appointmentSelectedTime: String? = ""
   /// Fetch Times from Api
   func fetchTimes(stationId: String, date: String) {
     let timesUrl = WebsiteUrl.dateTimeUrl + "\(stationId)" + "?userID=\(User.user?.userId ?? 0)" + "&date=\(date)" // create custom url
@@ -48,11 +49,10 @@ class DateTimeViewModel{
         var viewSocketValues = (viewTimeDatas.sockets ?? []).map {
           $0.chargeType! + " • " + $0.socketType!
         }
-        self?.numberOfSockets = viewSocketValues.count
+        self?.numberOfSockets = viewSocketValues.count // set the number of the socket's count
         
         self?.onTimesChanged?(viewTimeDatas)
-        self?.onViewsSocketsChanged?(viewSocketValues)
-        
+        self?.onViewsSocketsChanged?(viewSocketValues) // we will set the sockettype's label's with this
       }else {
         // SHOW ERROR PAGE HERE!!!!
         self?.onTimesError?(errorString ?? "UNKNOWN ERROR")
@@ -70,22 +70,33 @@ class DateTimeViewModel{
     self.distance = distance
   }
   /// Creates Appointment Datas and returns them
-  func createAppointmentDatas(allTimes: SelectTimeViewModel, tableNumber: Int, selectedRow: Int) -> AppointmentDatas {
+  func createAppointmentDatas(allTimes: SelectTimeViewModel, tableNumber: Int, selectedRow: Int) {
     var appointmentDatas = AppointmentDatas(
       address: allTimes.address,
       workingHours: "24",
-      distance: distance ?? nil,
+      distance: distance == "-1" ? nil : distance, // check if the distance value exists
       stationCode: allTimes.stationCode,
       services: allTimes.services,
       stationID: allTimes.stationId,
       socketNumber: allTimes.sockets![tableNumber].socketId,
       deviceType: allTimes.sockets![tableNumber].chargeType,
       socketType: allTimes.sockets![tableNumber].socketType,
-      outsorcepower: "\(allTimes.sockets![tableNumber].power) \(allTimes.sockets![tableNumber].powerUnit)",
+      outsorcepower: "\(allTimes.sockets![tableNumber].power ?? "0") \(allTimes.sockets![tableNumber].powerUnit ?? "kw")",
       dateView: dateView,
       dateData: dateData,
       time: allTimes.sockets![tableNumber].day?.timeSlots![selectedRow].slot,
       appointmentDuration: "1")
-    return appointmentDatas
+    appointmentSelectedTime = allTimes.sockets![tableNumber].day?.timeSlots![selectedRow].slot
+  }
+  /// checks if the selected date and time is older than the curentDate and Time
+  func isDateOld() -> Bool {
+    let selectedDate = DateHandler.shared.convertDate(dateData: dateData!, timeData: appointmentSelectedTime!)
+    let todayDate = DateHandler.shared.getTodayDate() // get today date
+    let difference = selectedDate - todayDate // get differencef between today and selected date
+    if difference.minute! < 0 {
+      return true
+    }else {
+      return false
+    }
   }
 }

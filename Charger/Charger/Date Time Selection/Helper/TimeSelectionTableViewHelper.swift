@@ -8,7 +8,7 @@
 import UIKit
 
 protocol TimeSelectionProtocol: AnyObject {
-  func didTimeSelected(appointmentDatas: AppointmentDatas)
+  func didTimeSelected() // if a time value selected we will let the vc know about it
 }
 
 class TimeSelectionTableViewHelper: NSObject {
@@ -18,7 +18,7 @@ class TimeSelectionTableViewHelper: NSObject {
   weak var tableViewFirst: UITableView?
   weak var tableViewSecond: UITableView?
   weak var tableViewThird: UITableView?
-  var numberOfSockets: Int?
+  var numberOfSockets: Int? // according to that we will arrange the tableview!s items
   init(tableViewFirst: UITableView, tableViewSecond: UITableView, tableViewThird: UITableView, vm: DateTimeViewModel){
     super.init()
     self.tableViewFirst = tableViewFirst
@@ -31,7 +31,7 @@ class TimeSelectionTableViewHelper: NSObject {
     self.tableViewSecond?.dataSource = self
     self.tableViewThird?.delegate = self // get tableview's delegations
     self.tableViewThird?.dataSource = self
-    registerCells()
+    registerCells() // register cell all of the tableviews
   }
   /// Register custom cell to our tableView
   func registerCells(){
@@ -45,14 +45,14 @@ class TimeSelectionTableViewHelper: NSObject {
     tableViewFirst?.reloadData()
     tableViewSecond?.reloadData()
     tableViewThird?.reloadData()
-    numberOfSockets = vm?.getNumberOfSockets()
+    numberOfSockets = vm?.getNumberOfSockets() // get the number of the sockets from the vm
   }
   
   /// it will deselect all of the selected cells when another cell selected
   func deselectAllCells() {
     for i in 0..<(numberOfSockets ?? 1) {
       for j in 0..<(allTimes?.sockets![i].day?.timeSlots?.count ?? 0) {
-        allTimes?.sockets![i].day?.timeSlots![j].isSocketSelected = false
+        allTimes?.sockets![i].day?.timeSlots![j].isSocketSelected = false // set allItems unselected
       }
     }
   }
@@ -69,14 +69,14 @@ extension TimeSelectionTableViewHelper: UITableViewDelegate {
       tableView == tableViewSecond ? (tableNumber = 1) : (tableNumber = 2)
     }
     
-    allTimes?.sockets![tableNumber].day?.timeSlots![indexPath.row].isSocketSelected = true
+    allTimes?.sockets![tableNumber].day?.timeSlots![indexPath.row].isSocketSelected = true // after setting the socketSelection variable we will reload all of the TableViews
     tableViewFirst?.reloadData()
     tableViewSecond?.reloadData()
     tableViewThird?.reloadData()
     
-    var appointmentDatas = vm?.createAppointmentDatas(allTimes: allTimes!, tableNumber: tableNumber, selectedRow: indexPath.row)
+    vm?.createAppointmentDatas(allTimes: allTimes!, tableNumber: tableNumber, selectedRow: indexPath.row) // let the vm know now it can create a appointmentData variable
     
-    self.delegate?.didTimeSelected(appointmentDatas: appointmentDatas!)
+    self.delegate?.didTimeSelected() // call delegation func
   }
 }
 
@@ -96,7 +96,7 @@ extension TimeSelectionTableViewHelper: UITableViewDataSource {
     }
     
     if tableNumber <= ((numberOfSockets! - 1)) {
-      
+      // according to table view we will set the cell tableview
       var cell = tableViewFirst?.dequeueReusableCell(withIdentifier: "TimeSelectionTableViewCell") as! TimeSelectionTableViewCell
       if tableNumber == 1 {
         cell = tableViewSecond?.dequeueReusableCell(withIdentifier: "TimeSelectionTableViewCell") as! TimeSelectionTableViewCell
@@ -112,8 +112,7 @@ extension TimeSelectionTableViewHelper: UITableViewDataSource {
       cell.backgroundColor = .clear
       cell.selectionStyle = .none
       return cell
-      
     }
-    return UITableViewCell()
+    return UITableViewCell() // this line will never work it is redundant it is just here to confirm func requirement
   }
 }
