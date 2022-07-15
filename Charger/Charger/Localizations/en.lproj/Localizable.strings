@@ -64,3 +64,12 @@
 "dateIndicator" = "Appointment Date";
 "socketHead" = "Socket";
 "confirmTimeButton" = "CONFIRM DATE AND TIME";
+"oldDateTitleError" = "Invalid Date";
+"oldDateSubtitleError" = "You cannot get appointment for an past date";
+"oldDateActionButton" = "EDIT";
+"oldDateSecondActionButton" = "SELECT TODAY";
+
+
+
+"receivedServerErrorTitle" = "Server Error";
+"receivedServerErrorButtonTitle" = "EDIT";

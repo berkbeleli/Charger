@@ -63,3 +63,14 @@
 "dateIndicator" = "Randevu Tarihi";
 "socketHead" = "Soket";
 "confirmTimeButton" = "TARİH VE SAATİ ONAYLA";
+"oldDateTitleError" = "Geçersiz Tarih";
+"oldDateSubtitleError" = "Geçmiş bir tarihe randevu alamazsınız.";
+"oldDateActionButton" = "DÜZENLE";
+"oldDateSecondActionButton" = "BUGÜNÜ SEÇ";
+
+
+
+
+
+"receivedServerErrorTitle" = "Server Hatası";
+"receivedServerErrorButtonTitle" = "DÜZENLE";
