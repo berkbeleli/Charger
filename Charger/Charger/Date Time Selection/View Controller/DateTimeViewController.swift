@@ -119,6 +119,7 @@ class DateTimeViewController: UIViewController {
       tableViewSecond: socketSecondTableView,
       tableViewThird: socketThirdTableView,
       vm: viewModel)
+    tableViewHelper.delegate = self
     viewModel.onTimesChanged = {[weak self] receivedTimes in
       self?.tableViewHelper.setItems(receivedTimes)
     }
@@ -136,5 +137,12 @@ class DateTimeViewController: UIViewController {
 extension DateTimeViewController: DateSelectedDelegate {
   func dateChanged(date: String) {
     viewModel.fetchTimes(stationId: "\(stationId!)", date: date) // fetch the times according to the selected date
+    viewModel.setDateAndDistanceValues(date: date, dateView: appointmentSelectorLabel.text!, distance: distance ?? "0") // set view models date and distance values
+  }
+}
+
+extension DateTimeViewController: TimeSelectionProtocol {
+  func didTimeSelected(appointmentDatas: AppointmentDatas) {
+    print(appointmentDatas)
   }
 }

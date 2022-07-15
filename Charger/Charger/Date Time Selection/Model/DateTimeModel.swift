@@ -66,7 +66,7 @@ struct SelectTimeViewModel {
 }
 
 struct SocketView {
-  var socketId: String?
+  var socketId: Int?
   var day: DaySocketView?
   var socketType: String?
   var chargeType: String?

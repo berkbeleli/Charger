@@ -8,7 +8,7 @@
 import UIKit
 
 protocol TimeSelectionProtocol: AnyObject {
-  func didTimeSelected()
+  func didTimeSelected(appointmentDatas: AppointmentDatas)
 }
 
 class TimeSelectionTableViewHelper: NSObject {
@@ -47,6 +47,7 @@ class TimeSelectionTableViewHelper: NSObject {
     tableViewThird?.reloadData()
     numberOfSockets = vm?.getNumberOfSockets()
   }
+  
   /// it will deselect all of the selected cells when another cell selected
   func deselectAllCells() {
     for i in 0..<(numberOfSockets ?? 1) {
@@ -67,16 +68,15 @@ extension TimeSelectionTableViewHelper: UITableViewDelegate {
     }else {
       tableView == tableViewSecond ? (tableNumber = 1) : (tableNumber = 2)
     }
-   
     
-
-      allTimes?.sockets![tableNumber].day?.timeSlots![indexPath.row].isSocketSelected = true
-      tableViewFirst?.reloadData()
-      tableViewSecond?.reloadData()
-      tableViewThird?.reloadData()
-
+    allTimes?.sockets![tableNumber].day?.timeSlots![indexPath.row].isSocketSelected = true
+    tableViewFirst?.reloadData()
+    tableViewSecond?.reloadData()
+    tableViewThird?.reloadData()
     
-    self.delegate?.didTimeSelected()
+    var appointmentDatas = vm?.createAppointmentDatas(allTimes: allTimes!, tableNumber: tableNumber, selectedRow: indexPath.row)
+    
+    self.delegate?.didTimeSelected(appointmentDatas: appointmentDatas!)
   }
 }
 

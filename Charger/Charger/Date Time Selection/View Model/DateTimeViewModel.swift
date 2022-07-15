@@ -14,13 +14,16 @@ class DateTimeViewModel{
   var onViewsSocketsChanged: (([String]) -> ())?
   var onTimesError: ((String) -> ())? // ERROR COMPLETION HANDLER
   var numberOfSockets: Int?
+  var dateData: String?
+  var dateView: String?
+  var distance: String?
   /// Fetch Times from Api
   func fetchTimes(stationId: String, date: String) {
     let timesUrl = WebsiteUrl.dateTimeUrl + "\(stationId)" + "?userID=\(User.user?.userId ?? 0)" + "&date=\(date)" // create custom url
     
     WebServiceHelper.instance.getServiceData(url: timesUrl, method: .get, header: UserToken.token) { [weak self] (returnedResponse: SelectTimeStations!, errorString: String?) in
       if errorString == nil {
-     // map the received response according to our usage
+        // map the received response according to our usage
         let viewTimeDatas = SelectTimeViewModel(
           stationId: returnedResponse.stationId,
           stationCode: returnedResponse.stationCode,
@@ -28,7 +31,7 @@ class DateTimeViewModel{
           services: returnedResponse.services,
           sockets: (returnedResponse.sockets ?? []).map{
             SocketView(
-              socketId: "\($0.socketId!)",
+              socketId: $0.socketId!,
               day: DaySocketView(
                 timeSlots: ($0.day?.timeSlots ?? []).map {
                   TimeSlotView(
@@ -49,7 +52,7 @@ class DateTimeViewModel{
         
         self?.onTimesChanged?(viewTimeDatas)
         self?.onViewsSocketsChanged?(viewSocketValues)
-       
+        
       }else {
         // SHOW ERROR PAGE HERE!!!!
         self?.onTimesError?(errorString ?? "UNKNOWN ERROR")
@@ -59,5 +62,30 @@ class DateTimeViewModel{
   /// Returns the Number of the sockets in a specific station
   func getNumberOfSockets() -> Int {
     numberOfSockets ?? 1
+  }
+  /// set date and distance Values
+  func setDateAndDistanceValues(date: String, dateView: String, distance: String) {
+    self.dateData = date
+    self.dateView = dateView
+    self.distance = distance
+  }
+  /// Creates Appointment Datas and returns them
+  func createAppointmentDatas(allTimes: SelectTimeViewModel, tableNumber: Int, selectedRow: Int) -> AppointmentDatas {
+    var appointmentDatas = AppointmentDatas(
+      address: allTimes.address,
+      workingHours: "24",
+      distance: distance ?? nil,
+      stationCode: allTimes.stationCode,
+      services: allTimes.services,
+      stationID: allTimes.stationId,
+      socketNumber: allTimes.sockets![tableNumber].socketId,
+      deviceType: allTimes.sockets![tableNumber].chargeType,
+      socketType: allTimes.sockets![tableNumber].socketType,
+      outsorcepower: "\(allTimes.sockets![tableNumber].power) \(allTimes.sockets![tableNumber].powerUnit)",
+      dateView: dateView,
+      dateData: dateData,
+      time: allTimes.sockets![tableNumber].day?.timeSlots![selectedRow].slot,
+      appointmentDuration: "1")
+    return appointmentDatas
   }
 }
