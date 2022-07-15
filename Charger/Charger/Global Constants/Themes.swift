@@ -32,6 +32,7 @@ struct Themes {
   static let acImage = UIImage(named: "AcImage")!
   static let dcImage = UIImage(named: "DcImage")!
   static let acDcImage = UIImage(named: "Ac-DcImage")!
+  static let alertImage = UIImage(named: "AlertImage")!
 }
 
 
