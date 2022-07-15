@@ -179,8 +179,12 @@ class DateTimeViewController: UIViewController {
     if timeControl {
       openErrorPopUp(error: "DATE ERROR", responseHandler: resetDatePickerToday)
     }else {
-      // display next Page
-      print("Next Page")
+     // Display Appointment Infos page
+      let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MakeAppointment") as! MakeAppointmentViewController
+      vc.stationName = stationName // sent station Name
+      vc.appointmentValues = viewModel.requestAppointmentDatas() // request appointment values from viewmodel
+      self.navigationController?.pushViewController(vc, animated: true)
+      
     }
   }
 }

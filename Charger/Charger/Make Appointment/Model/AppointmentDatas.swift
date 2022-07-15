@@ -14,7 +14,6 @@ struct AppointmentDatas {
   var distance: String?
   var stationCode: String?
   var services: [String]?
-  var stationName: String?
   var stationID: Int?
   var socketNumber: Int?
   var deviceType: String?

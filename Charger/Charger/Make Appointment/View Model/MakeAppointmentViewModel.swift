@@ -9,9 +9,9 @@ import Foundation
 
 class MakeAppointmentViewModel{
   
-
+  var onAppointmentCreated: ((String) -> ())?
   var onAppointmentError: ((String) -> ())? // ERROR COMPLETION HANDLER
-  var appointmentValues: AppointmentDatas?
+  private var appointmentValues: AppointmentDatas?
   /// Fetch Times from Api
   func createAppointment() {
     var createAppointmentUrl = WebsiteUrl.createAppointmentUrl + "\(User.user?.userId ?? -1)" // create custom url
@@ -21,10 +21,10 @@ class MakeAppointmentViewModel{
     
     let parameter: [String: Any] = ["stationID": appointmentValues?.stationID ?? 0,"socketID": appointmentValues?.socketNumber ?? 0, "timeSlot": appointmentValues?.time ?? "0", "appointmentDate": "\(appointmentValues?.dateData ?? "")"]
     
-    WebServiceHelper.instance.getServiceData(url: createAppointmentUrl, method: .get,parameters: parameter ,header: UserToken.token) { [weak self] (returnedResponse: Appointment!, errorString: String?) in
+    WebServiceHelper.instance.getServiceData(url: createAppointmentUrl, method: .get, parameters: parameter ,header: UserToken.token) { [weak self] (returnedResponse: Appointment!, errorString: String?) in
       if errorString == nil {
         
-        
+        self?.onAppointmentCreated?("Created Appointment")
    
       }else {
         // SHOW ERROR PAGE HERE!!!!

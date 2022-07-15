@@ -432,9 +432,9 @@
 		C0BD8E2F2880E30400F91A8E /* Make Appointment */ = {
 			isa = PBXGroup;
 			children = (
-				C0F14FF82881BD8B00079EE1 /* View Model */,
 				C0F14FE32881B28300079EE1 /* Components */,
 				C0F14FE02881AEBE00079EE1 /* View Controller */,
+				C0F14FF82881BD8B00079EE1 /* View Model */,
 				C0BD8E302880E31100F91A8E /* Model */,
 			);
 			path = "Make Appointment";
