@@ -71,6 +71,7 @@
 		C0EF3AA0287CDF910078C77A /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A9F287CDF910078C77A /* NotificationManager.swift */; };
 		C0EF3AA7287CE7130078C77A /* AppointmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3AA6287CE7130078C77A /* AppointmentsViewController.swift */; };
 		C0F14FDD288190AA00079EE1 /* CustomPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F14FDC288190AA00079EE1 /* CustomPopupViewController.swift */; };
+		C0F14FE22881AECD00079EE1 /* MakeAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F14FE12881AECD00079EE1 /* MakeAppointmentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +147,7 @@
 		C0EF3A9F287CDF910078C77A /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		C0EF3AA6287CE7130078C77A /* AppointmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsViewController.swift; sourceTree = "<group>"; };
 		C0F14FDC288190AA00079EE1 /* CustomPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopupViewController.swift; sourceTree = "<group>"; };
+		C0F14FE12881AECD00079EE1 /* MakeAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAppointmentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -410,6 +412,7 @@
 		C0BD8E2F2880E30400F91A8E /* Make Appointment */ = {
 			isa = PBXGroup;
 			children = (
+				C0F14FE02881AEBE00079EE1 /* View Controller */,
 				C0BD8E302880E31100F91A8E /* Model */,
 			);
 			path = "Make Appointment";
@@ -444,6 +447,7 @@
 		C0EF3A3A287CAAD70078C77A /* Charger */ = {
 			isa = PBXGroup;
 			children = (
+				C0F14FDE2881ACD500079EE1 /* New Group */,
 				C0BD8E192880B6F700F91A8E /* Date Handler */,
 				C0EF3A7B287CCD8C0078C77A /* Login */,
 				C0EF3AA3287CE4920078C77A /* Appointments */,
@@ -620,9 +624,32 @@
 		C0F14FDB2881908600079EE1 /* Custom Popup */ = {
 			isa = PBXGroup;
 			children = (
-				C0F14FDC288190AA00079EE1 /* CustomPopupViewController.swift */,
+				C0F14FDF2881AEB200079EE1 /* View Controller */,
 			);
 			path = "Custom Popup";
+			sourceTree = "<group>";
+		};
+		C0F14FDE2881ACD500079EE1 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		C0F14FDF2881AEB200079EE1 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C0F14FDC288190AA00079EE1 /* CustomPopupViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		C0F14FE02881AEBE00079EE1 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C0F14FE12881AECD00079EE1 /* MakeAppointmentViewController.swift */,
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 		E09D57559AD7669FA4F24006 /* Pods */ = {
@@ -773,6 +800,7 @@
 				C0EF3AA7287CE7130078C77A /* AppointmentsViewController.swift in Sources */,
 				C070BB93287F7AF500DCCE44 /* StationCollectionViewHelper.swift in Sources */,
 				C070BB90287F794700DCCE44 /* FilterCollectionViewCell.swift in Sources */,
+				C0F14FE22881AECD00079EE1 /* MakeAppointmentViewController.swift in Sources */,
 				C0BD8E322880E31C00F91A8E /* AppointmentDatas.swift in Sources */,
 				C0319AE4287E18B6005B846D /* CitySelectionViewController.swift in Sources */,
 				C0319AF1287E2879005B846D /* CitySelectionViewModel.swift in Sources */,
