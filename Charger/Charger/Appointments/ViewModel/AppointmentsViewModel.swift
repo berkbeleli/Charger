@@ -47,7 +47,15 @@ class AppointmentsViewModel{
               $0.chargeType!
             }
             
-
+            self?.allAppointments![index].outpower = "\(self?.allAppointments![index].socket?.power ?? 0) \(self?.allAppointments![index].socket?.powerUnit ?? "kVa")"
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let date = dateFormatter.date(from:  self?.allAppointments![index].date ?? "2022-01-01")
+            let dateFormatter2 = DateFormatter()
+            dateFormatter2.dateFormat = "dd MMM yyyy"
+            
+            self?.allAppointments![index].showingTime = dateFormatter2.string(from: date!) + ", " +  (self?.allAppointments![index].time ?? " ")!
             
             if (chargeTypes.contains("AC") ?? false) && (chargeTypes.contains("DC") ?? false) { // set the image for the view cell
               self?.allAppointments![index].imageType = Themes.acDcImage

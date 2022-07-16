@@ -23,7 +23,8 @@
 
 "appointmentPageSocket" = "Socket number:";
 "currentAppointmentsTitle" = "CURRENT APPOINTMENTS";
-"today" = "Today";
+"pastAppointmentsTitle" = "PAST APPOINTMENTS";
+"todaytitle" = "Today";
 "Your appointment at %@ on %@ at %@ will be cancelled." = "Your appointment at %@ on %@ at %@ will be cancelled.";
 
 

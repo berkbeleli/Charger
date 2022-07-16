@@ -21,7 +21,10 @@
 "createAppointmentButton" = "RANDEVU OLUŞTUR";
 
 "appointmentPageSocket" = "Soket numarası:";
-
+"currentAppointmentsTitle" = "GÜNCEL RANDEVULAR";
+"pastAppointmentsTitle" = "GEÇMİŞ RANDEVULAR";
+"todaytitle" = "Bugün";
+"Your appointment at %@ on %@ at %@ will be cancelled." = "%@ istasyonundaki %@ saat %@ randevunuz iptal edilecektir.";
 
 //MARK: - PROFILE PAGE
 "profileTitle" = "Profil";

@@ -40,17 +40,17 @@ class AppointmentsTableViewCell: UITableViewCell {
     appointmentSubBackgrounViewSec.layer.cornerRadius = ObjectConstants.viewBorders
     stationNameLabel.font = Themes.fontBold
     stationNameLabel.textColor = Themes.colorSolidWhite
-    appointmentTimeLabel.font = Themes.fontBoldStationSubValues
+    appointmentTimeLabel.font = Themes.fontBoldAppointmentSubValues
     appointmentTimeLabel.textColor = Themes.colorSolidWhite
-    notificationTimeLabel.font = Themes.fontBoldStationSubValues
+    notificationTimeLabel.font = Themes.fontBoldAppointmentSubValues
     notificationTimeLabel.textColor = Themes.colorSolidWhite
-    outsourcePowerLabel.font = Themes.fontRegularSubtitle
+    outsourcePowerLabel.font = Themes.fontRegularAppointmentSubtitle
     outsourcePowerLabel.textColor = Themes.colorGrayScale
-    socketNumberTitleLabel.font = Themes.fontRegularSubtitle
+    socketNumberTitleLabel.font = Themes.fontRegularAppointmentSubtitle
     socketNumberTitleLabel.textColor = Themes.colorGrayScale
-    socketNumberLabel.font = Themes.fontBoldStationSubValues
+    socketNumberLabel.font = Themes.fontBoldAppointmentSubValues
     socketNumberLabel.textColor = Themes.colorSolidWhite
-    chargeAndSocketTypeLabel.font = Themes.fontRegularSubtitle
+    chargeAndSocketTypeLabel.font = Themes.fontRegularAppointmentSubtitle
     chargeAndSocketTypeLabel.textColor = Themes.colorGrayScale
     deleteAppointmentButton.tintColor = Themes.colorSolidWhite
   }

@@ -18,6 +18,7 @@ class AppointmentsViewController: UIViewController {
   @IBOutlet private weak var appointmentsTableView: UITableView!
   
   private var viewModel = AppointmentsViewModel()
+  private var tableViewHelper: AppointmentsTableViewHelper!
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
@@ -40,6 +41,7 @@ class AppointmentsViewController: UIViewController {
     self.navigationItem.hidesBackButton = true // hide back navbar button
     navigationItem.leftBarButtonItem = UIBarButtonItem(image: Themes.UserImage, style: .plain, target: self, action: #selector(profileClicked))
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // with this we will disable back button label text
+    appointmentsTableView.isHidden = true
   }
   
   // Setup UI Elements according to app language
@@ -52,6 +54,18 @@ class AppointmentsViewController: UIViewController {
   
   func setupController() {
     viewModel.fetchAppointments()
+    tableViewHelper = .init(with: appointmentsTableView, vm: viewModel)
+    
+    viewModel.onAppointmentsChanged = { [weak self] currentAppointment, pastAppointments in
+      self?.tableViewHelper.setItems(currentAppointments: currentAppointment, pastAppointments: pastAppointments)
+      if currentAppointment.isEmpty && pastAppointments.isEmpty {
+        self?.appointmentsTableView.isHidden = true
+        self?.noAppointmentView.isHidden = false
+      }else {
+        self?.appointmentsTableView.isHidden = false
+        self?.noAppointmentView.isHidden = true
+      }
+    }
   }
   
   @objc

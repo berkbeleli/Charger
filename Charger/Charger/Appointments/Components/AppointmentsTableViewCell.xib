@@ -39,7 +39,9 @@
                                 <rect key="frame" x="510" y="23" width="44" height="31"/>
                                 <color key="tintColor" name="Dark-2"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="trash" catalog="system" symbolScale="large"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="deleteAppointmentPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="y1U-V5-dqO"/>
                                 </connections>
@@ -54,10 +56,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="271" translatesAutoresizingMaskIntoConstraints="NO" id="mWL-1U-sLm">
-                                        <rect key="frame" x="445.5" y="10" width="92.5" height="31"/>
+                                        <rect key="frame" x="452.5" y="10" width="85.5" height="31"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="trE-Mj-8CK">
-                                                <rect key="frame" x="0.0" y="0.0" width="92.5" height="31"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="trE-Mj-8CK">
+                                                <rect key="frame" x="0.0" y="0.0" width="85.5" height="31"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSD-sb-vmu">
                                                         <rect key="frame" x="0.0" y="0.0" width="44" height="31"/>
@@ -68,7 +70,7 @@
                                                         </buttonConfiguration>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2G-sZ-g8E">
-                                                        <rect key="frame" x="51" y="5" width="41.5" height="20.5"/>
+                                                        <rect key="frame" x="44" y="5" width="41.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -76,7 +78,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9B-Vh-XCa">
-                                                <rect key="frame" x="92.5" y="10.5" width="0.0" height="20.5"/>
+                                                <rect key="frame" x="85.5" y="10.5" width="0.0" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
