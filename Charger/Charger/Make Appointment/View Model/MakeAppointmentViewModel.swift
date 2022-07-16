@@ -27,12 +27,12 @@ class MakeAppointmentViewModel{
       let titleValue = String(format: NSLocalizedString("station: %@ timeleft: %@", comment: ""), stationName as! NSString, notificationTime?.localizeString() as! NSString) // create a localized title Value for our notification
       
       let minutesAgo = Int(notificationTime!.filter("0123456789".contains)) // turn the notification Time into filtered number
-      
+      var identifier = UUID().uuidString
       NotificationManager.shared.createAppointmentNotification( // send the required variables to the func to create notification
         date: appointmentValues?.dateData ?? "2022-01-01",
         time: appointmentValues?.time ?? "00:00",
         minutesAgo: minutesAgo!,
-        identifier: UUID().uuidString,
+        identifier: identifier,
         title: "upcomingAppointment".localizeString(),
         body: titleValue) {[weak self] result in
           
@@ -64,8 +64,6 @@ class MakeAppointmentViewModel{
         self?.onAppointmentError?(errorString ?? "UNKNOWN ERROR")
       }
     }
-    
-    
     
   }
 }
