@@ -11,7 +11,7 @@ import CoreData
 struct CoreDataHandler {
   static var shared = CoreDataHandler()
   var notifications: [NSManagedObject] = []
-  
+  /// This function saves the received notification values
   mutating func saveNotificationData(appointmentDate: String, appointmentTime: String, notificationTimer: String, notificationUniqueId: String, socketId: String, stationId: String) {
     
     guard let appDelegate =
@@ -19,19 +19,17 @@ struct CoreDataHandler {
       return
     }
     
-    // 1
-    let managedContext =
-      appDelegate.persistentContainer.viewContext
+    // 1 get the context
+    let managedContext = appDelegate.persistentContainer.viewContext
     
-    // 2
-    let entity =
-      NSEntityDescription.entity(forEntityName: "Appointment",
+    // 2 get the core data object
+    let entity = NSEntityDescription.entity(forEntityName: "AppointmentsCore",
                                  in: managedContext)!
     
     let notification = NSManagedObject(entity: entity,
                                  insertInto: managedContext)
     
-    // 3
+    // 3 set the row values according to received values
     notification.setValue(appointmentDate, forKeyPath: "appointmentDate")
     notification.setValue(appointmentTime, forKeyPath: "appointmentTime")
     notification.setValue(notificationTimer, forKeyPath: "notificationTimer")
@@ -39,7 +37,7 @@ struct CoreDataHandler {
     notification.setValue(socketId, forKeyPath: "socketId")
     notification.setValue(stationId, forKeyPath: "stationId")
     
-    // 4
+    // 4 save the values
     do {
       try managedContext.save()
       notifications.append(notification)

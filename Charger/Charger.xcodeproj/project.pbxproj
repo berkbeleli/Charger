@@ -12,8 +12,8 @@
 		C00831ED28806EC200FC4FAA /* UINavigationItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00831EC28806EC200FC4FAA /* UINavigationItem+Extension.swift */; };
 		C00ED7F82882082D004322BA /* MakeAppointmentTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00ED7F72882082D004322BA /* MakeAppointmentTableViewHelper.swift */; };
 		C00ED7FB28820F66004322BA /* NotificationTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00ED7FA28820F66004322BA /* NotificationTimePicker.swift */; };
-		C00ED80228823F25004322BA /* Appointment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C00ED80028823F25004322BA /* Appointment.xcdatamodeld */; };
 		C00ED80428824055004322BA /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00ED80328824055004322BA /* CoreDataHandler.swift */; };
+		C00ED80728824352004322BA /* AppointmentsCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C00ED80528824352004322BA /* AppointmentsCore.xcdatamodeld */; };
 		C0319AD8287E0757005B846D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AD7287E0757005B846D /* ProfileViewController.swift */; };
 		C0319ADA287E0FA9005B846D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AD9287E0FA9005B846D /* ProfileViewModel.swift */; };
 		C0319ADC287E1115005B846D /* UserToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319ADB287E1115005B846D /* UserToken.swift */; };
@@ -96,8 +96,8 @@
 		C00831EC28806EC200FC4FAA /* UINavigationItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+Extension.swift"; sourceTree = "<group>"; };
 		C00ED7F72882082D004322BA /* MakeAppointmentTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAppointmentTableViewHelper.swift; sourceTree = "<group>"; };
 		C00ED7FA28820F66004322BA /* NotificationTimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTimePicker.swift; sourceTree = "<group>"; };
-		C00ED80128823F25004322BA /* Appointment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Appointment.xcdatamodel; sourceTree = "<group>"; };
 		C00ED80328824055004322BA /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
+		C00ED80628824352004322BA /* AppointmentsCore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppointmentsCore.xcdatamodel; sourceTree = "<group>"; };
 		C0319AD7287E0757005B846D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C0319AD9287E0FA9005B846D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		C0319ADB287E1115005B846D /* UserToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserToken.swift; sourceTree = "<group>"; };
@@ -238,8 +238,8 @@
 		C00ED7FF28823ED0004322BA /* AppointmentCoreData */ = {
 			isa = PBXGroup;
 			children = (
-				C00ED80028823F25004322BA /* Appointment.xcdatamodeld */,
 				C00ED80328824055004322BA /* CoreDataHandler.swift */,
+				C00ED80528824352004322BA /* AppointmentsCore.xcdatamodeld */,
 			);
 			path = AppointmentCoreData;
 			sourceTree = "<group>";
@@ -921,6 +921,7 @@
 				C0319AE8287E22C5005B846D /* CustomCityTableViewCell.swift in Sources */,
 				C0EF3A7A287CCA010078C77A /* UITextField+Extension.swift in Sources */,
 				C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */,
+				C00ED80728824352004322BA /* AppointmentsCore.xcdatamodeld in Sources */,
 				C047CC05287EE6630038CAA2 /* Station.swift in Sources */,
 				C0F14FE62881B2B000079EE1 /* MakeAppAddresssTableViewCell.swift in Sources */,
 				C047CC0D287F0A680038CAA2 /* StationTableViewHelper.swift in Sources */,
@@ -949,7 +950,6 @@
 				C0BD8E292880CB0700F91A8E /* TimeSelectionTableViewCell.swift in Sources */,
 				C00ED7F82882082D004322BA /* MakeAppointmentTableViewHelper.swift in Sources */,
 				C00ED80428824055004322BA /* CoreDataHandler.swift in Sources */,
-				C00ED80228823F25004322BA /* Appointment.xcdatamodeld in Sources */,
 				C0EF3A84287CD13D0078C77A /* AppConstants.swift in Sources */,
 				C0319ADA287E0FA9005B846D /* ProfileViewModel.swift in Sources */,
 				C0F14FDD288190AA00079EE1 /* CustomPopupViewController.swift in Sources */,
@@ -1217,13 +1217,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		C00ED80028823F25004322BA /* Appointment.xcdatamodeld */ = {
+		C00ED80528824352004322BA /* AppointmentsCore.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				C00ED80128823F25004322BA /* Appointment.xcdatamodel */,
+				C00ED80628824352004322BA /* AppointmentsCore.xcdatamodel */,
 			);
-			currentVersion = C00ED80128823F25004322BA /* Appointment.xcdatamodel */;
-			path = Appointment.xcdatamodeld;
+			currentVersion = C00ED80628824352004322BA /* AppointmentsCore.xcdatamodel */;
+			path = AppointmentsCore.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

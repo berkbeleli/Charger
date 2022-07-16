@@ -27,6 +27,7 @@ class MakeAppointmentViewModel{
       let titleValue = String(format: NSLocalizedString("station: %@ timeleft: %@", comment: ""), stationName as! NSString, notificationTime?.localizeString() as! NSString) // create a localized title Value for our notification
       
       let minutesAgo = Int(notificationTime!.filter("0123456789".contains)) // turn the notification Time into filtered number
+
       var identifier = UUID().uuidString
       NotificationManager.shared.createAppointmentNotification( // send the required variables to the func to create notification
         date: appointmentValues?.dateData ?? "2022-01-01",
@@ -37,6 +38,16 @@ class MakeAppointmentViewModel{
         body: titleValue) {[weak self] result in
           
           if result == "NOTIFICATION SET" {
+            DispatchQueue.main.async {
+              CoreDataHandler.shared.saveNotificationData(
+                appointmentDate: (self?.appointmentValues?.dateData)!,
+                appointmentTime: (self?.appointmentValues?.time)!,
+                notificationTimer: "\(minutesAgo!)",
+                notificationUniqueId: identifier,
+                socketId: "\(self?.appointmentValues?.socketNumber)",
+                stationId: "\(self?.appointmentValues?.stationID)") // save the set notification values inside our core data
+            }
+    
             self?.createAppointment() // if the notification set call the createAppointment func
           }else {
             self?.onNotificationError?(result)

@@ -45,6 +45,9 @@ class MakeAppointmentViewController: UIViewController {
     tableViewHelper.setItems(appointmentValues!)
     viewModel.appointmentValues = appointmentValues
     viewModel.stationName = stationName
+    viewModel.onAppointmentCreated = {
+      
+    }
   }
   
   
