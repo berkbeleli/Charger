@@ -55,6 +55,13 @@ class StationViewController: UIViewController {
     navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.decrease")?.withTintColor(Themes.colorSolidWhite), style: .plain, target: self, action: #selector(filterPageOpen)) // Create open Filter Page Button
   }
   
+  // Setup UI Elements according to app language
+  func localization() {
+    self.navigationItem.title = "stationselectionTitle".localizeString()
+    noResultTitle.text = "noCityErrorTitle".localizeString()
+    noResultSubtitle.text = "noCityErrorSubTitle".localizeString()
+  }
+  
   func setupCustomSearchTextField() {
     searchStationTextField.addTarget(self, action: #selector(filterTextEntered), for: .editingChanged) // add and observer for our custom searchBar
     searchStationTextField.layer.cornerRadius = ObjectConstants.searchTextFiledBorderRadius
@@ -121,6 +128,7 @@ class StationViewController: UIViewController {
     
     viewModel.onStationsError = { [weak self] receivedError in
       // show received error custom error page
+      self?.openErrorPopUp(error: receivedError)
     }
     
     collectionViewHelper = .init(with: filterCollectionView, vm: viewModel)
@@ -135,12 +143,21 @@ class StationViewController: UIViewController {
     }
   }
   
-  // Setup UI Elements according to app language
-  func localization() {
-    self.navigationItem.title = "stationselectionTitle".localizeString()
-    noResultTitle.text = "noCityErrorTitle".localizeString()
-    noResultSubtitle.text = "noCityErrorSubTitle".localizeString()
+  func openErrorPopUp(error: String) {
+    let popvc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CustomPopup") as! CustomPopupViewController // instantiate custom popup view
+    UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController!.addChild(popvc)
+    popvc.view.frame = UIScreen.main.bounds
+    UIApplication.shared.windows.last!.addSubview(popvc.view)
+    // if we receive a server error
+    popvc.setupObjects(
+      title: "receivedServerErrorTitle".localizeString(),
+      subtitle: error.localizeString(),
+      confirmButtonLabel:  "receivedServerErrorButtonTitle".localizeString(),
+      cancelButtonLabel: "zero".localizeString(),hideSecondButton: true)
+    popvc.didMove(toParent: self)
   }
+  
+
   
   @objc
   func filterTextEntered(textfield: UITextField) {
