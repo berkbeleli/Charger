@@ -90,15 +90,18 @@
 "getNotify" = "Receive Notification";
 "confirmAppointmentButton" = "CONFIRM APPOINTMENT";
 
-//MARK: - TIME SELECTION PICKER
-"5m" = "5 minutes ago";
-"10m" = "10 minutes ago";
-"15m" = "15 minutes ago";
-"30m" = "30 minutes ago";
-"60m" = "1 hour ago";
-"120m" = "2 hours ago";
-"180m" = "3 hours ago";
+"upcomingAppointment" = "Upcoming Appointment";
+"station: %@ timeleft: %@" = "Your appointment at %@ will be in %@.";
 
+//MARK: - TIME SELECTION PICKER
+"5m" = "5 minutes";
+"10m" = "10 minutes";
+"15m" = "15 minutes";
+"30m" = "30 minutes";
+"60m" = "1 hour";
+"120m" = "2 hours";
+"180m" = "3 hours";
+"beforetime" = "ago";
 
 "receivedServerErrorTitle" = "Server Error";
 "receivedServerErrorButtonTitle" = "EDIT";

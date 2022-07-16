@@ -149,8 +149,7 @@ extension MakeAppointmentTableViewHelper: UITableViewDataSource {
        
        let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationTimeTableViewCell") as! NotificationTimeTableViewCell
        
-       cell.notificationTimeLabel.text = vm!.notificationTime?.localizeString() ?? "5m".localizeString()
-       
+       cell.notificationTimeLabel.text = (vm!.notificationTime?.localizeString())! + " " + "beforetime".localizeString()
        (cell.notificationTimeBackgroundView as? NotificationTimePickerView)?.delegate = self // get time picker delegation
        cell.backgroundColor = .clear
        if vm?.getNotified ?? false { // if wwe do not want to reeceive notification we will hide this cell

@@ -89,14 +89,18 @@
 "getNotify" = "Bildirim Al";
 "confirmAppointmentButton" = "RANDEVUYU ONAYLA";
 
+"upcomingAppointment" = "Yaklaşan Randevu";
+"station: %@ timeleft: %@" = "%@ istasyonu için oluşturduğunuz randevunuza %@ kaldı.";
+
 //MARK: - TIME SELECTION PICKER
-"5m" = "5 dakika önce";
-"10m" = "10 dakika önce";
-"15m" = "15 dakika önce";
-"30m" = "30 dakika önce";
-"60m" = "1 saat önce";
-"120m" = "2 saat önce";
-"180m" = "3 saat önce";
+"5m" = "5 dakika";
+"10m" = "10 dakika";
+"15m" = "15 dakika";
+"30m" = "30 dakika";
+"60m" = "1 saat";
+"120m" = "2 saat";
+"180m" = "3 saat";
+"beforetime" = "önce";
 
 
 "receivedServerErrorTitle" = "Server Hatası";

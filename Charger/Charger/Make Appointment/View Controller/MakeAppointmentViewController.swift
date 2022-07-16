@@ -43,11 +43,13 @@ class MakeAppointmentViewController: UIViewController {
   func setupController() {
     tableViewHelper = .init(tableView: appointmentDatasTableView, vm: viewModel)
     tableViewHelper.setItems(appointmentValues!)
+    viewModel.appointmentValues = appointmentValues
+    viewModel.stationName = stationName
   }
   
   
   @IBAction func confirmAppointmentButtonPressed(_ sender: UIButton) {
-    viewModel.createAppointment()
+    viewModel.requestAppointment()
   }
   
   
