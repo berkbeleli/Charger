@@ -46,6 +46,7 @@ class ProfileViewController: UIViewController {
     profileBadgeImage.image = Themes.profileBadgeImage
     emailLabel.text = User.user?.email! // set email label to our user email
     deviceUdIdLabel.text = AppConstants.deviceUDID // set Device Id to our device Id constant value
+    self.navigationController?.interactivePopGestureRecognizer?.delegate = self // allow swipe to back page
   }
   
   // Setup UI Elements according to app language
@@ -86,4 +87,10 @@ class ProfileViewController: UIViewController {
   @IBAction func logOutPressed(_ sender: UIButton) {
     viewModel.logOutRequest() // request logout from our vm
   }
+}
+//MARK: - UIGestureRecognizerDelegate
+extension ProfileViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true // allow slide to back page feature
+    }
 }

@@ -66,6 +66,7 @@ class DateTimeViewController: UIViewController {
     socketThirdTypeLabel.font = Themes.fontRegular
     socketThirdTypeLabel.textColor = Themes.colorGrayScale
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // with this we will disable back button label text
+    self.navigationController?.interactivePopGestureRecognizer?.delegate = self // allow swipe to back page
   }
   
   // Setup UI Elements according to app language
@@ -210,4 +211,11 @@ extension DateTimeViewController: TimeSelectionProtocol {
   func didTimeSelected() {
     activateConfirmButton() // if a time selected we will activate the confirm button
   }
+}
+
+//MARK: - UIGestureRecognizerDelegate
+extension DateTimeViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true // allow slide to back page feature
+    }
 }

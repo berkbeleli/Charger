@@ -101,6 +101,7 @@ class FilterStationsViewController: UIViewController {
     distanceSlider.tintColor = Themes.colorSelectedGreen
     
     navigationItem.rightBarButtonItem = UIBarButtonItem(title: "clearButton".localizeString(), style: .done, target: self, action: #selector(emptyFilters))
+    self.navigationController?.interactivePopGestureRecognizer?.delegate = self // allow swipe to back page
   }
   
   /// Setup UI Elements according to app language
@@ -252,4 +253,11 @@ class FilterStationsViewController: UIViewController {
     viewModel.clearFilters()
   }
   
+}
+
+//MARK: - UIGestureRecognizerDelegate
+extension FilterStationsViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true // allow slide to back page feature
+    }
 }

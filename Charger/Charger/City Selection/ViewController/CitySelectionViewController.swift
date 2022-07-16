@@ -65,6 +65,7 @@ class CitySelectionViewController: UIViewController {
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // with this we will disable back button label text
     noResultView.isHidden = true
     cityTableView.isHidden = true
+    self.navigationController?.interactivePopGestureRecognizer?.delegate = self // allow swipe to back page
   }
   
   // Setup UI Elements according to app language
@@ -162,4 +163,10 @@ extension CitySelectionViewController: CitySelectionProtocol {
   func didCitySelected(_ vc: UIViewController) {
     self.navigationController?.pushViewController(vc, animated: true) // PUSH The vc that has been sent from delegate selected city
   }
+}
+//MARK: - UIGestureRecognizerDelegate
+extension CitySelectionViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true // allow slide to back page feature
+    }
 }
