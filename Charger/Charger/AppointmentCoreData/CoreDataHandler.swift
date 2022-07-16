@@ -46,4 +46,42 @@ struct CoreDataHandler {
     }
   }
   
+  mutating func catchAppoinmentNotificationData(returnType: String, appointmentDate: String, appointmentTime: String, socketId: String, stationId: String) -> String {
+    //1
+      guard let appDelegate =
+        UIApplication.shared.delegate as? AppDelegate else {
+          return "could not catch"
+      }
+      
+      let managedContext =
+        appDelegate.persistentContainer.viewContext
+      
+      //2
+      let fetchRequest =
+        NSFetchRequest<NSManagedObject>(entityName: "AppointmentsCore")
+      
+      //3
+      do {
+        self.notifications = try managedContext.fetch(fetchRequest)
+        
+      } catch let error as NSError {
+        print("Could not fetch. \(error), \(error.userInfo)")
+      }
+    let resultNotification = notifications.filter {
+      ($0.value(forKey: "appointmentDate") as! String) == appointmentDate &&
+      ($0.value(forKey: "appointmentTime") as! String) == appointmentTime &&
+      ($0.value(forKey: "socketId") as! String) == socketId &&
+      ($0.value(forKey: "stationId") as! String) == stationId
+    }
+    if resultNotification.count > 0 {
+      if returnType == "notificationTime" {
+        return (resultNotification[0].value(forKey: "notificationTimer") as? String)!
+      }else if returnType == "identifier" {
+        return (resultNotification[0].value(forKey: "notificationUniqueId") as? String)!
+      }
+    }
+
+    return ""
+  }
+  
 }

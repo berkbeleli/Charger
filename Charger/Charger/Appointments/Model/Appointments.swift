@@ -5,7 +5,7 @@
 //  Created by Berk Beleli on 2022-07-15.
 //
 
-import Foundation
+import UIKit
 
 struct Appointment: Codable {
   var appointmentId: Int?
@@ -25,10 +25,10 @@ struct Appointment: Codable {
     case stationName
     case hasPassed
   }
-  
 }
 
 struct StationAppointment: Codable {
+  var id: Int?
   var sockets: [SocketAppointment]?
 }
 
@@ -48,5 +48,22 @@ struct SocketAppointment: Codable {
     case powerUnit
     case socketNumber
   }
-  
 }
+
+// we will use next model for our view
+struct AppointmentViewViewModel {
+  var appointmentId: String?
+  var date: String?
+  var time: String?
+  var showingTime: String?
+  var showAlertTime: String?
+  var stationId: String?
+  var socketId: String?
+  var socket: SocketAppointment?
+  var outpower: String?
+  var stationName: String?
+  var hasPassed: Bool?
+  var notificationTime: String?
+  var imageType: UIImage?
+}
+

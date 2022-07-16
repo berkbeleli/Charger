@@ -74,12 +74,15 @@ class CustomPopupViewController: UIViewController {
     })
   }
   
+  
   @IBAction func actionButtonPressed(_ sender: UIButton) {
+    self.removeFromParent()
     self.confirmPressed?("CONFIRMED")
     removeAnimate()
   }
   
   @IBAction func secondActionButtonPressed(_ sender: UIButton) {
+    self.removeFromParent()
     self.secondActionPressed?("SECONDACTION")
     removeAnimate()
     self.dismiss(animated: true)

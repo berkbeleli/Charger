@@ -29,6 +29,9 @@ struct Themes {
   static let fontBoldMakeAppInfoType = UIFont(name: "Proxima Nova Bold", size: 14)!
   static let fontRegularMakeAppInfo = UIFont(name: "ProximaNova-Regular", size: 14)!
   
+  static let fontBoldAppointmentSubValues = UIFont(name: "Proxima Nova Bold", size: 14)!
+  static let fontRegularAppointmentSubtitle = UIFont(name: "ProximaNova-Regular", size: 14)!
+  
   static let noAppointmentImage = UIImage(named: "AppointmentBadge")!
   static let UserImage = UIImage(named: "Users")!
   static let profileBadgeImage = UIImage(named: "ProfileBadge")!
