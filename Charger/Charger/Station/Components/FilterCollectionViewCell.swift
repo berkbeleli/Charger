@@ -13,7 +13,6 @@ class FilterCollectionViewCell: UICollectionViewCell {
   @IBOutlet private(set) weak var filterLabel: UILabel!
   override func awakeFromNib() {
     super.awakeFromNib()
-    
     setupUI()
   }
   /// setup the ui
@@ -25,7 +24,7 @@ class FilterCollectionViewCell: UICollectionViewCell {
     filterLabel.font = Themes.fontRegular
     filterLabel.textColor = Themes.colorSolidWhite
   }
-  
+  /// handle deletion of a filter item
   @IBAction func deleteFilterButton(_ sender: UIButton) {
     deleteFilter?("DeletedFilter")
   }

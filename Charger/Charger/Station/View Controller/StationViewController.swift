@@ -23,13 +23,18 @@ class StationViewController: UIViewController {
   private var collectionViewHelper: StationCollectionViewHelper!
   var cityName: String?
   var filterValues: FilterModel? // it will hold the filter Values
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      setupUI()
-      setupCustomSearchTextField()
-      localization()
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setupUI()
+    setupCustomSearchTextField()
+    localization()
+  }
+  override func viewWillAppear(_ animated: Bool) {
+    if filterValues == nil {
       setupController()
+      tableViewHelper.startGradientAnimation()
     }
+  }
   
   /// Setup UI Elements
   func setupUI(){
@@ -79,6 +84,7 @@ class StationViewController: UIViewController {
   func setupController() {
     viewModel.fetchStations(cityName: cityName ?? "Unknown City")
     tableViewHelper = .init(with: stationsTableView, vm: viewModel)
+    tableViewHelper.startGradientAnimation()
     tableViewHelper.delegate = self
     viewModel.onStationsChanged = {[weak self] stations in
       if stations.count == 0{
@@ -88,14 +94,12 @@ class StationViewController: UIViewController {
         self?.resultView.isHidden = false // show tableview
         self?.noResultView.isHidden = true // hide no result view
       }
- 
+      
       self?.resultLabel.isHidden = false
       self?.searchStationTextField.layer.borderColor = Themes.colorGrayScale.cgColor // border color for the textfield
       let stringResult = String(format: NSLocalizedString("City: %@ Count: %@", comment: ""), self?.cityName! as! NSString, "\(stations.count)" as! NSString) // localize string
       self?.resultLabel.attributedText = stringResult.withBoldText(text: self?.cityName! ?? "Unknown City", font: Themes.fontRegularSubtitle) // make city label bold
-      DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) { // inserted a delay so user can see the gradient animation
       self?.tableViewHelper.setItems(stations)
-      }
     }
     
     viewModel.onStationsFiltered =  {[weak self] filteredStations in
@@ -167,7 +171,7 @@ class StationViewController: UIViewController {
         self?.navigationItem.rightBarButtonItem?.tintColor = Themes.colorSolidWhite // if not make it white
         self?.filterCollectionView.isHidden = true // hide the collection view
       }
-  
+      
     }
   }
 }

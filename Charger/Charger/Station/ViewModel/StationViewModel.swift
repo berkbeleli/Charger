@@ -31,7 +31,6 @@ class StationViewModel{
       if errorString == nil {
         
         self?.cityStations = returnedResponse.filter{ $0.geoLocation?.province == cityName } // filter the stations that belongs to selected city
-        
         self?.allStations = (self?.cityStations ?? []).map { // map the received station according to our usage Model
           StationViewViewModel.init(
             stationId: $0.id ?? 0,
@@ -146,30 +145,9 @@ class StationViewModel{
   }
   
   func filteredStations() {
-    var resultFilter: [StationViewViewModel] = []
-    for filterItemIndex in 0..<(filtersForDisplay?.count ?? 0) {
-      
-      if filterItemIndex == 0 { // check if we are in the first index
-        if let enumCase = DeviceType(rawValue: filtersForDisplay![0]) { //check if the first item device type filter
-          resultFilter = allStations!.filter({ data in
-            return data.chargeTypes!.contains(where: { $0 == filtersForDisplay![0]}) // check the item
-          })
-        }else if let enumCase = SocketType(rawValue: filtersForDisplay![0]) { //check if the first item socket type filter
-          resultFilter = allStations!.filter({ data in
-            return data.socketTypes!.contains(where: { $0 == filtersForDisplay![0]})// check the item
-          })
-        }else if let enumCase = Services(rawValue: filtersForDisplay![0]) { //check if the first item service type filter
-          resultFilter = allStations!.filter({ data in
-            return data.services!.contains(where: { $0 == filtersForDisplay![0]})// check the item
-          })
-        }else {
-          resultFilter = allStations!.filter({ data in //check if the first item distance type filter
-            let result = filtersForDisplay![0].filter("0123456789.".contains)
-            return (data.distanceFilter ?? 0)! < Double(result.replacingOccurrences(of: ",", with: ".")) ?? 0
-          })
-        }
-      } else { // after the first filtered item we will do the second according to first item
-        
+    var resultFilter: [StationViewViewModel] = allStations ?? []
+
+    for filterItemIndex in 0..<(filtersForDisplay?.count ?? 0) { // get through inside filter datas
         if let enumCase = DeviceType(rawValue: filtersForDisplay![filterItemIndex]) {//check if the item device type filter
           resultFilter = resultFilter.filter({ data in
             return data.chargeTypes!.contains(where: { $0 == filtersForDisplay![filterItemIndex]})// check the item
@@ -179,30 +157,27 @@ class StationViewModel{
           resultFilter = resultFilter.filter({ data in
             return data.socketTypes!.contains(where: { $0 == filtersForDisplay![filterItemIndex]})// check the item
           })
-          
         }else if let enumCase = Services(rawValue:  filtersForDisplay![filterItemIndex]) { //check if the item service type filter
-          
           resultFilter = resultFilter.filter({ data in
             return data.services!.contains(where: { $0 == filtersForDisplay![filterItemIndex]})// check the item
           })
-          
         }else {
           resultFilter = resultFilter.filter({ data in
-            let result = filtersForDisplay![filterItemIndex].filter("0123456789.".contains)
-            return (data.distanceFilter ?? 0)! < Double(result.replacingOccurrences(of: ",", with: ".")) ?? 0
+            let result = filtersForDisplay![filterItemIndex].filter("0123456789,".contains)
+            if data.distanceFilter == nil {
+              return false
+            }else {
+              return (data.distanceFilter ?? 0)! < Double(result.replacingOccurrences(of: ",", with: ".")) ?? 0
+            }
           })
         }
-      }
-      
     }
-    
     if resultFilter == [] && filtersForDisplay?.count == 0 { // if all of the filters deleted get the first array
       filterStations = allStations
     }else {
       filterStations = resultFilter // if not get the result array
     }
-    
-    
+        
     onStationsChanged?(filterStations ?? []) // return the result array to our vc
   }
   
