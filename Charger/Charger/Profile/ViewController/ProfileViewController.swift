@@ -57,16 +57,30 @@ class ProfileViewController: UIViewController {
   }
   
   func setupVM() {
-    viewModel.onLogoutRequested = {  result in // check the result of login request
+    viewModel.onLogoutRequested = {[weak self]  result in // check the result of login request
       if result == "SUCCESS" {
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "navController")
         vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true)
+        self?.present(vc, animated: true)
       }else {
         // show error popup here
-        print(result)
+        self?.openErrorPopUp(error: result)
       }
     }
+  }
+  
+  func openErrorPopUp(error: String) {
+    let popvc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CustomPopup") as! CustomPopupViewController // instantiate custom popup view
+    UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController!.addChild(popvc)
+    popvc.view.frame = UIScreen.main.bounds
+    UIApplication.shared.windows.last!.addSubview(popvc.view)
+    // if we receive a server error
+    popvc.setupObjects(
+      title: "receivedServerErrorTitle".localizeString(),
+      subtitle: error.localizeString(),
+      confirmButtonLabel:  "receivedServerErrorButtonTitle".localizeString(),
+      cancelButtonLabel: "zero".localizeString(),hideSecondButton: true)
+    popvc.didMove(toParent: self)
   }
 
   @IBAction func logOutPressed(_ sender: UIButton) {
