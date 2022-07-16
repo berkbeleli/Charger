@@ -28,6 +28,10 @@
 "Your appointment at %@ on %@ at %@ will be cancelled." = "Your appointment at %@ on %@ at %@ will be cancelled.";
 "cancelAppointmentTitle" = "Cancel Appointment";
 
+"maxNumberAppointmentsReachedTitle" = "Maximum Number Reached";
+"maxNumberAppointmentsReachedSubTitle" = "You can only have 10 appointments at the same time.";
+"maxNumberAppointmentsReachedButton" = "OKAY";
+
 "confirmButton" = "CANCEL APPOINTMENT";
 "confirmCancelButton" = "CANCEL";
 

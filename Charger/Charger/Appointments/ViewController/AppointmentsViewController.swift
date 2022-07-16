@@ -99,7 +99,10 @@ class AppointmentsViewController: UIViewController {
       popvc.confirmPressed = { [weak self] response in
         self?.viewModel.deleteAppointment(appointmentID: appointmentID!)//delete appointment
       } // handle received button press action
-    }else {
+    }else if error == "maxNumberAppointmentsReached"{ // HANDLE IF there is more than 10 appointments error
+      popvc.setupObjects(title: "maxNumberAppointmentsReachedTitle".localizeString(), subtitle: "maxNumberAppointmentsReachedSubTitle".localizeString(), confirmButtonLabel:  "maxNumberAppointmentsReachedButton".localizeString(), cancelButtonLabel: "zero".localizeString(),hideSecondButton: true)
+      popvc.didMove(toParent: self)
+    }else { // handle server errors
       popvc.setupObjects(title: "receivedServerErrorTitle".localizeString(), subtitle: "error".localizeString(), confirmButtonLabel:  "receivedServerErrorButtonTitle".localizeString(), cancelButtonLabel: "zero".localizeString(),hideSecondButton: true)
       popvc.didMove(toParent: self)
     }
@@ -109,8 +112,11 @@ class AppointmentsViewController: UIViewController {
   
   
   @IBAction func createAppointmentPressed(_ sender: UIButton) {
-    let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CitySelection")
-    self.navigationController?.pushViewController(vc, animated: true)
+    if viewModel.shouldNavigateNextPage() { //if the number of the appointments higher than 10 we will show erro popup
+      let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CitySelection")
+      self.navigationController?.pushViewController(vc, animated: true)
+    }else {
+      openErrorPopUp(error: "maxNumberAppointmentsReached")
   }
 }
 

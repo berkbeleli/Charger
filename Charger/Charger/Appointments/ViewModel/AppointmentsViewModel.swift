@@ -118,6 +118,15 @@ class AppointmentsViewModel{
     let notificationIdentifier = CoreDataHandler.shared.catchAppoinmentNotificationData(returnType: "identifier", appointmentDate: (appointmentDatas.date ?? "2022-01-01"), appointmentTime: (appointmentDatas.time ?? "00:00"), socketId: (appointmentDatas.socketId ?? "") , stationId: (appointmentDatas.stationId ?? ""))
     NotificationManager.shared.removeNotification(identifier: notificationIdentifier)
   }
+  /// Checks the number of the current appointment higher than 10 
+  func shouldNavigateNextPage() -> Bool {
+    if (currentAppointments?.count ?? 0) > 10 {
+      return false
+    }else {
+      return true
+    }
+  }
+  
 }
 
 

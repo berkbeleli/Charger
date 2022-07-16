@@ -27,6 +27,10 @@
 "Your appointment at %@ on %@ at %@ will be cancelled." = "%@ istasyonundaki %@ saat %@ randevunuz iptal edilecektir.";
 "cancelAppointmentTitle" = "Randevu İptali";
 
+"maxNumberAppointmentsReachedTitle" = "Randevu Sayısı Aşımı";
+"maxNumberAppointmentsReachedSubTitle" = "Aynı anda maksimum 10 adet randevu alabilirsiniz.";
+"maxNumberAppointmentsReachedButton" = "TAMAM";
+
 "confirmButton" = "RANDEVUYU İPTAL ET";
 "confirmCancelButton" = "VAZGEÇ";
 
