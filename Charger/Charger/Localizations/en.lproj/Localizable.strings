@@ -99,7 +99,7 @@
 "outpower" = "Power";
 "appointmentInfos" = "APPOINTMENT INFOS";
 "date" = "Date";
-"time" = "Time";
+"time" = "hours";
 "appointmentDuration" = "Appointment Duration";
 "getNotify" = "Receive Notification";
 "confirmAppointmentButton" = "CONFIRM APPOINTMENT";
@@ -113,6 +113,9 @@
 "notificationNotAllowedSubtitle" = "Allow notifications to receive notifications before appointments.";
 "notificationErrorConfirmButton" = "EDIT";
 "notificationSecondConfirmButton" = "WITHOUT NOTIFICATION";
+
+"Otopark" = "Car Parking";
+"Büfe" = "Buffet";
 
 //MARK: - TIME SELECTION PICKER
 "5m" = "5 minutes";
