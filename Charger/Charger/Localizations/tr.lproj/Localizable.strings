@@ -20,6 +20,8 @@
 "noAppointmentsInfo" = "Oluşturulan randevular burada listelenir.";
 "createAppointmentButton" = "RANDEVU OLUŞTUR";
 
+"appointmentPageSocket" = "Soket numarası:";
+
 
 //MARK: - PROFILE PAGE
 "profileTitle" = "Profil";

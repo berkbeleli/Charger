@@ -14,6 +14,8 @@
 		C00ED7FB28820F66004322BA /* NotificationTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00ED7FA28820F66004322BA /* NotificationTimePicker.swift */; };
 		C00ED80428824055004322BA /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00ED80328824055004322BA /* CoreDataHandler.swift */; };
 		C00ED80728824352004322BA /* AppointmentsCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C00ED80528824352004322BA /* AppointmentsCore.xcdatamodeld */; };
+		C01767052882D642005C5655 /* AppointmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01767032882D642005C5655 /* AppointmentsTableViewCell.swift */; };
+		C01767062882D642005C5655 /* AppointmentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C01767042882D642005C5655 /* AppointmentsTableViewCell.xib */; };
 		C0319AD8287E0757005B846D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AD7287E0757005B846D /* ProfileViewController.swift */; };
 		C0319ADA287E0FA9005B846D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AD9287E0FA9005B846D /* ProfileViewModel.swift */; };
 		C0319ADC287E1115005B846D /* UserToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319ADB287E1115005B846D /* UserToken.swift */; };
@@ -98,6 +100,8 @@
 		C00ED7FA28820F66004322BA /* NotificationTimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTimePicker.swift; sourceTree = "<group>"; };
 		C00ED80328824055004322BA /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		C00ED80628824352004322BA /* AppointmentsCore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppointmentsCore.xcdatamodel; sourceTree = "<group>"; };
+		C01767032882D642005C5655 /* AppointmentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsTableViewCell.swift; sourceTree = "<group>"; };
+		C01767042882D642005C5655 /* AppointmentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentsTableViewCell.xib; sourceTree = "<group>"; };
 		C0319AD7287E0757005B846D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C0319AD9287E0FA9005B846D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		C0319ADB287E1115005B846D /* UserToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserToken.swift; sourceTree = "<group>"; };
@@ -242,6 +246,15 @@
 				C00ED80528824352004322BA /* AppointmentsCore.xcdatamodeld */,
 			);
 			path = AppointmentCoreData;
+			sourceTree = "<group>";
+		};
+		C01767022882D629005C5655 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C01767032882D642005C5655 /* AppointmentsTableViewCell.swift */,
+				C01767042882D642005C5655 /* AppointmentsTableViewCell.xib */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		C0319AD4287E071F005B846D /* Profile */ = {
@@ -658,6 +671,7 @@
 		C0EF3AA3287CE4920078C77A /* Appointments */ = {
 			isa = PBXGroup;
 			children = (
+				C01767022882D629005C5655 /* Components */,
 				C0F14FFB2881BF2500079EE1 /* Model */,
 				C0EF3AA5287CE4B80078C77A /* ViewModel */,
 				C0EF3AA4287CE4A50078C77A /* ViewController */,
@@ -859,6 +873,7 @@
 				C0319AE9287E22C5005B846D /* CustomCityTableViewCell.xib in Resources */,
 				C0F14FF72881B86000079EE1 /* NotificationTimeTableViewCell.xib in Resources */,
 				C0EF3A9A287CDDCC0078C77A /* InfoPlist.strings in Resources */,
+				C01767062882D642005C5655 /* AppointmentsTableViewCell.xib in Resources */,
 				C070BB91287F794700DCCE44 /* FilterCollectionViewCell.xib in Resources */,
 				C0EF3A43287CAAD70078C77A /* Main.storyboard in Resources */,
 			);
@@ -964,6 +979,7 @@
 				C00831ED28806EC200FC4FAA /* UINavigationItem+Extension.swift in Sources */,
 				C0BD8E182880B53100F91A8E /* DatePickerLabel.swift in Sources */,
 				C0F14FF62881B86000079EE1 /* NotificationTimeTableViewCell.swift in Sources */,
+				C01767052882D642005C5655 /* AppointmentsTableViewCell.swift in Sources */,
 				C0EF3A6D287CB5C20078C77A /* String+Extension.swift in Sources */,
 				C0BD8E1E2880BA7A00F91A8E /* DateTimeViewModel.swift in Sources */,
 				C047CC09287F01770038CAA2 /* StationTableViewCell.swift in Sources */,
