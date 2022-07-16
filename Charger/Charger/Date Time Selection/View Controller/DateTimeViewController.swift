@@ -137,7 +137,7 @@ class DateTimeViewController: UIViewController {
       }
     }
   }
-  // open erro pop up according to received error
+  // open error pop up according to received error
   func onServerError(error: String) {
     openErrorPopUp(error: error, responseHandler: serverErrorHandler)
   }
@@ -179,16 +179,20 @@ class DateTimeViewController: UIViewController {
     if timeControl {
       openErrorPopUp(error: "DATE ERROR", responseHandler: resetDatePickerToday)
     }else {
-      // display next Page
-      print("Next Page")
+     // Display Appointment Infos page
+      let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MakeAppointment") as! MakeAppointmentViewController
+      vc.stationName = stationName // sent station Name
+      vc.appointmentValues = viewModel.requestAppointmentDatas() // request appointment values from viewmodel
+      self.navigationController?.pushViewController(vc, animated: true)
+      
     }
   }
 }
 // MARK: - DateSelectedDelegate
 extension DateTimeViewController: DateSelectedDelegate {
-  func dateChanged(date: String) {
+  func dateChanged(date: String, dateView: String) {
     viewModel.fetchTimes(stationId: "\(stationId!)", date: date) // fetch the times according to the selected date
-    viewModel.setDateAndDistanceValues(date: date, dateView: appointmentSelectorLabel.text!, distance: distance ?? "-1") // set view models date and distance values if thereis not distance value we will not show in the next page
+    viewModel.setDateAndDistanceValues(date: date, dateView: dateView, distance: distance ?? "-1") // set view models date and distance values if thereis not distance value we will not show in the next page
     deactivateConfirmButton()// deactivate confirm button
   }
 }

@@ -18,6 +18,7 @@ class DateTimeViewModel{
   var dateView: String? // date that is being shown to the user
   var distance: String? // distance to the
   var appointmentSelectedTime: String? = ""
+  var appointmentDatas: AppointmentDatas? = AppointmentDatas()
   /// Fetch Times from Api
   func fetchTimes(stationId: String, date: String) {
     let timesUrl = WebsiteUrl.dateTimeUrl + "\(stationId)" + "?userID=\(User.user?.userId ?? 0)" + "&date=\(date)" // create custom url
@@ -70,7 +71,7 @@ class DateTimeViewModel{
   }
   /// Creates Appointment Datas and returns them
   func createAppointmentDatas(allTimes: SelectTimeViewModel, tableNumber: Int, selectedRow: Int) {
-    var appointmentDatas = AppointmentDatas(
+    appointmentDatas = AppointmentDatas(
       address: allTimes.address,
       workingHours: "24",
       distance: distance == "-1" ? nil : distance, // check if the distance value exists
@@ -86,6 +87,10 @@ class DateTimeViewModel{
       time: allTimes.sockets![tableNumber].day?.timeSlots![selectedRow].slot,
       appointmentDuration: "1")
     appointmentSelectedTime = allTimes.sockets![tableNumber].day?.timeSlots![selectedRow].slot
+  }
+  
+  func requestAppointmentDatas() -> AppointmentDatas {
+    appointmentDatas!
   }
   /// checks if the selected date and time is past than the curentDate and Time
   func isDatePast() -> Bool {

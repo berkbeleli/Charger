@@ -69,7 +69,45 @@
 "oldDateSecondActionButton" = "BUGÜNÜ SEÇ";
 
 
+//MARK: - MAKE APPOINTMENT PAGE
+"makeAppointmentTitle" = "Randevu Detayı";
+"stationInfo" = "İSTASYON BİLGİLERİ";
+"addres" = "Adres";
+"workingHours" = "Hizmet Saatleri";
+"distance" = "Uzaklık";
+"stationCode" = "İstasyon Kodu";
+"services" = "Hizmetler";
+"socketInfos" = "SOKET BİLGİLERİ";
+"socketNumber" = "Soket Numarası";
+"deviceType" = "Cihaz Tipi";
+"socketType" = "Soket Tipi";
+"outpower" = "Çıkış Gücü";
+"appointmentInfos" = "RANDEVU BİLGİLERİ";
+"date" = "Tarih";
+"time" = "Saat";
+"appointmentDuration" = "Randevu Süresi";
+"getNotify" = "Bildirim Al";
+"confirmAppointmentButton" = "RANDEVUYU ONAYLA";
 
+"upcomingAppointment" = "Yaklaşan Randevu";
+"station: %@ timeleft: %@" = "%@ istasyonu için oluşturduğunuz randevunuza %@ kaldı.";
+
+"NOTIFICATION OLDER DATE" = "Geçersiz Bildirim Zamanı";
+"notificationolderSubtitle" = "Randevunuza kalan süre seçtiğiniz bildirim zamanından daha kısa.";
+"NOTIFICATION NOT ALLOWED" = "Bildirim İzni yok";
+"notificationNotAllowedSubtitle" = "Randevulardan önce bildirim almak için bildirimlere izin veriniz.";
+"notificationErrorConfirmButton" = "DÜZENLE";
+"notificationSecondConfirmButton" = "BİLDİRİMSİZ DEVAM ET";
+
+//MARK: - TIME SELECTION PICKER
+"5m" = "5 dakika";
+"10m" = "10 dakika";
+"15m" = "15 dakika";
+"30m" = "30 dakika";
+"60m" = "1 saat";
+"120m" = "2 saat";
+"180m" = "3 saat";
+"beforetime" = "önce";
 
 
 "receivedServerErrorTitle" = "Server Hatası";

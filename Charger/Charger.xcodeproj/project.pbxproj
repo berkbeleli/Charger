@@ -10,6 +10,10 @@
 		6CC73505AB1CAF438BA4D782 /* Pods_Charger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425149758F6630A3A1A11A7C /* Pods_Charger.framework */; };
 		C00831EB28805C7D00FC4FAA /* DateTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00831EA28805C7D00FC4FAA /* DateTimeViewController.swift */; };
 		C00831ED28806EC200FC4FAA /* UINavigationItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00831EC28806EC200FC4FAA /* UINavigationItem+Extension.swift */; };
+		C00ED7F82882082D004322BA /* MakeAppointmentTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00ED7F72882082D004322BA /* MakeAppointmentTableViewHelper.swift */; };
+		C00ED7FB28820F66004322BA /* NotificationTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00ED7FA28820F66004322BA /* NotificationTimePicker.swift */; };
+		C00ED80428824055004322BA /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00ED80328824055004322BA /* CoreDataHandler.swift */; };
+		C00ED80728824352004322BA /* AppointmentsCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C00ED80528824352004322BA /* AppointmentsCore.xcdatamodeld */; };
 		C0319AD8287E0757005B846D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AD7287E0757005B846D /* ProfileViewController.swift */; };
 		C0319ADA287E0FA9005B846D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AD9287E0FA9005B846D /* ProfileViewModel.swift */; };
 		C0319ADC287E1115005B846D /* UserToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319ADB287E1115005B846D /* UserToken.swift */; };
@@ -71,6 +75,17 @@
 		C0EF3AA0287CDF910078C77A /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3A9F287CDF910078C77A /* NotificationManager.swift */; };
 		C0EF3AA7287CE7130078C77A /* AppointmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF3AA6287CE7130078C77A /* AppointmentsViewController.swift */; };
 		C0F14FDD288190AA00079EE1 /* CustomPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F14FDC288190AA00079EE1 /* CustomPopupViewController.swift */; };
+		C0F14FE22881AECD00079EE1 /* MakeAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F14FE12881AECD00079EE1 /* MakeAppointmentViewController.swift */; };
+		C0F14FE62881B2B000079EE1 /* MakeAppAddresssTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F14FE42881B2B000079EE1 /* MakeAppAddresssTableViewCell.swift */; };
+		C0F14FE72881B2B000079EE1 /* MakeAppAddresssTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0F14FE52881B2B000079EE1 /* MakeAppAddresssTableViewCell.xib */; };
+		C0F14FEC2881B4EC00079EE1 /* OtherDatasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F14FEA2881B4EC00079EE1 /* OtherDatasTableViewCell.swift */; };
+		C0F14FED2881B4EC00079EE1 /* OtherDatasTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0F14FEB2881B4EC00079EE1 /* OtherDatasTableViewCell.xib */; };
+		C0F14FF12881B63200079EE1 /* GetNotifiedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F14FEF2881B63200079EE1 /* GetNotifiedTableViewCell.swift */; };
+		C0F14FF22881B63200079EE1 /* GetNotifiedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0F14FF02881B63200079EE1 /* GetNotifiedTableViewCell.xib */; };
+		C0F14FF62881B86000079EE1 /* NotificationTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F14FF42881B86000079EE1 /* NotificationTimeTableViewCell.swift */; };
+		C0F14FF72881B86000079EE1 /* NotificationTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0F14FF52881B86000079EE1 /* NotificationTimeTableViewCell.xib */; };
+		C0F14FFA2881BD9C00079EE1 /* MakeAppointmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F14FF92881BD9C00079EE1 /* MakeAppointmentViewModel.swift */; };
+		C0F14FFD2881BF2E00079EE1 /* Appointments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F14FFC2881BF2E00079EE1 /* Appointments.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +94,10 @@
 		676773AED797A27AF75B9CC0 /* Pods-Charger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Charger.release.xcconfig"; path = "Target Support Files/Pods-Charger/Pods-Charger.release.xcconfig"; sourceTree = "<group>"; };
 		C00831EA28805C7D00FC4FAA /* DateTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeViewController.swift; sourceTree = "<group>"; };
 		C00831EC28806EC200FC4FAA /* UINavigationItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+Extension.swift"; sourceTree = "<group>"; };
+		C00ED7F72882082D004322BA /* MakeAppointmentTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAppointmentTableViewHelper.swift; sourceTree = "<group>"; };
+		C00ED7FA28820F66004322BA /* NotificationTimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTimePicker.swift; sourceTree = "<group>"; };
+		C00ED80328824055004322BA /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
+		C00ED80628824352004322BA /* AppointmentsCore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppointmentsCore.xcdatamodel; sourceTree = "<group>"; };
 		C0319AD7287E0757005B846D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C0319AD9287E0FA9005B846D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		C0319ADB287E1115005B846D /* UserToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserToken.swift; sourceTree = "<group>"; };
@@ -146,6 +165,17 @@
 		C0EF3A9F287CDF910078C77A /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		C0EF3AA6287CE7130078C77A /* AppointmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsViewController.swift; sourceTree = "<group>"; };
 		C0F14FDC288190AA00079EE1 /* CustomPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopupViewController.swift; sourceTree = "<group>"; };
+		C0F14FE12881AECD00079EE1 /* MakeAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAppointmentViewController.swift; sourceTree = "<group>"; };
+		C0F14FE42881B2B000079EE1 /* MakeAppAddresssTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAppAddresssTableViewCell.swift; sourceTree = "<group>"; };
+		C0F14FE52881B2B000079EE1 /* MakeAppAddresssTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MakeAppAddresssTableViewCell.xib; sourceTree = "<group>"; };
+		C0F14FEA2881B4EC00079EE1 /* OtherDatasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherDatasTableViewCell.swift; sourceTree = "<group>"; };
+		C0F14FEB2881B4EC00079EE1 /* OtherDatasTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherDatasTableViewCell.xib; sourceTree = "<group>"; };
+		C0F14FEF2881B63200079EE1 /* GetNotifiedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNotifiedTableViewCell.swift; sourceTree = "<group>"; };
+		C0F14FF02881B63200079EE1 /* GetNotifiedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetNotifiedTableViewCell.xib; sourceTree = "<group>"; };
+		C0F14FF42881B86000079EE1 /* NotificationTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTimeTableViewCell.swift; sourceTree = "<group>"; };
+		C0F14FF52881B86000079EE1 /* NotificationTimeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTimeTableViewCell.xib; sourceTree = "<group>"; };
+		C0F14FF92881BD9C00079EE1 /* MakeAppointmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAppointmentViewModel.swift; sourceTree = "<group>"; };
+		C0F14FFC2881BF2E00079EE1 /* Appointments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointments.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +217,31 @@
 				C00831EA28805C7D00FC4FAA /* DateTimeViewController.swift */,
 			);
 			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		C00ED7F628820812004322BA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C00ED7F72882082D004322BA /* MakeAppointmentTableViewHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C00ED7F928820F4A004322BA /* NotificationTimeLabelPicker */ = {
+			isa = PBXGroup;
+			children = (
+				C00ED7FA28820F66004322BA /* NotificationTimePicker.swift */,
+			);
+			path = NotificationTimeLabelPicker;
+			sourceTree = "<group>";
+		};
+		C00ED7FF28823ED0004322BA /* AppointmentCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C00ED80328824055004322BA /* CoreDataHandler.swift */,
+				C00ED80528824352004322BA /* AppointmentsCore.xcdatamodeld */,
+			);
+			path = AppointmentCoreData;
 			sourceTree = "<group>";
 		};
 		C0319AD4287E071F005B846D /* Profile */ = {
@@ -410,7 +465,12 @@
 		C0BD8E2F2880E30400F91A8E /* Make Appointment */ = {
 			isa = PBXGroup;
 			children = (
+				C00ED7F928820F4A004322BA /* NotificationTimeLabelPicker */,
+				C0F14FE32881B28300079EE1 /* Components */,
+				C0F14FE02881AEBE00079EE1 /* View Controller */,
+				C0F14FF82881BD8B00079EE1 /* View Model */,
 				C0BD8E302880E31100F91A8E /* Model */,
+				C00ED7F628820812004322BA /* Helpers */,
 			);
 			path = "Make Appointment";
 			sourceTree = "<group>";
@@ -444,6 +504,7 @@
 		C0EF3A3A287CAAD70078C77A /* Charger */ = {
 			isa = PBXGroup;
 			children = (
+				C0F14FDE2881ACD500079EE1 /* New Group */,
 				C0BD8E192880B6F700F91A8E /* Date Handler */,
 				C0EF3A7B287CCD8C0078C77A /* Login */,
 				C0EF3AA3287CE4920078C77A /* Appointments */,
@@ -454,6 +515,7 @@
 				C00831E828805C2F00FC4FAA /* Date Time Selection */,
 				C0F14FDB2881908600079EE1 /* Custom Popup */,
 				C0BD8E2F2880E30400F91A8E /* Make Appointment */,
+				C00ED7FF28823ED0004322BA /* AppointmentCoreData */,
 				C0EF3A9E287CDF7B0078C77A /* LocalNotificationManager */,
 				C0EF3A8A287CD8D90078C77A /* LocationManager */,
 				C0EF3A7E287CCDE90078C77A /* GenericAPICaller */,
@@ -596,6 +658,7 @@
 		C0EF3AA3287CE4920078C77A /* Appointments */ = {
 			isa = PBXGroup;
 			children = (
+				C0F14FFB2881BF2500079EE1 /* Model */,
 				C0EF3AA5287CE4B80078C77A /* ViewModel */,
 				C0EF3AA4287CE4A50078C77A /* ViewController */,
 			);
@@ -620,9 +683,95 @@
 		C0F14FDB2881908600079EE1 /* Custom Popup */ = {
 			isa = PBXGroup;
 			children = (
-				C0F14FDC288190AA00079EE1 /* CustomPopupViewController.swift */,
+				C0F14FDF2881AEB200079EE1 /* View Controller */,
 			);
 			path = "Custom Popup";
+			sourceTree = "<group>";
+		};
+		C0F14FDE2881ACD500079EE1 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		C0F14FDF2881AEB200079EE1 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C0F14FDC288190AA00079EE1 /* CustomPopupViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		C0F14FE02881AEBE00079EE1 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C0F14FE12881AECD00079EE1 /* MakeAppointmentViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		C0F14FE32881B28300079EE1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C0F14FF32881B83500079EE1 /* Notification Time TableViewCell */,
+				C0F14FEE2881B60F00079EE1 /* Notify TableViewCell */,
+				C0F14FE92881B4D400079EE1 /* Other Datas TableViewCell */,
+				C0F14FE82881B4BE00079EE1 /* Address TableViewCell */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C0F14FE82881B4BE00079EE1 /* Address TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C0F14FE42881B2B000079EE1 /* MakeAppAddresssTableViewCell.swift */,
+				C0F14FE52881B2B000079EE1 /* MakeAppAddresssTableViewCell.xib */,
+			);
+			path = "Address TableViewCell";
+			sourceTree = "<group>";
+		};
+		C0F14FE92881B4D400079EE1 /* Other Datas TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C0F14FEA2881B4EC00079EE1 /* OtherDatasTableViewCell.swift */,
+				C0F14FEB2881B4EC00079EE1 /* OtherDatasTableViewCell.xib */,
+			);
+			path = "Other Datas TableViewCell";
+			sourceTree = "<group>";
+		};
+		C0F14FEE2881B60F00079EE1 /* Notify TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C0F14FEF2881B63200079EE1 /* GetNotifiedTableViewCell.swift */,
+				C0F14FF02881B63200079EE1 /* GetNotifiedTableViewCell.xib */,
+			);
+			path = "Notify TableViewCell";
+			sourceTree = "<group>";
+		};
+		C0F14FF32881B83500079EE1 /* Notification Time TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C0F14FF42881B86000079EE1 /* NotificationTimeTableViewCell.swift */,
+				C0F14FF52881B86000079EE1 /* NotificationTimeTableViewCell.xib */,
+			);
+			path = "Notification Time TableViewCell";
+			sourceTree = "<group>";
+		};
+		C0F14FF82881BD8B00079EE1 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				C0F14FF92881BD9C00079EE1 /* MakeAppointmentViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		C0F14FFB2881BF2500079EE1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C0F14FFC2881BF2E00079EE1 /* Appointments.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E09D57559AD7669FA4F24006 /* Pods */ = {
@@ -695,16 +844,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0F14FE72881B2B000079EE1 /* MakeAppAddresssTableViewCell.xib in Resources */,
 				C0BD8E2A2880CB0700F91A8E /* TimeSelectionTableViewCell.xib in Resources */,
+				C0F14FF22881B63200079EE1 /* GetNotifiedTableViewCell.xib in Resources */,
 				C0EF3A48287CAAD90078C77A /* LaunchScreen.storyboard in Resources */,
 				C047CC0A287F01770038CAA2 /* StationTableViewCell.xib in Resources */,
 				C0EF3A5A287CAE650078C77A /* ProximaNova-Regular.otf in Resources */,
 				C0EF3A45287CAAD90078C77A /* Assets.xcassets in Resources */,
 				C0EF3A70287CB6CA0078C77A /* Localizable.strings in Resources */,
 				C0EF3A5B287CAE650078C77A /* Proxima Nova Thin.otf in Resources */,
+				C0F14FED2881B4EC00079EE1 /* OtherDatasTableViewCell.xib in Resources */,
 				C0EF3A59287CAE650078C77A /* Proxima Nova Bold.otf in Resources */,
 				C0EF3A56287CAE650078C77A /* Proxima Nova Extrabold.otf in Resources */,
 				C0319AE9287E22C5005B846D /* CustomCityTableViewCell.xib in Resources */,
+				C0F14FF72881B86000079EE1 /* NotificationTimeTableViewCell.xib in Resources */,
 				C0EF3A9A287CDDCC0078C77A /* InfoPlist.strings in Resources */,
 				C070BB91287F794700DCCE44 /* FilterCollectionViewCell.xib in Resources */,
 				C0EF3A43287CAAD70078C77A /* Main.storyboard in Resources */,
@@ -762,17 +915,21 @@
 			files = (
 				C047CBFF287EDE6A0038CAA2 /* StationViewController.swift in Sources */,
 				C0EF3A86287CD1DD0078C77A /* WebsiteUrl.swift in Sources */,
+				C0F14FFA2881BD9C00079EE1 /* MakeAppointmentViewModel.swift in Sources */,
 				C0EF3AA0287CDF910078C77A /* NotificationManager.swift in Sources */,
 				C070BB8D287F5CE100DCCE44 /* FilterStationsViewModel.swift in Sources */,
 				C0319AE8287E22C5005B846D /* CustomCityTableViewCell.swift in Sources */,
 				C0EF3A7A287CCA010078C77A /* UITextField+Extension.swift in Sources */,
 				C0EF3A40287CAAD70078C77A /* LoginViewController.swift in Sources */,
+				C00ED80728824352004322BA /* AppointmentsCore.xcdatamodeld in Sources */,
 				C047CC05287EE6630038CAA2 /* Station.swift in Sources */,
+				C0F14FE62881B2B000079EE1 /* MakeAppAddresssTableViewCell.swift in Sources */,
 				C047CC0D287F0A680038CAA2 /* StationTableViewHelper.swift in Sources */,
 				C0319ADC287E1115005B846D /* UserToken.swift in Sources */,
 				C0EF3AA7287CE7130078C77A /* AppointmentsViewController.swift in Sources */,
 				C070BB93287F7AF500DCCE44 /* StationCollectionViewHelper.swift in Sources */,
 				C070BB90287F794700DCCE44 /* FilterCollectionViewCell.swift in Sources */,
+				C0F14FE22881AECD00079EE1 /* MakeAppointmentViewController.swift in Sources */,
 				C0BD8E322880E31C00F91A8E /* AppointmentDatas.swift in Sources */,
 				C0319AE4287E18B6005B846D /* CitySelectionViewController.swift in Sources */,
 				C0319AF1287E2879005B846D /* CitySelectionViewModel.swift in Sources */,
@@ -782,17 +939,23 @@
 				C0EF3A61287CB2CD0078C77A /* CustomNavigationController.swift in Sources */,
 				C0319AD8287E0757005B846D /* ProfileViewController.swift in Sources */,
 				C0BD8E212880BADB00F91A8E /* DateTimeModel.swift in Sources */,
+				C0F14FF12881B63200079EE1 /* GetNotifiedTableViewCell.swift in Sources */,
 				C0EF3A5D287CB0120078C77A /* Themes.swift in Sources */,
+				C0F14FEC2881B4EC00079EE1 /* OtherDatasTableViewCell.swift in Sources */,
+				C00ED7FB28820F66004322BA /* NotificationTimePicker.swift in Sources */,
 				C0EF3A76287CBA320078C77A /* GradientBackgroundView.swift in Sources */,
 				C0EF3A3C287CAAD70078C77A /* AppDelegate.swift in Sources */,
 				C047CC0F287F17AC0038CAA2 /* Double+Extension.swift in Sources */,
 				C070BB8A287F5AE000DCCE44 /* Filter.swift in Sources */,
 				C0BD8E292880CB0700F91A8E /* TimeSelectionTableViewCell.swift in Sources */,
+				C00ED7F82882082D004322BA /* MakeAppointmentTableViewHelper.swift in Sources */,
+				C00ED80428824055004322BA /* CoreDataHandler.swift in Sources */,
 				C0EF3A84287CD13D0078C77A /* AppConstants.swift in Sources */,
 				C0319ADA287E0FA9005B846D /* ProfileViewModel.swift in Sources */,
 				C0F14FDD288190AA00079EE1 /* CustomPopupViewController.swift in Sources */,
 				C070BB88287F5A9B00DCCE44 /* Filter Enums.swift in Sources */,
 				C0EF3A80287CCE070078C77A /* WebServiceHelper.swift in Sources */,
+				C0F14FFD2881BF2E00079EE1 /* Appointments.swift in Sources */,
 				C0BD8E342880EAE100F91A8E /* Date+Extension.swift in Sources */,
 				C0319AF4287E30E7005B846D /* LetterCities.swift in Sources */,
 				C0319AEE287E2831005B846D /* CitySelectionTableViewHelper.swift in Sources */,
@@ -800,6 +963,7 @@
 				C0EF3A78287CC2F60078C77A /* Object Constants.swift in Sources */,
 				C00831ED28806EC200FC4FAA /* UINavigationItem+Extension.swift in Sources */,
 				C0BD8E182880B53100F91A8E /* DatePickerLabel.swift in Sources */,
+				C0F14FF62881B86000079EE1 /* NotificationTimeTableViewCell.swift in Sources */,
 				C0EF3A6D287CB5C20078C77A /* String+Extension.swift in Sources */,
 				C0BD8E1E2880BA7A00F91A8E /* DateTimeViewModel.swift in Sources */,
 				C047CC09287F01770038CAA2 /* StationTableViewCell.swift in Sources */,
@@ -1051,6 +1215,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C00ED80528824352004322BA /* AppointmentsCore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C00ED80628824352004322BA /* AppointmentsCore.xcdatamodel */,
+			);
+			currentVersion = C00ED80628824352004322BA /* AppointmentsCore.xcdatamodel */;
+			path = AppointmentsCore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C0EF3A30287CAAD70078C77A /* Project object */;
 }
