@@ -156,14 +156,23 @@ class DateTimeViewController: UIViewController {
     popvc.view.frame = UIScreen.main.bounds
     UIApplication.shared.windows.last!.addSubview(popvc.view)
     if error == "DATE ERROR" { // if the selected date is past we will show the error page according to that
-      popvc.setupObjects(title: "oldDateTitleError".localizeString(), subtitle: "oldDateSubtitleError".localizeString(), confirmButtonLabel:  "oldDateActionButton".localizeString(), cancelButtonLabel: "oldDateSecondActionButton".localizeString()) // setup pop up elements
+      popvc.setupObjects(
+        title: "oldDateTitleError".localizeString(),
+        subtitle: "oldDateSubtitleError".localizeString(),
+        confirmButtonLabel:  "oldDateActionButton".localizeString(),
+        cancelButtonLabel: "oldDateSecondActionButton".localizeString()) // setup pop up elements
       
       popvc.didMove(toParent: self) // open popup
       popvc.secondActionPressed = { [weak self] response in
         self?.resetDatePickerToday()
       } // handle received button press action
     }else {
-      popvc.setupObjects(title: "receivedServerErrorTitle".localizeString(), subtitle: error.localizeString(), confirmButtonLabel:  "receivedServerErrorButtonTitle".localizeString(), cancelButtonLabel: "zero".localizeString(),hideSecondButton: true)
+      popvc.setupObjects(
+        title: "receivedServerErrorTitle".localizeString(),
+        subtitle: error.localizeString(),
+        confirmButtonLabel:  "receivedServerErrorButtonTitle".localizeString(),
+        cancelButtonLabel: "zero".localizeString(),
+        hideSecondButton: true)
       popvc.didMove(toParent: self)
     }
     
