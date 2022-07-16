@@ -9,5 +9,5 @@ import Foundation
 
 struct LetterCities: Equatable {
   var city: String?
-  var boldString: String?
+  var boldString: String? // we will set the bold text values here
 }

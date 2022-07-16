@@ -15,7 +15,7 @@ class CustomCityTableViewCell: UITableViewCell {
     super.awakeFromNib()
     setupUI()
   }
-  
+  // setup UI
   func setupUI() {
     cityNameLabel.textColor = Themes.colorSolidWhite
     cityNameLabel.font = Themes.fontRegularSubtitle
