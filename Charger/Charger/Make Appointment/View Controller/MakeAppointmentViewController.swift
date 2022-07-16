@@ -100,7 +100,7 @@ class MakeAppointmentViewController: UIViewController {
     else { // if we receive a server error
       popvc.setupObjects(
         title: "receivedServerErrorTitle".localizeString(),
-        subtitle: "error".localizeString(),
+        subtitle: error.localizeString(),
         confirmButtonLabel:  "receivedServerErrorButtonTitle".localizeString(),
         cancelButtonLabel: "zero".localizeString(),hideSecondButton: true)
       popvc.didMove(toParent: self)

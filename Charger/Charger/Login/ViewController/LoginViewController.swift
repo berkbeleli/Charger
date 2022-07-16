@@ -45,8 +45,8 @@ class LoginViewController: UIViewController {
     welcomeLabel.attributedText = "welcome".localizeString().withBoldText(text: "loginBoldText".localizeString(),font: Themes.fontRegularHeader) // set welcome label's Brand side bold
     loginNoteLabel.text = "loginNote".localizeString()
     emailTextField.attributedPlaceholder = NSAttributedString(
-        string:  "loginTxtPlaceHolder".localizeString(),
-        attributes: [NSAttributedString.Key.foregroundColor: Themes.colorGrayScale]
+      string:  "loginTxtPlaceHolder".localizeString(),
+      attributes: [NSAttributedString.Key.foregroundColor: Themes.colorGrayScale]
     )  // set textField placeholder color
     loginButton.setTitle("loginButton".localizeString(), for: .normal)
   }
@@ -54,18 +54,32 @@ class LoginViewController: UIViewController {
   func setupVM() {
     viewModel.requestLocation()
     viewModel.requestNotificationPermission()
-    viewModel.onLoginRequested = { result in // check the result of login request
+    viewModel.onLoginRequested = {[weak self] result in // check the result of login request
       if result == "SUCCESS" {
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AppointmentsView")
-        self.navigationController?.pushViewController(vc, animated: true)
+        self?.navigationController?.pushViewController(vc, animated: true)
       }else {
         // show error popup here
-        print(result)
+        self?.openErrorPopUp(error: result)
       }
     }
     
   }
-
+  
+  func openErrorPopUp(error: String) {
+    let popvc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CustomPopup") as! CustomPopupViewController // instantiate custom popup view
+    UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController!.addChild(popvc)
+    popvc.view.frame = UIScreen.main.bounds
+    UIApplication.shared.windows.last!.addSubview(popvc.view)
+    // if we receive a server error
+    popvc.setupObjects(
+      title: "receivedServerErrorTitle".localizeString(),
+      subtitle: error.localizeString(),
+      confirmButtonLabel:  "receivedServerErrorButtonTitle".localizeString(),
+      cancelButtonLabel: "zero".localizeString(),hideSecondButton: true)
+    popvc.didMove(toParent: self)
+  }
+  
   @IBAction func loginButtonPressed(_ sender: UIButton) {
     viewModel.loginRequest(email: emailTextField.text ?? "empty mail")
   }

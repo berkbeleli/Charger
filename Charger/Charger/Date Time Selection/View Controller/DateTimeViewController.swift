@@ -163,7 +163,7 @@ class DateTimeViewController: UIViewController {
         self?.resetDatePickerToday()
       } // handle received button press action
     }else {
-      popvc.setupObjects(title: "receivedServerErrorTitle".localizeString(), subtitle: "error".localizeString(), confirmButtonLabel:  "receivedServerErrorButtonTitle".localizeString(), cancelButtonLabel: "zero".localizeString(),hideSecondButton: true)
+      popvc.setupObjects(title: "receivedServerErrorTitle".localizeString(), subtitle: error.localizeString(), confirmButtonLabel:  "receivedServerErrorButtonTitle".localizeString(), cancelButtonLabel: "zero".localizeString(),hideSecondButton: true)
       popvc.didMove(toParent: self)
     }
     

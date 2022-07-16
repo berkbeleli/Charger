@@ -148,7 +148,7 @@ class AppointmentsViewController: UIViewController {
     }else {
       popvc.setupObjects(
         title: "receivedServerErrorTitle".localizeString(),
-        subtitle: "error".localizeString(),
+        subtitle: error.localizeString(),
         confirmButtonLabel:  "receivedServerErrorButtonTitle".localizeString(),
         cancelButtonLabel: "zero".localizeString(),
         hideSecondButton: true)
