@@ -26,7 +26,10 @@
 "pastAppointmentsTitle" = "PAST APPOINTMENTS";
 "todaytitle" = "Today";
 "Your appointment at %@ on %@ at %@ will be cancelled." = "Your appointment at %@ on %@ at %@ will be cancelled.";
+"cancelAppointmentTitle" = "Cancel Appointment";
 
+"confirmButton" = "CANCEL APPOINTMENT";
+"confirmCancelButton" = "CANCEL";
 
 //MARK: - PROFILE PAGE
 "profileTitle" = "Profile";

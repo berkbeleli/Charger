@@ -57,6 +57,7 @@ struct AppointmentViewViewModel {
   var date: String?
   var time: String?
   var showingTime: String?
+  var showAlertTime: String?
   var socketId: String?
   var socket: SocketAppointment?
   var outpower: String?

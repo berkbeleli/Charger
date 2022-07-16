@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol AppointmentViewProtocol: AnyObject {
+  func didDeletionSelected(appointmentID: String, stationName: String, date: String, time: String)
+}
+
 class AppointmentsTableViewHelper: NSObject {
   private var currentAppointments: [AppointmentViewViewModel] = []
   private var pastAppointments: [AppointmentViewViewModel] = []
   weak var vm: AppointmentsViewModel?
   weak var tableView: UITableView?
+  
+  weak var delegate: AppointmentViewProtocol?
   
   init(with tableView: UITableView, vm: AppointmentsViewModel){
     super.init()
@@ -100,8 +106,8 @@ extension AppointmentsTableViewHelper: UITableViewDataSource {
       cell.outsourcePowerLabel.text = rowItem.outpower
       cell.chargeAndSocketTypeLabel.text = "\(rowItem.socket?.chargeType ?? "AC")" + " • " +  "\(rowItem.socket?.socketType ?? "AC")"
     
-      cell.deleteAppointment = { data in
-//        self.openPopup(appointmentID: rowItem.appointmentID!, self.deleteAppointment)
+      cell.deleteAppointment = {[weak self] _ in
+        self?.delegate?.didDeletionSelected(appointmentID: rowItem.appointmentId!, stationName: rowItem.stationName!,date: rowItem.showAlertTime! ,time: rowItem.time!)
       }
       
     }else {

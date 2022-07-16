@@ -55,6 +55,12 @@ class AppointmentsViewModel{
             let dateFormatter2 = DateFormatter()
             dateFormatter2.dateFormat = "dd MMM yyyy"
             
+            dateFormatter.dateFormat = "dd M yyyy"
+            dateFormatter.dateStyle = .long
+            
+            self?.allAppointments![index].showAlertTime = dateFormatter.string(from: date!)
+            
+            
             self?.allAppointments![index].showingTime = dateFormatter2.string(from: date!) + ", " +  (self?.allAppointments![index].time ?? " ")!
             
             if (chargeTypes.contains("AC") ?? false) && (chargeTypes.contains("DC") ?? false) { // set the image for the view cell

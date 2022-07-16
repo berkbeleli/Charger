@@ -25,6 +25,10 @@
 "pastAppointmentsTitle" = "GEÇMİŞ RANDEVULAR";
 "todaytitle" = "Bugün";
 "Your appointment at %@ on %@ at %@ will be cancelled." = "%@ istasyonundaki %@ saat %@ randevunuz iptal edilecektir.";
+"cancelAppointmentTitle" = "Randevu İptali";
+
+"confirmButton" = "RANDEVUYU İPTAL ET";
+"confirmCancelButton" = "VAZGEÇ";
 
 //MARK: - PROFILE PAGE
 "profileTitle" = "Profil";
