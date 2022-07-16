@@ -25,7 +25,6 @@ struct Appointment: Codable {
     case stationName
     case hasPassed
   }
-  
 }
 
 struct StationAppointment: Codable {
@@ -51,8 +50,7 @@ struct SocketAppointment: Codable {
   }
 }
 
-// we will use next 3 model for our view
-
+// we will use next model for our view
 struct AppointmentViewViewModel {
   var appointmentId: String?
   var date: String?

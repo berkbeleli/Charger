@@ -691,10 +691,10 @@
 		C0EF3AA3287CE4920078C77A /* Appointments */ = {
 			isa = PBXGroup;
 			children = (
-				C01767092882E545005C5655 /* ViewModel */,
 				C01767022882D629005C5655 /* Components */,
 				C0F14FFB2881BF2500079EE1 /* Model */,
 				C0EF3AA4287CE4A50078C77A /* ViewController */,
+				C01767092882E545005C5655 /* ViewModel */,
 				C017670A2882F7B0005C5655 /* Helper */,
 			);
 			path = Appointments;

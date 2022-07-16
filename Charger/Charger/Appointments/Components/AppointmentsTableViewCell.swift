@@ -54,13 +54,13 @@ class AppointmentsTableViewCell: UITableViewCell {
     chargeAndSocketTypeLabel.textColor = Themes.colorGrayScale
     deleteAppointmentButton.tintColor = Themes.colorSolidWhite
   }
-  
+  // localize strings
   func localization() {
     socketNumberTitleLabel.text = "appointmentPageSocket".localizeString()
   }
-  
+  // handle delete button action
   @IBAction func deleteAppointmentPressed(_ sender: UIButton) {
-    deleteAppointment?("deleted")
+    deleteAppointment?("deleted") // used closure to inform our vc
   }
   
 }

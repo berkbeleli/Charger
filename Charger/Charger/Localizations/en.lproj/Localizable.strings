@@ -1,3 +1,4 @@
+
 /*
   Localizable.strings
   Charger
@@ -128,15 +129,15 @@
 
 
 //MARK: - SERVER ERRORS
-"EMAIL_NOT_IN_CORRECT_FORM" : "E-mail is not in correct form.";
-"NOT_FOUND" : "Request was not found";
-"USER_NOT_FOUND" : "User was not found";
-"UNAUTHORIZED_REQUEST": "You are not authorized to fulfill the request.";
-"STATION_NOT_FOUND" : "Station was not found.";
-"STATION_NOT_ACCEPTING_APPOINTMENTS" : "Station is not accepting appointments whose date and time are specified.";
-"INVALID_DATE": "Invalid / past date information.";
-"INVALID_TIME": "Invalid / past time information.";
-"TIME_FORMAT_ERROR": "Time format is not in expected format";
-"SOCKET_OCCUPIED": "The socket is already in use on given date and time";
-"APPOINTMENT_NOT_FOUND": "Appointment was not found.";
-"APPOINTMENT_USER_MISMATCH": "Appointment does not belong to user given.";
+"EMAIL_NOT_IN_CORRECT_FORM" = "E-mail is not in correct form.";
+"NOT_FOUND" = "Request was not found";
+"USER_NOT_FOUND" = "User was not found";
+"UNAUTHORIZED_REQUEST" = "You are not authorized to fulfill the request.";
+"STATION_NOT_FOUND" = "Station was not found.";
+"STATION_NOT_ACCEPTING_APPOINTMENTS" = "Station is not accepting appointments whose date and time are specified.";
+"INVALID_DATE" = "Invalid / past date information.";
+"INVALID_TIME" = "Invalid / past time information.";
+"TIME_FORMAT_ERROR" = "Time format is not in expected format";
+"SOCKET_OCCUPIED" = "The socket is already in use on given date and time";
+"APPOINTMENT_NOT_FOUND" = "Appointment was not found.";
+"APPOINTMENT_USER_MISMATCH" = "Appointment does not belong to user given.";
