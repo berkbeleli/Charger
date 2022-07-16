@@ -29,6 +29,7 @@ struct Appointment: Codable {
 }
 
 struct StationAppointment: Codable {
+  var id: Int?
   var sockets: [SocketAppointment]?
 }
 
@@ -58,6 +59,7 @@ struct AppointmentViewViewModel {
   var time: String?
   var showingTime: String?
   var showAlertTime: String?
+  var stationId: String?
   var socketId: String?
   var socket: SocketAppointment?
   var outpower: String?

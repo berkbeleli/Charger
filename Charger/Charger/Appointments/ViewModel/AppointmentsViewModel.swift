@@ -29,10 +29,11 @@ class AppointmentsViewModel{
                   appointmentId: "\($0.appointmentId ?? 0)",
                   date: $0.date,
                   time: $0.time,
+                  stationId: "\($0.station?.id)",
                   socketId: "\($0.socketId ?? 0)",
                   stationName: $0.stationName,
                   hasPassed: $0.hasPassed,
-                  notificationTime: "5 minutes ago") // we will get it iff the notification allowed
+                  notificationTime: "") // we will get it iff the notification allowed
               }
         
         
@@ -43,8 +44,9 @@ class AppointmentsViewModel{
               $0.socketId == socketId
             }.first
             
-            var chargeTypes = (returnedResponse![index].station?.sockets ?? []).map{
-              $0.chargeType!
+            if  self?.allAppointments![index].hasPassed == false {
+              self?.allAppointments![index].notificationTime = CoreDataHandler.shared.catchAppoinmentNotificationTime(returnType: "notificationTime", appointmentDate:  self?.allAppointments![index].date ?? "", appointmentTime: self?.allAppointments![index].time ?? "", socketId: self?.allAppointments![index].socketId ?? "", stationId: self?.allAppointments![index].stationId! ?? "") + "m"
+
             }
             
             self?.allAppointments![index].outpower = "\(self?.allAppointments![index].socket?.power ?? 0) \(self?.allAppointments![index].socket?.powerUnit ?? "kVa")"
@@ -62,6 +64,11 @@ class AppointmentsViewModel{
             
             
             self?.allAppointments![index].showingTime = dateFormatter2.string(from: date!) + ", " +  (self?.allAppointments![index].time ?? " ")!
+            
+            
+            var chargeTypes = (returnedResponse![index].station?.sockets ?? []).map{
+              $0.chargeType!
+            }
             
             if (chargeTypes.contains("AC") ?? false) && (chargeTypes.contains("DC") ?? false) { // set the image for the view cell
               self?.allAppointments![index].imageType = Themes.acDcImage

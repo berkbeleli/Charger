@@ -102,7 +102,7 @@ extension AppointmentsTableViewHelper: UITableViewDataSource {
       cell.deleteAppointmentButton.isHidden = false
       rowItem.notificationTime != "" ? (cell.outsourcePowerLabel.isHidden = true ) : (cell.outsourcePowerLabel.isHidden = false )
       rowItem.notificationTime != "" ? (cell.notificationTimeView.isHidden = false ) : (cell.notificationTimeView.isHidden = true )
-      cell.notificationTimeLabel.text = rowItem.notificationTime
+      cell.notificationTimeLabel.text = (rowItem.notificationTime?.localizeString())! + " " + "beforetime".localizeString()
       cell.outsourcePowerLabel.text = rowItem.outpower
       cell.chargeAndSocketTypeLabel.text = "\(rowItem.socket?.chargeType ?? "AC")" + " • " +  "\(rowItem.socket?.socketType ?? "AC")"
     

@@ -44,8 +44,8 @@ class MakeAppointmentViewModel{
                 appointmentTime: (self?.appointmentValues?.time)!,
                 notificationTimer: "\(minutesAgo!)",
                 notificationUniqueId: identifier,
-                socketId: "\(self?.appointmentValues?.socketNumber)",
-                stationId: "\(self?.appointmentValues?.stationID)") // save the set notification values inside our core data
+                socketId: "\(self?.appointmentValues?.socketNumber ?? 0)",
+                stationId: "\(self?.appointmentValues?.stationID ?? 0)") // save the set notification values inside our core data
             }
     
             self?.createAppointment() // if the notification set call the createAppointment func
@@ -65,7 +65,7 @@ class MakeAppointmentViewModel{
       createAppointmentUrl += "&userLatitude=\(LocationDatas.shared.locationlatitude!)&userLongitude=\(LocationDatas.shared.locationlongitude!)"
     }
     // set the required parameters
-    let parameter: [String: Any] = ["stationID": appointmentValues?.stationID ?? 0,"socketID": appointmentValues?.socketNumber ?? 0, "timeSlot": appointmentValues?.time ?? "0", "appointmentDate": "\(appointmentValues?.dateData ?? "")"]
+    let parameter: [String: Any] = ["stationID": appointmentValues?.stationID ?? 0, "socketID": appointmentValues?.socketNumber ?? 0, "timeSlot": appointmentValues?.time ?? "0", "appointmentDate": "\(appointmentValues?.dateData ?? "")"]
     // cal generic api handler func
     WebServiceHelper.instance.getServiceData(url: createAppointmentUrl, method: .post, parameters: parameter ,header: UserToken.token) { [weak self] (returnedResponse: Appointment!, errorString: String?) in
       if errorString == nil {
