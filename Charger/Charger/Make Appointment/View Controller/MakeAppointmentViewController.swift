@@ -31,6 +31,7 @@ class MakeAppointmentViewController: UIViewController {
     confirmAppointmentButton.layer.cornerRadius = ObjectConstants.buttonBorderRadius
     confirmAppointmentButton.titleLabel?.font = Themes.fontRegularSubtitle
     confirmAppointmentButton.tintColor = Themes.colorDark
+    self.navigationController?.interactivePopGestureRecognizer?.delegate = self // allow swipe to back page
   }
   // Localization
   func localization() {
@@ -109,4 +110,11 @@ class MakeAppointmentViewController: UIViewController {
   @IBAction func confirmAppointmentButtonPressed(_ sender: UIButton) {
     viewModel.requestAppointment() // when user pressed confirm button call request appointment func
   }
+}
+
+//MARK: - UIGestureRecognizerDelegate
+extension MakeAppointmentViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true // allow slide to back page feature
+    }
 }
