@@ -14,7 +14,8 @@ class AppointmentsViewController: UIViewController {
   @IBOutlet private weak var noappointmentSubtitleLabel: UILabel!
   @IBOutlet private weak var noAppointmentImage: UIImageView!
   @IBOutlet private weak var createAppointmentButton: UIButton!
-  
+  @IBOutlet private weak var noAppointmentView: UIView!
+  @IBOutlet private weak var appointmentsTableView: UITableView!
   override func viewDidLoad() {
     super.viewDidLoad()
     
