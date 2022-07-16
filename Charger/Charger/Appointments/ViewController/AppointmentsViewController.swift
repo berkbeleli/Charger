@@ -92,7 +92,7 @@ class AppointmentsViewController: UIViewController {
       
       popvc.didMove(toParent: self) // open popup
       popvc.confirmPressed = { [weak self] response in
-//        responseHandler() //delete appointment
+        self?.viewModel.deleteAppointment(appointmentID: appointmentID!)//delete appointment
       } // handle received button press action
     }else {
       popvc.setupObjects(title: "receivedServerErrorTitle".localizeString(), subtitle: "error".localizeString(), confirmButtonLabel:  "receivedServerErrorButtonTitle".localizeString(), cancelButtonLabel: "zero".localizeString(),hideSecondButton: true)

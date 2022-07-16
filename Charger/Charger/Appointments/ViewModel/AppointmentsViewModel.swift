@@ -86,6 +86,30 @@ class AppointmentsViewModel{
       }
     }
   }
+  
+  
+  //MARK: - Delete Appointment
+  func deleteAppointment(appointmentID: String){
+    var appointmentDeletionUrl = WebsiteUrl.appointmentDeleteUrl + appointmentID + "?userID=\(User.user?.userId ?? -1)" // create custom url
+
+    
+    // cal generic api handler func
+    WebServiceHelper.instance.getServiceData(url: appointmentDeletionUrl, method: .delete, header: UserToken.token) { [weak self] (returnedResponse: String!, errorString: String?) in
+      if errorString == nil {
+        self?.fetchAppointments()
+      }else {
+        // SHOW ERROR PAGE HERE!!!!
+        self?.onAppointmentsError?(errorString ?? "UNKNOWN ERROR")
+      }
+    }
+
+    
+
+    
+    
+  }
+  
+  
 }
 
 
