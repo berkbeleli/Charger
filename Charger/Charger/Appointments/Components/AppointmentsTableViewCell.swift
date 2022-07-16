@@ -52,6 +52,7 @@ class AppointmentsTableViewCell: UITableViewCell {
     socketNumberLabel.textColor = Themes.colorSolidWhite
     chargeAndSocketTypeLabel.font = Themes.fontRegularSubtitle
     chargeAndSocketTypeLabel.textColor = Themes.colorGrayScale
+    deleteAppointmentButton.tintColor = Themes.colorSolidWhite
   }
   
   func localization() {

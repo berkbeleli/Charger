@@ -16,12 +16,13 @@ class AppointmentsViewController: UIViewController {
   @IBOutlet private weak var createAppointmentButton: UIButton!
   @IBOutlet private weak var noAppointmentView: UIView!
   @IBOutlet private weak var appointmentsTableView: UITableView!
+  
+  private var viewModel = AppointmentsViewModel()
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Do any additional setup after loading the view.
     setupUI()
     localization()
+    setupController()
   }
   
   /// Setup UI Elements
@@ -47,6 +48,10 @@ class AppointmentsViewController: UIViewController {
     noappointmentTitleLabel.text = "noAppointmentsTitle".localizeString()
     noappointmentSubtitleLabel.text = "noAppointmentsInfo".localizeString()
     createAppointmentButton.setTitle("createAppointmentButton".localizeString(), for: .normal)
+  }
+  
+  func setupController() {
+    viewModel.fetchAppointments()
   }
   
   @objc

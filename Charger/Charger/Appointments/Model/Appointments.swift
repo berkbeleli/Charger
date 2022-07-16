@@ -5,7 +5,7 @@
 //  Created by Berk Beleli on 2022-07-15.
 //
 
-import Foundation
+import UIKit
 
 struct Appointment: Codable {
   var appointmentId: Int?
@@ -48,5 +48,19 @@ struct SocketAppointment: Codable {
     case powerUnit
     case socketNumber
   }
-  
 }
+
+// we will use next 3 model for our view
+
+struct AppointmentViewViewModel {
+  var appointmentId: String?
+  var date: String?
+  var time: String?
+  var socketId: String?
+  var socket: SocketAppointment?
+  var stationName: String?
+  var hasPassed: Bool?
+  var notificationTime: String?
+  var imageType: UIImage?
+}
+

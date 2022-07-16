@@ -16,6 +16,7 @@
 		C00ED80728824352004322BA /* AppointmentsCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C00ED80528824352004322BA /* AppointmentsCore.xcdatamodeld */; };
 		C01767052882D642005C5655 /* AppointmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01767032882D642005C5655 /* AppointmentsTableViewCell.swift */; };
 		C01767062882D642005C5655 /* AppointmentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C01767042882D642005C5655 /* AppointmentsTableViewCell.xib */; };
+		C01767082882E533005C5655 /* AppointmentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01767072882E533005C5655 /* AppointmentsViewModel.swift */; };
 		C0319AD8287E0757005B846D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AD7287E0757005B846D /* ProfileViewController.swift */; };
 		C0319ADA287E0FA9005B846D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319AD9287E0FA9005B846D /* ProfileViewModel.swift */; };
 		C0319ADC287E1115005B846D /* UserToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0319ADB287E1115005B846D /* UserToken.swift */; };
@@ -102,6 +103,7 @@
 		C00ED80628824352004322BA /* AppointmentsCore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppointmentsCore.xcdatamodel; sourceTree = "<group>"; };
 		C01767032882D642005C5655 /* AppointmentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsTableViewCell.swift; sourceTree = "<group>"; };
 		C01767042882D642005C5655 /* AppointmentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentsTableViewCell.xib; sourceTree = "<group>"; };
+		C01767072882E533005C5655 /* AppointmentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppointmentsViewModel.swift; path = Charger/Appointments/ViewModel/AppointmentsViewModel.swift; sourceTree = SOURCE_ROOT; };
 		C0319AD7287E0757005B846D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C0319AD9287E0FA9005B846D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		C0319ADB287E1115005B846D /* UserToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserToken.swift; sourceTree = "<group>"; };
@@ -255,6 +257,14 @@
 				C01767042882D642005C5655 /* AppointmentsTableViewCell.xib */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		C01767092882E545005C5655 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C01767072882E533005C5655 /* AppointmentsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C0319AD4287E071F005B846D /* Profile */ = {
@@ -671,9 +681,9 @@
 		C0EF3AA3287CE4920078C77A /* Appointments */ = {
 			isa = PBXGroup;
 			children = (
+				C01767092882E545005C5655 /* ViewModel */,
 				C01767022882D629005C5655 /* Components */,
 				C0F14FFB2881BF2500079EE1 /* Model */,
-				C0EF3AA5287CE4B80078C77A /* ViewModel */,
 				C0EF3AA4287CE4A50078C77A /* ViewController */,
 			);
 			path = Appointments;
@@ -685,13 +695,6 @@
 				C0EF3AA6287CE7130078C77A /* AppointmentsViewController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		C0EF3AA5287CE4B80078C77A /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C0F14FDB2881908600079EE1 /* Custom Popup */ = {
@@ -985,6 +988,7 @@
 				C047CC09287F01770038CAA2 /* StationTableViewCell.swift in Sources */,
 				C00831EB28805C7D00FC4FAA /* DateTimeViewController.swift in Sources */,
 				C070BB85287F4E2800DCCE44 /* FilterStationsViewController.swift in Sources */,
+				C01767082882E533005C5655 /* AppointmentsViewModel.swift in Sources */,
 				C0EF3A89287CD3800078C77A /* UserInfo.swift in Sources */,
 				C0BD8E232880C8C000F91A8E /* NSLayoutConsstraint+Extension.swift in Sources */,
 				C0EF3A3E287CAAD70078C77A /* SceneDelegate.swift in Sources */,
