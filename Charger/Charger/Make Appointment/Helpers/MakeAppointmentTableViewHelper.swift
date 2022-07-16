@@ -96,7 +96,8 @@ extension MakeAppointmentTableViewHelper: UITableViewDataSource {
         cellAll.appointmentType.text = appointmentValues?.stationCode
       }  else if indexPath.row == 4 {
         cellAll.appointmentInfoTypeLabel.text = "services".localizeString()  // localzie title
-        cellAll.appointmentType.text = appointmentValues?.services?.joined(separator: ", ") // join array values by ,
+        var services = appointmentValues?.services?.map { $0.localizeString() }
+        cellAll.appointmentType.text = services!.joined(separator: ", ")// join array values by ,
       }
       cellAll.backgroundColor = .clear
       return cellAll
