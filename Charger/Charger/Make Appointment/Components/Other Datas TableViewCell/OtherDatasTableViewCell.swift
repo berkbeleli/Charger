@@ -8,7 +8,7 @@
 import UIKit
 
 class OtherDatasTableViewCell: UITableViewCell {
-  
+  // object connections
   @IBOutlet private weak var otherDatasBackgroundView: UIView!
   @IBOutlet private(set) weak var appointmentInfoTypeLabel: UILabel!
   @IBOutlet private(set) weak var appointmentType: UILabel!

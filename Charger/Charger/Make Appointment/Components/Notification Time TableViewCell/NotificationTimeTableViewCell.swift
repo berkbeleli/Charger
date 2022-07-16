@@ -8,7 +8,7 @@
 import UIKit
 
 class NotificationTimeTableViewCell: UITableViewCell {
- 
+  //Object connections
   @IBOutlet private(set) weak var notificationTimeBackgroundView: NotificationTimePickerView!
   @IBOutlet private(set) weak var notificationTimeLabel: UILabel!
   @IBOutlet private weak var expandMoreImage: UIImageView!
@@ -26,5 +26,4 @@ class NotificationTimeTableViewCell: UITableViewCell {
     indicatorView.backgroundColor = Themes.colorGrayScale
     expandMoreImage.tintColor = Themes.colorSolidWhite
   }
-    
 }

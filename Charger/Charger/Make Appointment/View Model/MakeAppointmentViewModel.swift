@@ -8,7 +8,7 @@
 import Foundation
 
 class MakeAppointmentViewModel{
-  
+  // object connections
   var onAppointmentCreated: ((String) -> ())?
   var onAppointmentError: ((String) -> ())? // ERROR COMPLETION HANDLER
   var onNotificationError: ((String) -> ())?
@@ -16,10 +16,8 @@ class MakeAppointmentViewModel{
   var notificationTime: String? = "5m" // default notification Time
   var stationName: String? = ""
   var appointmentValues: AppointmentDatas?
-  /// Fetch Times from Api
+  /// Requests to create appointment
   func requestAppointment() {
-    
-    
     var shouldAppoint: Bool = true // it will check before making appointment if there is any error like notification timers
     
     if getNotified ?? false { // check if the user asks for notification
@@ -38,7 +36,7 @@ class MakeAppointmentViewModel{
         body: titleValue) {[weak self] result in
           
           if result == "NOTIFICATION SET" {
-            DispatchQueue.main.async { // we need tto use our core data model in the main branch
+            DispatchQueue.main.async { // we need to use our core data model in the main branch
               CoreDataHandler.shared.saveNotificationData(
                 appointmentDate: (self?.appointmentValues?.dateData)!,
                 appointmentTime: (self?.appointmentValues?.time)!,
@@ -50,7 +48,7 @@ class MakeAppointmentViewModel{
     
             self?.createAppointment() // if the notification set call the createAppointment func
           }else {
-            self?.onNotificationError?(result)
+            self?.onNotificationError?(result) // if user asks for notification and there is an error about notification
           }
         }
     }else {

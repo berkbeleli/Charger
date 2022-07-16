@@ -26,18 +26,19 @@ class GetNotifiedTableViewCell: UITableViewCell {
     notifySwift.tintColor = Themes.colorSelectedGreen
     getNotifiedBackgroundView.backgroundColor = Themes.colorCharcoal
   }
-  
+  // localize the string
   func localization() {
     getNotifiedHeadLabel.text = "getNotify".localizeString()
   }
-  
+  /// set switch to on
   func setSwitchOn() {
     notifySwift.isOn = true
   }
+  /// set switch to off
   func setSwitchOff() {
     notifySwift.isOn = false
   }
-  
+  /// handler switch toggle function with closure
   @IBAction func notifyToggled(_ sender: UISwitch) {
     if sender.isOn {
       togglerChanged?("ON")
