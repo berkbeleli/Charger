@@ -8,7 +8,7 @@
 import UIKit
 
 class MakeAppAddresssTableViewCell: UITableViewCell {
-  
+  //object connections
   @IBOutlet private weak var addressBackgroundView: UIView!
   @IBOutlet private weak var addressHeaderLabel: UILabel!
   @IBOutlet private(set) weak var addressLabel: UILabel!

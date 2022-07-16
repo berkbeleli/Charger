@@ -6,9 +6,8 @@
 //
 
 import Foundation
-
+// These datas will be used to set notification and for displaying infos to the user 
 struct AppointmentDatas {
-  
   var address: String?
   var workingHours: String?
   var distance: String?
@@ -19,10 +18,8 @@ struct AppointmentDatas {
   var deviceType: String?
   var socketType: String?
   var outsorcepower: String?
-  
   var dateView: String?
   var dateData: String?
   var time: String?
   var appointmentDuration: String?
-  
 }

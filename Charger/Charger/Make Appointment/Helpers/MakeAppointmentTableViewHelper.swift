@@ -46,9 +46,9 @@ extension MakeAppointmentTableViewHelper: UITableViewDelegate {
     if section == 0 {
       label.text = "stationInfo".localizeString() // if first section set the title
     } else if section == 1 {
-      label.text = "socketInfos".localizeString()
+      label.text = "socketInfos".localizeString() // if second section set the title
     }else {
-      label.text = "appointmentInfos".localizeString()
+      label.text = "appointmentInfos".localizeString()  // if third section set the title
     }
     label.font = Themes.fontBoldMakeAppointmentHeader // set label's font
     label.textColor = Themes.colorGrayScale // set label's color
@@ -69,9 +69,11 @@ extension MakeAppointmentTableViewHelper: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if section == 0 {
-      return 5 }else if section == 1 {
-        return 4}else {
-          return 5 }
+      return 5
+    }else if section == 1 {
+      return 4
+    }else {
+      return 5 }
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -99,9 +101,9 @@ extension MakeAppointmentTableViewHelper: UITableViewDataSource {
       cellAll.backgroundColor = .clear
       return cellAll
     } else if indexPath.section == 1 {
-       if indexPath.row == 0 {
-         cellAll.appointmentInfoTypeLabel.text = "socketNumber".localizeString()// localzie title
-         cellAll.appointmentType.text = "\(appointmentValues?.socketNumber ?? 0)"
+      if indexPath.row == 0 {
+        cellAll.appointmentInfoTypeLabel.text = "socketNumber".localizeString()// localzie title
+        cellAll.appointmentType.text = "\(appointmentValues?.socketNumber ?? 0)"
       }  else if indexPath.row == 1 {
         cellAll.appointmentInfoTypeLabel.text = "deviceType".localizeString()// localzie title
         cellAll.appointmentType.text = appointmentValues?.deviceType
@@ -114,55 +116,52 @@ extension MakeAppointmentTableViewHelper: UITableViewDataSource {
       }
       cellAll.backgroundColor = .clear
       return cellAll
-
     }else {
       if indexPath.row == 0 {
-
+        
         cellAll.appointmentInfoTypeLabel.text = "date".localizeString()// localzie title
         cellAll.appointmentType.text = appointmentValues?.dateView
-     }  else if indexPath.row == 1 {
-
-       cellAll.appointmentInfoTypeLabel.text = "time".localizeString()// localzie title
-       cellAll.appointmentType.text = appointmentValues?.time
-     }  else if indexPath.row == 2 {
-
-       cellAll.appointmentInfoTypeLabel.text = "appointmentDuration".localizeString()// localzie title
-       cellAll.appointmentType.text = "1" + " " + "time".localizeString()
-     }  else if indexPath.row == 3 {
-
-       let cell = tableView.dequeueReusableCell(withIdentifier: "GetNotifiedTableViewCell") as! GetNotifiedTableViewCell
-       
-       (vm?.getNotified)! ? cell.setSwitchOn() : cell.setSwitchOff() // check the notification is allowed or not we control it as table view as tableview redraw this cell we may lose the state of the switch
-       cell.togglerChanged = { value in
-         if value == "ON" {
-           self.vm?.getNotified = true // set we want to receive notification
-           self.tableView?.reloadData()
-         }else {
-           self.vm?.getNotified = false // set we dont want to receive notificaiton
-           self.tableView?.reloadData()
-         }
-       }
-       cell.backgroundColor = .clear
-       return cell
-     } else{
-
-       
-       let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationTimeTableViewCell") as! NotificationTimeTableViewCell
-       
-       cell.notificationTimeLabel.text = (vm!.notificationTime?.localizeString())! + " " + "beforetime".localizeString()
-       (cell.notificationTimeBackgroundView as? NotificationTimePickerView)?.delegate = self // get time picker delegation
-       cell.backgroundColor = .clear
-       if vm?.getNotified ?? false { // if wwe do not want to reeceive notification we will hide this cell
-         cell.isHidden = false
-       }else {
-         cell.isHidden = true
-       }
-       return cell
-     }
+      }  else if indexPath.row == 1 {
+        
+        cellAll.appointmentInfoTypeLabel.text = "time".localizeString()// localzie title
+        cellAll.appointmentType.text = appointmentValues?.time
+      }  else if indexPath.row == 2 {
+        
+        cellAll.appointmentInfoTypeLabel.text = "appointmentDuration".localizeString()// localzie title
+        cellAll.appointmentType.text = "1" + " " + "time".localizeString()
+      }  else if indexPath.row == 3 {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GetNotifiedTableViewCell") as! GetNotifiedTableViewCell
+        
+        (vm?.getNotified)! ? cell.setSwitchOn() : cell.setSwitchOff() // check the notification is allowed or not we control it as table view as tableview redraw this cell we may lose the state of the switch
+        cell.togglerChanged = { value in
+          if value == "ON" {
+            self.vm?.getNotified = true // set we want to receive notification
+            self.tableView?.reloadData()
+          }else {
+            self.vm?.getNotified = false // set we dont want to receive notificaiton
+            self.tableView?.reloadData()
+          }
+        }
+        cell.backgroundColor = .clear
+        return cell
+      } else{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationTimeTableViewCell") as! NotificationTimeTableViewCell
+        
+        cell.notificationTimeLabel.text = (vm!.notificationTime?.localizeString())! + " " + "beforetime".localizeString()
+        (cell.notificationTimeBackgroundView as? NotificationTimePickerView)?.delegate = self // get time picker delegation
+        cell.backgroundColor = .clear
+        if vm?.getNotified ?? false { // if wwe do not want to reeceive notification we will hide this cell
+          cell.isHidden = false
+        }else {
+          cell.isHidden = true
+        }
+        return cell
+      }
       cellAll.backgroundColor = .clear
-     return cellAll
-
-   }
+      return cellAll
+      
+    }
   }
 }
 // MARK: - NotificationTimeProtocol
