@@ -44,10 +44,10 @@ class AppointmentsViewModel{
               $0.socketId == socketId
             }.first
             
-//            if  self?.allAppointments![index].hasPassed == false {
-//              self?.allAppointments![index].notificationTime = CoreDataHandler.shared.catchAppoinmentNotificationTime(returnType: "notificationTime", appointmentDate:  self?.allAppointments![index].date ?? "", appointmentTime: self?.allAppointments![index].time ?? "", socketId: self?.allAppointments![index].socketId ?? "", stationId: self?.allAppointments![index].stationId! ?? "") + "m"
-//
-//            }
+            if  self?.allAppointments![index].hasPassed == false {
+              self?.allAppointments![index].notificationTime = CoreDataHandler.shared.catchAppoinmentNotificationData(returnType: "notificationTime", appointmentDate:  self?.allAppointments![index].date ?? "", appointmentTime: self?.allAppointments![index].time ?? "", socketId: self?.allAppointments![index].socketId ?? "", stationId: self?.allAppointments![index].stationId! ?? "") + "m"
+
+            }
             
             self?.allAppointments![index].outpower = "\(self?.allAppointments![index].socket?.power ?? 0) \(self?.allAppointments![index].socket?.powerUnit ?? "kVa")"
             
@@ -99,24 +99,25 @@ class AppointmentsViewModel{
   func deleteAppointment(appointmentID: String){
     var appointmentDeletionUrl = WebsiteUrl.appointmentDeleteUrl + appointmentID + "?userID=\(User.user?.userId ?? -1)" // create custom url
 
-    
     // cal generic api handler func
     WebServiceHelper.instance.getServiceData(url: appointmentDeletionUrl, method: .delete, header: UserToken.token) { [weak self] (returnedResponse: String!, errorString: String?) in
       if errorString == nil {
+        let appointmentDatas = self?.allAppointments?.filter { $0.appointmentId == appointmentID }.first
+        if appointmentDatas?.notificationTime != "" {
+          self?.deleteNotification(appointmentDatas: appointmentDatas!)
+        }
         self?.fetchAppointments()
       }else {
         // SHOW ERROR PAGE HERE!!!!
         self?.onAppointmentsError?(errorString ?? "UNKNOWN ERROR")
       }
     }
-
-    
-
-    
-    
   }
-  
-  
+  // remove deleted appointment Notification Value
+  func deleteNotification(appointmentDatas: AppointmentViewViewModel) {
+    let notificationIdentifier = CoreDataHandler.shared.catchAppoinmentNotificationData(returnType: "identifier", appointmentDate: (appointmentDatas.date ?? "2022-01-01"), appointmentTime: (appointmentDatas.time ?? "00:00"), socketId: (appointmentDatas.socketId ?? "") , stationId: (appointmentDatas.stationId ?? ""))
+    NotificationManager.shared.removeNotification(identifier: notificationIdentifier)
+  }
 }
 
 

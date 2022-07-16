@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EBEF8021-9A0D-4B86-8A45-DEB8B1BDC64D"
+            uuid = "C477C16A-132C-44C9-A8D9-661430219A07"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Charger/Make Appointment/View Model/MakeAppointmentViewModel.swift"
+            filePath = "Charger/LocalNotificationManager/NotificationManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "createAppointment()"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "removeNotification(identifier:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

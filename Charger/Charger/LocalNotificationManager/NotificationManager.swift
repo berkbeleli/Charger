@@ -79,4 +79,11 @@ class NotificationManager {
       }
     }
   }
+  
+  /// This function remove the notification that has the given identifier
+  func removeNotification(identifier: String) {
+    let center = UNUserNotificationCenter.current()
+    center.removePendingNotificationRequests(withIdentifiers: [identifier])
+  }
+  
 }

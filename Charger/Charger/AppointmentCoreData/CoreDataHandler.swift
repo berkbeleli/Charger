@@ -46,7 +46,7 @@ struct CoreDataHandler {
     }
   }
   
-  mutating func catchAppoinmentNotificationTime(returnType: String, appointmentDate: String, appointmentTime: String, socketId: String, stationId: String) -> String {
+  mutating func catchAppoinmentNotificationData(returnType: String, appointmentDate: String, appointmentTime: String, socketId: String, stationId: String) -> String {
     //1
       guard let appDelegate =
         UIApplication.shared.delegate as? AppDelegate else {
@@ -71,9 +71,19 @@ struct CoreDataHandler {
       let resultNotification = notifications.filter {
         ($0.value(forKey: "appointmentDate") as! String) == appointmentDate &&
         ($0.value(forKey: "appointmentTime") as! String) == appointmentTime &&
-        ($0.value(forKey: "socketId") as! String) == socketId
+        ($0.value(forKey: "socketId") as! String) == socketId &&
+        ($0.value(forKey: "stationId") as! String) == stationId
+
       }
       return (resultNotification[0].value(forKey: "notificationTimer") as? String)!
+    }else if returnType == "identifier" {
+      let resultNotification = notifications.filter {
+        ($0.value(forKey: "appointmentDate") as! String) == appointmentDate &&
+        ($0.value(forKey: "appointmentTime") as! String) == appointmentTime &&
+        ($0.value(forKey: "socketId") as! String) == socketId &&
+        ($0.value(forKey: "stationId") as! String) == stationId
+      }
+      return (resultNotification[0].value(forKey: "notificationUniqueId") as? String)!
     }
     return ""
   }
