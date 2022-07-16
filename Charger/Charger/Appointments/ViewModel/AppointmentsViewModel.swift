@@ -44,9 +44,9 @@ class AppointmentsViewModel{
               $0.socketId == socketId
             }.first
             
-            if  self?.allAppointments![index].hasPassed == false {
-              self?.allAppointments![index].notificationTime = CoreDataHandler.shared.catchAppoinmentNotificationData(returnType: "notificationTime", appointmentDate:  self?.allAppointments![index].date ?? "", appointmentTime: self?.allAppointments![index].time ?? "", socketId: self?.allAppointments![index].socketId ?? "", stationId: self?.allAppointments![index].stationId! ?? "") + "m"
-
+            if self?.allAppointments![index].hasPassed == false {
+            let resultTime = CoreDataHandler.shared.catchAppoinmentNotificationData(returnType: "notificationTime", appointmentDate:  self?.allAppointments![index].date ?? "", appointmentTime: self?.allAppointments![index].time ?? "", socketId: self?.allAppointments![index].socketId ?? "", stationId: self?.allAppointments![index].stationId! ?? "") + "m"
+              resultTime == "m" ? (self?.allAppointments![index].notificationTime = "") : (self?.allAppointments![index].notificationTime = resultTime)
             }
             
             self?.allAppointments![index].outpower = "\(self?.allAppointments![index].socket?.power ?? 0) \(self?.allAppointments![index].socket?.powerUnit ?? "kVa")"

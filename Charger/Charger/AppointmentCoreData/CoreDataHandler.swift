@@ -67,24 +67,20 @@ struct CoreDataHandler {
       } catch let error as NSError {
         print("Could not fetch. \(error), \(error.userInfo)")
       }
-    if returnType == "notificationTime" {
-      let resultNotification = notifications.filter {
-        ($0.value(forKey: "appointmentDate") as! String) == appointmentDate &&
-        ($0.value(forKey: "appointmentTime") as! String) == appointmentTime &&
-        ($0.value(forKey: "socketId") as! String) == socketId &&
-        ($0.value(forKey: "stationId") as! String) == stationId
-
-      }
-      return (resultNotification[0].value(forKey: "notificationTimer") as? String)!
-    }else if returnType == "identifier" {
-      let resultNotification = notifications.filter {
-        ($0.value(forKey: "appointmentDate") as! String) == appointmentDate &&
-        ($0.value(forKey: "appointmentTime") as! String) == appointmentTime &&
-        ($0.value(forKey: "socketId") as! String) == socketId &&
-        ($0.value(forKey: "stationId") as! String) == stationId
-      }
-      return (resultNotification[0].value(forKey: "notificationUniqueId") as? String)!
+    let resultNotification = notifications.filter {
+      ($0.value(forKey: "appointmentDate") as! String) == appointmentDate &&
+      ($0.value(forKey: "appointmentTime") as! String) == appointmentTime &&
+      ($0.value(forKey: "socketId") as! String) == socketId &&
+      ($0.value(forKey: "stationId") as! String) == stationId
     }
+    if resultNotification.count > 0 {
+      if returnType == "notificationTime" {
+        return (resultNotification[0].value(forKey: "notificationTimer") as? String)!
+      }else if returnType == "identifier" {
+        return (resultNotification[0].value(forKey: "notificationUniqueId") as? String)!
+      }
+    }
+
     return ""
   }
   

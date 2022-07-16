@@ -14,7 +14,7 @@ class NotificationManager {
   func requestPermission() {
     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (success, error) in}
   }
-    /// Creates a notification
+  /// Creates a notification
   func createAppointmentNotification(date: String, time: String, minutesAgo: Int ,identifier: String, title: String, body: String, completion: @escaping ((String) -> ())) {
     // Initialize User Notification Center Object
     let center = UNUserNotificationCenter.current()
@@ -79,6 +79,7 @@ class NotificationManager {
       }
     }
   }
+
   
   /// This function remove the notification that has the given identifier
   func removeNotification(identifier: String) {
