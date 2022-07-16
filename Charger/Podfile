@@ -8,5 +8,6 @@ target 'Charger' do
   # Pods for Charger
   pod 'Alamofire'
   pod 'SkeletonView'
+  pod 'lottie-ios'
 
 end
