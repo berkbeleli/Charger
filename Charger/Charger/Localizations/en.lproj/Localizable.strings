@@ -93,6 +93,13 @@
 "upcomingAppointment" = "Upcoming Appointment";
 "station: %@ timeleft: %@" = "Your appointment at %@ will be in %@.";
 
+"NOTIFICATION OLDER DATE" = "Invalid Notification Time";
+"notificationolderSubtitle" = "The remaining time to your appointment is shorter than the notification time you selected.";
+"NOTIFICATION NOT ALLOWED" = "Notification Not Allowd";
+"notificationNotAllowedSubtitle" = "Allow notifications to receive notifications before appointments.";
+"notificationErrorConfirmButton" = "EDIT";
+"notificationSecondConfirmButton" = "WITHOUT NOTIFICATION";
+
 //MARK: - TIME SELECTION PICKER
 "5m" = "5 minutes";
 "10m" = "10 minutes";

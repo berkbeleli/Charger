@@ -38,7 +38,7 @@ class MakeAppointmentViewModel{
         body: titleValue) {[weak self] result in
           
           if result == "NOTIFICATION SET" {
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { // we need tto use our core data model in the main branch
               CoreDataHandler.shared.saveNotificationData(
                 appointmentDate: (self?.appointmentValues?.dateData)!,
                 appointmentTime: (self?.appointmentValues?.time)!,
@@ -67,7 +67,7 @@ class MakeAppointmentViewModel{
     // set the required parameters
     let parameter: [String: Any] = ["stationID": appointmentValues?.stationID ?? 0,"socketID": appointmentValues?.socketNumber ?? 0, "timeSlot": appointmentValues?.time ?? "0", "appointmentDate": "\(appointmentValues?.dateData ?? "")"]
     // cal generic api handler func
-    WebServiceHelper.instance.getServiceData(url: createAppointmentUrl, method: .get, parameters: parameter ,header: UserToken.token) { [weak self] (returnedResponse: Appointment!, errorString: String?) in
+    WebServiceHelper.instance.getServiceData(url: createAppointmentUrl, method: .post, parameters: parameter ,header: UserToken.token) { [weak self] (returnedResponse: Appointment!, errorString: String?) in
       if errorString == nil {
         self?.onAppointmentCreated?("Created Appointment")
       }else {

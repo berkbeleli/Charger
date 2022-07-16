@@ -92,6 +92,13 @@
 "upcomingAppointment" = "Yaklaşan Randevu";
 "station: %@ timeleft: %@" = "%@ istasyonu için oluşturduğunuz randevunuza %@ kaldı.";
 
+"NOTIFICATION OLDER DATE" = "Geçersiz Bildirim Zamanı";
+"notificationolderSubtitle" = "Randevunuza kalan süre seçtiğiniz bildirim zamanından daha kısa.";
+"NOTIFICATION NOT ALLOWED" = "Bildirim İzni yok";
+"notificationNotAllowedSubtitle" = "Randevulardan önce bildirim almak için bildirimlere izin veriniz.";
+"notificationErrorConfirmButton" = "DÜZENLE";
+"notificationSecondConfirmButton" = "BİLDİRİMSİZ DEVAM ET";
+
 //MARK: - TIME SELECTION PICKER
 "5m" = "5 dakika";
 "10m" = "10 dakika";

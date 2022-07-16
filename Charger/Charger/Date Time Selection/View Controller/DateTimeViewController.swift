@@ -137,7 +137,7 @@ class DateTimeViewController: UIViewController {
       }
     }
   }
-  // open erro pop up according to received error
+  // open error pop up according to received error
   func onServerError(error: String) {
     openErrorPopUp(error: error, responseHandler: serverErrorHandler)
   }
