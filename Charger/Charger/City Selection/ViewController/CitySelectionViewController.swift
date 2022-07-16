@@ -126,7 +126,22 @@ class CitySelectionViewController: UIViewController {
     }
     viewModel.onCitiesError = { [weak self] receivedError in
       // show received error custom error page
+      self?.openErrorPopUp(error: receivedError)
     }
+  }
+  // open custom popup
+  func openErrorPopUp(error: String) {
+    let popvc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CustomPopup") as! CustomPopupViewController // instantiate custom popup view
+    UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController!.addChild(popvc)
+    popvc.view.frame = UIScreen.main.bounds
+    UIApplication.shared.windows.last!.addSubview(popvc.view)
+    // if we receive a server error
+    popvc.setupObjects(
+      title: "receivedServerErrorTitle".localizeString(),
+      subtitle: error.localizeString(),
+      confirmButtonLabel:  "receivedServerErrorButtonTitle".localizeString(),
+      cancelButtonLabel: "zero".localizeString(),hideSecondButton: true)
+    popvc.didMove(toParent: self)
   }
   
   @objc
