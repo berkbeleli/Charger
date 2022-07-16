@@ -140,3 +140,4 @@
 "SOCKET_OCCUPIED" = "Soket belirtilen tarih ve saatte zaten kullanımda.";
 "APPOINTMENT_NOT_FOUND" = "Aranan randevu bulunamadı.";
 "APPOINTMENT_USER_MISMATCH" = "Aranan randevu verisi verilen kullanıcıya ait değil.";
+"Network Not Reachable" = "İnternet Bağlantısını Kontrol Edin.";
