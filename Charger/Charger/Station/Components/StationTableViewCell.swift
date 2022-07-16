@@ -9,7 +9,7 @@ import UIKit
 import SkeletonView
 
 class StationTableViewCell: UITableViewCell {
-  
+  // Object connections
   @IBOutlet private(set) weak var chargeTypeImage: UIImageView!
   @IBOutlet private(set) weak var stationNameLabel: UILabel!
   @IBOutlet private weak var stationBackgroundView: UIView!

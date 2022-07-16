@@ -29,7 +29,6 @@ struct Station: Codable {
     case services
     case stationName
   }
-  
 }
 
 struct SocketData: Codable {
@@ -56,7 +55,7 @@ struct GeoLocation: Codable {
   var province: String?
   var address: String?
 }
-
+// this structure will be used for viewing purpose
 struct StationViewViewModel: Equatable {
   static func == (lhs: StationViewViewModel, rhs: StationViewViewModel) -> Bool {
     return lhs.stationId == rhs.stationId

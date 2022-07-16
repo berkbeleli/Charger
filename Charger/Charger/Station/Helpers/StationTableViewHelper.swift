@@ -8,7 +8,7 @@
 import UIKit
 
 protocol StationSelectionProtocol: AnyObject {
-  func didStationSelected(_ vc: UIViewController)
+  func didStationSelected(_ vc: UIViewController) // when a station cell selected
 }
 
 class StationTableViewHelper: NSObject {
@@ -30,6 +30,11 @@ class StationTableViewHelper: NSObject {
   func registerCell(){
     tableView?.register(.init(nibName: "StationTableViewCell", bundle: nil), forCellReuseIdentifier: "StationTableViewCell")
   }
+  
+  func startGradientAnimation() {
+    shouldAnimate = true
+  }
+  
   /// This function set the table view items and reload the table view
   func setItems(_ items: [StationViewViewModel]) {
     shouldAnimate = false
@@ -43,11 +48,9 @@ extension StationTableViewHelper: UITableViewDelegate {
     // city selection
     let rowItem = allStations[indexPath.row]
     let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DateTimeView") as! DateTimeViewController
-    
     vc.stationId = rowItem.stationId
     vc.stationName = rowItem.stationName
     vc.distance = rowItem.distance ?? nil
-  
     self.delegate?.didStationSelected(vc)
   }
 }
@@ -56,7 +59,7 @@ extension StationTableViewHelper: UITableViewDelegate {
 extension StationTableViewHelper: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return shouldAnimate ? 10 : allStations.count
+    return shouldAnimate ? 10 : allStations.count // if we are animating with skeleton view we will display 10 rows
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,12 +67,14 @@ extension StationTableViewHelper: UITableViewDataSource {
     
     if shouldAnimate { // check if the animation requested
       cell.startAnimatedSkeletonView() // start the animation
+      cell.isUserInteractionEnabled = false // disable if the user clicks on loading the animation
       cell.stationNameLabel.text = "" // there is a small delay before the view appears before them remove the texts
       cell.availableSocketLabel.text = ""
       cell.distanceLabel.text = ""
       cell.workingHours.text = ""
     }else {
-      cell.stopAnimatedSkeletonView()
+      cell.stopAnimatedSkeletonView() // stop the animation
+      cell.isUserInteractionEnabled = true // enable interaction again
       let rowItem = allStations[indexPath.row]
       cell.chargeTypeImage.image = rowItem.imageType
       cell.stationNameLabel.text = rowItem.stationName
@@ -77,12 +82,8 @@ extension StationTableViewHelper: UITableViewDataSource {
       cell.distanceLabel.text = rowItem.distance ?? ""
       cell.workingHours.text = rowItem.workingHours! + " " + "time".localizeString()
     }
-    
     cell.backgroundColor = .clear
     cell.selectionStyle = .none
     return cell
   }
 }
-
-
-
