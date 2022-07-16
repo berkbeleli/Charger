@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 struct Themes {
   // With this global stitic variables we can user less line of codes
@@ -40,6 +41,8 @@ struct Themes {
   static let dcImage = UIImage(named: "DcImage")!
   static let acDcImage = UIImage(named: "Ac-DcImage")!
   static let alertImage = UIImage(named: "AlertImage")!
+  
+  static let loadingAnimation = Animation.named("loadingAnimation")
 }
 
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class AppointmentsViewController: UIViewController {
   //Object connections
@@ -16,7 +17,8 @@ class AppointmentsViewController: UIViewController {
   @IBOutlet private weak var createAppointmentButton: UIButton!
   @IBOutlet private weak var noAppointmentView: UIView!
   @IBOutlet private weak var appointmentsTableView: UITableView!
-  
+  private var animationView = AnimationView() // initialize animation
+  private var refreshControl: UIRefreshControl? // refresh control for pull to refresh
   private var viewModel = AppointmentsViewModel()
   private var tableViewHelper: AppointmentsTableViewHelper!
   override func viewDidLoad() {
@@ -24,6 +26,37 @@ class AppointmentsViewController: UIViewController {
     setupUI()
     localization()
     setupController()
+    setupPullToRefresh()
+  }
+  override func viewWillAppear(_ animated: Bool) {
+    setupLoadingAnimation()
+  }
+  
+  func setupPullToRefresh() {
+    refreshControl = UIRefreshControl()
+    appointmentsTableView.addSubview(refreshControl!)
+    refreshControl!.addTarget(self, action: #selector(callPullToRefresh), for: .valueChanged) // add table view pull to refresh action
+  }
+  
+  @objc
+  func callPullToRefresh() {
+    viewModel.fetchAppointments()
+  }
+  
+  /// Creates loading animation for current view
+  func setupLoadingAnimation() {
+    animationView.animation = Themes.loadingAnimation // setup animation gif
+    animationView.frame = view.bounds // get the view frame
+    animationView.contentMode = .scaleAspectFit
+    view.addSubview(animationView) // add the animation as subview
+    animationView.animationSpeed = 0.8 // set animation speed
+    animationView.loopMode = .loop // set as loop
+    animationView.play() // start animating
+  }
+  /// Stop and remove animation from the super view
+  func removeAnimation() {
+    animationView.stop()
+    animationView.removeFromSuperview()
   }
   
   /// Setup UI Elements
@@ -41,7 +74,9 @@ class AppointmentsViewController: UIViewController {
     self.navigationItem.hidesBackButton = true // hide back navbar button
     navigationItem.leftBarButtonItem = UIBarButtonItem(image: Themes.UserImage, style: .plain, target: self, action: #selector(profileClicked))
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // with this we will disable back button label text
-    appointmentsTableView.isHidden = true
+    appointmentsTableView.isHidden = true // make both the view hidden to show loading animation
+    noAppointmentView.isHidden = true
+    refreshControl?.tintColor = .green
   }
   
   // Setup UI Elements according to app language
@@ -58,6 +93,8 @@ class AppointmentsViewController: UIViewController {
     tableViewHelper.delegate = self // get delegation
     
     viewModel.onAppointmentsChanged = { [weak self] currentAppointment, pastAppointments in // when  appointments received
+      self?.removeAnimation()
+      self?.refreshControl?.endRefreshing() // end animation
       self?.tableViewHelper.setItems(currentAppointments: currentAppointment, pastAppointments: pastAppointments)
       if currentAppointment.isEmpty && pastAppointments.isEmpty { //  if there is no appointment show no appointment view
         self?.appointmentsTableView.isHidden = true

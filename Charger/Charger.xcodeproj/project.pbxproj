@@ -34,6 +34,7 @@
 		C047CC0A287F01770038CAA2 /* StationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C047CC08287F01770038CAA2 /* StationTableViewCell.xib */; };
 		C047CC0D287F0A680038CAA2 /* StationTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047CC0C287F0A680038CAA2 /* StationTableViewHelper.swift */; };
 		C047CC0F287F17AC0038CAA2 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047CC0E287F17AC0038CAA2 /* Double+Extension.swift */; };
+		C05714092883494F00C292F7 /* loadingAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = C05714082883494F00C292F7 /* loadingAnimation.json */; };
 		C070BB85287F4E2800DCCE44 /* FilterStationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070BB84287F4E2800DCCE44 /* FilterStationsViewController.swift */; };
 		C070BB88287F5A9B00DCCE44 /* Filter Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070BB87287F5A9B00DCCE44 /* Filter Enums.swift */; };
 		C070BB8A287F5AE000DCCE44 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C070BB89287F5AE000DCCE44 /* Filter.swift */; };
@@ -122,6 +123,7 @@
 		C047CC08287F01770038CAA2 /* StationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StationTableViewCell.xib; sourceTree = "<group>"; };
 		C047CC0C287F0A680038CAA2 /* StationTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewHelper.swift; sourceTree = "<group>"; };
 		C047CC0E287F17AC0038CAA2 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		C05714082883494F00C292F7 /* loadingAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingAnimation.json; sourceTree = "<group>"; };
 		C070BB84287F4E2800DCCE44 /* FilterStationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStationsViewController.swift; sourceTree = "<group>"; };
 		C070BB87287F5A9B00DCCE44 /* Filter Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Filter Enums.swift"; sourceTree = "<group>"; };
 		C070BB89287F5AE000DCCE44 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
@@ -411,6 +413,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		C05714072883492D00C292F7 /* LottieFile Animation */ = {
+			isa = PBXGroup;
+			children = (
+				C05714082883494F00C292F7 /* loadingAnimation.json */,
+			);
+			path = "LottieFile Animation";
+			sourceTree = "<group>";
+		};
 		C070BB82287F4E0200DCCE44 /* Filter Stations */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,7 +547,7 @@
 		C0EF3A3A287CAAD70078C77A /* Charger */ = {
 			isa = PBXGroup;
 			children = (
-				C0F14FDE2881ACD500079EE1 /* New Group */,
+				C05714072883492D00C292F7 /* LottieFile Animation */,
 				C0BD8E192880B6F700F91A8E /* Date Handler */,
 				C0EF3A7B287CCD8C0078C77A /* Login */,
 				C0EF3AA3287CE4920078C77A /* Appointments */,
@@ -716,13 +726,6 @@
 			path = "Custom Popup";
 			sourceTree = "<group>";
 		};
-		C0F14FDE2881ACD500079EE1 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		C0F14FDF2881AEB200079EE1 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -881,6 +884,7 @@
 				C0EF3A45287CAAD90078C77A /* Assets.xcassets in Resources */,
 				C0EF3A70287CB6CA0078C77A /* Localizable.strings in Resources */,
 				C0EF3A5B287CAE650078C77A /* Proxima Nova Thin.otf in Resources */,
+				C05714092883494F00C292F7 /* loadingAnimation.json in Resources */,
 				C0F14FED2881B4EC00079EE1 /* OtherDatasTableViewCell.xib in Resources */,
 				C0EF3A59287CAE650078C77A /* Proxima Nova Bold.otf in Resources */,
 				C0EF3A56287CAE650078C77A /* Proxima Nova Extrabold.otf in Resources */,
