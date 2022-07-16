@@ -10,6 +10,7 @@ import Lottie
 
 struct Themes {
   // With this global stitic variables we can user less line of codes
+  //MARK: - COLORS
   static let colorDark = UIColor(named: "Dark")!
   static let colorDark_2 = UIColor(named: "Dark-2")!
   static let colorCharcoal = UIColor(named: "Charcoal")!
@@ -18,6 +19,7 @@ struct Themes {
   static let colorSelectedGreen = UIColor(named: "SelectedGreen")!
   static let colorSolidWhite = UIColor(named: "SolidWhite")!
   
+  //MARK: - FONTS
   static let fontExtraBold = UIFont(name: "Proxima Nova Extrabold", size: 25)!
   static let fontBold = UIFont(name: "Proxima Nova Bold", size: 19)!
   static let fontBoldStationSubValues = UIFont(name: "Proxima Nova Bold", size: 17)!
@@ -32,7 +34,7 @@ struct Themes {
   
   static let fontBoldAppointmentSubValues = UIFont(name: "Proxima Nova Bold", size: 14)!
   static let fontRegularAppointmentSubtitle = UIFont(name: "ProximaNova-Regular", size: 14)!
-  
+  //MARK: - IMAGES
   static let noAppointmentImage = UIImage(named: "AppointmentBadge")!
   static let UserImage = UIImage(named: "Users")!
   static let profileBadgeImage = UIImage(named: "ProfileBadge")!
@@ -41,7 +43,7 @@ struct Themes {
   static let dcImage = UIImage(named: "DcImage")!
   static let acDcImage = UIImage(named: "Ac-DcImage")!
   static let alertImage = UIImage(named: "AlertImage")!
-  
+  //MARK: - LOADING ANIMATION GIF
   static let loadingAnimation = Animation.named("loadingAnimation")
 }
 

@@ -10,11 +10,8 @@ import CoreLocation
 
 class LocationManager: NSObject, CLLocationManagerDelegate {
     static let shared = LocationManager() // singleton to reach and request user location
-    
     let manager = CLLocationManager()
-  
     private override init() { }
-    
     func checkLocationService() {
         if CLLocationManager.locationServicesEnabled() { // checks if the location service is enabled
             setupLocationManager()
@@ -53,9 +50,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
         if let location = locations.last {
-            
             let object: [String: Any] = [
                 "error": false,
                 "location": location
@@ -70,9 +65,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             manager.stopUpdatingLocation() // stop receiving location
             
         }
-        
     }
-    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkLocationService() // check after the user change authoriation of the app
     }
