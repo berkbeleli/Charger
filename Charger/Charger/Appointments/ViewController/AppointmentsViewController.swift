@@ -67,6 +67,10 @@ class AppointmentsViewController: UIViewController {
         self?.noAppointmentView.isHidden = true
       }
     }
+    
+    viewModel.onAppointmentsError = { [weak self] receivedError in
+      self?.openErrorPopUp(error: receivedError)
+    }
   }
   
   @objc
@@ -75,7 +79,7 @@ class AppointmentsViewController: UIViewController {
     self.navigationController?.pushViewController(vc, animated: true)
   }
   
-  func openErrorPopUp(error: String, appointmentID: String?, stationName: String?,date: String? ,time: String?) {
+  func openErrorPopUp(error: String, appointmentID: String? = nil, stationName: String? = nil,date: String? = nil ,time: String? = nil) {
     let popvc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CustomPopup") as! CustomPopupViewController // instantiate custom popup view
     UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController!.addChild(popvc)
     popvc.view.frame = UIScreen.main.bounds

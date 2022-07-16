@@ -121,3 +121,18 @@
 
 "receivedServerErrorTitle" = "Server Hatası";
 "receivedServerErrorButtonTitle" = "DÜZENLE";
+
+
+//MARK: - SERVER ERRORS
+"EMAIL_NOT_IN_CORRECT_FORM" : "Girilen E-Posta adresi doğru bir biçimde değil.";
+"NOT_FOUND" : "İstek bulunamadı";
+"USER_NOT_FOUND" : "Kullanıcı bulunamadı";
+"UNAUTHORIZED_REQUEST": "İşlemi yapmak için gereken yetkiye sahip değilsiniz.";
+"STATION_NOT_FOUND" : "Aranan istasyon bulunamadı.";
+"STATION_NOT_ACCEPTING_APPOINTMENTS" : "İstasyon verilen tarihte rezervasyon kabul etmemektedir.";
+"INVALID_DATE": "Geçersiz / geçmiş tarih bilgisi girildi.";
+"INVALID_TIME": "Geçersiz / geçmiş tarih bilgisi girildi.";
+"TIME_FORMAT_ERROR": "Saat formatı istenilen biçimde değil.";
+"SOCKET_OCCUPIED": "Soket belirtilen tarih ve saatte zaten kullanımda.";
+"APPOINTMENT_NOT_FOUND": "Aranan randevu bulunamadı.";
+"APPOINTMENT_USER_MISMATCH": "Aranan randevu verisi verilen kullanıcıya ait değil.";
