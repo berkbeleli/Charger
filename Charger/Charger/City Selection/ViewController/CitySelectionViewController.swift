@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class CitySelectionViewController: UIViewController {
   // Object Connections
@@ -17,7 +18,7 @@ class CitySelectionViewController: UIViewController {
   @IBOutlet private weak var noResultImage: UIImageView!
   @IBOutlet private weak var noResultTitleLabel: UILabel!
   @IBOutlet private weak var noResultSubtitleLabel: UILabel!
-  
+  private var animationView = AnimationView() // initialize animation
   private var viewModel = CitySelectionViewModel()
   private var tableViewHelper: CitySelectionTableViewHelper!
   
@@ -26,17 +27,29 @@ class CitySelectionViewController: UIViewController {
     setupCustomSearchTextField()
     setupUI()
     localization()
-    setupController()
   }
   
   override func viewWillAppear(_ animated: Bool) {
-          super.viewWillAppear(animated)
-          if #available(iOS 13.0, *) {
-              self.view.layoutIfNeeded()
-              self.view.updateConstraintsIfNeeded()
-          }
-      }
+    setupLoadingAnimation()
+    setupController()
+  }
   
+  /// Creates loading animation for current view
+  func setupLoadingAnimation() {
+    animationView.animation = Themes.loadingAnimation // setup animation gif
+    animationView.frame = view.bounds // get the view frame
+    animationView.contentMode = .scaleAspectFit
+    view.addSubview(animationView) // add the animation as subview
+    animationView.animationSpeed = 0.8 // set animation speed
+    animationView.loopMode = .loop // set as loop
+    animationView.play() // start animating
+  }
+  /// Stop and remove animation from the super view
+  func removeAnimation() {
+    animationView.stop()
+    animationView.removeFromSuperview()
+  }
+    
   
   /// Setup UI Elements
   func setupUI(){
@@ -51,6 +64,7 @@ class CitySelectionViewController: UIViewController {
     noResultImage.image = Themes.noResultImage
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // with this we will disable back button label text
     noResultView.isHidden = true
+    cityTableView.isHidden = true
   }
   
   // Setup UI Elements according to app language
@@ -91,6 +105,7 @@ class CitySelectionViewController: UIViewController {
     tableViewHelper.delegate = self
     viewModel.fetchCities()
     viewModel.onCitiesChanged = { [weak self] cities in
+      self?.removeAnimation()
       self?.cityTableView.isHidden = false // show tableview
       self?.noResultView.isHidden = true // hide no result view
       self?.searchCityTextField.layer.borderColor = Themes.colorGrayScale.cgColor // border color for the textfield

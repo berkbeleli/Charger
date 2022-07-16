@@ -25,11 +25,12 @@ class AppointmentsViewController: UIViewController {
     super.viewDidLoad()
     setupUI()
     localization()
-    setupController()
     setupPullToRefresh()
   }
+  
   override func viewWillAppear(_ animated: Bool) {
     setupLoadingAnimation()
+    setupController()
   }
   
   func setupPullToRefresh() {
