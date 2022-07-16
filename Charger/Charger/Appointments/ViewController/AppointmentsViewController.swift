@@ -80,8 +80,9 @@ class AppointmentsViewController: UIViewController {
     UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController!.addChild(popvc)
     popvc.view.frame = UIScreen.main.bounds
     UIApplication.shared.windows.last!.addSubview(popvc.view)
+
     if error == "DELETEAPPOINTMENT" { // if the selected date is past we will show the error page according to that
-      
+
       let localizedMsg = String(format: NSLocalizedString("Your appointment at %@ on %@ at %@ will be cancelled.", comment: ""), stationName as! NSString, date as! NSString, time as! NSString)
       
       popvc.setupObjects(

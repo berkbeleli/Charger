@@ -64,7 +64,6 @@ struct CoreDataHandler {
       do {
         self.notifications = try managedContext.fetch(fetchRequest)
         
-        print(notifications[0].value(forKey: "appointmentDate") as? String)
       } catch let error as NSError {
         print("Could not fetch. \(error), \(error.userInfo)")
       }

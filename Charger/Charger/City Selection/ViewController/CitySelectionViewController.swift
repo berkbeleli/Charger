@@ -28,6 +28,16 @@ class CitySelectionViewController: UIViewController {
     localization()
     setupController()
   }
+  
+  override func viewWillAppear(_ animated: Bool) {
+          super.viewWillAppear(animated)
+          if #available(iOS 13.0, *) {
+              self.view.layoutIfNeeded()
+              self.view.updateConstraintsIfNeeded()
+          }
+      }
+  
+  
   /// Setup UI Elements
   func setupUI(){
     statusbarBackgroundView.backgroundColor = Themes.colorCharcoal

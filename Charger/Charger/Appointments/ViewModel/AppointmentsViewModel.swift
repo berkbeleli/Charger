@@ -29,7 +29,7 @@ class AppointmentsViewModel{
                   appointmentId: "\($0.appointmentId ?? 0)",
                   date: $0.date,
                   time: $0.time,
-                  stationId: "\($0.station?.id)",
+                  stationId: "\($0.station?.id ?? 0)",
                   socketId: "\($0.socketId ?? 0)",
                   stationName: $0.stationName,
                   hasPassed: $0.hasPassed,
@@ -44,10 +44,10 @@ class AppointmentsViewModel{
               $0.socketId == socketId
             }.first
             
-            if  self?.allAppointments![index].hasPassed == false {
-              self?.allAppointments![index].notificationTime = CoreDataHandler.shared.catchAppoinmentNotificationTime(returnType: "notificationTime", appointmentDate:  self?.allAppointments![index].date ?? "", appointmentTime: self?.allAppointments![index].time ?? "", socketId: self?.allAppointments![index].socketId ?? "", stationId: self?.allAppointments![index].stationId! ?? "") + "m"
-
-            }
+//            if  self?.allAppointments![index].hasPassed == false {
+//              self?.allAppointments![index].notificationTime = CoreDataHandler.shared.catchAppoinmentNotificationTime(returnType: "notificationTime", appointmentDate:  self?.allAppointments![index].date ?? "", appointmentTime: self?.allAppointments![index].time ?? "", socketId: self?.allAppointments![index].socketId ?? "", stationId: self?.allAppointments![index].stationId! ?? "") + "m"
+//
+//            }
             
             self?.allAppointments![index].outpower = "\(self?.allAppointments![index].socket?.power ?? 0) \(self?.allAppointments![index].socket?.powerUnit ?? "kVa")"
             
