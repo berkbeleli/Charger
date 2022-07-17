@@ -45,7 +45,7 @@ class ProfileViewController: UIViewController {
     logoutButton.titleLabel?.font = Themes.fontRegularSubtitle
     profileBadgeImage.image = Themes.profileBadgeImage
     emailLabel.text = User.user?.email! // set email label to our user email
-    deviceUdIdLabel.text = AppConstants.deviceUDID // set Device Id to our device Id constant value
+    deviceUdIdLabel.text = AppConstants.deviceUDDisplay // set Device Id to our device Id constant value
     self.navigationController?.interactivePopGestureRecognizer?.delegate = self // allow swipe to back page
   }
   
