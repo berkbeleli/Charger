@@ -60,7 +60,7 @@ class MakeAppointmentViewController: UIViewController {
   
   // open error pop up according to received error
   func onServerError(error: String) {
-    openErrorPopUp(error: error, responseHandler: serverErrorHandler) // call popup func
+      openErrorPopUp(error: error, responseHandler: serverErrorHandler) // call popup func
   }
   /// İf we want to handle server error handle we can write inside this func
   func serverErrorHandler(){}
@@ -73,7 +73,10 @@ class MakeAppointmentViewController: UIViewController {
   func openErrorPopUp(error: String, responseHandler: @escaping (() -> ())) {
     let popvc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CustomPopup") as! CustomPopupViewController // instantiate custom popup view
     UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController!.addChild(popvc)
-    popvc.view.frame = UIScreen.main.bounds
+    DispatchQueue.main.async {
+      popvc.view?.frame = UIScreen.main.bounds
+    }
+    
     UIApplication.shared.windows.last!.addSubview(popvc.view)
     if error == "NOTIFICATION OLDER DATE" { // if the selected date is past we will show the error page according to that
       popvc.setupObjects(
@@ -86,19 +89,7 @@ class MakeAppointmentViewController: UIViewController {
       popvc.secondActionPressed = { [weak self] response in
         responseHandler() // turn off the switch
       } // handle received button press action
-    }else if error == "NOTIFICATION NOT ALLOWED"{ // if the notification not allowed
-      popvc.setupObjects(
-        title: "oldDateTitleError".localizeString(),
-        subtitle: "oldDateSubtitleError".localizeString(),
-        confirmButtonLabel:  "notificationErrorConfirmButton".localizeString(),
-        cancelButtonLabel: "notificationSecondConfirmButton".localizeString()) // setup pop up elements
-      
-      popvc.didMove(toParent: self) // open popup
-      popvc.secondActionPressed = { [weak self] response in
-        responseHandler() // turn off the switch
-      } // handle received button press action
-    }
-    else { // if we receive a server error
+    } else { // if we receive a server error
       popvc.setupObjects(
         title: "receivedServerErrorTitle".localizeString(),
         subtitle: error.localizeString(),
