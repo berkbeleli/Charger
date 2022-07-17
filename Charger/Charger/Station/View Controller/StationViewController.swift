@@ -189,6 +189,7 @@ class StationViewController: UIViewController {
       }else {
         self?.navigationItem.rightBarButtonItem?.tintColor = Themes.colorSolidWhite // if not make it white
         self?.filterCollectionView.isHidden = true // hide the collection view
+        self?.setupController()
       }
       
     }
