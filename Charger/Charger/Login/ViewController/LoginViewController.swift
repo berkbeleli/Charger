@@ -34,6 +34,8 @@ class LoginViewController: UIViewController {
     emailTextField.textColor = Themes.colorSolidWhite
     emailTextField.font = Themes.fontRegularSubtitle
     emailTextField.useUnderline() // make email text underlined
+    emailTextField.keyboardType = .emailAddress // make keyboard type email
+    emailTextField.delegate = self
     loginButton.tintColor = Themes.colorDark
     loginButton.backgroundColor = Themes.colorSolidWhite
     loginButton.layer.cornerRadius = ObjectConstants.buttonBorderRadius
@@ -83,7 +85,14 @@ class LoginViewController: UIViewController {
   @IBAction func loginButtonPressed(_ sender: UIButton) {
     viewModel.loginRequest(email: emailTextField.text ?? "empty mail")
   }
-  
-  
+}
+
+//MARK: - UITextFieldDelegate
+extension LoginViewController: UITextFieldDelegate {
+  // With this extension when we  pressed ok button on keyboard it will be dismissed
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 }
 

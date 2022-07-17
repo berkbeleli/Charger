@@ -66,6 +66,7 @@ class CitySelectionViewController: UIViewController {
     noResultView.isHidden = true
     cityTableView.isHidden = true
     self.navigationController?.interactivePopGestureRecognizer?.delegate = self // allow swipe to back page
+    searchCityTextField.delegate = self
   }
   
   // Setup UI Elements according to app language
@@ -168,5 +169,14 @@ extension CitySelectionViewController: CitySelectionProtocol {
 extension CitySelectionViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true // allow slide to back page feature
+    }
+}
+
+//MARK: - UITextFieldDelegate
+extension CitySelectionViewController: UITextFieldDelegate {
+  // With this extension when we  pressed ok button on keyboard it will be dismissed
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
