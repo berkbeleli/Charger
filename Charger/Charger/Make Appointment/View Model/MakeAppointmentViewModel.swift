@@ -48,7 +48,9 @@ class MakeAppointmentViewModel{
     
             self?.createAppointment() // if the notification set call the createAppointment func
           }else {
-            self?.onNotificationError?(result) // if user asks for notification and there is an error about notification
+            if result != "NOTIFICATION NOT ALLOWED" {
+              self?.onNotificationError?(result) // if user asks for notification and there is an error about notification
+            }
           }
         }
     }else {
