@@ -54,6 +54,7 @@ class StationViewController: UIViewController {
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // with this we will disable back button label text
     navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.decrease")?.withTintColor(Themes.colorSolidWhite), style: .plain, target: self, action: #selector(filterPageOpen)) // Create open Filter Page Button
     self.navigationController?.interactivePopGestureRecognizer?.delegate = self // allow swipe to back page
+    searchStationTextField.delegate = self
   }
   
   // Setup UI Elements according to app language
@@ -204,5 +205,14 @@ extension StationViewController: StationSelectionProtocol {
 extension StationViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true // allow slide to back page feature
+    }
+}
+
+//MARK: - UITextFieldDelegate
+extension StationViewController: UITextFieldDelegate {
+  // With this extension when we  pressed ok button on keyboard it will be dismissed
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
