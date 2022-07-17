@@ -1,0 +1,143 @@
+/*
+  Localizable.strings
+  Charger
+
+  Created by Berk Beleli on 2022-07-11.
+  
+*/
+
+//MARK: - LOGIN PAGE
+"loginTitle" = "Giriş Yapın";
+"welcome" = "Charger'a hoş geldiniz.";
+"loginNote" = "Charger'ı kullanmak için giriş yapmanız gerekiyor.";
+"loginTxtPlaceHolder" = "E-POSTA ADRESİNİZ";
+"loginButton" = "GİRİŞ YAP";
+"loginBoldText" = "Charger'a";
+
+//MARK: - APPOINTMENTS PAGE
+"appointmentTitle" = "Randevular";
+"noAppointmentsTitle" = "Henüz bir randevu oluşturmadınız.";
+"noAppointmentsInfo" = "Oluşturulan randevular burada listelenir.";
+"createAppointmentButton" = "RANDEVU OLUŞTUR";
+
+"appointmentPageSocket" = "Soket numarası:";
+"currentAppointmentsTitle" = "GÜNCEL RANDEVULAR";
+"pastAppointmentsTitle" = "GEÇMİŞ RANDEVULAR";
+"todaytitle" = "Bugün";
+"Your appointment at %@ on %@ at %@ will be cancelled." = "%@ istasyonundaki %@ saat %@ randevunuz iptal edilecektir.";
+"cancelAppointmentTitle" = "Randevu İptali";
+
+"maxNumberAppointmentsReachedTitle" = "Randevu Sayısı Aşımı";
+"maxNumberAppointmentsReachedSubTitle" = "Aynı anda maksimum 10 adet randevu alabilirsiniz.";
+"maxNumberAppointmentsReachedButton" = "TAMAM";
+
+"confirmButton" = "RANDEVUYU İPTAL ET";
+"confirmCancelButton" = "VAZGEÇ";
+
+//MARK: - PROFILE PAGE
+"profileTitle" = "Profil";
+"email" = "E-posta:";
+"deviceID" = "Cihaz ID:";
+"logoutButton" = "ÇIKIŞ YAP";
+
+
+//MARK: - CITY SELECTION PAGE
+"cityselectionTitle" = "Şehir Seçin";
+"searchCityPlaceHolder" = "Şehir Ara";
+"noCityErrorTitle" = "Aramanız ile eşleşen bir sonuç bulunamadı.";
+"noCityErrorSubTitle" = "Lütfen yeni bir arama yapın.";
+
+//MARK: - STATION SELECTION PAGE
+"stationselectionTitle" = "İstasyon Seçin";
+"searchStationPlaceHolder" = "İstasyon Ara";
+"noStationErrorTitle" = "Aramanız ile eşleşen bir sonuç bulunamadı.";
+"noStationErrorSubTitle" = "Lütfen yeni bir arama yapın.";
+"servicehourTitle" = "Hizmet saatleri:";
+"availablesocket" = "Uygun soket sayısı:";
+"time" = "Saat";
+"City: %@ Count: %@" = "'%@' şehri için %@ sonuç görüntüleniyor.";
+
+
+//MARK: - FILTER SELECTION PAGE
+"filterselectionTitle" = "Filtreleme";
+"clearButton" = "TEMİZLE";
+"DeviceTypeHeader" = "Cihaz Tipi";
+"SocketTypeHeader" = "Soket Tipi";
+"DistanceHeader" = "Uzaklık (km)";
+"servicesTitle" = "Hizmetler";
+"dcbutton" = "DC (Hızlı Sarj)";
+"carpark" = "Otopark";
+"buffet" = "Büfe";
+"filterButton" = "FİLTRELE";
+
+
+//MARK: - DATE AND TIME PAGE
+"timeTitle" = "Tarih ve Saat Seçin";
+"dateIndicator" = "Randevu Tarihi";
+"socketHead" = "Soket";
+"confirmTimeButton" = "TARİH VE SAATİ ONAYLA";
+"oldDateTitleError" = "Geçersiz Tarih";
+"oldDateSubtitleError" = "Geçmiş bir tarihe randevu alamazsınız.";
+"oldDateActionButton" = "DÜZENLE";
+"oldDateSecondActionButton" = "BUGÜNÜ SEÇ";
+
+
+//MARK: - MAKE APPOINTMENT PAGE
+"makeAppointmentTitle" = "Randevu Detayı";
+"stationInfo" = "İSTASYON BİLGİLERİ";
+"addres" = "Adres";
+"workingHours" = "Hizmet Saatleri";
+"distance" = "Uzaklık";
+"stationCode" = "İstasyon Kodu";
+"services" = "Hizmetler";
+"socketInfos" = "SOKET BİLGİLERİ";
+"socketNumber" = "Soket Numarası";
+"deviceType" = "Cihaz Tipi";
+"socketType" = "Soket Tipi";
+"outpower" = "Çıkış Gücü";
+"appointmentInfos" = "RANDEVU BİLGİLERİ";
+"date" = "Tarih";
+"time" = "Saat";
+"appointmentDuration" = "Randevu Süresi";
+"getNotify" = "Bildirim Al";
+"confirmAppointmentButton" = "RANDEVUYU ONAYLA";
+
+"upcomingAppointment" = "Yaklaşan Randevu";
+"station: %@ timeleft: %@" = "%@ istasyonu için oluşturduğunuz randevunuza %@ kaldı.";
+
+"NOTIFICATION OLDER DATE" = "Geçersiz Bildirim Zamanı";
+"notificationolderSubtitle" = "Randevunuza kalan süre seçtiğiniz bildirim zamanından daha kısa.";
+"NOTIFICATION NOT ALLOWED" = "Bildirim İzni yok";
+"notificationNotAllowedSubtitle" = "Randevulardan önce bildirim almak için bildirimlere izin veriniz.";
+"notificationErrorConfirmButton" = "DÜZENLE";
+"notificationSecondConfirmButton" = "BİLDİRİMSİZ DEVAM ET";
+
+//MARK: - TIME SELECTION PICKER
+"5m" = "5 dakika";
+"10m" = "10 dakika";
+"15m" = "15 dakika";
+"30m" = "30 dakika";
+"60m" = "1 saat";
+"120m" = "2 saat";
+"180m" = "3 saat";
+"beforetime" = "önce";
+
+
+"receivedServerErrorTitle" = "Server Hatası";
+"receivedServerErrorButtonTitle" = "DÜZENLE";
+
+
+//MARK: - SERVER ERRORS
+"EMAIL_NOT_IN_CORRECT_FORM" = "Girilen E-Posta adresi doğru bir biçimde değil.";
+"NOT_FOUND" = "İstek bulunamadı";
+"USER_NOT_FOUND" = "Kullanıcı bulunamadı";
+"UNAUTHORIZED_REQUEST" = "İşlemi yapmak için gereken yetkiye sahip değilsiniz.";
+"STATION_NOT_FOUND" = "Aranan istasyon bulunamadı.";
+"STATION_NOT_ACCEPTING_APPOINTMENTS" = "İstasyon verilen tarihte rezervasyon kabul etmemektedir.";
+"INVALID_DATE" = "Geçersiz / geçmiş tarih bilgisi girildi.";
+"INVALID_TIME" = "Geçersiz / geçmiş tarih bilgisi girildi.";
+"TIME_FORMAT_ERROR" = "Saat formatı istenilen biçimde değil.";
+"SOCKET_OCCUPIED" = "Soket belirtilen tarih ve saatte zaten kullanımda.";
+"APPOINTMENT_NOT_FOUND" = "Aranan randevu bulunamadı.";
+"APPOINTMENT_USER_MISMATCH" = "Aranan randevu verisi verilen kullanıcıya ait değil.";
+"Network Not Reachable" = "İnternet Bağlantısını Kontrol Edin.";
