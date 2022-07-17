@@ -75,8 +75,6 @@ class AppointmentsViewController: UIViewController {
     self.navigationItem.hidesBackButton = true // hide back navbar button
     navigationItem.leftBarButtonItem = UIBarButtonItem(image: Themes.UserImage, style: .plain, target: self, action: #selector(profileClicked))
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // with this we will disable back button label text
-    appointmentsTableView.isHidden = true // make both the view hidden to show loading animation
-    noAppointmentView.isHidden = true
     refreshControl?.tintColor = .green
   }
   
@@ -89,6 +87,8 @@ class AppointmentsViewController: UIViewController {
   }
   /// setup vm and tableview helper
   func setupController() {
+    appointmentsTableView.isHidden = true // make both the view hidden to show loading animation
+    noAppointmentView.isHidden = true
     viewModel.fetchAppointments() // fetch the appointments
     tableViewHelper = .init(with: appointmentsTableView, vm: viewModel) // initialize tableviewhelper
     tableViewHelper.delegate = self // get delegation
