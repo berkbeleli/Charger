@@ -73,10 +73,7 @@ class MakeAppointmentViewController: UIViewController {
   func openErrorPopUp(error: String, responseHandler: @escaping (() -> ())) {
     let popvc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CustomPopup") as! CustomPopupViewController // instantiate custom popup view
     UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController!.addChild(popvc)
-    DispatchQueue.main.async {
       popvc.view?.frame = UIScreen.main.bounds
-    }
-    
     UIApplication.shared.windows.last!.addSubview(popvc.view)
     if error == "NOTIFICATION OLDER DATE" { // if the selected date is past we will show the error page according to that
       popvc.setupObjects(
