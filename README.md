@@ -30,14 +30,14 @@ This app basically for the electric car users the app users can make appointment
 - All of the GradientView backgrounds are handled from the same class
 - App compatible with small screen sizes.
 - Local notifications can be set
-- Local notifications will be deleted after appointment deleted
+- Local notification will be deleted after the appointment deleted
 - All of the datas provided by API
 - All of the API processes handled from Alamafire Generic API Handler. 
-- Users can only make appoint only for the future dates
-- All of the custom popUps handled from the same view
+- Users can only make appointment only for the future dates
+- All of the custom popups handled from the same view
 - Create, Read with CoreData
 - Supported Languages: English, Turkish
-
+- Supports under iOS 15.6
 
 # Why MVVM
 After using MVVM, I've found it to be very beneficial in many ways. Let’s get back to the list of things we set out to accomplish when architecting our app to see if MVVM addresses them.
@@ -52,14 +52,13 @@ After using MVVM, I've found it to be very beneficial in many ways. Let’s get 
 
 # Used Packages
 - Alamofire = Alamofire let us do more work with less lines of codes than URL Session as I used a generic API handler function with Alamofire I made the project cleaner and more understandable for anyone.
-- Skeleton View = Using skeleton View I created a gradient animation for my TableviewCell
+- Skeleton View = Using skeleton View I created a gradient animation for Stations Page
 - LottieFiles = Using LottieFiles package I create a nice animation as loading some of the pages datas
 
 # Splash Screen
 <img width="375" alt="01_EV_Splash_01" src="https://user-images.githubusercontent.com/44535117/179416931-678ec257-b090-443e-8842-aa4d62040248.png">
 
 ## Permission ScreenShots
-Sometimes Allow, Don't Allow and Allow Notification Title comes in english it is a bug about the simulator. Phone will localize that strings.
 
 <img width="217" alt="Screenshot 2022-07-17 at 08 12 23 PM" src="https://user-images.githubusercontent.com/44535117/179417201-fbf21884-d575-498f-b705-ea9fe4b3d213.png"> <img width="218" alt="Screenshot 2022-07-17 at 08 11 48 PM" src="https://user-images.githubusercontent.com/44535117/179417207-22cd8682-26b3-4779-b12d-4f8ed161ad5e.png">
 
@@ -67,27 +66,27 @@ Sometimes Allow, Don't Allow and Allow Notification Title comes in english it is
 
 
 # Login Page 
-When the app opened for the first time notification and location permissions will be asked from the user. In this page we need to enter a valid email address to create a appointment if we enter a wrong email address firstly the mail address will be checked by the local side after that the server side. If the user exists the user will sign in, otherwise user will be signed up and logged in. if there is any error about entered email or any server side problem there will be custom error pop up in the screen. Also the keyboard type will be email here so user can see email characters in the main keyboard page when people pressed return button from the keyboard the keyboard will be disappear. Also title will be bold in both supported languages.
+When the app opened for the first time notification and location permissions will be asked from the user. In this page we need to enter a valid email address to create an appointment if we enter a wrong email address firstly the mail address will be checked by the local side after that the server side. If the user exists the user will sign in, otherwise user will be signed up and logged in. if there is any error about entered email or any server side problem there will be custom error pop up in the screen. Also the keyboard type will be email here so user can see email characters in the main keyboard page when people pressed return button from the keyboard the keyboard will be disappear. Also title will be bold in both supported languages.
 
 ## Login Page ScreenShots
 <img width="334" alt="Screenshot 2022-07-17 at 08 24 12 PM" src="https://user-images.githubusercontent.com/44535117/179417457-cf894a8e-d87a-478f-ad02-6c4dbcb201f4.png">   <img width="337" alt="Screenshot 2022-07-17 at 08 23 14 PM" src="https://user-images.githubusercontent.com/44535117/179417460-5c63c49b-e54c-4be5-8551-30714515e31b.png">
 
 # Server Error(Custom Error View) ScreenShots
-For all of the server type errors our custom popUp View's will look like this only the subtitle will be changed according to the error. The second button will be hidden.
+For all of the server type errors our custom popUp View's will look like this only the subtitle will be changed according to the error.
 
 <img width="333" alt="Screenshot 2022-07-17 at 10 43 42 PM" src="https://user-images.githubusercontent.com/44535117/179422268-23c699be-0992-4102-85d9-ee4a1882c39f.png"> <img width="321" alt="Screenshot 2022-07-17 at 10 44 03 PM" src="https://user-images.githubusercontent.com/44535117/179422270-aea005da-75df-4a8f-8890-934a87c21a3c.png">
 
 
 
 # Appointments Page (Empty State)
-In this page you can see your past and current appointments if you haven't created any appointment you will not see any appointment in this page. As this page loading you will see lottifiles animation laoding view. In this page datafetch and showing animation made in the  Viewwillload function so the appointments will be reload when user returns to this page.
+In this page you can see your past and current appointments if you haven't created any appointment you will not see any appointment in this page. As this page loading you will see lottifiles animation laoding view. In this page datafetch and showing animation made in the  Viewwillload function so the appointments will be reloaded when user returns to this page.
 
 ## Appointments Page (Empty State) ScreenShots
 <img width="341" alt="Screenshot 2022-07-17 at 08 31 35 PM" src="https://user-images.githubusercontent.com/44535117/179417678-3ab76135-3075-4342-be27-93b89a7ae43a.png">  <img width="324" alt="Screenshot 2022-07-17 at 08 26 35 PM" src="https://user-images.githubusercontent.com/44535117/179417613-062543c8-8d11-47ab-afc2-d56bc4be3409.png">
 
 
 # Profile Page
-In this page you can see your profile Infos (email and deviceUDID) if you want to logout of current user profile you can logout from this page. This page supports the swipe to back page option.
+In this page you can see your profile infos (email and deviceUDID) if you want to logout of current user profile you can logout from this page. This page supports the swipe to back page option.
 
 ## Profile Page Screen Shots
 
@@ -96,7 +95,7 @@ In this page you can see your profile Infos (email and deviceUDID) if you want t
 
 
 # City Selection Page
-You can reach this page after pressing create appointment button from the Appointments page. The Cities those are catched from API will be listed in this page.Datas will be loaded in the ViewwillLoad function just like the Appointments page. As this datas loading you will see the lottieFile animation view. Via Custom SearchBar you can search by city names you can search by turkish or english character even the table shows in turkish. For example you can search for "can" for the city "Çankırı" the app will handle it and make bolder entered text in the result cities also change custom search textfield border color green color. if there is not any matching cities the no result view will appear also change custom search textfield border color red. Also the keyboard(for search city textfield) return button handled in this page as well when user press that button the keyboard will disappers. This page supports swipe to back page option.
+You can reach this page after pressing create appointment button from the Appointments page. The cities those are catched from API will be listed in this page. Datas will be loaded in the ViewwillLoad function just like the Appointments page. As this datas loading you will see the lottieFile animation view. Via Custom SearchBar you can search by city names you can search by turkish or english character even the table shows in turkish. For example you can search for "can" for the city "Çankırı" the app will handle it and make bolder entered text in the result cities also change custom search textfield border color green color. if there is not any matching cities the no result view will appear also change custom search textfield border color red. Also the keyboard(for search city textfield) return button handled in this page as well when user press that button the keyboard will disappers. This page supports swipe to back page option.
 
 ## City Selection Page ScreenShots
 <img width="323" alt="Screenshot 2022-07-17 at 08 43 47 PM" src="https://user-images.githubusercontent.com/44535117/179418152-bb4965e9-c89d-4d82-bc7f-f3d051ea502f.png">  <img width="334" alt="Screenshot 2022-07-17 at 08 43 59 PM" src="https://user-images.githubusercontent.com/44535117/179418157-cd8f7d48-a074-47df-a346-0779f02f2df9.png">  <img width="332" alt="Screenshot 2022-07-17 at 08 44 07 PM" src="https://user-images.githubusercontent.com/44535117/179418164-20ffc345-694f-406c-8bb7-e4b02f27e5f6.png">
@@ -139,7 +138,7 @@ We reach this page via using the filter icon that is on the right navigation bar
 
 
 # Date and Time Selection Page
-We reach this page after selecting a station from the stations page. In the date picker the today's date will be selected. Date Picker will be independent from the appearance of the phone it will always have black background and white texts. Also In the date picker You are not allowed to selected later than 2022-12-31 (Even it is shown in the Datepicker, the later date after the maximum dates are disabled inside the datepicker.). Everytime when user select a new date from the date picker the sockets will be reloaded and the number of the sockets will be checked, according to that we will implement that view (The station may close socket 3 in the following date). The socket table's widths will be changed according to the width of the screen if there is only one socket it will completely cover the screen width if there are two sockets half of the screen otherwise each of them will be cover 30% of the screen if we select a old date or older time than now there will be custom popup and block to proceed next page from this page. We can choose the option "select today" via this option the date picker values will automatically set to today date. Also if the time slot is appointed before, it will be disabled. So user is not able to select that time. You can only select one socket and one time.  If the user has not been selected any time socket the confirm time and date button will be deactivated. This page supports swipe to back page option.
+We reach this page after selecting a station from the stations page. In the date picker the today's date will be selected. Date Picker will be independent from the appearance of the phone it will always have black background and white texts. Also in the date picker you are not allowed to selected later than 2022-12-31 (Even it is shown in the Datepicker, the later date after the maximum dates are disabled inside the datepicker.). Everytime when user select a new date from the date picker the sockets will be reloaded and the number of the sockets will be checked, according to that we will implement that view (The station may close socket 3 in the following date). The socket table's widths will be changed according to the width of the screen if there is only one socket it will completely cover the screen width if there are two sockets half of the screen otherwise each of them will be cover 30% of the screen if we select a old date or older time than now there will be custom popup and block to proceed next page from this page. We can choose the option "select today" via this option the date picker values will automatically set to today date. Also if the time slot is appointed before, it will be disabled. So user is not able to select that time. You can only select one socket and one time.  If the user has not been selected any time socket the confirm time and date button will be deactivated. This page supports swipe to back page option.
 
 ## Date and Time Selection ScreenShots
 <img width="332" alt="Screenshot 2022-07-17 at 09 24 57 PM" src="https://user-images.githubusercontent.com/44535117/179419605-c85bfd87-ee82-4202-a97c-cad8395d0e4e.png"> <img width="330" alt="Screenshot 2022-07-17 at 09 23 13 PM" src="https://user-images.githubusercontent.com/44535117/179419609-640be711-485d-4b13-b267-608c69938fd4.png"> <img width="326" alt="Screenshot 2022-07-17 at 09 25 21 PM" src="https://user-images.githubusercontent.com/44535117/179419615-6515906a-4f96-49a4-8649-193230cef0e0.png">
