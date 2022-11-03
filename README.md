@@ -19,6 +19,7 @@ This app basically for the electric car users the app users can make appointment
 - About The Project
 - Used Packages
 - Pages
+- Screen Recording
 - Small Screen Views
 
 # About The Project
@@ -190,10 +191,17 @@ In this page we will see the created appointments that are divided into 2 differ
 
 
 
-# Notification
+## Notification
 
 ![notificationeng](https://user-images.githubusercontent.com/44535117/179405313-9a77006d-5dad-48ef-80f9-ea9ea0c3fe11.png)
 ![notificationtrk](https://user-images.githubusercontent.com/44535117/179405316-23c7abcc-b086-4fd1-9b80-d7aeb9c49d54.png)
+
+## Screen Recording
+
+
+https://user-images.githubusercontent.com/44535117/199670390-3c62ba79-6bf3-43dd-a696-118a601d0a07.mp4
+
+
 
 ## Small Screen ScreenShots
 
