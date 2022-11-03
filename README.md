@@ -37,7 +37,6 @@ This app basically for the electric car users the app users can make appointment
 - All of the custom popups handled from the same view
 - Create, Read with CoreData
 - Supported Languages: English, Turkish
-- Supports under iOS 15.6
 
 # Why MVVM
 After using MVVM, I've found it to be very beneficial in many ways. Let’s get back to the list of things we set out to accomplish when architecting our app to see if MVVM addresses them.
